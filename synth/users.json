@@ -1,0 +1,27 @@
+{
+    "type": "array",
+    "length": {
+        "type": "number",
+        "constant": 1
+    },
+    "content": {
+        "type": "object",
+        "id": {
+            "type": "number",
+            "id": {}
+        },
+        "email": {
+            "type": "string",
+            "faker": {
+                "generator": "safe_email"
+            }
+        },
+        "joined_on": {
+            "type": "date_time",
+            "format": "%Y-%m-%d",
+            "subtype": "naive_date",
+            "begin": "2010-01-01",
+            "end": "2020-01-01"
+        }
+    }
+}

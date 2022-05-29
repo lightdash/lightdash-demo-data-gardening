@@ -1,0 +1,25 @@
+{
+    "type": "array",
+    "length": 41,
+    "content": {
+        "type": "object",
+        "sku": {
+            "type": "number",
+            "id": {}
+        },
+        "product_name": {
+            "type": "datasource",
+            "path": "json:lookup/product_names.json",
+            "cycle": true
+        },
+        "price_amount": {
+            "type": "datasource",
+            "path": "json:lookup/product_prices.json",
+            "cycle": true
+        },
+        "price_currency": {
+            "type": "string",
+            "constant": "USD"
+        }
+    }
+}

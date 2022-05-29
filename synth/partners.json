@@ -1,0 +1,21 @@
+{
+    "type": "array",
+    "length": 6,
+    "content": {
+        "type": "object",
+        "partner_id": {
+            "type": "number",
+            "id": {}
+        },
+        "partner_name": {
+            "type": "datasource",
+            "path": "json:lookup/partner_names.json",
+            "cycle": true
+        },
+        "partner_commission": {
+            "type": "datasource",
+            "path": "json:lookup/partner_commissions.json",
+            "cycle": true
+        }
+    }
+}

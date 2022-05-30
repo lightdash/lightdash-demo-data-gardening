@@ -33,5 +33,6 @@ bq load --autodetect=true lightdash_demo_gardening.support_requests transformed_
 # 4. run dbt
 
 ```
+cd dbt
 dbt run --full-refresh
 ```

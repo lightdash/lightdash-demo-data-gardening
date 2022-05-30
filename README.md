@@ -13,7 +13,8 @@ synth generate synth --collection support_requests > synth_output_data/support_r
 synth generate synth --collection orders --random > synth_output_data/orders_random.json
 synth generate synth --collection support_requests --random > synth_output_data/support_requests_random.json
 ```
-# 2. run steps in notebook, checking along the way
+# 2. run steps in notebook
+remember to check the charts and data critically, along the way...
 ```
 exploration_and_transformation.ipynb
 ```

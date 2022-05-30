@@ -1,7 +1,7 @@
 # lightdash-demo-data-gardening
 Demo dbt project using fake gardening e-commerce platform data
 
-# 1, generate all the synth datasets
+# 1. generate all the synth datasets
 ```
 synth generate synth --collection users > synth_output_data/users.json
 synth generate synth --collection orders > synth_output_data/orders.json

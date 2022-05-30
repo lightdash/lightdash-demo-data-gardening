@@ -1,4 +1,14 @@
+# env
 .env
 .venv
+
+# node
 node_modules/
+
+# jupyter
 .ipynb_checkpoints
+
+# dbt
+target/
+dbt_packages/
+logs/

@@ -13,10 +13,11 @@ synth generate synth --collection support_requests > synth_output_data/support_r
 synth generate synth --collection orders --random > synth_output_data/orders_random.json
 synth generate synth --collection support_requests --random > synth_output_data/support_requests_random.json
 ```
-# 2. run steps in notebook
+# 2. run transformation script
 remember to check the charts and data critically, along the way...
 ```
-exploration_and_transformation.ipynb
+pip install -r requirements.txt
+python main.py
 ```
 # 3. load to bigquery
 

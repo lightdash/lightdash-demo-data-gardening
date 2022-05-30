@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: products
+- name: dbt_products
   description: ''
   columns:
   - name: price_amount

@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: orders
+- name: dbt_orders
   description: ''
   columns:
   - name: order_id

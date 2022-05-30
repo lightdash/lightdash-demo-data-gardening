@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: support_requests
+- name: dbt_support_requests
   description: ''
   columns:
   - name: feedback_rating

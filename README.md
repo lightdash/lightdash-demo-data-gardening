@@ -28,3 +28,9 @@ bq load --autodetect=true lightdash_demo_gardening.partners transformed_data/par
 bq load --autodetect=true lightdash_demo_gardening.products transformed_data/products.csv
 bq load --autodetect=true lightdash_demo_gardening.support_requests transformed_data/support_requests.csv
 ```
+
+# 4. run dbt
+
+```
+dbt run --full-refresh
+```

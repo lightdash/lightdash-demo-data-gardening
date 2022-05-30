@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: partners
+- name: dbt_partners
   description: ''
   columns:
   - name: partner_commission

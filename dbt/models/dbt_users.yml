@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: users
+- name: dbt_users
   description: ''
   columns:
   - name: browser

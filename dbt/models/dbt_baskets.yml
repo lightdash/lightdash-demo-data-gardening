@@ -1,6 +1,6 @@
 version: 2
 models:
-- name: baskets
+- name: dbt_baskets
   description: ''
   columns:
   - name: basket_item_id

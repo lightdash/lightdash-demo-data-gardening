@@ -1,0 +1,15 @@
+version: 2
+models:
+- name: users
+  description: ''
+  columns:
+  - name: browser
+    description: ''
+  - name: created_date
+    description: ''
+  - name: email
+    description: ''
+  - name: shipping_address
+    description: ''
+  - name: user_id
+    description: ''

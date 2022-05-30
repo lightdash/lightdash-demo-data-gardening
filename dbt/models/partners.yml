@@ -1,0 +1,10 @@
+version: 2
+models:
+- name: partners
+  description: ''
+  columns:
+  - name: partner_commission
+    description: ''
+  - name: partner_id
+    description: ''
+  - name: partner_name

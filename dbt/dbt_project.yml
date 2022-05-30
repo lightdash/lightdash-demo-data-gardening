@@ -4,7 +4,7 @@
 # name or the intended use of these models
 name: 'lightdash_demo_data_gardening'
 version: '0.1.0'
-config-version: 1
+config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'lightdash_demo_data_ecommerce'
@@ -26,3 +26,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+models:
+  lightdash_demo_data_gardening:
+    +materialized: table

@@ -1,0 +1,15 @@
+version: 2
+models:
+- name: support_requests
+  description: ''
+  columns:
+  - name: feedback_rating
+    description: ''
+  - name: order_id
+    description: ''
+  - name: reason
+    description: ''
+  - name: request_id
+    description: ''
+  - name: timestamp
+    description: ''

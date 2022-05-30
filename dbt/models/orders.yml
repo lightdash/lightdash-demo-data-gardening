@@ -1,0 +1,23 @@
+version: 2
+models:
+- name: orders
+  description: ''
+  columns:
+  - name: order_id
+    description: ''
+  - name: currency
+    description: ''
+  - name: ordered_product_skus
+    description: ''
+  - name: partner_id
+    description: ''
+  - name: referrer
+    description: ''
+  - name: timestamp
+    description: ''
+  - name: user_id
+    description: ''
+  - name: basket_total
+    description: ''
+  - name: profit
+    description: ''

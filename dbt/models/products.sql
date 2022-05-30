@@ -1,0 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+select
+    *
+from
+    `lightdash-analytics`.lightdash_demo_gardening.products

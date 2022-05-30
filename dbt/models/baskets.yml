@@ -1,0 +1,15 @@
+version: 2
+models:
+- name: baskets
+  description: ''
+  columns:
+  - name: basket_item_id
+    description: ''
+  - name: order_id
+    description: ''
+  - name: ordered_product_skus
+    description: ''
+  - name: price_amount
+    description: ''
+  - name: basket_total
+    description: ''

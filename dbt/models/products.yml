@@ -1,0 +1,13 @@
+version: 2
+models:
+- name: products
+  description: ''
+  columns:
+  - name: price_amount
+    description: ''
+  - name: price_currency
+    description: ''
+  - name: product_name
+    description: ''
+  - name: sku
+    description: ''

@@ -7,13 +7,29 @@ models:
     description: ''
   - name: order_date
     description: ''
-  - name: user_id
-    description: ''
   - name: partner_id
+    description: ''
+  - name: partner_name
+    description: ''
+  - name: partner_commission
     description: ''
   - name: currency
     description: ''
   - name: basket_total
     description: ''
+  - name: profit
+    description: ''
   - name: referrer
+    description: ''
+  - name: user_id
+    description: ''
+  - name: email
+    description: ''
+  - name: user_created_date
+    description: ''
+  - name: browser
+    description: ''
+  - name: shipping_city
+    description: ''
+  - name: shipping_country
     description: ''

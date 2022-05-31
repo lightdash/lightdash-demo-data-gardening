@@ -25,7 +25,7 @@ synth generate synth --collection support_requests --random > synth_output_data/
 ```
 ## 2. Transform data
 
-This will run some bespoke transformations (using Python `pandas` and `numpy`) on the data to improve its suitability for a demo. Note that this script is not deterministic since it includes some randomness as product popularity.
+This will run some bespoke transformations (using Python `pandas` and `numpy`) on the data to improve its suitability for a demo. Note that this script is non-deterministic since it includes some randomness (e.g. to adjust product popularity).
 ```
 pip install -r requirements.txt
 python main.py
@@ -42,7 +42,7 @@ bq load --autodetect=true lightdash_demo_gardening.products transformed_data/pro
 bq load --autodetect=true lightdash_demo_gardening.support_requests transformed_data/support_requests.csv
 ```
 
-# 4. Run dbt
+## 4. Run dbt
 
 ```
 cd dbt

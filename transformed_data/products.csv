@@ -1,42 +1,42 @@
-price_amount,price_currency,product_name,sku
-225,USD,Steel outdoor dining table set,1
-250,USD,Wood-fired pizza oven,2
-130,USD,Funky gnome themed parasol,3
-30,USD,Monstera deliciosa medium,4
-50,USD,Monstera deliciosa large,5
-5,USD,Sage seeds,6
-95,USD,Banana tree,7
-25,USD,Rubber tree,8
-60,USD,Contemporary clay trough,9
-40,USD,Pink heritage pot medium,10
-70,USD,Blue heritage pot large,11
-4,USD,White Roses seeds,12
-4,USD,Red Roses seeds,13
-450,USD,Luxury Gas-Powered BBQ,14
-80,USD,Fire Pit Medium,15
-120,USD,Fire Pit Large,16
-3,USD,Basil seeds,17
-3,USD,Oregano seeds,18
-3,USD,Thyme seeds,19
-17,USD,Bamboo,20
-54,USD,Eucalyptus tree,21
-75,USD,Lemon tree,22
-85,USD,Lime tree,23
-99,USD,Magnolia,24
-79,USD,Azalea,25
-150,USD,Mixed Rhododendron,26
-65,USD,Ficus,27
-75,USD,Fig tree,28
-30,USD,Alocasia,29
-6,USD,Poppy seeds,30
-25,USD,Spider plant,31
-115,USD,Bay tree,32
-20,USD,Olive tree,33
-20,USD,Peony,34
-20,USD,Gerbera,35
-30,USD,Peace lily,36
-30,USD,Snake plant,37
-25,USD,Money plant,38
-15,USD,Pothos,39
-24,USD,Aloe vera,40
-34,USD,Calathea,41
+sku,product_name,price_amount,price_currency
+1,Steel outdoor dining table set,225,USD
+2,Wood-fired pizza oven,250,USD
+3,Funky gnome themed parasol,130,USD
+4,Monstera deliciosa medium,30,USD
+5,Monstera deliciosa large,50,USD
+6,Sage seeds,5,USD
+7,Banana tree,95,USD
+8,Rubber tree,25,USD
+9,Contemporary clay trough,60,USD
+10,Pink heritage pot medium,40,USD
+11,Blue heritage pot large,70,USD
+12,White Roses seeds,4,USD
+13,Red Roses seeds,4,USD
+14,Luxury Gas-Powered BBQ,450,USD
+15,Fire Pit Medium,80,USD
+16,Fire Pit Large,120,USD
+17,Basil seeds,3,USD
+18,Oregano seeds,3,USD
+19,Thyme seeds,3,USD
+20,Bamboo,17,USD
+21,Eucalyptus tree,54,USD
+22,Lemon tree,75,USD
+23,Lime tree,85,USD
+24,Magnolia,99,USD
+25,Azalea,79,USD
+26,Mixed Rhododendron,150,USD
+27,Ficus,65,USD
+28,Fig tree,75,USD
+29,Alocasia,30,USD
+30,Poppy seeds,6,USD
+31,Spider plant,25,USD
+32,Bay tree,115,USD
+33,Olive tree,20,USD
+34,Peony,20,USD
+35,Gerbera,20,USD
+36,Peace lily,30,USD
+37,Snake plant,30,USD
+38,Money plant,25,USD
+39,Pothos,15,USD
+40,Aloe vera,24,USD
+41,Calathea,34,USD

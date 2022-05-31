@@ -54,7 +54,7 @@ def main():
         if random.randint(0, 10) > 3:
             print(f'unpopular product: {i}')
             df_orders['ordered_product_skus'] = df_orders['ordered_product_skus'].apply(lambda x: product_manipulation(x))
-            
+
     # drop unnecessary cols
     to_drop = [
         'browser',
@@ -133,6 +133,17 @@ def main():
     df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge.loc[df_orders_support_requests_concat_merge['timestamp_x']>df_orders_support_requests_concat_merge['timestamp_y']]
     df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.rename({'timestamp_x': 'timestamp'}, axis=1)
 
+    # sort by timestamp ascending, and correct request IDs
+    df_orders_support_requests_concat_merge_cut.sort_values('timestamp', inplace=True)
+    df_orders_support_requests_concat_merge_cut.drop('request_id', inplace=True, axis=1)
+    df_orders_support_requests_concat_merge_cut.reset_index(drop=True, inplace=True)
+    df_orders_support_requests_concat_merge_cut.reset_index(inplace=True)
+    df_orders_support_requests_concat_merge_cut.rename({'index':'request_id'}, inplace=True, axis=1)
+    df_orders_support_requests_concat_merge_cut['request_id']+=1
+
+    # remove everything after end of may
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.loc[df_orders_support_requests_concat_merge_cut['timestamp']<'2022-06-01']
+
     # drop unnecessary cols and reset index
     to_drop = [
         'currency',
@@ -152,6 +163,56 @@ def main():
     df_orders_support_requests_concat_merge_cut.reset_index(drop=True, inplace=True)
     df_support_requests = df_orders_support_requests_concat_merge_cut.copy()
 
+    # order cols and sort records appropriately
+    df_orders = df_orders[[
+        'order_id',
+        'timestamp',
+        'user_id',
+        'partner_id',
+        'ordered_product_skus',
+        'currency',
+        'basket_total',
+        'profit',
+        'referrer'
+    ]].copy()
+
+    df_baskets = df_baskets[[
+        'order_id',
+        'basket_item_id',
+        'ordered_product_skus',
+        'price_amount',
+        'basket_total'
+    ]].copy()
+
+    df_products = df_products[[
+        'sku',
+        'product_name',
+        'price_amount',
+        'price_currency'
+    ]].copy()
+
+    df_partners = df_partners[[
+        'partner_id',
+        'partner_name',
+        'partner_commission'
+    ]].copy()
+
+    df_users = df_users[[
+        'user_id',
+        'email',
+        'created_date',
+        'browser',
+        'shipping_address'
+    ]].copy()
+
+    df_support_requests = df_support_requests[[
+        'request_id',
+        'order_id',
+        'timestamp',
+        'reason',
+        'feedback_rating'
+    ]].copy()
+
     # save to csv
     df_orders.to_csv('transformed_data/orders.csv', index=False)
     df_baskets.to_csv('transformed_data/baskets.csv', index=False)
@@ -159,7 +220,6 @@ def main():
     df_partners.to_csv('transformed_data/partners.csv', index=False)
     df_users.to_csv('transformed_data/users.csv', index=False)
     df_support_requests.to_csv('transformed_data/support_requests.csv', index=False)
-    
 
 if __name__ == "__main__":
    main()

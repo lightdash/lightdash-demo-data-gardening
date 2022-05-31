@@ -20,13 +20,13 @@
                 "high": 1000
             }
         },
-        "timestamp": {
+        "order_date": {
             "type": "series",
             "cyclical": {
                 "start": "2022-01-01 00:00:00",
                 "period": "100d",
                 "min_rate": "11h",
-                "max_rate": "55m"
+                "max_rate": "58m"
             }
         },
         "ordered_product_skus": {

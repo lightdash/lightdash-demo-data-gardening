@@ -15,7 +15,6 @@ This will use `synth` to generate all the base datasets using the synth configur
 ```
 synth generate synth --collection users > synth_output_data/users.json
 synth generate synth --collection orders > synth_output_data/orders.json
-synth generate synth --collection baskets > synth_output_data/baskets.json
 synth generate synth --collection partners > synth_output_data/partners.json
 synth generate synth --collection products > synth_output_data/products.json
 synth generate synth --collection support_requests > synth_output_data/support_requests.json

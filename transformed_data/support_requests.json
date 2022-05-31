@@ -8,7 +8,7 @@
         "type": "STRING"
     },
     {
-        "name": "timestamp",
+        "name": "request_date",
         "type": "TIMESTAMP"
     },
     {

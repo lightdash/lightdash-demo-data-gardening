@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def main():
-    
+
     # read data from synth
     df_orders = pd.read_json('synth_output_data/orders.json')
     df_products = pd.read_json('synth_output_data/products.json')
@@ -20,7 +20,7 @@ def main():
     df_orders_users = pd.merge(df_orders, df_users, on="user_id", how="left")
 
     # remove orders created by users before they existed
-    df_orders_users_cut = df_orders_users.loc[df_orders_users['created_date']<df_orders_users['timestamp']]
+    df_orders_users_cut = df_orders_users.loc[df_orders_users['created_date']<df_orders_users['order_date']]
 
     # bulk up orders with more random orders to make up for lost orders in previous step
     df_orders_random_users = pd.merge(df_orders_random, df_users, on="user_id", how="left")
@@ -32,9 +32,9 @@ def main():
     df_orders_concat['order_id'] = df_orders_concat['order_id']+1
 
     # again, remove orders created by users before they existed and also before 2022-06-01
-    df_orders_concat_cut = df_orders_concat.loc[df_orders_concat['created_date']<df_orders_concat['timestamp']]
-    df_orders_concat_cut = df_orders_concat_cut.loc[df_orders_concat_cut['timestamp']<'2022-06-01']
-    df_orders_concat_cut = df_orders_concat_cut.sort_values('timestamp')
+    df_orders_concat_cut = df_orders_concat.loc[df_orders_concat['created_date']<df_orders_concat['order_date']]
+    df_orders_concat_cut = df_orders_concat_cut.loc[df_orders_concat_cut['order_date']<'2022-06-01']
+    df_orders_concat_cut = df_orders_concat_cut.sort_values('order_date')
     df_orders_concat_cut = df_orders_concat_cut.drop('order_id', axis=1)
     df_orders_concat_cut = df_orders_concat_cut.reset_index(drop=True)
     df_orders_concat_cut = df_orders_concat_cut.reset_index()
@@ -109,8 +109,7 @@ def main():
     df_orders_support_requests = pd.merge(df_support_requests, df_orders, how='left', on='order_id')
 
     # remove requests that happened before their corresponding order
-    df_orders_support_requests = df_orders_support_requests.loc[df_orders_support_requests['timestamp_x']>df_orders_support_requests['timestamp_y']]
-    df_orders_support_requests.rename({'timestamp_x': 'timestamp'}, axis=1, inplace=True)
+    df_orders_support_requests = df_orders_support_requests.loc[df_orders_support_requests['request_date']>df_orders_support_requests['order_date']]
 
     # remove unnecessary cols
     to_drop = [
@@ -118,7 +117,7 @@ def main():
         'ordered_product_skus',
         'partner_id',
         'referrer',
-        'timestamp_y',
+        'order_date',
         'user_id'
     ]
     df_orders_support_requests.drop(to_drop, inplace=True, axis=1)
@@ -130,19 +129,18 @@ def main():
     df_orders_support_requests_concat_merge = pd.merge(df_orders_support_requests_concat, df_orders_concat_cut, how='left', on='order_id')
 
     # again, remove requests that happened before their corresponding order
-    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge.loc[df_orders_support_requests_concat_merge['timestamp_x']>df_orders_support_requests_concat_merge['timestamp_y']]
-    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.rename({'timestamp_x': 'timestamp'}, axis=1)
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge.loc[df_orders_support_requests_concat_merge['request_date']>df_orders_support_requests_concat_merge['order_date']]
 
     # sort by timestamp ascending, and correct request IDs
-    df_orders_support_requests_concat_merge_cut.sort_values('timestamp', inplace=True)
-    df_orders_support_requests_concat_merge_cut.drop('request_id', inplace=True, axis=1)
-    df_orders_support_requests_concat_merge_cut.reset_index(drop=True, inplace=True)
-    df_orders_support_requests_concat_merge_cut.reset_index(inplace=True)
-    df_orders_support_requests_concat_merge_cut.rename({'index':'request_id'}, inplace=True, axis=1)
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.sort_values('request_date')
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.drop('request_id', axis=1)
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.reset_index(drop=True)
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.reset_index()
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.rename({'index':'request_id'}, axis=1)
     df_orders_support_requests_concat_merge_cut['request_id']+=1
 
     # remove everything after end of may
-    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.loc[df_orders_support_requests_concat_merge_cut['timestamp']<'2022-06-01']
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.loc[df_orders_support_requests_concat_merge_cut['request_date']<'2022-06-01']
 
     # drop unnecessary cols and reset index
     to_drop = [
@@ -150,7 +148,7 @@ def main():
         'ordered_product_skus',
         'partner_id',
         'referrer',
-        'timestamp_y',
+        'order_date',
         'user_id',
         'browser',
         'created_date',
@@ -166,7 +164,7 @@ def main():
     # order cols and sort records appropriately
     df_orders = df_orders[[
         'order_id',
-        'timestamp',
+        'order_date',
         'user_id',
         'partner_id',
         'ordered_product_skus',
@@ -208,7 +206,7 @@ def main():
     df_support_requests = df_support_requests[[
         'request_id',
         'order_id',
-        'timestamp',
+        'request_date',
         'reason',
         'feedback_rating'
     ]].copy()

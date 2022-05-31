@@ -1,7 +1,9 @@
-import pandas as pd
-from ast import literal_eval
 import random
+from ast import literal_eval
+
 import numpy as np
+import pandas as pd
+
 
 def main():
     

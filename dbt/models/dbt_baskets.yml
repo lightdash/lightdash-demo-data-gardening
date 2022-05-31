@@ -3,13 +3,17 @@ models:
 - name: dbt_baskets
   description: ''
   columns:
-  - name: basket_item_id
-    description: ''
   - name: order_id
     description: ''
-  - name: ordered_product_skus
+  - name: basket_item_id
     description: ''
-  - name: price_amount
+  - name: sku
+    description: ''
+  - name: product_name
+    description: ''
+  - name: currency
+    description: ''
+  - name: item_price
     description: ''
   - name: basket_total
     description: ''

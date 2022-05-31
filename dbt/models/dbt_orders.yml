@@ -5,19 +5,15 @@ models:
   columns:
   - name: order_id
     description: ''
-  - name: currency
-    description: ''
-  - name: ordered_product_skus
-    description: ''
-  - name: partner_id
-    description: ''
-  - name: referrer
-    description: ''
-  - name: timestamp
+  - name: order_date
     description: ''
   - name: user_id
     description: ''
+  - name: partner_id
+    description: ''
+  - name: currency
+    description: ''
   - name: basket_total
     description: ''
-  - name: profit
+  - name: referrer
     description: ''

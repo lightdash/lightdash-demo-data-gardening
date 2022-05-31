@@ -3,8 +3,9 @@ models:
 - name: dbt_partners
   description: ''
   columns:
-  - name: partner_commission
-    description: ''
   - name: partner_id
     description: ''
+  - name: partner_commission
+    description: ''
   - name: partner_name
+    description: ''

@@ -3,13 +3,13 @@ models:
 - name: dbt_support_requests
   description: ''
   columns:
-  - name: feedback_rating
+  - name: request_id
     description: ''
   - name: order_id
     description: ''
+  - name: request_date
+    description: ''
   - name: reason
     description: ''
-  - name: request_id
-    description: ''
-  - name: timestamp
+  - name: feedback_rating
     description: ''

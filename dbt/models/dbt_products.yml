@@ -3,11 +3,11 @@ models:
 - name: dbt_products
   description: ''
   columns:
-  - name: price_amount
-    description: ''
-  - name: price_currency
+  - name: sku
     description: ''
   - name: product_name
     description: ''
-  - name: sku
+  - name: price_amount
+    description: ''
+  - name: price_currency
     description: ''

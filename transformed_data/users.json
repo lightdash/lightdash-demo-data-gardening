@@ -1,0 +1,22 @@
+[
+    {
+        "name": "user_id",
+        "type": "STRING"
+    },
+    {
+        "name": "email",
+        "type": "STRING"
+    },
+    {
+        "name": "created_date",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "browser",
+        "type": "STRING"
+    },
+    {
+        "name": "shipping_address",
+        "type": "STRING"
+    }
+]

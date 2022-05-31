@@ -17,7 +17,7 @@
     },
     {
         "name": "ordered_product_skus",
-        "type": "ARRAY"
+        "type": "STRING"
     },
     {
         "name": "currency",

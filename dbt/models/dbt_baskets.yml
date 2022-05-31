@@ -17,3 +17,13 @@ models:
     description: ''
   - name: basket_total
     description: ''
+  - name: order_date
+    description: ''
+  - name: profit
+    description: ''
+  - name: partner_id
+    description: ''
+  - name: partner_name
+    description: ''
+  - name: partner_commission
+    description: ''

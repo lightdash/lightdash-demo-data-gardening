@@ -13,3 +13,25 @@ models:
     description: ''
   - name: feedback_rating
     description: ''
+  - name: order_date
+    description: ''
+  - name: basket_total
+    description: ''
+  - name: profit
+    description: ''
+  - name: referrer
+    description: ''
+  - name: partner_id
+    description: ''
+  - name: partner_name
+    description: ''
+  - name: partner_commission
+    description: ''
+  - name: user_id
+    description: ''
+  - name: email
+    description: ''
+  - name: created_date
+    description: ''
+  - name: browser
+    description: ''

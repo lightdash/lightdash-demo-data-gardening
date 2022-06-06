@@ -33,12 +33,12 @@ python main.py
 This will load the datasets into bigquery under the dataset name `lightdash_demo_gardening`.
 
 ```
-bq load --autodetect=true --replace=true --schema=transformed_data/users.json lightdash_demo_gardening.users transformed_data/users.csv
-bq load --autodetect=true --replace=true --schema=transformed_data/orders.json lightdash_demo_gardening.orders transformed_data/orders.csv
-bq load --autodetect=true --replace=true --schema=transformed_data/baskets.json lightdash_demo_gardening.baskets transformed_data/baskets.csv
-bq load --autodetect=true --replace=true --schema=transformed_data/partners.json lightdash_demo_gardening.partners transformed_data/partners.csv
-bq load --autodetect=true --replace=true --schema=transformed_data/products.json lightdash_demo_gardening.products transformed_data/products.csv
-bq load --autodetect=true --replace=true --schema=transformed_data/support_requests.json lightdash_demo_gardening.support_requests transformed_data/support_requests.csv
+bq load --autodetect=true --replace=true --schema=seeds/users.json lightdash_demo_gardening.users seeds/users.csv
+bq load --autodetect=true --replace=true --schema=seeds/orders.json lightdash_demo_gardening.orders seeds/orders.csv
+bq load --autodetect=true --replace=true --schema=seeds/baskets.json lightdash_demo_gardening.baskets seeds/baskets.csv
+bq load --autodetect=true --replace=true --schema=seeds/partners.json lightdash_demo_gardening.partners seeds/partners.csv
+bq load --autodetect=true --replace=true --schema=seeds/products.json lightdash_demo_gardening.products seeds/products.csv
+bq load --autodetect=true --replace=true --schema=seeds/support_requests.json lightdash_demo_gardening.support_requests seeds/support_requests.csv
 ```
 
 ## 4. Run dbt

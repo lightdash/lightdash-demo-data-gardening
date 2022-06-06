@@ -212,12 +212,12 @@ def main():
     ]].copy()
 
     # save to csv
-    df_orders.to_csv('transformed_data/orders.csv', index=False)
-    df_baskets.to_csv('transformed_data/baskets.csv', index=False)
-    df_products.to_csv('transformed_data/products.csv', index=False)
-    df_partners.to_csv('transformed_data/partners.csv', index=False)
-    df_users.to_csv('transformed_data/users.csv', index=False)
-    df_support_requests.to_csv('transformed_data/support_requests.csv', index=False)
+    df_orders.to_csv('seeds/orders.csv', index=False)
+    df_baskets.to_csv('seeds/baskets.csv', index=False)
+    df_products.to_csv('seeds/products.csv', index=False)
+    df_partners.to_csv('seeds/partners.csv', index=False)
+    df_users.to_csv('seeds/users.csv', index=False)
+    df_support_requests.to_csv('seeds/support_requests.csv', index=False)
 
 if __name__ == "__main__":
    main()

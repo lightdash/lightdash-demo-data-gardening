@@ -28,11 +28,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
-  lightdash_demo_data_gardening:
+  lightdash_demo_thyme:
     +materialized: table
     orders:
       - 
 
 seeds:
-  lightdash_demo_data_gardening:
+  lightdash_demo_thyme:
     +enabled: true

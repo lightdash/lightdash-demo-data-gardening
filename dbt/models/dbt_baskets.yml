@@ -11,6 +11,9 @@ models:
     description: ''
   - name: product_name
     description: ''
+    meta:
+      dimensions:
+        label: 'Product name'
   - name: currency
     description: ''
   - name: item_price
@@ -25,6 +28,9 @@ models:
         format: 'usd'
   - name: order_date
     description: ''
+    meta:
+      dimensions:
+        label: 'Order date'
   - name: profit
     description: ''
     meta:
@@ -34,5 +40,8 @@ models:
     description: ''
   - name: partner_name
     description: ''
+    meta:
+      dimensions:
+        label: 'Partner name'
   - name: partner_commission
     description: ''

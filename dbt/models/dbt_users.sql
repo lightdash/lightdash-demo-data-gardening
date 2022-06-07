@@ -5,6 +5,6 @@ SELECT
   browser,
   shipping_address
 FROM
-  `lightdash-analytics.lightdash_demo_gardening.users`
+  thyme.users
 ORDER BY
   CAST(user_id AS int) ASC

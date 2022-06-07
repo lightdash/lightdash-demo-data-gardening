@@ -1,6 +1,6 @@
 import random
 from ast import literal_eval
-
+import csv
 import numpy as np
 import pandas as pd
 
@@ -161,6 +161,24 @@ def main():
     df_orders_support_requests_concat_merge_cut.reset_index(drop=True, inplace=True)
     df_support_requests = df_orders_support_requests_concat_merge_cut.copy()
 
+    # remove names with quotes in from users table to make things easier later...
+    def remove_quote_names(x):
+        for field in x.keys():
+            if field in ['city', 'country', 'street_name']:
+                if "'" in x[field]:
+                    print('replacing: "{value_old}" with "{value_new}"'.format(value_old=x[field], value_new=x[field].replace("'", "")))
+                    x[field] = x[field].replace("'", "")
+        return x
+    df_users['shipping_address'] = df_users['shipping_address'].apply(lambda x: remove_quote_names(x))
+
+    # convert to a json string representation
+    def escape_string(x):
+        x = str(x)
+        x = x.replace("'", '"')
+        return x
+
+    df_users['shipping_address'] = df_users['shipping_address'].apply(lambda x: escape_string(x))
+
     # order cols and sort records appropriately
     df_orders = df_orders[[
         'order_id',
@@ -212,12 +230,12 @@ def main():
     ]].copy()
 
     # save to csv
-    df_orders.to_csv('seeds/orders.csv', index=False)
-    df_baskets.to_csv('seeds/baskets.csv', index=False)
-    df_products.to_csv('seeds/products.csv', index=False)
-    df_partners.to_csv('seeds/partners.csv', index=False)
-    df_users.to_csv('seeds/users.csv', index=False)
-    df_support_requests.to_csv('seeds/support_requests.csv', index=False)
+    df_orders.to_csv('dbt/seeds/orders.csv', index=False)
+    df_baskets.to_csv('dbt/seeds/baskets.csv', index=False)
+    df_products.to_csv('dbt/seeds/products.csv', index=False)
+    df_partners.to_csv('dbt/seeds/partners.csv', index=False)
+    df_users.to_csv('dbt/seeds/users.csv', index=False, quoting=csv.QUOTE_ALL)
+    df_support_requests.to_csv('dbt/seeds/support_requests.csv', index=False)
 
 if __name__ == "__main__":
    main()

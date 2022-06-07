@@ -6,7 +6,7 @@ SELECT
   req.feedback_rating,
   ord.order_date,
   ROUND(ord.basket_total, 2) AS basket_total,
-  ROUND(ord.profit, 2) AS profit,
+  ROUND(ord.profit::NUMERIC, 2) AS profit,
   ord.referrer,
   ord.partner_id,
   prt.partner_name,
@@ -16,17 +16,17 @@ SELECT
   usr.created_date,
   usr.browser
 FROM
-  `lightdash-analytics.lightdash_demo_gardening.support_requests` req
+  thyme.support_requests req
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.orders` ord
+  thyme.orders ord
 ON
   req.order_id = ord.order_id
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.partners` prt
+  thyme.partners prt
 ON
   ord.partner_id = prt.partner_id
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.users` usr
+  thyme.users usr
 ON
   ord.user_id = usr.user_id
 ORDER BY

@@ -5,25 +5,25 @@ SELECT
   prd.product_name,
   prd.price_currency AS currency,
   bsk.price_amount AS item_price,
-  ROUND(bsk.basket_total, 2) AS basket_total,
+  ROUND(bsk.basket_total::NUMERIC, 2) AS basket_total,
   ord.order_date,
-  ROUND(ord.profit, 2) AS profit,
+  ROUND(ord.profit::NUMERIC, 2) AS profit,
   ord.partner_id,
   prt.partner_name,
   prt.partner_commission
 FROM
-  `lightdash-analytics.lightdash_demo_gardening.baskets` bsk
+  thyme.baskets bsk
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.products` prd
+  thyme.products prd
 ON
-  CAST(bsk.ordered_product_skus AS STRING) = prd.sku
+  ordered_product_skus::VARCHAR = prd.sku::VARCHAR
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.orders` ord
+  thyme.orders ord
 ON
   bsk.order_id = ord.order_id
 LEFT JOIN
-  `lightdash-analytics.lightdash_demo_gardening.partners` prt
+  thyme.partners prt
 ON
   ord.partner_id = prt.partner_id
 ORDER BY
-  CAST(bsk.basket_item_id AS int) ASC
+  bsk.basket_item_id::int ASC

@@ -30,3 +30,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   lightdash_demo_data_gardening:
     +materialized: table
+    orders:
+      - 
+
+seeds:
+  lightdash_demo_data_gardening:
+    +enabled: true

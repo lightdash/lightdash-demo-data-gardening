@@ -2,12 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'lightdash_demo_data_gardening'
+name: 'lightdash_demo_thyme'
 version: '0.1.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'lightdash_demo_data_ecommerce'
+profile: 'lightdash_demo_thyme'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be

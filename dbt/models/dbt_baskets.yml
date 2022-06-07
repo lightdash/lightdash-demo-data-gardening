@@ -23,12 +23,6 @@ models:
     meta:
       dimension:
         format: 'usd'
-      metrics:
-        calculated_item_profit:
-          type: number
-          sql: "(${item_price}*${partner_commission}"
-          format: usd
-          round: 2
   - name: basket_total
     description: ''
     meta:

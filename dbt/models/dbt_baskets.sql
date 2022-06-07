@@ -8,6 +8,7 @@ SELECT
   ROUND(bsk.basket_total::NUMERIC, 2) AS basket_total,
   ord.order_date,
   ROUND(ord.profit::NUMERIC, 2) AS profit,
+  ROUND((bsk.price_amount::decimal * prt.partner_commission::decimal), 2) AS item_profit,
   ord.partner_id,
   prt.partner_name,
   prt.partner_commission

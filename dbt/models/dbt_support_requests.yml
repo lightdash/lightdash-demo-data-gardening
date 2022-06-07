@@ -17,8 +17,14 @@ models:
     description: ''
   - name: basket_total
     description: ''
+    meta:
+      dimensions:
+        format: 'usd'
   - name: profit
     description: ''
+    meta:
+      dimensions:
+        format: 'usd'
   - name: referrer
     description: ''
   - name: partner_id

@@ -15,12 +15,21 @@ models:
     description: ''
   - name: item_price
     description: ''
+    meta:
+      dimensions:
+        format: 'usd'
   - name: basket_total
     description: ''
+    meta:
+      dimensions:
+        format: 'usd'
   - name: order_date
     description: ''
   - name: profit
     description: ''
+    meta:
+      dimensions:
+        format: 'usd'
   - name: partner_id
     description: ''
   - name: partner_name

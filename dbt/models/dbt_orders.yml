@@ -18,12 +18,12 @@ models:
   - name: basket_total
     description: ''
     meta:
-      dimensions:
+      dimension:
         format: 'usd'
   - name: profit
     description: ''
     meta:
-      dimensions:
+      dimension:
         format: 'usd'
   - name: referrer
     description: ''

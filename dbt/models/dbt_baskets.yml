@@ -12,36 +12,36 @@ models:
   - name: product_name
     description: ''
     meta:
-      dimensions:
+      dimension:
         label: 'Product name'
   - name: currency
     description: ''
   - name: item_price
     description: ''
     meta:
-      dimensions:
+      dimension:
         format: 'usd'
   - name: basket_total
     description: ''
     meta:
-      dimensions:
+      dimension:
         format: 'usd'
   - name: order_date
     description: ''
     meta:
-      dimensions:
+      dimension:
         label: 'Order date'
   - name: profit
     description: ''
     meta:
-      dimensions:
+      dimension:
         format: 'usd'
   - name: partner_id
     description: ''
   - name: partner_name
     description: ''
     meta:
-      dimensions:
+      dimension:
         label: 'Partner name'
   - name: partner_commission
     description: ''

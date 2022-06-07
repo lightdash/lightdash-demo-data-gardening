@@ -18,11 +18,13 @@ models:
     description: ''
   - name: item_price
     description: ''
+  - name: item_profit
+    description: ''
     meta:
       dimension:
         format: 'usd'
       metrics:
-        item_profit:
+        calculated_item_profit:
           type: number
           sql: "(${item_price}*${partner_commission}"
           format: usd

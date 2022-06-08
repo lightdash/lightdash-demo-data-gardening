@@ -5,14 +5,28 @@ models:
   columns:
   - name: request_id
     description: ''
+    meta:
+      metrics:
+        count_of_request_id:
+          type: count
+        count_distinct_request_id:
+          type: count_distinct
   - name: order_id
     description: ''
   - name: request_date
     description: ''
   - name: reason
     description: ''
+    meta:
+      metrics:
+        count_of_reason:
+          type: count
   - name: feedback_rating
     description: ''
+    meta:
+      metrics:
+        average_of_feedback_rating:
+          type: average
   - name: order_date
     description: ''
   - name: basket_total
@@ -20,11 +34,21 @@ models:
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_basket_total:
+          type: sum
+        average_of_basket_total:
+          type: average
   - name: profit
     description: ''
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_profit:
+          type: sum
+        average_of_profit:
+          type: average
   - name: referrer
     description: ''
   - name: partner_id

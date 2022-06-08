@@ -5,6 +5,10 @@ models:
   columns:
   - name: order_id
     description: ''
+    meta:
+      metrics:
+        count_distinct_order_id:
+          type: count_distinct
   - name: order_date
     description: ''
   - name: partner_id
@@ -20,15 +24,27 @@ models:
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_basket_total:
+          type: sum
+        average_of_basket_total:
+          type: average
   - name: profit
     description: ''
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_profit:
+          type: sum
   - name: referrer
     description: ''
   - name: user_id
     description: ''
+    meta:
+      metrics:
+        count_distinct_user_id:
+          type: count_distinct
   - name: email
     description: ''
   - name: user_created_date

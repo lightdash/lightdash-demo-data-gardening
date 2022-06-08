@@ -14,6 +14,9 @@ models:
     meta:
       dimension:
         label: 'Product name'
+      metrics:
+        count_of_product_name:
+          type: count
   - name: currency
     description: ''
   - name: item_price

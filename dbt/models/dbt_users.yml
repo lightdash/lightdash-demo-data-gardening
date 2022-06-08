@@ -13,3 +13,9 @@ models:
     description: ''
   - name: user_id
     description: ''
+    meta:
+      metrics:
+        count_of_user_id:
+          type: count
+        count_distinct_of_user_id:
+          type: count_distinct

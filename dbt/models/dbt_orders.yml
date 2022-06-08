@@ -27,8 +27,10 @@ models:
       metrics:
         sum_of_basket_total:
           type: sum
+          format: 'usd'
         average_of_basket_total:
           type: average
+          format: 'usd'
   - name: profit
     description: ''
     meta:
@@ -37,6 +39,7 @@ models:
       metrics:
         sum_of_profit:
           type: sum
+          format: 'usd'
   - name: referrer
     description: ''
   - name: user_id

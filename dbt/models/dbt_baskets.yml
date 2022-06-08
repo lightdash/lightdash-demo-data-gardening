@@ -31,6 +31,13 @@ models:
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_basket_total:
+          type: sum
+          format: 'usd'
+        average_of_basket_total:
+          type: average
+          format: 'usd'
   - name: order_date
     description: ''
     meta:

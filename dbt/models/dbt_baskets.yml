@@ -26,6 +26,13 @@ models:
     meta:
       dimension:
         format: 'usd'
+      metrics:
+        sum_of_item_profit:
+          type: sum
+          format: 'usd'
+        average_of_item_profit:
+          type: average
+          format: 'usd'
   - name: basket_total
     description: ''
     meta:

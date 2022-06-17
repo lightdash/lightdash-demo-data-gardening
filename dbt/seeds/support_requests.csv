@@ -1,77 +1,53 @@
 request_id,order_id,request_date,reason,feedback_rating
-1,18,2022-01-23 18:43:49,Delivery issue,9
-2,67,2022-02-04 12:57:01,Delivery issue,9
-3,144,2022-02-13 10:54:33,Delivery issue,10
-4,154,2022-02-23 00:33:58,Delivery issue,2
-5,101,2022-03-10 00:27:33,Delivery issue,10
-6,177,2022-03-14 05:40:55,Delivery issue,10
-7,108,2022-03-25 14:41:00,Product related query,8
-8,74,2022-03-26 05:30:41,Payment issue,2
-9,148,2022-03-26 11:12:36,Payment issue,9
-10,13,2022-03-27 00:02:42,Product related query,8
-11,40,2022-03-28 13:52:23,Wrong item received,7
-12,36,2022-03-28 22:07:38,Product related query,7
-13,97,2022-04-01 04:40:13,Delivery issue,7
-14,125,2022-04-01 18:12:29,Product related query,9
-15,91,2022-04-01 20:33:12,Product related query,10
-16,27,2022-04-03 10:42:14,Wrong item received,9
-17,204,2022-04-04 19:33:53,Wrong item received,7
-18,18,2022-04-07 05:42:10,Product related query,9
-19,42,2022-04-07 07:40:00,Delivery issue,10
-20,28,2022-04-07 22:29:03,Delivery issue,9
-21,3,2022-04-14 20:12:45,Product related query,8
-22,120,2022-04-19 20:38:10,Delivery issue,6
-23,107,2022-04-20 08:29:39,Delivery issue,1
-24,81,2022-04-21 06:58:25,Delivery issue,7
-25,267,2022-04-24 18:59:17,Product related query,8
-26,210,2022-04-27 18:18:04,Delivery issue,8
-27,65,2022-04-28 06:19:37,Payment issue,9
-28,14,2022-04-28 06:44:48,Payment issue,3
-29,283,2022-04-28 11:45:04,Product related query,10
-30,116,2022-05-01 07:20:19,Delivery issue,9
-31,133,2022-05-01 10:25:18,Delivery issue,8
-32,30,2022-05-01 11:23:27,Delivery issue,3
-33,334,2022-05-01 17:32:32,Delivery issue,9
-34,316,2022-05-03 03:23:51,Payment issue,8
-35,349,2022-05-03 08:19:06,Delivery issue,10
-36,139,2022-05-03 08:36:07,Product related query,10
-37,346,2022-05-03 15:38:39,Wrong item received,8
-38,244,2022-05-04 03:38:42,Payment issue,1
-39,135,2022-05-04 14:27:03,Delivery issue,10
-40,86,2022-05-05 09:00:32,Delivery issue,9
-41,472,2022-05-07 10:14:05,Wrong item received,1
-42,17,2022-05-08 13:13:49,Delivery issue,6
-43,200,2022-05-12 08:22:00,Product related query,9
-44,251,2022-05-12 23:41:07,Wrong item received,10
-45,538,2022-05-13 14:18:19,Product related query,10
-46,200,2022-05-14 14:31:04,Delivery issue,8
-47,557,2022-05-15 04:38:43,Product related query,10
-48,95,2022-05-15 07:49:39,Product related query,2
-49,315,2022-05-15 15:06:51,Payment issue,6
-50,442,2022-05-16 19:04:05,Product related query,2
-51,412,2022-05-17 07:22:38,Wrong item received,4
-52,693,2022-05-17 09:33:46,Delivery issue,10
-53,582,2022-05-17 09:39:59,Product related query,2
-54,457,2022-05-18 05:22:55,Payment issue,6
-55,599,2022-05-18 07:01:19,Delivery issue,8
-56,468,2022-05-18 18:22:56,Product related query,4
-57,8,2022-05-18 21:09:34,Product related query,7
-58,346,2022-05-19 03:26:38,Delivery issue,6
-59,563,2022-05-19 06:32:03,Delivery issue,8
-60,734,2022-05-19 08:35:04,Delivery issue,8
-61,193,2022-05-19 19:44:21,Wrong item received,9
-62,745,2022-05-19 21:38:56,Wrong item received,10
-63,508,2022-05-19 22:08:45,Delivery issue,4
-64,842,2022-05-22 03:00:17,Wrong item received,8
-65,810,2022-05-23 04:01:18,Delivery issue,7
-66,458,2022-05-23 19:00:36,Delivery issue,10
-67,893,2022-05-25 06:01:55,Delivery issue,8
-68,116,2022-05-25 11:16:24,Delivery issue,6
-69,898,2022-05-26 06:17:36,Product related query,8
-70,775,2022-05-26 17:10:52,Wrong item received,8
-71,777,2022-05-26 18:07:41,Delivery issue,9
-72,599,2022-05-26 18:14:22,Product related query,9
-73,517,2022-05-27 15:12:36,Delivery issue,9
-74,769,2022-05-27 18:35:34,Delivery issue,9
-75,611,2022-05-30 10:23:00,Delivery issue,5
-76,391,2022-05-31 11:01:37,Payment issue,10
+1,72,2022-02-02 23:36:50,Delivery issue,10
+2,98,2022-02-06 18:42:53,Payment issue,6
+3,51,2022-02-13 07:45:17,Product related query,10
+4,11,2022-02-13 16:53:06,Product related query,10
+5,69,2022-02-16 11:18:15,Product related query,1
+6,28,2022-02-22 14:15:15,Delivery issue,5
+7,102,2022-02-27 07:30:57,Delivery issue,2
+8,3,2022-02-27 15:44:36,Product related query,9
+9,125,2022-03-03 03:09:55,Product related query,6
+10,129,2022-03-03 06:40:37,Product related query,8
+11,132,2022-03-03 09:37:46,Product related query,2
+12,73,2022-03-04 09:50:32,Payment issue,9
+13,48,2022-03-04 23:30:32,Payment issue,10
+14,113,2022-03-09 19:22:42,Delivery issue,8
+15,79,2022-03-12 15:40:00,Product related query,4
+16,106,2022-03-13 02:29:55,Wrong item received,9
+17,49,2022-03-13 22:02:39,Payment issue,10
+18,163,2022-03-15 08:47:43,Product related query,1
+19,16,2022-03-18 09:30:15,Product related query,8
+20,31,2022-03-23 15:22:01,Product related query,10
+21,183,2022-03-27 22:56:25,Delivery issue,10
+22,181,2022-03-28 21:28:53,Delivery issue,9
+23,14,2022-03-31 12:35:22,Payment issue,3
+24,7,2022-04-03 18:31:19,Product related query,8
+25,204,2022-04-06 00:55:42,Delivery issue,9
+26,53,2022-04-14 00:35:18,Product related query,8
+27,138,2022-04-14 09:43:00,Delivery issue,9
+28,24,2022-04-21 05:51:37,Delivery issue,1
+29,7,2022-04-22 22:55:45,Wrong item received,8
+30,110,2022-04-24 02:32:12,Product related query,10
+31,79,2022-04-26 21:07:31,Product related query,7
+32,123,2022-04-29 19:54:07,Delivery issue,1
+33,301,2022-04-30 21:30:02,Payment issue,10
+34,403,2022-05-01 14:52:49,Delivery issue,6
+35,311,2022-05-04 07:20:21,Payment issue,9
+36,472,2022-05-04 09:28:04,Delivery issue,7
+37,405,2022-05-05 16:00:49,Delivery issue,7
+38,583,2022-05-06 04:40:05,Wrong item received,10
+39,153,2022-05-06 05:20:36,Payment issue,10
+40,326,2022-05-06 23:57:38,Product related query,10
+41,383,2022-05-07 09:49:34,Product related query,9
+42,367,2022-05-07 16:50:56,Payment issue,8
+43,341,2022-05-07 19:19:12,Product related query,1
+44,192,2022-05-08 19:51:24,Wrong item received,5
+45,330,2022-05-12 14:01:14,Product related query,6
+46,412,2022-05-14 18:18:14,Delivery issue,10
+47,84,2022-05-17 03:12:05,Wrong item received,4
+48,10,2022-05-20 10:28:09,Product related query,1
+49,383,2022-05-20 13:32:15,Product related query,8
+50,445,2022-05-21 03:11:19,Delivery issue,8
+51,614,2022-05-21 12:04:55,Product related query,5
+52,446,2022-05-27 08:30:12,Delivery issue,8

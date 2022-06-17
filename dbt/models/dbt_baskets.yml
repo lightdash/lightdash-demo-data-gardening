@@ -1,16 +1,16 @@
 version: 2
 models:
 - name: dbt_baskets
-  description: ''
+  description: 'All the baskets. One basket per order.'
   columns:
   - name: order_id
-    description: ''
+    description: 'Unique Order ID that the basket relates to.'
   - name: basket_item_id
-    description: ''
+    description: 'ID for the product item within the basket.'
   - name: sku
-    description: ''
+    description: 'Unique Stock Keeping Unit code.'
   - name: product_name
-    description: ''
+    description: 'Full name of the product.'
     meta:
       dimension:
         label: 'Product name'
@@ -18,11 +18,11 @@ models:
         count_of_product_name:
           type: count
   - name: currency
-    description: ''
+    description: 'Three letter international currency code of the item price.'
   - name: item_price
-    description: ''
+    description: 'Price of the item in the specified currency.'
   - name: item_profit
-    description: ''
+    description: 'Profit made for the individual item.'
     meta:
       dimension:
         format: 'usd'
@@ -34,7 +34,7 @@ models:
           type: average
           format: 'usd'
   - name: basket_total
-    description: ''
+    description: 'Sum of item prices for each item within the basket.'
     meta:
       dimension:
         format: 'usd'
@@ -46,21 +46,21 @@ models:
           type: average
           format: 'usd'
   - name: order_date
-    description: ''
+    description: 'Timestamp of order placement by the user.'
     meta:
       dimension:
         label: 'Order date'
   - name: profit
-    description: ''
+    description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
     meta:
       dimension:
         format: 'usd'
   - name: partner_id
-    description: ''
+    description: 'Unique ID of the partner that is fulfilling the basket.'
   - name: partner_name
-    description: ''
+    description: 'Full name of the partner that is fulfilling the basket.'
     meta:
       dimension:
         label: 'Partner name'
   - name: partner_commission
-    description: ''
+    description: 'The commission rate the specified parter charges, as a decimal fraction.'

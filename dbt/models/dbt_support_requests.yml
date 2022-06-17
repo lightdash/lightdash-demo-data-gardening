@@ -1,10 +1,10 @@
 version: 2
 models:
 - name: dbt_support_requests
-  description: ''
+  description: 'All the support requests.'
   columns:
   - name: request_id
-    description: ''
+    description: 'Unique ID of the request.'
     meta:
       metrics:
         count_of_request_id:
@@ -12,25 +12,25 @@ models:
         count_distinct_request_id:
           type: count_distinct
   - name: order_id
-    description: ''
+    description: 'Unique Order ID that pertains to this request.'
   - name: request_date
-    description: ''
+    description: 'Timestamp of request submission by the user.'
   - name: reason
-    description: ''
+    description: 'Determined cause of request.'
     meta:
       metrics:
         count_of_reason:
           type: count
   - name: feedback_rating
-    description: ''
+    description: 'Feedback rating out of ten as received by post-request user survey.'
     meta:
       metrics:
         average_of_feedback_rating:
           type: average
   - name: order_date
-    description: ''
+    description: 'Timestamp of the order.'
   - name: basket_total
-    description: ''
+    description: 'Value of order.'
     meta:
       dimension:
         format: 'usd'
@@ -42,7 +42,7 @@ models:
           type: average
           format: 'usd'
   - name: profit
-    description: ''
+    description: 'Total profit made for the order that pertains to the request.'
     meta:
       dimension:
         format: 'usd'
@@ -54,18 +54,18 @@ models:
           type: average
           format: 'usd'
   - name: referrer
-    description: ''
+    description: 'Source from which the user was linked to the Thyme to Shine website.'
   - name: partner_id
-    description: ''
+    description: 'ID of the partner that is fulfilling the order.'
   - name: partner_name
-    description: ''
+    description: 'Full name of the partner that is fulfilling the order.'
   - name: partner_commission
-    description: ''
+    description: 'Commission rate the specified parter charges, as a decimal fraction.'
   - name: user_id
-    description: ''
+    description: 'Unique user ID for the user that placed the order.'
   - name: email
-    description: ''
+    description: 'Email address of the user that placed the order.'
   - name: created_date
-    description: ''
+    description: 'Timestamp of user creation.'
   - name: browser
-    description: ''
+    description: 'Web browser that the user used to place the order.'

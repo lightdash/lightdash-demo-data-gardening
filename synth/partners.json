@@ -1,6 +1,6 @@
 {
     "type": "array",
-    "length": 6,
+    "length": 5,
     "content": {
         "type": "object",
         "partner_id": {

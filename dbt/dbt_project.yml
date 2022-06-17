@@ -30,8 +30,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   lightdash_demo_thyme:
     +materialized: table
-    orders:
-      - 
 
 seeds:
   lightdash_demo_thyme:

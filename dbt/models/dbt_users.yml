@@ -3,7 +3,7 @@ models:
 - name: dbt_users
   description: 'All the users'
   meta:
-    labels: Users
+    label: Users
   columns:
   - name: browser
     description: 'Web browser that the user used to place the order.'

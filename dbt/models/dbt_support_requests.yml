@@ -2,6 +2,8 @@ version: 2
 models:
 - name: dbt_support_requests
   description: 'All the support requests.'
+  meta:
+    label: Support requests
   columns:
   - name: request_id
     description: 'Unique ID of the request.'

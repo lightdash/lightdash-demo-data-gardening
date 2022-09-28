@@ -2,6 +2,8 @@ version: 2
 models:
 - name: dbt_orders
   description: 'All the orders.'
+  meta:
+    label: Orders
   columns:
   - name: order_id
     description: 'Unique Order ID for the order.'

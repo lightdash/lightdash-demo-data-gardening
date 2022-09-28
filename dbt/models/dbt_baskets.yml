@@ -2,6 +2,8 @@ version: 2
 models:
 - name: dbt_baskets
   description: 'All the baskets. One basket per order.'
+  meta:
+    label: Baskets
   columns:
   - name: order_id
     description: 'Unique Order ID that the basket relates to.'

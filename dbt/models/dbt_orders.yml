@@ -52,6 +52,11 @@ models:
           type: count_distinct
   - name: email
     description: 'Email address of the user that placed the order.'
+    meta:
+      dimension:
+        urls:
+          - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+            label: Send email
   - name: user_created_date
     description: 'Timestamp of user creation.'
   - name: browser

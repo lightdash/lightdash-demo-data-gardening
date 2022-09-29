@@ -66,6 +66,11 @@ models:
   - name: user_id
     description: 'Unique user ID for the user that placed the order.'
   - name: email
+    meta:
+      dimension:
+        urls:
+          - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+            label: Send email
     description: 'Email address of the user that placed the order.'
   - name: created_date
     description: 'Timestamp of user creation.'

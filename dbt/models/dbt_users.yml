@@ -17,7 +17,6 @@ models:
     description: 'Unique user ID for the user.'
     meta:
       metrics:
-        count_of_user_id:
-          type: count
         count_distinct_of_user_id:
           type: count_distinct
+          label: Total users

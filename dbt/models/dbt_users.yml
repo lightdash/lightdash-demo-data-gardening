@@ -14,8 +14,8 @@ models:
     meta:
       dimension:
         urls:
-          url: 'mailto:${value.raw}'
-          label: Send email
+          - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+            label: Send email
   - name: shipping_address
     description: 'Full shipping address of the user, as an object.'
   - name: user_id

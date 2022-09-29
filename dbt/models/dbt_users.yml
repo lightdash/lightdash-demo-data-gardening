@@ -11,6 +11,11 @@ models:
     description: 'Timestamp of user creation.'
   - name: email
     description: 'Email address of the user.'
+    meta:
+      dimension:
+        urls:
+          url: 'mailto:${value.raw}'
+          label: Send email
   - name: shipping_address
     description: 'Full shipping address of the user, as an object.'
   - name: user_id

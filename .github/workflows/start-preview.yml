@@ -16,19 +16,6 @@ jobs:
         with:
           python-version: "3.7.x"
 
-      - name: Copy Google credentials file
-        env: 
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        if: "${{ env.GOOGLE_CREDENTIALS != '' }}"
-        id: create-json
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: "googlecredentials.json"
-          json: ${{ env.GOOGLE_CREDENTIALS }}
-
-      - name: Move credentials to /tmp 
-        run: mv googlecredentials.json /tmp || true
-
       - name: Locate dbt_project.yml
         run: echo "PROJECT_DIR=$(find . -name "dbt_project.yml"  | sed  's/dbt_project.yml//g')" >> $GITHUB_ENV
 

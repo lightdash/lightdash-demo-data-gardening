@@ -1,0 +1,12 @@
+lightdash_demo_thyme:
+  target: prod
+  outputs:
+    prod:
+      type: postgres
+      host: "{{ env_var('PGHOST') }}"
+      user: "{{ env_var('PGUSER') }}"
+      database: "{{ env_var('PGDATABASE') }}"
+      password: "{{ env_var('PGPASSWORD') }}"
+      schema: thyme
+      port: 5432
+

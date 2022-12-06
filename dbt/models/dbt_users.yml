@@ -24,4 +24,4 @@ models:
       metrics:
         count_distinct_of_user_id:
           type: count_distinct
-          label: Total users
+          label: Total users adrien

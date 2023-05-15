@@ -11,6 +11,7 @@ models:
       metrics:
         count_distinct_order_id:
           type: count_distinct
+          label: 'Order count'
   - name: order_date
     description: 'Timestamp of order placement by user.'
   - name: partner_id
@@ -50,6 +51,7 @@ models:
       metrics:
         count_distinct_user_id:
           type: count_distinct
+          label: 'Total unique users'
   - name: email
     description: 'Email address of the user that placed the order.'
     meta:

@@ -1,7 +1,7 @@
 version: 2
 models:
 - name: dbt_support_requests
-  description: 'All the support requests.'
+  description: 'This table contains information on all the support requests we’ve received'
   meta:
     label: Support requests
   columns:

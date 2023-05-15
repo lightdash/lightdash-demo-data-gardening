@@ -1,7 +1,7 @@
 version: 2
 models:
 - name: dbt_baskets
-  description: 'All the baskets. One basket per order.'
+  description: 'This table contains all the information on customer shopping baskets on our site. There is one basket per order'
   meta:
     label: Baskets
   columns:
@@ -34,7 +34,10 @@ models:
           format: 'usd'
         average_of_item_profit:
           type: average
+          label: 'Average item profit'
           format: 'usd'
+          description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
+          round: 2
   - name: basket_total
     description: 'Sum of item prices for each item within the basket.'
     meta:
@@ -43,10 +46,14 @@ models:
       metrics:
         sum_of_basket_total:
           type: sum
+          label: 'Basket total'
           format: 'usd'
         average_of_basket_total:
           type: average
+          label: 'Average basket total'
           format: 'usd'
+          description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+          round: 2
   - name: order_date
     description: 'Timestamp of order placement by the user.'
     meta:

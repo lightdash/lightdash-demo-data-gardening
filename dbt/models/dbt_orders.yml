@@ -19,9 +19,10 @@ models:
   - name: partner_name
     description: 'Full name of the partner that is fulfilling the order.'
     meta:
-      urls:
-        - url: https://docs.lightdash.com/references/dimensions#urls
-          label: View partner account in Salesforce
+      dimension:
+        urls:
+          - url: https://docs.lightdash.com/references/dimensions#urls
+            label: View partner account in Salesforce
   - name: partner_commission
     description: 'Commission rate the specified parter charges, as a decimal fraction.'
   - name: currency

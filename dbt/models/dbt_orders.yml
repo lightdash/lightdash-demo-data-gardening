@@ -4,6 +4,7 @@ models:
   description: 'This table contains information on all the confirmed orders and their status'
   meta:
     label: Orders
+    group_label: Sales
   columns:
   - name: order_id
     description: 'Unique Order ID for the order.'

@@ -4,6 +4,7 @@ models:
   description: 'This table contains all the information on customer shopping baskets on our site. There is one basket per order'
   meta:
     label: Baskets
+    group_label: Sales
   columns:
   - name: order_id
     description: 'Unique Order ID that the basket relates to.'

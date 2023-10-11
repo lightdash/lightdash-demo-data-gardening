@@ -1,3 +1,9 @@
+{{
+  config(
+    tags = ['not_lightdash']
+  )
+}}
+
 SELECT ord.order_id,
   ord.order_date,
   ord.partner_id,

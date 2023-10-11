@@ -1,3 +1,9 @@
+{{
+  config(
+    tags = ['lightdash']
+  )
+}}
+
 SELECT req.request_id,
   req.order_id,
   req.request_date,

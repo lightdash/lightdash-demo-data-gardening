@@ -15,6 +15,9 @@ models:
           label: 'Order count'
   - name: order_date
     description: 'Timestamp of order placement by user.'
+    meta:
+      dimension:
+        time_intervals: ['DAY', 'WEEK', 'WEEK_NUM', 'MONTH', 'QUARTER', 'YEAR']
   - name: partner_id
     description: 'ID of the partner that is fulfilling the order.'
   - name: partner_name

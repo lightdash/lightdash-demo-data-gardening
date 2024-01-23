@@ -5,6 +5,8 @@ models:
   meta:
     label: Orders
     group_label: Sales
+    required_attributes:
+      can_access_orders: "true"
   columns:
   - name: order_id
     description: 'Unique Order ID for the order.'

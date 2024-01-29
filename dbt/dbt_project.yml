@@ -3,7 +3,7 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'lightdash_demo_thyme'
-version: '1.6.6'
+version: '1.7.6'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.

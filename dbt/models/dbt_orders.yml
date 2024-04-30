@@ -29,6 +29,12 @@ models:
         urls:
           - url: https://docs.lightdash.com/references/dimensions#urls
             label: View partner account in Salesforce
+        colors:
+          "Trowels R Us": "#DAF7A6"
+          "Garden of Sweden": "#FFC300"
+          "Plant Paradise": "#FF5733"
+          "Redwood Ranch": "#C70039"
+          "Peat, Fruits and Leaves": "#581845"
   - name: partner_commission
     description: 'Commission rate the specified parter charges, as a decimal fraction.'
   - name: currency

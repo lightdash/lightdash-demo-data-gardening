@@ -1,5 +1,6 @@
-numpy==1.22.4
-pandas==1.4.2
-python-dateutil==2.8.2
-pytz==2022.1
-six==1.16.0
+numpy
+pandas
+setuptools
+python-dateutil
+pytz
+six

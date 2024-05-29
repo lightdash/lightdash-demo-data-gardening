@@ -3,7 +3,7 @@ from ast import literal_eval
 import csv
 import numpy as np
 import pandas as pd
-
+from datetime import datetime
 
 def main():
 
@@ -15,6 +15,10 @@ def main():
     df_support_requests= pd.read_json('synth_output_data/support_requests.json')
     df_orders_random = pd.read_json('synth_output_data/orders_random.json')
     df_support_requests_random = pd.read_json('synth_output_data/support_requests_random.json')
+
+    # get the current date of the system
+    current_date = datetime.today().date()
+    formatted_date = current_date.strftime('%Y-%m-%d')
 
     # merge orders with users
     df_orders_users = pd.merge(df_orders, df_users, on="user_id", how="left")
@@ -31,9 +35,9 @@ def main():
     df_orders_concat = df_orders_concat.rename({'index': 'order_id'}, axis=1)
     df_orders_concat['order_id'] = df_orders_concat['order_id']+1
 
-    # again, remove orders created by users before they existed and also before 2022-06-01
+    # again, remove orders created by users before they existed and also before the current date
     df_orders_concat_cut = df_orders_concat.loc[df_orders_concat['created_date']<df_orders_concat['order_date']]
-    df_orders_concat_cut = df_orders_concat_cut.loc[df_orders_concat_cut['order_date']<'2022-06-01']
+    df_orders_concat_cut = df_orders_concat_cut.loc[df_orders_concat_cut['order_date']<formatted_date]
     df_orders_concat_cut = df_orders_concat_cut.sort_values('order_date')
     df_orders_concat_cut = df_orders_concat_cut.drop('order_id', axis=1)
     df_orders_concat_cut = df_orders_concat_cut.reset_index(drop=True)
@@ -140,7 +144,7 @@ def main():
     df_orders_support_requests_concat_merge_cut['request_id']+=1
 
     # remove everything after end of may
-    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.loc[df_orders_support_requests_concat_merge_cut['request_date']<'2022-06-01']
+    df_orders_support_requests_concat_merge_cut = df_orders_support_requests_concat_merge_cut.loc[df_orders_support_requests_concat_merge_cut['request_date']<formatted_date]
 
     # drop unnecessary cols and reset index
     to_drop = [

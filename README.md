@@ -50,6 +50,6 @@ bq load --autodetect=true --replace=true --schema=dbt/seeds/support_requests.jso
 ## 4. Run dbt
 
 ```
-cd dbt
-dbt run --full-refresh
+cd dbt-bigquery
+dbt run -m dbt_baskets dbt_orders dbt_support_requests dbt_users
 ```

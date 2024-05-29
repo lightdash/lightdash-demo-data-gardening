@@ -5,7 +5,7 @@ echo ""
 echo ""
 
 echo "1. update start date to 200 days ago"
-date_two_hundreed_days_ago=$(date "+%Y-%m-%d %H:%M:%S" -d "200 day ago")
+date_two_hundreed_days_ago=$(/bin/date -j -v-200d "+%Y-%m-%d %H:%M:%S")
 for file in synth/*.json; do
   sed -i '' "s/\"start\": \"[^\"]*\"/\"start\": \"$date_two_hundreed_days_ago\"/" $file
 done

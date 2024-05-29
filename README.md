@@ -15,24 +15,14 @@ This repo consists of a synthetically generated dataset, along with the config f
 
 This will use `synth` to generate all the base datasets using the synth configuration defined in `synth/`, with help from the lookups define in `lookup/`. Note that the final two commands are non-deterministic.
 
-### 1.1 update dates
-
-```
-sh update_dates.sh
-```
-
-### 1.2 generate data
-
 ```
 synth generate synth --collection users > synth_output_data/users.json
 synth generate synth --collection orders > synth_output_data/orders.json
 synth generate synth --collection partners > synth_output_data/partners.json
 synth generate synth --collection products > synth_output_data/products.json
 synth generate synth --collection support_requests > synth_output_data/support_requests.json
-
 synth generate synth --collection orders --random > synth_output_data/orders_random.json
 synth generate synth --collection support_requests --random > synth_output_data/support_requests_random.json
-
 ```
 
 ## 2. Transform data

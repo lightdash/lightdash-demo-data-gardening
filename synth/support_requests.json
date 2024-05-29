@@ -2,7 +2,7 @@
     "type": "array",
     "length": {
         "type": "number",
-        "constant": 130
+        "constant": 250
     },
     "content": {
         "type": "object",
@@ -17,7 +17,7 @@
             "type": "number",
             "range": {
                 "low": 1,
-                "high": 1000
+                "high": 1500
             }
         },
         "request_date": {

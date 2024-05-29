@@ -2,7 +2,7 @@
     "type": "array",
     "length": {
         "type": "number",
-        "constant": 1000
+        "constant": 1500
     },
     "content": {
         "type": "object",
@@ -17,7 +17,7 @@
             "type": "number",
             "range": {
                 "low": 1,
-                "high": 1000
+                "high": 1500
             }
         },
         "order_date": {
@@ -54,6 +54,10 @@
         "partner_id": {
             "type": "string",
             "categorical": {
+                "9": 7,
+                "8": 3,
+                "7": 4,
+                "6": 1,
                 "4": 8,
                 "3": 5,
                 "5": 3,

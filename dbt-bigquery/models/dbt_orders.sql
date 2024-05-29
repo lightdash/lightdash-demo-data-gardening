@@ -4,22 +4,23 @@
   )
 }}
 
-SELECT ord.order_id,
+SELECT 
+  CAST(ord.order_id AS STRING) AS order_id,
   ord.order_date,
-  ord.partner_id,
+  CAST(ord.partner_id AS STRING) AS partner_id,
   prt.partner_name,
   prt.partner_commission,
   ord.currency,
-  ord.basket_total::decimal AS basket_total,
-  ord.profit::decimal AS profit,
+  ord.basket_total,
+  ord.profit,
   ord.referrer,
-  ord.user_id,
+  CAST(ord.user_id AS STRING) AS user_id,
   usr.email,
   usr.created_date AS user_created_date,
   usr.browser,
-  shipping_address::jsonb->>'city' AS shipping_city,
-  shipping_address::jsonb->>'country' AS shipping_country
-FROM thyme.orders ord
-  LEFT JOIN thyme.users usr ON ord.user_id = usr.user_id
-  LEFT JOIN thyme.partners prt ON ord.partner_id = prt.partner_id
+  JSON_EXTRACT_SCALAR(shipping_address, '$.city') AS shipping_city,
+  JSON_EXTRACT_SCALAR(shipping_address, '$.country') AS shipping_country
+FROM `lightdash-analytics.lightdash_demo_gardening.orders` ord
+  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.users` usr ON CAST(ord.user_id AS STRING) = CAST(usr.user_id AS STRING)
+  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.partners` prt ON CAST(ord.partner_id AS STRING) = CAST(prt.partner_id AS STRING)
 ORDER BY CAST(order_id AS int) ASC

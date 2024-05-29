@@ -1,7 +1,8 @@
-SELECT user_id,
+SELECT 
+  CAST(user_id AS STRING) AS user_id,
   email,
   created_date,
   browser,
   shipping_address
-FROM thyme.users
+FROM `lightdash-analytics.lightdash_demo_gardening.users`
 ORDER BY CAST(user_id AS int) ASC

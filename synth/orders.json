@@ -23,8 +23,8 @@
         "order_date": {
             "type": "series",
             "cyclical": {
-                "start": "2022-01-01 00:00:00",
-                "period": "100d",
+                "start": "2023-11-11 00:00:00",
+                "period": "200d",
                 "min_rate": "11h",
                 "max_rate": "58m"
             }

@@ -2,7 +2,7 @@
     "type": "array",
     "length": {
         "type": "number",
-        "constant": 250
+        "constant": 150
     },
     "content": {
         "type": "object",
@@ -23,7 +23,7 @@
         "request_date": {
             "type": "series",
             "cyclical": {
-                "start": "2022-01-01 00:00:00",
+                "start": "2023-11-11 00:00:00",
                 "period": "1d",
                 "min_rate": "28h",
                 "max_rate": "5h"

@@ -1,0 +1,101 @@
+user_id,email,created_date,browser,shipping_address
+1,teagan_voluptates@yahoo.com,2022-01-01 00:39:51,safari,|{"city": "Rachael fort", "country": "RO", "street_name": "Bednar Mountain", "street_number": 90, "zip_code": "7538"}|
+2,kitty_est@yahoo.com,2022-01-01 01:49:38,edge,|{"city": "Nikolaus side", "country": "BR", "street_name": "Keely Shoals", "street_number": 22, "zip_code": "79717"}|
+3,bradford_aspernatur@hotmail.com,2022-01-01 08:16:17,edge,|{"city": "Bergnaum fort", "country": "CK", "street_name": "Robbie Drive", "street_number": 88, "zip_code": "30240"}|
+4,loma_optio@yahoo.com,2022-01-01 10:29:44,chrome,|{"city": "East Carlie Feeney berg", "country": "VE", "street_name": "Eula Street", "street_number": 32, "zip_code": "827"}|
+5,tyrell_qui@yahoo.com,2022-01-01 13:17:57,safari,|{"city": "Gutkowski side", "country": "TC", "street_name": "Turcotte Lodge", "street_number": 112, "zip_code": "00639"}|
+6,bill_rem@yahoo.com,2022-01-02 00:15:26,safari,|{"city": "Shane fort", "country": "KN", "street_name": "Gibson Mills", "street_number": 100, "zip_code": "8815"}|
+7,claudine_rem@gmail.com,2022-01-02 00:48:45,safari,|{"city": "Carroll borough", "country": "VC", "street_name": "Lindgren Mill", "street_number": 9, "zip_code": "2445"}|
+8,armando_praesentium@yahoo.com,2022-01-02 13:14:31,safari,|{"city": "Leora burgh", "country": "UY", "street_name": "Bailee Road", "street_number": 153, "zip_code": "419"}|
+9,leslie_illo@yahoo.com,2022-01-02 15:57:51,chrome,|{"city": "East Tierra Nienow port", "country": "LB", "street_name": "Merritt Stravenue", "street_number": 97, "zip_code": "34532"}|
+10,lora_enim@hotmail.com,2022-01-02 20:24:20,firefox,|{"city": "Cummerata burgh", "country": "DJ", "street_name": "Bruen Orchard", "street_number": 107, "zip_code": "086"}|
+11,jules_sunt@gmail.com,2022-01-02 22:21:18,chrome,|{"city": "Sawayn shire", "country": "NC", "street_name": "Quigley Curve", "street_number": 96, "zip_code": "611"}|
+12,shannon_consequuntur@yahoo.com,2022-01-02 23:54:19,safari,|{"city": "Klein port", "country": "NO", "street_name": "Adrianna Hollow", "street_number": 182, "zip_code": "543"}|
+13,moshe_maiores@gmail.com,2022-01-03 02:34:15,chrome,|{"city": "Swaniawski stad", "country": "PR", "street_name": "Sadie Valley", "street_number": 181, "zip_code": "8226"}|
+14,laverna_et@gmail.com,2022-01-03 07:54:51,chrome,|{"city": "Cormier town", "country": "MS", "street_name": "Bernier Roads", "street_number": 134, "zip_code": "798"}|
+15,casper_corporis@hotmail.com,2022-01-03 08:49:16,safari,|{"city": "Rhea haven", "country": "PT", "street_name": "Carmella Curve", "street_number": 56, "zip_code": "08972"}|
+16,zachery_voluptatum@hotmail.com,2022-01-03 10:35:44,chrome,|{"city": "West Verda Kozey shire", "country": "FJ", "street_name": "Helmer Parkways", "street_number": 16, "zip_code": "3491"}|
+17,frances_voluptas@hotmail.com,2022-01-03 10:55:42,chrome,|{"city": "Gerhold town", "country": "FO", "street_name": "Welch Ways", "street_number": 35, "zip_code": "3660"}|
+18,bryce_suscipit@hotmail.com,2022-01-03 12:25:00,safari,|{"city": "Borer haven", "country": "LK", "street_name": "Frederick Burg", "street_number": 98, "zip_code": "08796"}|
+19,elwyn_enim@yahoo.com,2022-01-03 14:10:06,safari,|{"city": "Cronin shire", "country": "JO", "street_name": "Deion Glens", "street_number": 91, "zip_code": "7402"}|
+20,ed_quas@gmail.com,2022-01-03 19:35:01,edge,|{"city": "Gia land", "country": "MR", "street_name": "Altenwerth Corner", "street_number": 44, "zip_code": "175"}|
+21,dessie_quo@gmail.com,2022-01-04 04:51:18,edge,|{"city": "Adams shire", "country": "VG", "street_name": "Jessyca Road", "street_number": 166, "zip_code": "7616"}|
+22,aryanna84@hotmail.com,2022-01-04 12:24:01,firefox,|{"city": "Kilback land", "country": "MM", "street_name": "Mitchell Row", "street_number": 38, "zip_code": "278"}|
+23,brandy_laboriosam@hotmail.com,2022-01-04 16:38:52,chrome,|{"city": "Walsh bury", "country": "CL", "street_name": "Cartwright Isle", "street_number": 147, "zip_code": "5172"}|
+24,angelita_quam@gmail.com,2022-01-04 17:52:08,chrome,|{"city": "Port Letha Lind side", "country": "CZ", "street_name": "Maci Canyon", "street_number": 140, "zip_code": "1611"}|
+25,rory_ipsam@hotmail.com,2022-01-04 19:59:05,chrome,|{"city": "Metz berg", "country": "TN", "street_name": "Schiller Station", "street_number": 164, "zip_code": "10617"}|
+26,thaddeus_eius@hotmail.com,2022-01-04 21:46:55,chrome,|{"city": "Vandervort bury", "country": "JO", "street_name": "Grimes Fords", "street_number": 125, "zip_code": "1112"}|
+27,valentina_sit@yahoo.com,2022-01-05 03:03:20,edge,|{"city": "McLaughlin mouth", "country": "FM", "street_name": "Schinner Trail", "street_number": 88, "zip_code": "002"}|
+28,anastacio_quia@gmail.com,2022-01-05 08:08:41,chrome,|{"city": "Michael berg", "country": "EH", "street_name": "Wisoky Fort", "street_number": 32, "zip_code": "40422"}|
+29,rico_iste@hotmail.com,2022-01-05 13:04:33,safari,|{"city": "Eliseo burgh", "country": "MC", "street_name": "Cayla Mews", "street_number": 106, "zip_code": "329"}|
+30,dolores_cumque@gmail.com,2022-01-05 15:49:37,safari,|{"city": "Shania chester", "country": "NE", "street_name": "Marks Summit", "street_number": 163, "zip_code": "3321"}|
+31,grayson_mollitia@yahoo.com,2022-01-05 21:09:07,chrome,|{"city": "South Eleanore Rutherford town", "country": "IL", "street_name": "Kelton Greens", "street_number": 130, "zip_code": "5015"}|
+32,sage_velit@hotmail.com,2022-01-05 21:33:37,edge,|{"city": "New Stewart Monahan ton", "country": "BA", "street_name": "Itzel Tunnel", "street_number": 140, "zip_code": "4169"}|
+33,jessy_doloremque@yahoo.com,2022-01-06 08:40:43,safari,|{"city": "Josefa furt", "country": "CM", "street_name": "Blanda Square", "street_number": 13, "zip_code": "1573"}|
+34,sammy_nulla@yahoo.com,2022-01-06 09:35:26,safari,|{"city": "New Lazaro Steuber ton", "country": "BB", "street_name": "Mary Inlet", "street_number": 135, "zip_code": "19165"}|
+35,gerry_omnis@gmail.com,2022-01-06 12:02:41,chrome,|{"city": "Gerald burgh", "country": "PG", "street_name": "Metz Turnpike", "street_number": 58, "zip_code": "8196"}|
+36,alexie_aspernatur@hotmail.com,2022-01-06 12:31:49,chrome,|{"city": "Stroman side", "country": "PL", "street_name": "Elias Estate", "street_number": 127, "zip_code": "7086"}|
+37,giles_accusamus@yahoo.com,2022-01-06 13:22:35,safari,|{"city": "Eladio ton", "country": "MK", "street_name": "Mueller Road", "street_number": 28, "zip_code": "046"}|
+38,mortimer_doloribus@yahoo.com,2022-01-06 14:14:20,chrome,|{"city": "Kyle chester", "country": "KY", "street_name": "Virgil Ports", "street_number": 132, "zip_code": "37348"}|
+39,sasha_quidem@hotmail.com,2022-01-06 14:42:33,safari,|{"city": "South Dennis Borer bury", "country": "PM", "street_name": "Brady Cliff", "street_number": 114, "zip_code": "3246"}|
+40,aimee_voluptas@gmail.com,2022-01-06 16:52:24,chrome,|{"city": "Cruickshank bury", "country": "AF", "street_name": "Hilma Mill", "street_number": 112, "zip_code": "285"}|
+41,lina_quasi@gmail.com,2022-01-07 08:00:58,chrome,|{"city": "Bednar borough", "country": "EG", "street_name": "DuBuque Coves", "street_number": 157, "zip_code": "992"}|
+42,blanca_est@hotmail.com,2022-01-07 12:17:51,safari,|{"city": "Bayer chester", "country": "MA", "street_name": "Bruen Islands", "street_number": 92, "zip_code": "291"}|
+43,emilio_quae@yahoo.com,2022-01-07 13:16:39,safari,|{"city": "Kunze view", "country": "GP", "street_name": "Felipa Glens", "street_number": 139, "zip_code": "1735"}|
+44,clarissa_ipsa@yahoo.com,2022-01-07 15:46:14,edge,|{"city": "Port Carissa Klein side", "country": "SK", "street_name": "Quigley Loaf", "street_number": 146, "zip_code": "1450"}|
+45,clint_sit@yahoo.com,2022-01-07 19:09:27,edge,|{"city": "Spinka port", "country": "TM", "street_name": "Karley Groves", "street_number": 155, "zip_code": "1211"}|
+46,ashly_minima@hotmail.com,2022-01-07 19:21:02,safari,|{"city": "Beahan mouth", "country": "ES", "street_name": "Doyle Greens", "street_number": 176, "zip_code": "22699"}|
+47,amie_consequatur@hotmail.com,2022-01-08 05:00:57,chrome,|{"city": "Schmidt chester", "country": "CA", "street_name": "Dillon Plain", "street_number": 89, "zip_code": "6093"}|
+48,cornelius_est@yahoo.com,2022-01-08 10:25:42,firefox,|{"city": "West Brielle Gerhold side", "country": "PR", "street_name": "Coty Mountain", "street_number": 152, "zip_code": "49189"}|
+49,kiara_molestias@gmail.com,2022-01-08 13:49:28,chrome,|{"city": "Wyman burgh", "country": "FO", "street_name": "Kole Light", "street_number": 165, "zip_code": "213"}|
+50,carmella_id@hotmail.com,2022-01-08 16:06:27,safari,|{"city": "Sanford haven", "country": "ZW", "street_name": "Ariel Corners", "street_number": 18, "zip_code": "551"}|
+51,emiliano_harum@yahoo.com,2022-01-08 16:25:09,chrome,|{"city": "Effertz ton", "country": "GH", "street_name": "Kianna Motorway", "street_number": 13, "zip_code": "194"}|
+52,jarvis_quaerat@yahoo.com,2022-01-08 20:28:59,chrome,|{"city": "Telly chester", "country": "MK", "street_name": "O"Conner Locks", "street_number": 143, "zip_code": "386"}|
+53,jimmie_autem@hotmail.com,2022-01-08 20:34:26,chrome,|{"city": "Ocie chester", "country": "MS", "street_name": "Daniel Vista", "street_number": 89, "zip_code": "591"}|
+54,karli_cupiditate@hotmail.com,2022-01-08 21:22:33,edge,|{"city": "Port Marianna Kuhlman ville", "country": "UM", "street_name": "Konopelski Centers", "street_number": 131, "zip_code": "1786"}|
+55,faustino_qui@hotmail.com,2022-01-08 22:56:00,chrome,|{"city": "Rempel fort", "country": "FR", "street_name": "Elmo Wells", "street_number": 101, "zip_code": "2271"}|
+56,tobin_numquam@hotmail.com,2022-01-09 05:26:21,chrome,|{"city": "Flatley ville", "country": "IO", "street_name": "Morton Street", "street_number": 22, "zip_code": "756"}|
+57,carroll_reprehenderit@yahoo.com,2022-01-09 08:46:25,chrome,|{"city": "Parker shire", "country": "TJ", "street_name": "Sheridan Shore", "street_number": 28, "zip_code": "054"}|
+58,justen_voluptas@gmail.com,2022-01-09 10:10:37,safari,|{"city": "Dooley town", "country": "GQ", "street_name": "Khalid Lights", "street_number": 176, "zip_code": "3274"}|
+59,eula_nemo@yahoo.com,2022-01-09 10:41:52,firefox,|{"city": "Hoppe side", "country": "GD", "street_name": "Sabrina Groves", "street_number": 46, "zip_code": "687"}|
+60,ervin_iure@hotmail.com,2022-01-09 15:23:15,safari,|{"city": "Port Kaylie Schroeder side", "country": "GD", "street_name": "Mueller Fords", "street_number": 75, "zip_code": "44501"}|
+61,nicholaus_commodi@hotmail.com,2022-01-09 16:16:20,chrome,|{"city": "East Albin Larkin shire", "country": "VN", "street_name": "Odell Rapids", "street_number": 167, "zip_code": "0041"}|
+62,jenifer_doloribus@hotmail.com,2022-01-09 20:55:11,chrome,|{"city": "Lake Kara Sawayn view", "country": "LR", "street_name": "Kaleigh Track", "street_number": 191, "zip_code": "55215"}|
+63,christophe_deserunt@yahoo.com,2022-01-09 23:47:40,chrome,|{"city": "New Xander Reichert land", "country": "LI", "street_name": "Delmer Ridge", "street_number": 153, "zip_code": "23635"}|
+64,maurice_non@gmail.com,2022-01-10 01:03:38,chrome,|{"city": "Kris bury", "country": "MV", "street_name": "Crona Park", "street_number": 121, "zip_code": "939"}|
+65,arch_id@hotmail.com,2022-01-10 07:14:08,chrome,|{"city": "Ivy fort", "country": "SX", "street_name": "Elmira Course", "street_number": 195, "zip_code": "7406"}|
+66,watson_non@hotmail.com,2022-01-10 13:49:42,edge,|{"city": "East Oleta Kulas side", "country": "TT", "street_name": "Pink Center", "street_number": 180, "zip_code": "047"}|
+67,jed_dignissimos@yahoo.com,2022-01-10 16:52:34,chrome,|{"city": "North Elijah Turcotte berg", "country": "SO", "street_name": "Erdman Ford", "street_number": 180, "zip_code": "295"}|
+68,obie_ut@yahoo.com,2022-01-10 21:04:29,edge,|{"city": "Moore berg", "country": "US", "street_name": "Johann Mills", "street_number": 116, "zip_code": "3146"}|
+69,gerson_tempora@gmail.com,2022-01-11 04:47:03,edge,|{"city": "Altenwerth borough", "country": "JP", "street_name": "Schumm Rue", "street_number": 73, "zip_code": "211"}|
+70,walker_quibusdam@gmail.com,2022-01-11 05:25:44,safari,|{"city": "Kutch view", "country": "BR", "street_name": "Alverta Plain", "street_number": 66, "zip_code": "0841"}|
+71,linnie_dolor@gmail.com,2022-01-11 11:15:07,edge,|{"city": "Yost ville", "country": "KZ", "street_name": "Freeman Ville", "street_number": 137, "zip_code": "643"}|
+72,ila_doloribus@yahoo.com,2022-01-11 17:53:54,safari,|{"city": "Satterfield chester", "country": "MS", "street_name": "Collins Islands", "street_number": 129, "zip_code": "4327"}|
+73,rogers_qui@yahoo.com,2022-01-12 03:45:42,safari,|{"city": "East Randi Littel fort", "country": "HT", "street_name": "Fletcher Rest", "street_number": 67, "zip_code": "1771"}|
+74,rudolph_consectetur@hotmail.com,2022-01-12 08:12:58,chrome,|{"city": "Lake Miguel Nikolaus ville", "country": "AR", "street_name": "Monroe Street", "street_number": 198, "zip_code": "98511"}|
+75,christopher_reiciendis@hotmail.com,2022-01-12 09:54:14,chrome,|{"city": "New Philip Moen mouth", "country": "MH", "street_name": "Shaylee Way", "street_number": 173, "zip_code": "75591"}|
+76,solon_consequuntur@yahoo.com,2022-01-12 12:28:28,edge,|{"city": "Dickens berg", "country": "FM", "street_name": "Jayme Hollow", "street_number": 182, "zip_code": "688"}|
+77,rahsaan_quis@hotmail.com,2022-01-12 15:28:22,edge,|{"city": "Hamill burgh", "country": "AZ", "street_name": "Deckow Lakes", "street_number": 145, "zip_code": "84219"}|
+78,kelton_quos@yahoo.com,2022-01-12 19:26:51,safari,|{"city": "Dicki view", "country": "BV", "street_name": "Felicita Ports", "street_number": 151, "zip_code": "348"}|
+79,isabelle_optio@yahoo.com,2022-01-12 21:26:51,safari,|{"city": "Robel mouth", "country": "AL", "street_name": "Wiegand Heights", "street_number": 189, "zip_code": "500"}|
+80,emmett_fugit@yahoo.com,2022-01-12 22:47:39,safari,|{"city": "Helene view", "country": "FR", "street_name": "Margot Cliffs", "street_number": 88, "zip_code": "71561"}|
+81,vivian_numquam@hotmail.com,2022-01-13 01:09:29,chrome,|{"city": "Schmitt ville", "country": "AO", "street_name": "Fannie Mountain", "street_number": 159, "zip_code": "03449"}|
+82,joaquin_eos@hotmail.com,2022-01-13 10:13:47,chrome,|{"city": "Hubert town", "country": "CN", "street_name": "Effertz Ways", "street_number": 116, "zip_code": "715"}|
+83,preston_ut@yahoo.com,2022-01-13 11:13:38,chrome,|{"city": "West Emerald Reinger mouth", "country": "BY", "street_name": "Mitchell Center", "street_number": 89, "zip_code": "137"}|
+84,ivah_incidunt@gmail.com,2022-01-13 15:28:58,chrome,|{"city": "Kutch ville", "country": "TK", "street_name": "Winfield Brooks", "street_number": 112, "zip_code": "7051"}|
+85,kaley_quos@hotmail.com,2022-01-13 16:07:59,chrome,|{"city": "Madeline chester", "country": "RS", "street_name": "Felicita Rue", "street_number": 103, "zip_code": "10860"}|
+86,ruthie_quod@gmail.com,2022-01-13 18:48:00,edge,|{"city": "Jazmyn mouth", "country": "LV", "street_name": "Kunze Shoals", "street_number": 108, "zip_code": "303"}|
+87,cristina_doloremque@yahoo.com,2022-01-13 19:05:45,chrome,|{"city": "New Celestine Terry bury", "country": "BE", "street_name": "Bartoletti Brooks", "street_number": 38, "zip_code": "556"}|
+88,fritz_voluptatem@gmail.com,2022-01-13 21:12:57,edge,|{"city": "Abbott berg", "country": "NU", "street_name": "Dicki Skyway", "street_number": 109, "zip_code": "7930"}|
+89,shyann_est@gmail.com,2022-01-13 21:17:32,chrome,|{"city": "Corkery furt", "country": "VU", "street_name": "Langosh Extension", "street_number": 63, "zip_code": "69587"}|
+90,magnus_aperiam@gmail.com,2022-01-13 23:03:47,safari,|{"city": "Frankie mouth", "country": "HN", "street_name": "Witting Courts", "street_number": 0, "zip_code": "5685"}|
+91,jodie_dolor@gmail.com,2022-01-14 06:16:51,safari,|{"city": "West Rowan Parisian borough", "country": "EG", "street_name": "Grady Street", "street_number": 38, "zip_code": "46839"}|
+92,clay_similique@gmail.com,2022-01-14 08:30:09,chrome,|{"city": "Lake Dusty Rice mouth", "country": "IS", "street_name": "Angelita Meadows", "street_number": 17, "zip_code": "094"}|
+93,raven_est@yahoo.com,2022-01-14 12:31:40,safari,|{"city": "Goodwin mouth", "country": "CD", "street_name": "Donavon Gateway", "street_number": 64, "zip_code": "0648"}|
+94,giovanni_dolores@gmail.com,2022-01-14 12:35:55,safari,|{"city": "King ville", "country": "BQ", "street_name": "Schoen Knolls", "street_number": 166, "zip_code": "022"}|
+95,daphney_rerum@gmail.com,2022-01-14 15:26:21,chrome,|{"city": "Ratke view", "country": "VU", "street_name": "Schultz Pines", "street_number": 37, "zip_code": "83683"}|
+96,dora_aut@hotmail.com,2022-01-14 16:39:33,firefox,|{"city": "New Carolina Kuhn town", "country": "CD", "street_name": "Malinda Square", "street_number": 81, "zip_code": "407"}|
+97,brenda_ut@yahoo.com,2022-01-14 20:27:46,chrome,|{"city": "Larkin land", "country": "CU", "street_name": "Jones Loop", "street_number": 106, "zip_code": "9931"}|
+98,augustine_nihil@yahoo.com,2022-01-15 01:45:57,safari,|{"city": "Kemmer town", "country": "VA", "street_name": "Johnston Turnpike", "street_number": 65, "zip_code": "4475"}|
+99,carlos_explicabo@yahoo.com,2022-01-15 04:55:13,chrome,|{"city": "North Denis Little furt", "country": "JO", "street_name": "King Road", "street_number": 51, "zip_code": "281"}|
+100,leslie_repellat@gmail.com,2022-01-15 07:55:48,chrome,|{"city": "Konopelski mouth", "country": "ZA", "street_name": "Margaretta Avenue", "street_number": 104, "zip_code": "58843"}|

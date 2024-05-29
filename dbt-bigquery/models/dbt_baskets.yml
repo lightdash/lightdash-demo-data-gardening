@@ -1,0 +1,76 @@
+version: 2
+models:
+- name: dbt_baskets
+  description: 'This table contains all the information on customer shopping baskets on our site. There is one basket per order'
+  meta:
+    label: Baskets
+    group_label: Sales
+  columns:
+  - name: order_id
+    description: 'Unique Order ID that the basket relates to.'
+  - name: basket_item_id
+    description: 'ID for the product item within the basket.'
+  - name: sku
+    description: 'Unique Stock Keeping Unit code.'
+  - name: product_name
+    description: 'Full name of the product.'
+    meta:
+      dimension:
+        label: 'Product name'
+      metrics:
+        count_of_product_name:
+          type: count
+  - name: currency
+    description: 'Three letter international currency code of the item price.'
+  - name: item_price
+    description: 'Price of the item in the specified currency.'
+  - name: item_profit
+    description: 'Profit made for the individual item.'
+    meta:
+      dimension:
+        format: 'usd'
+      metrics:
+        sum_of_item_profit:
+          type: sum
+          format: 'usd'
+        average_of_item_profit:
+          type: average
+          label: 'Average item profit'
+          format: 'usd'
+          description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
+          round: 2
+  - name: basket_total
+    description: 'Sum of item prices for each item within the basket.'
+    meta:
+      dimension:
+        format: 'usd'
+      metrics:
+        sum_of_basket_total:
+          type: sum
+          label: 'Basket total'
+          format: 'usd'
+        average_of_basket_total:
+          type: average
+          label: 'Average basket total'
+          format: 'usd'
+          description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+          round: 2
+  - name: order_date
+    description: 'Timestamp of order placement by the user.'
+    meta:
+      dimension:
+        label: 'Order date'
+  - name: profit
+    description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
+    meta:
+      dimension:
+        format: 'usd'
+  - name: partner_id
+    description: 'Unique ID of the partner that is fulfilling the basket.'
+  - name: partner_name
+    description: 'Full name of the partner that is fulfilling the basket.'
+    meta:
+      dimension:
+        label: 'Partner name'
+  - name: partner_commission
+    description: 'The commission rate the specified parter charges, as a decimal fraction.'

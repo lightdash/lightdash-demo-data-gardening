@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: dbt_orders
+  description: 'This table contains information on all the confirmed orders and their status'
+  meta:
+    label: Orders
+    group_label: Sales
+    required_attributes:
+      can_access_orders: "true"
+  columns:
+  - name: order_id
+    description: 'Unique Order ID for the order.'
+    meta:
+      metrics:
+        count_distinct_order_id:
+          type: count_distinct
+          label: 'Order count'
+  - name: order_date
+    description: 'Timestamp of order placement by user.'
+    meta:
+      dimension:
+        time_intervals: ['DAY', 'WEEK', 'WEEK_NUM', 'MONTH', 'QUARTER', 'YEAR']
+  - name: partner_id
+    description: 'ID of the partner that is fulfilling the order.'
+  - name: partner_name
+    description: 'Full name of the partner that is fulfilling the order.'
+    meta:
+      dimension:
+        urls:
+          - url: https://docs.lightdash.com/references/dimensions#urls
+            label: View partner account in Salesforce
+  - name: partner_commission
+    description: 'Commission rate the specified parter charges, as a decimal fraction.'
+  - name: currency
+    description: 'Three letter international currency code for the currency the order was paid with.'
+  - name: basket_total
+    description: 'Sum of item prices for each item within the basket.'
+    meta:
+      dimension:
+        format: 'usd'
+      metrics:
+        sum_of_basket_total:
+          type: sum
+          format: 'usd'
+        average_of_basket_total:
+          type: average
+          format: 'usd'
+  - name: profit
+    description: 'Sum of item profits within the basket. Thus, the total profit of the order.'
+    meta:
+      dimension:
+        format: 'usd'
+      metrics:
+        sum_of_profit:
+          type: sum
+          format: 'usd'
+  - name: referrer
+    description: 'Source from which the user was linked to the Thyme to Shine website.'
+  - name: user_id
+    description: 'Unique user ID for the user that placed the order.'
+    meta:
+      metrics:
+        count_distinct_user_id:
+          type: count_distinct
+          label: 'Total unique users'
+  - name: email
+    description: 'Email address of the user that placed the order.'
+    meta:
+      dimension:
+        urls:
+          - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+            label: Send email
+  - name: user_created_date
+    description: 'Timestamp of user creation.'
+  - name: browser
+    description: 'Web browser that the user used to place the order.'
+  - name: shipping_city
+    description: 'Shipping city of the user that placed the order.'
+  - name: shipping_country
+    description: 'Shipping country of the user that placed the order.'

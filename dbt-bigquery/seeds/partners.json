@@ -1,0 +1,14 @@
+[
+    {
+        "name": "partner_id",
+        "type": "STRING"
+    },
+    {
+        "name": "partner_name",
+        "type": "STRING"
+    },
+    {
+        "name": "partner_commission",
+        "type": "FLOAT64"
+    }
+]

@@ -1,0 +1,35 @@
+version: 2
+models:
+- name: dbt_support_requests
+  description: 'This table contains information on all the support requests we’ve received'
+  meta:
+    label: Support requests
+    joins:
+      - join: dbt_orders
+        sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+  columns:
+  - name: request_id
+    description: 'Unique ID of the request.'
+    meta:
+      metrics:
+        count_distinct_request_id:
+          type: count_distinct
+          label: Total requests
+  - name: order_id
+    description: 'Unique Order ID that pertains to this request.'
+  - name: request_date
+    description: 'Timestamp of request submission by the user.'
+  - name: reason
+    description: 'Determined cause of request.'
+    meta:
+      metrics:
+        count_of_reason:
+          type: count_distinct
+          label: Number of distinct reasons
+  - name: feedback_rating
+    description: 'Feedback rating out of ten as received by post-request user survey.'
+    meta:
+      metrics:
+        average_of_feedback_rating:
+          type: average
+          label: Average feedback rating

@@ -1,0 +1,1 @@
+This dbt project uses a connection to BigQuery. Specifically, it assumes that the datasets are in `lightdash-analytics.lightdash_demo_gardening`. The dbt .sql files are written using BigQuery syntax.

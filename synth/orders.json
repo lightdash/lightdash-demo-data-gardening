@@ -2,7 +2,7 @@
     "type": "array",
     "length": {
         "type": "number",
-        "constant": 1000
+        "constant": 1500
     },
     "content": {
         "type": "object",
@@ -17,14 +17,14 @@
             "type": "number",
             "range": {
                 "low": 1,
-                "high": 1000
+                "high": 1500
             }
         },
         "order_date": {
             "type": "series",
             "cyclical": {
-                "start": "2022-01-01 00:00:00",
-                "period": "100d",
+                "start": "2023-11-11 00:00:00",
+                "period": "200d",
                 "min_rate": "11h",
                 "max_rate": "58m"
             }
@@ -54,6 +54,10 @@
         "partner_id": {
             "type": "string",
             "categorical": {
+                "9": 7,
+                "8": 3,
+                "7": 4,
+                "6": 1,
                 "4": 8,
                 "3": 5,
                 "5": 3,

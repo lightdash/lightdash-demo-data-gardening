@@ -1,0 +1,38 @@
+[
+    {
+        "name": "order_id",
+        "type": "STRING"
+    },
+    {
+        "name": "order_date",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING"
+    },
+    {
+        "name": "partner_id",
+        "type": "STRING"
+    },
+    {
+        "name": "ordered_product_skus",
+        "type": "STRING"
+    },
+    {
+        "name": "currency",
+        "type": "STRING"
+    },
+    {
+        "name": "basket_total",
+        "type": "FLOAT64"
+    },
+    {
+        "name": "profit",
+        "type": "FLOAT64"
+    },
+    {
+        "name": "referrer",
+        "type": "STRING"
+    }
+]

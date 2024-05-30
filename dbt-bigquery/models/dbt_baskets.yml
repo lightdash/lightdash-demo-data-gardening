@@ -5,11 +5,22 @@ models:
   meta:
     label: Baskets
     group_label: Sales
+    groups:
+      product_details: 
+        label: Product Details
+        description: Fields that have information about the products in the basket.
+      item_details:
+        label: Item Details
+        description: Fields that have informaton about the items in the basket.
+      
   columns:
   - name: order_id
     description: 'Unique Order ID that the basket relates to.'
   - name: basket_item_id
     description: 'ID for the product item within the basket.'
+    meta:
+      dimension:
+        group: ['product_details', 'item_details']
   - name: sku
     description: 'Unique Stock Keeping Unit code.'
   - name: product_name
@@ -17,6 +28,7 @@ models:
     meta:
       dimension:
         label: 'Product name'
+        group: ['product_details']
       metrics:
         count_of_product_name:
           type: count
@@ -24,11 +36,15 @@ models:
     description: 'Three letter international currency code of the item price.'
   - name: item_price
     description: 'Price of the item in the specified currency.'
+    meta:
+      dimension:
+        group: ['product_details', 'item_details']
   - name: item_profit
     description: 'Profit made for the individual item.'
     meta:
       dimension:
         format: 'usd'
+        group: ['product_details', 'item_details']
       metrics:
         sum_of_item_profit:
           type: sum

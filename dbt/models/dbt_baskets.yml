@@ -11,7 +11,7 @@ models:
         description: Fields that have information about the products in the basket.
       item_details:
         label: Item Details
-        description: Fields that have informaton about the items in the basket.
+        description: Fields that have information about the items in the basket.
       
   columns:
   - name: order_id

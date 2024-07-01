@@ -54,6 +54,9 @@ models:
         sum_of_profit:
           type: sum
           format: 'usd'
+        stdev_of_profit:
+          type: number 
+          sql: stddev(${TABLE}.profit)
   - name: referrer
     description: 'Source from which the user was linked to the Thyme to Shine website.'
   - name: user_id

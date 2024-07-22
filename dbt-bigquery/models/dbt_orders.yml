@@ -15,6 +15,7 @@ models:
         count_distinct_order_id:
           type: count_distinct
           label: 'Order count'
+          description: 'This metric counts unique orders based on the Order ID field from the Orders table.'
   - name: order_date
     description: 'Timestamp of order placement by user.'
     meta:
@@ -29,6 +30,12 @@ models:
         urls:
           - url: https://docs.lightdash.com/references/dimensions#urls
             label: View partner account in Salesforce
+        colors:
+          "Trowels R Us": "#DAF7A6"
+          "Garden of Sweden": "#FFC300"
+          "Plant Paradise": "#FF5733"
+          "Redwood Ranch": "#C70039"
+          "Peat, Fruits and Leaves": "#581845"
   - name: partner_commission
     description: 'Commission rate the specified parter charges, as a decimal fraction.'
   - name: currency
@@ -42,9 +49,11 @@ models:
         sum_of_basket_total:
           type: sum
           format: 'usd'
+          description: 'Sums the basket total for orders in your query, grouped by the dimensions you have chosen.'
         average_of_basket_total:
           type: average
           format: 'usd'
+          description: 'Takes the average of basket total for orders in your query, grouped by the dimensions you have chosen.'
   - name: profit
     description: 'Sum of item profits within the basket. Thus, the total profit of the order.'
     meta:
@@ -54,6 +63,7 @@ models:
         sum_of_profit:
           type: sum
           format: 'usd'
+          description: 'Sums the profit on all orders in your query, grouped by the dimensions you have chosen.'
         stdev_of_profit:
           type: number 
           sql: stddev(${TABLE}.profit)
@@ -66,6 +76,7 @@ models:
         count_distinct_user_id:
           type: count_distinct
           label: 'Total unique users'
+          description: 'Counts the number of unique users (customers) with orders based on their User ID.'
   - name: email
     description: 'Email address of the user that placed the order.'
     meta:

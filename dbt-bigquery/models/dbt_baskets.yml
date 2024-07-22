@@ -45,6 +45,19 @@ models:
       dimension:
         format: 'usd'
         group: ['product_details', 'item_details']
+      additional_dimensions:
+        item_profit_margin:
+          type: number
+          description: Item profit divided by item price
+          sql: ${item_profit} / ${item_price}
+        item_profit_margin_tier:
+          type: string
+          description: True if item has profit margin greater than 12%
+          sql: |
+            case 
+              when ${item_profit_margin} < .08 then 'Low profit margin' 
+              when ${item_profit_margin} > .12 then 'High profit margin'
+              else 'Mid profit margin' end
       metrics:
         sum_of_item_profit:
           type: sum

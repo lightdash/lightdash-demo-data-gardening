@@ -4,6 +4,14 @@ models:
   description: 'This table contains information on all of our users and customers'
   meta:
     label: Users
+    joins:
+      - join: dbt_orders
+        sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
+        fields: [count_distinct_order_id]
+    metrics:
+      diff_emails_to_users:
+        type: number
+        sql: ${count_distinct_email} - ${count_distinct_of_user_id}
   columns:
   - name: browser
     description: 'Web browser that the user used to place the order.'
@@ -16,6 +24,10 @@ models:
         urls:
           - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
             label: Send email
+      metrics:
+        count_distinct_email:
+          type: count_distinct
+          label: Total emails
   - name: shipping_address
     description: 'Full shipping address of the user, as an object.'
   - name: user_id

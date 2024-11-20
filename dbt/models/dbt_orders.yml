@@ -28,6 +28,8 @@ models:
     meta:
       dimension:
         urls:
+          - url: https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/view?filters=%7B"dimensions"%3A%5B%7B"id"%3A"fc5f8c1a-7673-4054-ba00-765d33033bfe"%2C"operator"%3A"equals"%2C"target"%3A%7B"fieldId"%3A"dbt_orders_partner_name"%2C"tableName"%3A"dbt_orders"%2C"fieldName"%3A"partner_name"%7D%2C"disabled"%3Afalse%2C"values"%3A%5B"${ value.formatted | url_encode }"%5D%7D%5D%2C"metrics"%3A%5B%5D%2C"tableCalculations"%3A%5B%5D%7D
+            label: View partner KPI dashboard
           - url: https://docs.lightdash.com/references/dimensions#urls
             label: View partner account in Salesforce
         colors:

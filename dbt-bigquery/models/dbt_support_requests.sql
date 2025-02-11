@@ -7,10 +7,10 @@
 SELECT 
   CASt(req.request_id AS STRING) AS request_id,
   CAST(req.order_id AS STRING) AS order_id,
-  req.request_date,
+  {{ shift_timestamp('req.request_date') }} as request_date, 
   req.reason,
   req.feedback_rating,
-  ord.order_date,
+  {{ shift_timestamp('ord.order_date') }} as order_date, 
   ord.basket_total,
   ord.profit,
   ord.referrer,
@@ -19,7 +19,7 @@ SELECT
   prt.partner_commission,
   CAST(ord.user_id AS STRING) AS user_id,
   usr.email,
-  usr.created_date,
+  {{ shift_timestamp('usr.created_date') }} as created_date,
   usr.browser
 FROM `lightdash-analytics.lightdash_demo_gardening.support_requests` req
   LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.orders` ord ON req.order_id = ord.order_id

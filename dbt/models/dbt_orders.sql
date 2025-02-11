@@ -5,7 +5,7 @@
 }}
 
 SELECT ord.order_id,
-  ord.order_date,
+  ord.order_date, -- need to adjust this
   ord.partner_id,
   prt.partner_name,
   prt.partner_commission,
@@ -15,7 +15,7 @@ SELECT ord.order_id,
   ord.referrer,
   ord.user_id,
   usr.email,
-  usr.created_date AS user_created_date,
+  usr.created_date AS user_created_date, -- need to adjust this
   usr.browser,
   shipping_address::jsonb->>'city' AS shipping_city,
   shipping_address::jsonb->>'country' AS shipping_country

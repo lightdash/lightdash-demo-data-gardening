@@ -6,7 +6,7 @@ SELECT
   prd.price_currency AS currency,
   bsk.price_amount AS item_price,
   bsk.basket_total,
-  ord.order_date,
+  {{ shift_timestamp('ord.order_date') }} as order_date,
   ord.profit,
   (
     bsk.price_amount * prt.partner_commission

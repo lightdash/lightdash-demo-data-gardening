@@ -5,7 +5,7 @@ SELECT bsk.order_id,
   prd.price_currency AS currency,
   bsk.price_amount AS item_price,
   bsk.basket_total::decimal AS basket_total,
-  ord.order_date,
+  ord.order_date, -- need to adjust this
   ord.profit::decimal AS profit,
   (
     bsk.price_amount::decimal * prt.partner_commission::decimal

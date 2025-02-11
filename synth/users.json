@@ -2,7 +2,7 @@
     "type": "array",
     "length": {
         "type": "number",
-        "constant": 1500
+        "constant": 5000
     },
     "content": {
         "type": "object",
@@ -19,8 +19,8 @@
         "created_date": {
             "type": "series",
             "poisson": {
-                "start": "2023-11-11 00:00:00",
-                "rate": "150m"
+                "start": "2023-02-07 11:44:48",
+                "rate": "300m"
             }
         },
         "browser": {

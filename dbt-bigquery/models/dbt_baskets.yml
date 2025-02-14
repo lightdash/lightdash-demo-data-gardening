@@ -92,7 +92,7 @@ models:
         sql: >
           timestamp_add(
             ${TABLE}.order_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-12 00:00:00', second) second
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
           )
   - name: profit
     description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'

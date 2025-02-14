@@ -76,7 +76,7 @@ models:
     meta:
       dimension:
         label: 'Order date'
-        sql: ${TABLE}.order_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-12 00:00:00')
+        sql: ${TABLE}.order_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-13 00:00:00')
   - name: profit
     description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
     meta:

@@ -11,7 +11,7 @@ models:
     description: 'Timestamp of user creation.'
     meta:
       dimension:
-        sql: ${TABLE}.created_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-12 00:00:00')
+        sql: ${TABLE}.created_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-13 00:00:00')
   - name: email
     description: 'Email address of the user.'
     meta:

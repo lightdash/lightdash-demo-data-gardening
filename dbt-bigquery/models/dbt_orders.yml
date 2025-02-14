@@ -21,6 +21,11 @@ models:
     meta:
       dimension:
         time_intervals: ['DAY', 'WEEK', 'WEEK_NUM', 'MONTH', 'QUARTER', 'YEAR']
+        sql: >
+          timestamp_add(
+            ${TABLE}.order_date,
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-14 00:00:00', second) second
+          )
   - name: partner_id
     description: 'ID of the partner that is fulfilling the order.'
   - name: partner_name
@@ -88,6 +93,13 @@ models:
             label: Send email
   - name: user_created_date
     description: 'Timestamp of user creation.'
+    meta:
+      dimension:
+        sql: >
+          timestamp_add(
+            ${TABLE}.user_created_date,
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-14 00:00:00', second) second
+          )
   - name: browser
     description: 'Web browser that the user used to place the order.'
   - name: shipping_city

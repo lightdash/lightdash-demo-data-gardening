@@ -1,7 +1,7 @@
 SELECT 
   CAST(user_id AS STRING) AS user_id,
   email,
-  {{ shift_timestamp('created_date') }} as created_date,
+  created_date,
   browser,
   shipping_address
 FROM `lightdash-analytics.lightdash_demo_gardening.users`

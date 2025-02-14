@@ -18,7 +18,7 @@ SELECT req.request_id,
   prt.partner_commission,
   ord.user_id,
   usr.email,
-  usr.created_date, -- need to adjust this
+  usr.created_date,
   usr.browser
 FROM thyme.support_requests req
   LEFT JOIN thyme.orders ord ON req.order_id = ord.order_id

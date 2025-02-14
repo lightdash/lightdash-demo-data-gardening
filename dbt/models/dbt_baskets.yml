@@ -76,6 +76,7 @@ models:
     meta:
       dimension:
         label: 'Order date'
+        sql: ${TABLE}.order_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-12 00:00:00')
   - name: profit
     description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
     meta:
@@ -89,4 +90,4 @@ models:
       dimension:
         label: 'Partner name'
   - name: partner_commission
-    description: 'The commission rate the specified parter charges, as a decimal fraction.'
+    description: 'The commission rate the specified partner charges, as a decimal fraction.'

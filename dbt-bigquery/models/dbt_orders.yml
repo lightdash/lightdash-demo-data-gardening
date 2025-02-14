@@ -24,7 +24,7 @@ models:
         sql: >
           timestamp_add(
             ${TABLE}.order_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-14 00:00:00', second) second
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-12 00:00:00', second) second
           )
   - name: partner_id
     description: 'ID of the partner that is fulfilling the order.'
@@ -98,7 +98,7 @@ models:
         sql: >
           timestamp_add(
             ${TABLE}.user_created_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-14 00:00:00', second) second
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-12 00:00:00', second) second
           )
   - name: browser
     description: 'Web browser that the user used to place the order.'

@@ -9,6 +9,9 @@ models:
     description: 'Web browser that the user used to place the order.'
   - name: created_date
     description: 'Timestamp of user creation.'
+    meta:
+      dimension:
+        sql: ${TABLE}.created_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-12 00:00:00')
   - name: email
     description: 'Email address of the user.'
     meta:

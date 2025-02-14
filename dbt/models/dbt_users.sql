@@ -1,6 +1,6 @@
 SELECT user_id,
   email,
-  created_date, -- need to adjust this
+  created_date,
   browser,
   shipping_address
 FROM thyme.users

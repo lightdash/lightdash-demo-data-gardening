@@ -17,6 +17,13 @@ models:
     description: 'Web browser that the user used to place the order.'
   - name: created_date
     description: 'Timestamp of user creation.'
+    meta:
+      dimension:
+        sql: >
+          timestamp_add(
+            ${TABLE}.created_date,
+            interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+          )
   - name: email
     description: 'Email address of the user.'
     meta:

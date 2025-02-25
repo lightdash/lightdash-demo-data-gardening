@@ -19,6 +19,9 @@ models:
     description: 'Unique Order ID that pertains to this request.'
   - name: request_date
     description: 'Timestamp of request submission by the user.'
+    meta:
+      dimension:
+        sql: ${TABLE}.request_date + (CURRENT_TIMESTAMP - TIMESTAMP '2025-02-13 00:00:00')
   - name: reason
     description: 'Determined cause of request.'
     meta:

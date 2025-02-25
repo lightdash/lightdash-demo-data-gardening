@@ -10,7 +10,7 @@ SELECT
   req.request_date,
   req.reason,
   req.feedback_rating,
-  ord.order_date,
+  ord.order_date, 
   ord.basket_total,
   ord.profit,
   ord.referrer,

@@ -20,7 +20,7 @@ models:
     description: 'Timestamp of order placement by user.'
     meta:
       dimension:
-        time_intervals: ['DAY', 'WEEK', 'WEEK_NUM', 'MONTH', 'QUARTER', 'YEAR']
+        time_intervals: ['DAY', 'DAY_OF_MONTH_NUM', 'WEEK', 'WEEK_NUM', 'MONTH', 'MONTH_NUM', 'QUARTER', 'YEAR']
         sql: >
           timestamp_add(
             ${TABLE}.order_date,

@@ -20,7 +20,7 @@ SELECT
   usr.browser,
   JSON_EXTRACT_SCALAR(shipping_address, '$.city') AS shipping_city,
   JSON_EXTRACT_SCALAR(shipping_address, '$.country') AS shipping_country
-FROM `lightdash-analytics.lightdash_demo_gardening.orders` ord
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.users` usr ON CAST(ord.user_id AS STRING) = CAST(usr.user_id AS STRING)
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.partners` prt ON CAST(ord.partner_id AS STRING) = CAST(prt.partner_id AS STRING)
+FROM {{ ref('orders') }} ord
+  LEFT JOIN {{ ref('users') }} usr ON CAST(ord.user_id AS STRING) = CAST(usr.user_id AS STRING)
+  LEFT JOIN {{ ref('partners') }} prt ON CAST(ord.partner_id AS STRING) = CAST(prt.partner_id AS STRING)
 ORDER BY CAST(order_id AS int) ASC

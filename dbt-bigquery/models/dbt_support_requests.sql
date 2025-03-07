@@ -21,8 +21,8 @@ SELECT
   usr.email,
   usr.created_date,
   usr.browser
-FROM `lightdash-analytics.lightdash_demo_gardening.support_requests` req
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.orders` ord ON req.order_id = ord.order_id
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.partners` prt ON ord.partner_id = prt.partner_id
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.users` usr ON ord.user_id = usr.user_id
+FROM {{ ref('support_requests') }} req
+  LEFT JOIN {{ ref('orders') }} ord ON req.order_id = ord.order_id
+  LEFT JOIN {{ ref('partners') }} prt ON ord.partner_id = prt.partner_id
+  LEFT JOIN {{ ref('users') }} usr ON ord.user_id = usr.user_id
 ORDER BY CAST(request_id AS int) ASC

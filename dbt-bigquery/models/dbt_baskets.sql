@@ -14,8 +14,8 @@ SELECT
   ord.partner_id,
   prt.partner_name,
   prt.partner_commission
-FROM `lightdash-analytics.lightdash_demo_gardening.baskets` bsk
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.products` prd ON CAST(ordered_product_skus AS STRING) = CAST(prd.sku AS STRING)
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.orders` ord ON CAST(bsk.order_id AS STRING) = CAST(ord.order_id AS STRING)
-  LEFT JOIN `lightdash-analytics.lightdash_demo_gardening.partners` prt ON CAST(ord.partner_id AS STRING) = CAST(prt.partner_id AS STRING)
+FROM {{ ref('baskets') }} bsk
+  LEFT JOIN {{ ref('products') }} prd ON CAST(ordered_product_skus AS STRING) = CAST(prd.sku AS STRING)
+  LEFT JOIN {{ ref('orders') }} ord ON CAST(bsk.order_id AS STRING) = CAST(ord.order_id AS STRING)
+  LEFT JOIN {{ ref('partners') }} prt ON CAST(ord.partner_id AS STRING) = CAST(prt.partner_id AS STRING)
 ORDER BY bsk.basket_item_id ASC

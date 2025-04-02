@@ -44,3 +44,8 @@ models:
         count_distinct_of_user_id:
           type: count_distinct
           label: Total users
+        count_distinct_of_user_id_with_email:
+          type: count_distinct
+          label: Total users with emails
+          filters:
+            - email: "!null"

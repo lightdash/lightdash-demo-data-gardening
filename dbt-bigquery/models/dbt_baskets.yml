@@ -16,7 +16,7 @@ models:
   columns:
   - name: order_id
     description: 'Unique Order ID that the basket relates to.'
-  - name: basket_item_id
+  - name: item_id
     description: 'ID for the product item within the basket.'
     meta:
       dimension:

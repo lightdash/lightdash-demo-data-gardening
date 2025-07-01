@@ -1,46 +1,63 @@
 version: 2
 models:
-- name: dbt_users
-  description: 'This table contains information on all of our users and customers'
-  meta:
-    label: Users
-    joins:
-      - join: dbt_orders
-        sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
-        fields: [count_distinct_order_id]
-    metrics:
-      diff_emails_to_users:
-        type: number
-        sql: ${count_distinct_email} - ${count_distinct_of_user_id}
-  columns:
-  - name: browser
-    description: 'Web browser that the user used to place the order.'
-  - name: created_date
-    description: 'Timestamp of user creation.'
+  - name: dbt_users
+    description: 'This table contains information on all of our users and customers'
     meta:
-      dimension:
-        sql: >
-          timestamp_add(
-            ${TABLE}.created_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-          )
-  - name: email
-    description: 'Email address of the user.'
-    meta:
-      dimension:
-        urls:
-          - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
-            label: Send email
+      label: Users
+      joins:
+        - join: dbt_orders
+          sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
+          fields: [ count_distinct_order_id ]
       metrics:
-        count_distinct_email:
-          type: count_distinct
-          label: Total emails
-  - name: shipping_address
-    description: 'Full shipping address of the user, as an object.'
-  - name: user_id
-    description: 'Unique user ID for the user.'
-    meta:
-      metrics:
-        count_distinct_of_user_id:
-          type: count_distinct
-          label: Total users
+        diff_emails_to_users:
+          type: number
+          sql: ${count_distinct_email} - ${count_distinct_of_user_id}
+    columns:
+      - name: browser
+        description: 'Web browser that the user used to place the order.'
+        meta:
+          dimension:
+            type: string
+      - name: created_date
+        description: 'Timestamp of user creation.'
+        meta:
+          dimension:
+            sql: >
+              timestamp_add(
+                ${TABLE}.created_date,
+                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+              )
+            type: timestamp
+            time_intervals: [
+              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
+              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
+              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
+              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
+              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
+              'YEAR' ]
+      - name: email
+        description: 'Email address of the user.'
+        meta:
+          dimension:
+            urls:
+              - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+                label: Send email
+            type: string
+          metrics:
+            count_distinct_email:
+              type: count_distinct
+              label: Total emails
+      - name: shipping_address
+        description: 'Full shipping address of the user, as an object.'
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        description: 'Unique user ID for the user.'
+        meta:
+          metrics:
+            count_distinct_of_user_id:
+              type: count_distinct
+              label: Total users
+          dimension:
+            type: string

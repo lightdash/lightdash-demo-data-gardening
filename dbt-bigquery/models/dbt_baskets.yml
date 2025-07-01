@@ -1,110 +1,142 @@
 version: 2
 models:
-- name: dbt_baskets
-  description: 'This table contains all the information on customer shopping baskets on our site. There is one basket per order'
-  meta:
-    label: Baskets
-    group_label: Sales
-    groups:
-      product_details: 
-        label: Product Details
-        description: Fields that have information about the products in the basket.
-      item_details:
-        label: Item Details
-        description: Fields that have informaton about the items in the basket.
-      
-  columns:
-  - name: order_id
-    description: 'Unique Order ID that the basket relates to.'
-  - name: item_id
-    description: 'ID for the product item within the basket.'
+  - name: dbt_baskets
+    description: 'This table contains all the information on customer shopping
+      baskets on our site. There is one basket per order'
     meta:
-      dimension:
-        group: ['product_details', 'item_details']
-  - name: sku
-    description: 'Unique Stock Keeping Unit code.'
-  - name: product_name
-    description: 'Full name of the product.'
-    meta:
-      dimension:
-        label: 'Product name'
-        group: ['product_details']
-      metrics:
-        count_of_product_name:
-          type: count
-  - name: currency
-    description: 'Three letter international currency code of the item price.'
-  - name: item_price
-    description: 'Price of the item in the specified currency.'
-    meta:
-      dimension:
-        group: ['product_details', 'item_details']
-  - name: item_profit
-    description: 'Profit made for the individual item.'
-    meta:
-      dimension:
-        format: 'usd'
-        group: ['product_details', 'item_details']
-      additional_dimensions:
-        item_profit_margin:
-          type: number
-          description: Item profit divided by item price
-          sql: ${item_profit} / ${item_price}
-        item_profit_margin_tier:
-          type: string
-          description: True if item has profit margin greater than 12%
-          sql: |
-            case 
-              when ${item_profit_margin} < .08 then 'Low profit margin' 
-              when ${item_profit_margin} > .12 then 'High profit margin'
-              else 'Mid profit margin' end
-      metrics:
-        sum_of_item_profit:
-          type: sum
-          format: 'usd'
-        average_of_item_profit:
-          type: average
-          label: 'Average item profit'
-          format: 'usd'
-          description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
-          round: 2
-  - name: basket_total
-    description: 'Sum of item prices for each item within the basket.'
-    meta:
-      dimension:
-        format: 'usd'
-      metrics:
-        sum_of_basket_total:
-          type: sum
-          label: 'Basket total'
-          format: 'usd'
-        average_of_basket_total:
-          type: average
-          label: 'Average basket total'
-          format: 'usd'
-          description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
-          round: 2
-  - name: order_date
-    description: 'Timestamp of order placement by the user.'
-    meta:
-      dimension:
-        label: 'Order date'
-        sql: >
-          timestamp_add(
-            ${TABLE}.order_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-          )
-  - name: profit
-    description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
-    meta:
-      dimension:
-        format: 'usd'
-  - name: partner_id
-    description: 'Unique ID of the partner that is fulfilling the basket.'
-  - name: partner_name
-    description: 'Full name of the partner that is fulfilling the basket.'
-    meta:
-      dimension:
-        label: 'Partner name'
-  - name: partner_commission
-    description: 'The commission rate the specified parter charges, as a decimal fraction.'
+      label: Baskets
+      group_label: Sales
+      groups:
+        product_details:
+          label: Product Details
+          description: Fields that have information about the products in the basket.
+        item_details:
+          label: Item Details
+          description: Fields that have informaton about the items in the basket.
+
+    columns:
+      - name: order_id
+        description: 'Unique Order ID that the basket relates to.'
+        meta:
+          dimension:
+            type: string
+      - name: item_id
+        description: 'ID for the product item within the basket.'
+        meta:
+          dimension:
+            group: [ 'product_details', 'item_details' ]
+            type: string
+      - name: sku
+        description: 'Unique Stock Keeping Unit code.'
+        meta:
+          dimension:
+            type: number
+      - name: product_name
+        description: 'Full name of the product.'
+        meta:
+          dimension:
+            label: 'Product name'
+            group: [ 'product_details' ]
+            type: string
+          metrics:
+            count_of_product_name:
+              type: count
+      - name: currency
+        description: 'Three letter international currency code of the item price.'
+        meta:
+          dimension:
+            type: string
+      - name: item_price
+        description: 'Price of the item in the specified currency.'
+        meta:
+          dimension:
+            group: [ 'product_details', 'item_details' ]
+            type: number
+      - name: item_profit
+        description: 'Profit made for the individual item.'
+        meta:
+          dimension:
+            format: 'usd'
+            group: [ 'product_details', 'item_details' ]
+            type: number
+          additional_dimensions:
+            item_profit_margin:
+              type: number
+              description: Item profit divided by item price
+              sql: ${item_profit} / ${item_price}
+            item_profit_margin_tier:
+              type: string
+              description: True if item has profit margin greater than 12%
+              sql: |
+                case 
+                  when ${item_profit_margin} < .08 then 'Low profit margin' 
+                  when ${item_profit_margin} > .12 then 'High profit margin'
+                  else 'Mid profit margin' end
+          metrics:
+            sum_of_item_profit:
+              type: sum
+              format: 'usd'
+            average_of_item_profit:
+              type: average
+              label: 'Average item profit'
+              format: 'usd'
+              description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
+              round: 2
+      - name: basket_total
+        description: 'Sum of item prices for each item within the basket.'
+        meta:
+          dimension:
+            format: 'usd'
+            type: number
+          metrics:
+            sum_of_basket_total:
+              type: sum
+              label: 'Basket total'
+              format: 'usd'
+            average_of_basket_total:
+              type: average
+              label: 'Average basket total'
+              format: 'usd'
+              description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+              round: 2
+      - name: order_date
+        description: 'Timestamp of order placement by the user.'
+        meta:
+          dimension:
+            label: 'Order date'
+            sql: >
+              timestamp_add(
+                ${TABLE}.order_date,
+                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+              )
+            type: timestamp
+            time_intervals: [
+              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
+              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
+              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
+              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
+              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
+              'YEAR' ]
+      - name: profit
+        description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
+        meta:
+          dimension:
+            format: 'usd'
+            type: number
+      - name: partner_id
+        description: 'Unique ID of the partner that is fulfilling the basket.'
+        meta:
+          dimension:
+            type: number
+      - name: partner_name
+        description: 'Full name of the partner that is fulfilling the basket.'
+        meta:
+          dimension:
+            label: 'Partner name'
+            type: string
+      - name: partner_commission
+        description: 'The commission rate the specified parter charges, as a decimal
+          fraction.'
+        meta:
+          dimension:
+            type: number

@@ -1,42 +1,115 @@
 version: 2
 models:
-- name: dbt_support_requests
-  description: 'This table contains information on all the support requests we’ve received'
-  meta:
-    label: Support requests
-    joins:
-      - join: dbt_orders
-        sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
-  columns:
-  - name: request_id
-    description: 'Unique ID of the request.'
+  - name: dbt_support_requests
+    description: 'This table contains information on all the support requests we’ve
+      received'
     meta:
-      metrics:
-        count_distinct_request_id:
-          type: count_distinct
-          label: Total requests
-  - name: order_id
-    description: 'Unique Order ID that pertains to this request.'
-  - name: request_date
-    description: 'Timestamp of request submission by the user.'
-    meta:
-      dimension:
-        sql: >
-          timestamp_add(
-            ${TABLE}.request_date,
-            interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-          )
-  - name: reason
-    description: 'Determined cause of request.'
-    meta:
-      metrics:
-        count_of_reason:
-          type: count_distinct
-          label: Number of distinct reasons
-  - name: feedback_rating
-    description: 'Feedback rating out of ten as received by post-request user survey.'
-    meta:
-      metrics:
-        average_of_feedback_rating:
-          type: average
-          label: Average feedback rating
+      label: Support requests
+      joins:
+        - join: dbt_orders
+          sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+    columns:
+      - name: request_id
+        description: 'Unique ID of the request.'
+        meta:
+          metrics:
+            count_distinct_request_id:
+              type: count_distinct
+              label: Total requests
+          dimension:
+            type: string
+      - name: order_id
+        description: 'Unique Order ID that pertains to this request.'
+        meta:
+          dimension:
+            type: string
+      - name: request_date
+        description: 'Timestamp of request submission by the user.'
+        meta:
+          dimension:
+            sql: >
+              timestamp_add(
+                ${TABLE}.request_date,
+                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+              )
+            type: timestamp
+            time_intervals: [
+              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
+              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
+              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
+              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
+              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
+              'YEAR' ]
+      - name: reason
+        description: 'Determined cause of request.'
+        meta:
+          metrics:
+            count_of_reason:
+              type: count_distinct
+              label: Number of distinct reasons
+          dimension:
+            type: string
+      - name: feedback_rating
+        description: 'Feedback rating out of ten as received by post-request user survey.'
+        meta:
+          metrics:
+            average_of_feedback_rating:
+              type: average
+              label: Average feedback rating
+          dimension:
+            type: number
+      - name: order_date
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: basket_total
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: referrer
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: partner_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: partner_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: partner_commission
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: user_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: email
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: created_date
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: browser
+        description: ""
+        meta:
+          dimension:
+            type: string

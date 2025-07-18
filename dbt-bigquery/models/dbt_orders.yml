@@ -7,6 +7,7 @@ models:
       group_label: Sales
       required_attributes:
         can_access_orders: "true"
+      sql_filter: ${TABLE}.partner_name = ${lightdash.attributes.visible_partners} or ${lightdash.attributes.visible_partners} = 'All'
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'

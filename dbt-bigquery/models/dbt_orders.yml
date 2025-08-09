@@ -1,8 +1,16 @@
-version: 2
 models:
   - name: dbt_orders
     description: 'This table contains information on all the confirmed orders and their status'
     meta:
+      explores:
+        orders_users:
+          label: 'Garden of Sweden Orders w/Users'
+          description: All orders from Garden of Sweden, plus user info
+          sql_filter: ${partner_name} = 'Garden of Sweden'
+          joins:
+          - join: dbt_users
+            relationship: many-to-one
+            sql_on: ${dbt_orders.user_id} = ${dbt_users.user_id}
       label: Orders
       group_label: Sales
       required_attributes:
@@ -36,6 +44,11 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
+          additional_dimensions:
+            is_sunday:
+              description: true if the date is a sunday 
+              type: boolean 
+              sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
         meta:

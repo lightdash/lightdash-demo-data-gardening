@@ -1,0 +1,10 @@
+parameters:
+  orders_toggle:
+    label: "Dynamic order dimension"
+    description: "Swap between browser, partner, referrer"
+    options:
+      - "browser"
+      - "referrer"
+      - "partner_name"
+    default: "partner_name"
+    multiple: false

@@ -72,6 +72,16 @@ models:
               "Redwood Ranch": "#C70039"
               "Peat, Fruits and Leaves": "#581845"
             type: string
+          additional_dimensions:
+            dynamic_group: 
+              type: string 
+              description: Use this dimension to swap between referrer, partner_name,  browser
+              sql: 
+                case 
+                  when ${lightdash.parameters.orders_toggle} = 'partner' then ${partner_name}
+                  when ${lightdash.parameters.orders_toggle} = 'browsser' then ${browser}
+                  when ${lightdash.parameters.orders_toggle} = 'referrer' then ${referrer}
+                end 
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:

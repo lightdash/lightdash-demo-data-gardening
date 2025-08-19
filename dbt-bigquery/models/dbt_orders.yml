@@ -2,6 +2,16 @@ models:
   - name: dbt_orders
     description: 'This table contains information on all the confirmed orders and their status'
     meta:
+      parameters:
+        orders_dim_toggle:
+          label: "Browser/Partner/Referrer"
+          description: "Swap between browser, partner, referrer"
+          options:
+            - "browser"
+            - "referrer"
+            - "partner_name"
+          default: "partner_name"
+          multiple: false
       explores:
         orders_users:
           label: 'Garden of Sweden Orders w/Users'
@@ -72,6 +82,17 @@ models:
               "Redwood Ranch": "#C70039"
               "Peat, Fruits and Leaves": "#581845"
             type: string
+          additional_dimensions:
+            orders_dim: 
+              label: Browser/Partner/Referrer
+              type: string 
+              description: Use this dimension to swap between referrer, partner_name, browser
+              sql: 
+                case 
+                  when ${lightdash.parameters.orders_dim_toggle} = 'partner' then ${partner_name}
+                  when ${lightdash.parameters.orders_dim_toggle} = 'browser' then ${browser}
+                  when ${lightdash.parameters.orders_dim_toggle} = 'referrer' then ${referrer}
+                end 
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:

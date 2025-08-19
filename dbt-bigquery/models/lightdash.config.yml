@@ -1,0 +1,11 @@
+parameters:
+  # Parameter with simple options list
+  period_comparison:
+    label: "Period Comparison"
+    description: "Compare the selected period with the exact previous period"
+    options:
+      - "Last 30 Days"
+      - "Last 90 Days"
+      - "Last 180 Days"
+      - "Last 12 Months"
+    default: "Last 30 Days"

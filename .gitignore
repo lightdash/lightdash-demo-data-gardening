@@ -2,6 +2,7 @@
 .env
 .venv
 venv
+env
 
 # node
 node_modules/
@@ -13,3 +14,4 @@ node_modules/
 target/
 dbt_packages/
 logs/
+dbt_internal_packages/

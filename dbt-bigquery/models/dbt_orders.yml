@@ -3,16 +3,6 @@ models:
   - name: dbt_orders
     description: 'This table contains information on all the confirmed orders and their status'
     meta:
-      parameters:
-        orders_dim_toggle:
-          label: "Browser/Partner/Referrer"
-          description: "Swap between browser, partner, referrer"
-          options:
-            - "browser"
-            - "referrer"
-            - "partner_name"
-          default: "partner_name"
-          multiple: false
       explores:
         orders_users:
           label: 'Garden of Sweden Orders w/Users'

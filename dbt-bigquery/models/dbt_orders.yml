@@ -83,7 +83,12 @@ models:
                   when ${lightdash.parameters.orders_dim_toggle} = 'partner_name' then ${partner_name}
                   when ${lightdash.parameters.orders_dim_toggle} = 'browser' then ${browser}
                   when ${lightdash.parameters.orders_dim_toggle} = 'referrer' then ${referrer}
-                end 
+                end
+            selected_dim: 
+              label: Selected dimension
+              type: string
+              description: The dimension that is currently selected in the orders_dim_toggle parameter
+              sql: ${lightdash.parameters.orders_dim_toggle} 
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:

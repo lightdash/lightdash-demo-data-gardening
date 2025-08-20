@@ -78,9 +78,9 @@ models:
               label: Browser/Partner/Referrer
               type: string 
               description: Use this dimension to swap between referrer, partner_name, browser
-              sql: 
+              sql: |
                 case 
-                  when ${lightdash.parameters.orders_dim_toggle} = 'partner' then ${partner_name}
+                  when ${lightdash.parameters.orders_dim_toggle} = 'partner_name' then ${partner_name}
                   when ${lightdash.parameters.orders_dim_toggle} = 'browser' then ${browser}
                   when ${lightdash.parameters.orders_dim_toggle} = 'referrer' then ${referrer}
                 end 

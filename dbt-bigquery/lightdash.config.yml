@@ -9,12 +9,3 @@ parameters:
       - "Last 180 Days"
       - "Last 12 Months"
     default: "Last 30 Days"
-  orders_dim_toggle:
-    label: "Browser/Partner/Referrer"
-    description: "Swap between browser, partner, referrer"
-    options:
-      - "browser"
-      - "referrer"
-      - "partner_name"
-    default: "partner_name"
-    multiple: false

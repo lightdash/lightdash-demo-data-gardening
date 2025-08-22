@@ -3,6 +3,16 @@ models:
   - name: dbt_orders
     description: 'This table contains information on all the confirmed orders and their status'
     meta:
+      parameters:
+        orders_dim_toggle:
+              label: "Browser/Partner/Referrer"
+              description: "Swap between browser, partner, referrer"
+              options:
+                - "browser"
+                - "referrer"
+                - "partner_name"
+              default: "partner_name"
+              multiple: false
       explores:
         orders_users:
           label: 'Garden of Sweden Orders w/Users'
@@ -80,15 +90,15 @@ models:
               description: Use this dimension to swap between referrer, partner_name, browser
               sql: |
                 case 
-                  when ${lightdash.parameters.orders_dim_toggle} = 'partner_name' then ${partner_name}
-                  when ${lightdash.parameters.orders_dim_toggle} = 'browser' then ${browser}
-                  when ${lightdash.parameters.orders_dim_toggle} = 'referrer' then ${referrer}
+                  when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'partner_name' then ${partner_name}
+                  when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'browser' then ${browser}
+                  when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'referrer' then ${referrer}
                 end
             selected_dim: 
               label: Selected dimension
               type: string
               description: The dimension that is currently selected in the orders_dim_toggle parameter
-              sql: ${lightdash.parameters.orders_dim_toggle} 
+              sql: ${lightdash.parameters.dbt_orders.orders_dim_toggle} 
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:

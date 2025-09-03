@@ -1,32 +1,34 @@
 version: 2
 models:
   - name: dbt_orders
-    description: 'This table contains information on all the confirmed orders and their status'
+    description: 'This table contains information on all the confirmed orders and
+      their status'
     meta:
       parameters:
         orders_dim_toggle:
-              label: "Browser/Partner/Referrer"
-              description: "Swap between browser, partner, referrer"
-              options:
-                - "browser"
-                - "referrer"
-                - "partner_name"
-              default: "partner_name"
-              multiple: false
+          label: "Browser/Partner/Referrer"
+          description: "Swap between browser, partner, referrer"
+          options:
+            - "browser"
+            - "referrer"
+            - "partner_name"
+          default: "partner_name"
+          multiple: false
       explores:
         orders_users:
           label: 'Garden of Sweden Orders w/Users'
           description: All orders from Garden of Sweden, plus user info
           sql_filter: ${partner_name} = 'Garden of Sweden'
           joins:
-          - join: dbt_users
-            relationship: many-to-one
-            sql_on: ${dbt_orders.user_id} = ${dbt_users.user_id}
+            - join: dbt_users
+              relationship: many-to-one
+              sql_on: ${dbt_orders.user_id} = ${dbt_users.user_id}
       label: Orders
       group_label: Sales
       required_attributes:
         can_access_orders: "true"
-      sql_filter: ${TABLE}.partner_name = ${lightdash.attributes.visible_partners} or ${lightdash.attributes.visible_partners} = 'All'
+      sql_filter: ${TABLE}.partner_name = ${lightdash.attributes.visible_partners} or
+        ${lightdash.attributes.visible_partners} = 'All'
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'
@@ -35,20 +37,34 @@ models:
             count_distinct_order_id:
               type: count_distinct
               label: 'Order count'
-              description: 'This metric counts unique orders based on the Order ID field from the Orders table.'
+              description: 'This metric counts unique orders based on the Order ID field from
+                the Orders table.'
           dimension:
             type: string
       - name: order_date
         description: 'Timestamp of order placement by user.'
         meta:
           dimension:
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals:
+              [
+                'HOUR',
+                'MINUTE_OF_HOUR_NUM',
+                'HOUR_OF_DAY_NUM',
+                'DAY',
+                'DAY_OF_WEEK_INDEX',
+                'DAY_OF_MONTH_NUM',
+                'DAY_OF_YEAR_NUM',
+                'DAY_OF_WEEK_NAME',
+                'WEEK',
+                'WEEK_NUM',
+                'MONTH',
+                'MONTH_NUM',
+                'MONTH_NAME',
+                'QUARTER',
+                'QUARTER_NUM',
+                'QUARTER_NAME',
+                'YEAR'
+              ]
             sql: >
               timestamp_add(
                 ${TABLE}.order_date,
@@ -57,8 +73,8 @@ models:
             type: timestamp
           additional_dimensions:
             is_sunday:
-              description: true if the date is a sunday 
-              type: boolean 
+              description: true if the date is a sunday
+              type: boolean
               sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
@@ -84,9 +100,9 @@ models:
               "Peat, Fruits and Leaves": "#581845"
             type: string
           additional_dimensions:
-            orders_dim: 
+            orders_dim:
               label: Browser/Partner/Referrer
-              type: string 
+              type: string
               description: Use this dimension to swap between referrer, partner_name, browser
               sql: |
                 case 
@@ -94,18 +110,20 @@ models:
                   when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'browser' then ${browser}
                   when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'referrer' then ${referrer}
                 end
-            selected_dim: 
+            selected_dim:
               label: Selected dimension
               type: string
-              description: The dimension that is currently selected in the orders_dim_toggle parameter
-              sql: ${lightdash.parameters.dbt_orders.orders_dim_toggle} 
+              description: The dimension that is currently selected in the orders_dim_toggle
+                parameter
+              sql: ${lightdash.parameters.dbt_orders.orders_dim_toggle}
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:
           dimension:
             type: number
       - name: currency
-        description: 'Three letter international currency code for the currency the order was paid with.'
+        description: 'Three letter international currency code for the currency the
+          order was paid with.'
         meta:
           dimension:
             type: string
@@ -119,14 +137,16 @@ models:
             sum_of_basket_total:
               type: sum
               format: 'usd'
-              description: 'Sums the basket total for orders in your query, grouped by the dimensions you have chosen.'
+              description: 'Sums the basket total for orders in your query, grouped by the
+                dimensions you have chosen.'
             average_of_basket_total:
               type: average
               format: 'usd'
               description: 'Takes the average of basket total for orders in your query,
                 grouped by the dimensions you have chosen.'
       - name: profit
-        description: 'Sum of item profits within the basket. Thus, the total profit of the order.'
+        description: 'Sum of item profits within the basket. Thus, the total profit of
+          the order.'
         meta:
           dimension:
             format: 'usd'
@@ -135,7 +155,8 @@ models:
             sum_of_profit:
               type: sum
               format: 'usd'
-              description: 'Sums the profit on all orders in your query, grouped by the dimensions you have chosen.'
+              description: 'Sums the profit on all orders in your query, grouped by the
+                dimensions you have chosen.'
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:
@@ -148,7 +169,15 @@ models:
             count_distinct_user_id:
               type: count_distinct
               label: 'Total unique users'
-              description: 'Counts the number of unique users (customers) with orders based on their User ID.'
+              description: 'Counts the number of unique users (customers) with orders based on
+                their User ID.'
+            user_id_total_facebook_users:
+              label: total_facebook_users
+              description: Count distinct of User id on the table Orders with filters
+                dbt_orders.referrer
+              type: count_distinct
+              filters:
+                - referrer: facebook
           dimension:
             type: string
       - name: email

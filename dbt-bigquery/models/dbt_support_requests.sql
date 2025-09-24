@@ -5,12 +5,19 @@
 }}
 
 SELECT 
-  CASt(req.request_id AS STRING) AS request_id,
+  CAST(req.request_id AS STRING) AS request_id,
   CAST(req.order_id AS STRING) AS order_id,
-  req.request_date,
+  -- Calculate days between current timestamp and 2025-02-12 (the max order_date in our dataset), then add those days to urequest_date
+  -- This ensures that the demo data always appears recent & uses dbt macros to ensure this works across data warehouses
+  -- Note that this requires regular builds to keep the data fresh
+  {{ dbt.dateadd("day", 
+    dbt.datediff("'2025-02-12'", dbt.current_timestamp(), "day"), 
+    "req.request_date") }} as request_date,
   req.reason,
   req.feedback_rating,
-  ord.order_date, 
+  {{ dbt.dateadd("day", 
+    dbt.datediff("'2025-02-12'", dbt.current_timestamp(), "day"), 
+    "ord.order_date") }} as order_date,
   ord.basket_total,
   ord.profit,
   ord.referrer,

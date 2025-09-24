@@ -1,11 +1,27 @@
+spotlight:
+  default_visibility: show
+  categories:
+    PoP:
+      label: 'Period over Period Metrics'
+      color: 'blue'
 parameters:
   # Parameter with simple options list
-  period_comparison:
-    label: "Period Comparison"
+  comparison_period:
+    label: "Select Period to Compare"
+    type: string
     description: "Compare the selected period with the exact previous period"
     options:
-      - "Last 30 Days"
-      - "Last 90 Days"
-      - "Last 180 Days"
-      - "Last 12 Months"
-    default: "Last 30 Days"
+      - "Past 1 week"
+      - "Past 1 month"
+      - "Past 3 months"
+      - "Past 6 months"
+      - "Past 1 year"
+    default: "Past 1 week"
+  partner_select: 
+    label: select a partner
+    type: string
+    description: filter partners
+    options_from_dimension: 
+      model: dbt_orders
+      dimension: partner_name
+    default: "All"

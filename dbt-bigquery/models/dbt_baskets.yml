@@ -104,11 +104,6 @@ models:
         meta:
           dimension:
             label: 'Order date'
-            sql: >
-              timestamp_add(
-                ${TABLE}.order_date,
-                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-              )
             type: timestamp
             time_intervals: [
               'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',

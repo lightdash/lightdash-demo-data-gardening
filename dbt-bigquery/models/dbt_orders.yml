@@ -5,14 +5,13 @@ models:
     meta:
       parameters:
         orders_dim_toggle:
-              label: "Browser/Partner/Referrer"
-              description: "Swap between browser, partner, referrer"
-              options:
-                - "browser"
-                - "referrer"
-                - "partner_name"
-              default: "partner_name"
-              multiple: false
+          description: "Swap between browser, partner, referrer"
+          options:
+            - "browser"
+            - "referrer"
+            - "partner_name"
+          default: "partner_name"
+          multiple: false
       explores:
         orders_users:
           label: 'Garden of Sweden Orders w/Users'
@@ -49,17 +48,60 @@ models:
               'MONTH', 'MONTH_NUM', 'MONTH_NAME',
               'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
               'YEAR' ]
-            sql: >
-              timestamp_add(
-                ${TABLE}.order_date,
-                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-              )
             type: timestamp
           additional_dimensions:
             is_sunday:
               description: true if the date is a sunday 
               type: boolean 
               sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
+            interval: 
+              type: number
+              sql: | 
+                case 
+                    when ${lightdash.parameters.comparison_period} = 'Past 1 week' then 7
+                    when ${lightdash.parameters.comparison_period} = 'Past 1 month' then 30
+                    when ${lightdash.parameters.comparison_period} = 'Past 3 months' then 90
+                    when ${lightdash.parameters.comparison_period} = 'Past 6 months' then 180
+                    when ${lightdash.parameters.comparison_period} = 'Past year' then 365
+                end
+              hidden: true
+            selected_period: 
+              type: string
+              groups: PoP
+              sql: ${lightdash.parameters.comparison_period}
+            current_period_start:  
+              type: date
+              sql: date_sub(current_date(), interval ${interval} day)
+              groups: PoP
+              time_intervals: ['DAY']
+              description: The start date of the current period.
+            previous_period_start:
+              type: date
+              sql:   date_sub(${current_period_start}, interval ${interval} day)
+              groups: PoP
+              time_intervals: ['DAY']
+              description: The start date of the previous period.
+            is_current_period: 
+              type: boolean
+              sql: ${TABLE}.order_date >= ${current_period_start_day} AND ${TABLE}.order_date < current_date
+              groups: PoP
+              description: Indicates whether the event is in the current period.
+            is_previous_period: 
+              type: boolean
+              sql: ${TABLE}.order_date >= ${previous_period_start_day} AND ${TABLE}.order_date < current_date
+              groups: PoP
+              description: Indicates whether the event is in the previous period.
+            comparison_period:
+              type: string
+              sql: | 
+                CASE
+                    WHEN ${is_current_period} THEN 'Current Period'
+                    WHEN ${is_previous_period} THEN 'Previous Period'
+                    ELSE 'Not in time period'
+                END
+              groups: PoP
+              description: Indicates whether the event is in the current or previous period.
+
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
         meta:
@@ -163,11 +205,6 @@ models:
         description: 'Timestamp of user creation.'
         meta:
           dimension:
-            sql: >
-              timestamp_add(
-                ${TABLE}.user_created_date,
-                interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
-              )
             type: timestamp
       - name: browser
         description: 'Web browser that the user used to place the order.'

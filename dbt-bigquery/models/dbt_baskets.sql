@@ -6,7 +6,12 @@ SELECT
   prd.price_currency AS currency,
   bsk.price_amount AS item_price,
   bsk.basket_total,
-  ord.order_date,
+  -- Calculate days between current timestamp and 2025-02-12 (the max date in our dataset), then add those days to order_date
+  -- This ensures that the demo data always appears recent & uses dbt macros to ensure this works across data warehouses
+  -- Note that this requires regular builds to keep the data fresh
+  {{ dbt.dateadd("day", 
+    dbt.datediff("'2025-02-12'", dbt.current_timestamp(), "day"), 
+    "ord.order_date") }} as order_date,
   ord.profit,
   (
     bsk.price_amount * prt.partner_commission

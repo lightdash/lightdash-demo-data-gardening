@@ -26,6 +26,12 @@ models:
           dimension:
             group: [ 'product_details', 'item_details' ]
             type: string
+          metrics:
+            item_id_count_distinct_of_item_id:
+              label: Count distinct of Item id
+              description: "Count distinct of Item id on the table Baskets "
+              type: count_distinct
+              filters: []
       - name: sku
         description: 'Unique Stock Keeping Unit code.'
         meta:
@@ -80,7 +86,8 @@ models:
               type: average
               label: 'Average item profit'
               format: 'usd'
-              description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
+              description: 'The average of item profit. Apply this metric by week or month to
+                see our average profit per item over a given time period'
               round: 2
       - name: basket_total
         description: 'Sum of item prices for each item within the basket.'
@@ -97,7 +104,8 @@ models:
               type: average
               label: 'Average basket total'
               format: 'usd'
-              description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+              description: 'The average of total basket values. Apply this metric by week or
+                month to see our average basket total over a given time period'
               round: 2
       - name: order_date
         description: 'Timestamp of order placement by the user.'
@@ -110,15 +118,29 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals:
+              [
+                'HOUR',
+                'MINUTE_OF_HOUR_NUM',
+                'HOUR_OF_DAY_NUM',
+                'DAY',
+                'DAY_OF_WEEK_INDEX',
+                'DAY_OF_MONTH_NUM',
+                'DAY_OF_YEAR_NUM',
+                'DAY_OF_WEEK_NAME',
+                'WEEK',
+                'WEEK_NUM',
+                'MONTH',
+                'MONTH_NUM',
+                'MONTH_NAME',
+                'QUARTER',
+                'QUARTER_NUM',
+                'QUARTER_NAME',
+                'YEAR'
+              ]
       - name: profit
-        description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
+        description: 'Sum of item profits within the basket. Thus, the total profit of
+          the basket.'
         meta:
           dimension:
             format: 'usd'

@@ -1,0 +1,67 @@
+version: 2
+models:
+  - name: example
+    description: SQL model for Example
+    meta:
+      label: Example
+    columns:
+      - name: email
+        meta:
+          dimension:
+            type: string
+      - name: profit
+        meta:
+          dimension:
+            type: number
+      - name: browser
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        meta:
+          dimension:
+            type: string
+      - name: currency
+        meta:
+          dimension:
+            type: string
+      - name: order_id
+        meta:
+          dimension:
+            type: string
+      - name: referrer
+        meta:
+          dimension:
+            type: string
+      - name: order_date
+        meta:
+          dimension:
+            type: timestamp
+      - name: partner_id
+        meta:
+          dimension:
+            type: string
+      - name: basket_total
+        meta:
+          dimension:
+            type: number
+      - name: partner_name
+        meta:
+          dimension:
+            type: string
+      - name: shipping_city
+        meta:
+          dimension:
+            type: string
+      - name: shipping_country
+        meta:
+          dimension:
+            type: string
+      - name: user_created_date
+        meta:
+          dimension:
+            type: timestamp
+      - name: partner_commission
+        meta:
+          dimension:
+            type: number

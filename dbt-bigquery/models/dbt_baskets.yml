@@ -117,6 +117,16 @@ models:
               'MONTH', 'MONTH_NUM', 'MONTH_NAME',
               'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
               'YEAR' ]
+          additional_dimensions:
+            order_date_is_in_future:
+              type: boolean
+              description: True if order date is in the future, otherwise False
+              sql: |
+                case 
+                  when ${TABLE}.order_date > current_date() 
+                    then true
+                  else false
+                end
       - name: profit
         description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
         meta:

@@ -113,28 +113,28 @@ models:
         description: 'Sum of item prices for each item within the basket.'
         meta:
           dimension:
-            format: 'usd'
+            format: '[$$]#,##0'
             type: number
           metrics:
             sum_of_basket_total:
               type: sum
-              format: 'usd'
+              format: '[$$]#,##0'
               description: 'Sums the basket total for orders in your query, grouped by the dimensions you have chosen.'
             average_of_basket_total:
               type: average
-              format: 'usd'
+              format: '[$$]#,##0'
               description: 'Takes the average of basket total for orders in your query,
                 grouped by the dimensions you have chosen.'
       - name: profit
         description: 'Sum of item profits within the basket. Thus, the total profit of the order.'
         meta:
           dimension:
-            format: 'usd'
+            format: '[$$]#,##0'
             type: number
           metrics:
             sum_of_profit:
               type: sum
-              format: 'usd'
+              format: '[$$]#,##0'
               description: 'Sums the profit on all orders in your query, grouped by the dimensions you have chosen.'
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'

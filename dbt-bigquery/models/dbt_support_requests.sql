@@ -4,25 +4,31 @@
   )
 }}
 
-SELECT 
-  CASt(req.request_id AS STRING) AS request_id,
-  CAST(req.order_id AS STRING) AS order_id,
-  req.request_date,
-  req.reason,
-  req.feedback_rating,
-  ord.order_date, 
-  ord.basket_total,
-  ord.profit,
-  ord.referrer,
-  CAST(ord.partner_id AS STRING) AS partner_id,
-  prt.partner_name,
-  prt.partner_commission,
-  CAST(ord.user_id AS STRING) AS user_id,
-  usr.email,
-  usr.created_date,
-  usr.browser
-FROM {{ ref('support_requests') }} req
-  LEFT JOIN {{ ref('orders') }} ord ON req.order_id = ord.order_id
-  LEFT JOIN {{ ref('partners') }} prt ON ord.partner_id = prt.partner_id
-  LEFT JOIN {{ ref('users') }} usr ON ord.user_id = usr.user_id
-ORDER BY CAST(request_id AS int) ASC
+select 
+  cast(requests.request_id as string) as request_id,
+  cast(requests.order_id as string) as order_id,
+  requests.request_date,
+  requests.reason,
+  requests.feedback_rating,
+  orders.order_date, 
+  orders.basket_total,
+  orders.profit,
+  orders.referrer,
+  cast(orders.partner_id as string) as partner_id,
+  partners.partner_name,
+  partners.partner_commission,
+  cast(orders.user_id as string) as user_id,
+  users.email,
+  users.created_date,
+  users.browser
+
+from {{ ref('support_requests') }} as requests
+
+  left join {{ ref('orders') }} as orders
+    on requests.order_id = orders.order_id
+
+  left join {{ ref('partners') }} as partners 
+    on orders.partner_id = partners.partner_id
+
+  left join {{ ref('users') }} as users
+    on orders.user_id = users.user_id

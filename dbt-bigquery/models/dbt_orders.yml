@@ -1,4 +1,3 @@
-version: 2
 models:
   - name: dbt_orders
     description: 'This table contains information on all the confirmed orders and their status'
@@ -13,20 +12,15 @@ models:
                 - "partner_name"
               default: "partner_name"
               multiple: false
-      explores:
-        orders_users:
-          label: 'Garden of Sweden Orders w/Users'
-          description: All orders from Garden of Sweden, plus user info
-          sql_filter: ${partner_name} = 'Garden of Sweden'
-          joins:
-          - join: dbt_users
-            relationship: many-to-one
-            sql_on: ${dbt_orders.user_id} = ${dbt_users.user_id}
+        date_range:
+          label: "Date Range"
+          description: "Choose a date range"
+          options:
+            - "yesterday"
+            - "last 7 days"
+            - "last 30 days"
+          default: "last 7 days"
       label: Orders
-      group_label: Sales
-      required_attributes:
-        can_access_orders: "true"
-      sql_filter: ${TABLE}.partner_name = ${lightdash.attributes.visible_partners} or ${lightdash.attributes.visible_partners} = 'All'
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'
@@ -60,6 +54,37 @@ models:
               description: true if the date is a sunday 
               type: boolean 
               sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
+            order_date_period:
+              description: Date period (current period or previous period or previous year or out of range) chosen by the date_range parameter
+              type: string
+              sql: >
+                case
+                  -- current period
+                  when (
+                    (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(current_date(), interval 1 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(current_date(), interval 7 day) and date_sub(current_date(), interval 1 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(current_date(), interval 30 day) and date_sub(current_date(), interval 1 day))
+                  )
+                  then 'current period'
+
+                  -- previous period
+                  when (
+                    (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(current_date(), interval 2 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(current_date(), interval 14 day) and date_sub(current_date(), interval 8 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(current_date(), interval 60 day) and date_sub(current_date(), interval 31 day))
+                  )
+                  then 'previous period'
+
+                  -- previous year
+                  when (
+                    (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(date_sub(current_date(), interval 1 year), interval 1 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(date_sub(current_date(), interval 1 year), interval 7 day) and date_sub(date_sub(current_date(), interval 1 year), interval 1 day)) or
+                    (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(date_sub(current_date(), interval 1 year), interval 30 day) and date_sub(date_sub(current_date(), interval 1 year), interval 1 day))
+                  )
+                  then 'previous year'
+
+                  else 'out of range'
+                end
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
         meta:
@@ -77,11 +102,15 @@ models:
               - url: https://docs.lightdash.com/references/dimensions#urls
                 label: View partner account in Salesforce
             colors:
-              "Trowels R Us": "#DAF7A6"
-              "Garden of Sweden": "#FFC300"
-              "Plant Paradise": "#FF5733"
-              "Redwood Ranch": "#C70039"
-              "Peat, Fruits and Leaves": "#581845"
+              "Redwood Ranch": "#5E4CFF"
+              "Happy Harvesters": "#DBFE95"
+              "Peat, Fruits and Leaves": "#8001FE"
+              "Sprout Society": "#30CF87"
+              "Roots & Shoots": "#ED651C"
+              "Trowels R Us": "#FFC54D"
+              "Plant Paradise": "#FF0E53"
+              "Garden of Sweden": "#D1CCFF"
+              "Potted Paradise": "#EDFBD0"
             type: string
           additional_dimensions:
             orders_dim: 

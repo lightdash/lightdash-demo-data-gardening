@@ -1,10 +1,10 @@
-partner_id,partner_name,partner_commission
-1,Plant Paradise,0.18
-2,Garden of Sweden,0.14
-3,"Peat, Fruits and Leaves",0.06
-4,Redwood Ranch,0.22
-5,Trowels R Us,0.08
-6,Potted Paradise,0.17
-7,Sprout Society,0.07
-8,Roots & Shoots,0.11
-9,Happy Harvesters,0.03
+partner_id,partner_name,partner_commission,partner_logo
+1,Plant Paradise,0.18,"https://docs.lightdash.com/images/partners/plant.png"
+2,Garden of Sweden,0.14,"https://docs.lightdash.com/images/partners/sweden.png"
+3,"Peat, Fruits and Leaves",0.06,"https://docs.lightdash.com/images/partners/peat.png"
+4,Redwood Ranch,0.22,"https://docs.lightdash.com/images/partners/redwood.png"
+5,Trowels R Us,0.08,"https://docs.lightdash.com/images/partners/trowels.png"
+6,Potted Paradise,0.17,"https://docs.lightdash.com/images/partners/potted.png"
+7,Sprout Society,0.07,"https://docs.lightdash.com/images/partners/sprout.png"
+8,Roots & Shoots,0.11,"https://docs.lightdash.com/images/partners/roots.png"
+9,Happy Harvesters,0.03,"https://docs.lightdash.com/images/partners/happy.png"

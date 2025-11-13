@@ -10,5 +10,9 @@
     {
         "name": "partner_commission",
         "type": "FLOAT64"
+    },
+    {
+        "name": "partner_logo",
+        "type": "STRING"
     }
 ]

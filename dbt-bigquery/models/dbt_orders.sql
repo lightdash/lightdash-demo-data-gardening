@@ -3,6 +3,7 @@ select
   orders.order_date,
   cast(orders.partner_id as string) as partner_id,
   partners.partner_name,
+  partners.partner_logo,
   partners.partner_commission,
   orders.currency,
   orders.basket_total,

@@ -152,6 +152,9 @@ models:
             type: string
             image:
               url: "${value.raw}"
+              width: 128
+              height: 128
+              fit: cover
       - name: partner_commission
         description: 'Commission rate the specified parter charges, as a decimal fraction.'
         meta:

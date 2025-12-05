@@ -110,7 +110,7 @@ models:
                   else 'out of range'
                 end
             order_date_custom_period:
-              description: Date period bucket based on custom Starte date and End date parameters
+              description: Date period bucket based on custom Start date and End date parameters
               type: string
               sql: |
                 case

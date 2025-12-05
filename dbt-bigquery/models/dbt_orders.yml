@@ -3,6 +3,7 @@ models:
     description: 'This table contains information on all the confirmed orders and
       their status'
     meta:
+      label: Orders
       parameters:
         orders_dim_toggle:
           label: "Browser/Partner/Referrer"
@@ -21,7 +22,14 @@ models:
             - "last 7 days"
             - "last 30 days"
           default: "last 7 days"
-      label: Orders
+        custom_range_start:
+          label: "Start of custom date range"
+          description: "The start of the custom date range"
+          type: date
+        custom_range_end:
+          label: "End of custom date range"
+          description: "The end of the custom date range"
+          type: date
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'
@@ -99,6 +107,47 @@ models:
                   )
                   then 'previous year'
 
+                  else 'out of range'
+                end
+            order_date_custom_period:
+              description: Date period bucket based on custom Start date and End date parameters
+              type: string
+              sql: |
+                case
+                  --invalid date range 
+                  when ${lightdash.parameters.dbt_orders.custom_range_start} is null
+                    or ${lightdash.parameters.dbt_orders.custom_range_end} is null
+                    or ${lightdash.parameters.dbt_orders.custom_range_start} > ${lightdash.parameters.dbt_orders.custom_range_end}
+                    then 'invalid date range'
+
+                  --current period 
+                  when ${order_date_day} >= ${lightdash.parameters.dbt_orders.custom_range_start} 
+                    and ${order_date_day} <= ${lightdash.parameters.dbt_orders.custom_range_end}
+                    then 'current period'
+
+                  --previous period
+                  when ${order_date_day} between date_sub(
+                    ${lightdash.parameters.dbt_orders.custom_range_start},
+                    interval (date_diff(
+                      ${lightdash.parameters.dbt_orders.custom_range_end},
+                      ${lightdash.parameters.dbt_orders.custom_range_start},
+                      day
+                    ) + 1) day
+                  ) and date_sub(
+                    ${lightdash.parameters.dbt_orders.custom_range_end},
+                    interval (date_diff(
+                      ${lightdash.parameters.dbt_orders.custom_range_end},
+                      ${lightdash.parameters.dbt_orders.custom_range_start},
+                      day
+                    ) + 1) day
+                  )
+                    then 'previous period'
+
+                  --previous year
+                  when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
+                    and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
+                    then 'previous year'
+  
                   else 'out of range'
                 end
       - name: partner_id

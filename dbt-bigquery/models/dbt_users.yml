@@ -27,13 +27,26 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals:
+              [
+                'HOUR',
+                'MINUTE_OF_HOUR_NUM',
+                'HOUR_OF_DAY_NUM',
+                'DAY',
+                'DAY_OF_WEEK_INDEX',
+                'DAY_OF_MONTH_NUM',
+                'DAY_OF_YEAR_NUM',
+                'DAY_OF_WEEK_NAME',
+                'WEEK',
+                'WEEK_NUM',
+                'MONTH',
+                'MONTH_NUM',
+                'MONTH_NAME',
+                'QUARTER',
+                'QUARTER_NUM',
+                'QUARTER_NAME',
+                'YEAR'
+              ]
       - name: email
         description: 'Email address of the user.'
         meta:
@@ -58,5 +71,10 @@ models:
             count_distinct_of_user_id:
               type: count_distinct
               label: Total users
+            user_id_count_of_user_id:
+              label: Count of User id
+              description: "Count of User id on the table Users "
+              type: count
+              filters: []
           dimension:
             type: string

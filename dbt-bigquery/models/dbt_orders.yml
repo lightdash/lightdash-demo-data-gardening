@@ -110,7 +110,8 @@ models:
                   else 'out of range'
                 end
             order_date_custom_period:
-              description: Date period bucket based on custom Start date and End date parameters
+              description: Date period bucket based on custom Start date and End date
+                parameters
               type: string
               sql: |
                 case
@@ -147,7 +148,7 @@ models:
                   when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
                     and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
                     then 'previous year'
-  
+
                   else 'out of range'
                 end
       - name: partner_id
@@ -259,6 +260,11 @@ models:
               label: 'Total unique users'
               description: 'Counts the number of unique users (customers) with orders based on
                 their User ID.'
+            user_id_count_of_users:
+              label: count of users
+              description: "Count distinct of User id on the table Orders "
+              type: count_distinct
+              filters: []
           dimension:
             type: string
       - name: email

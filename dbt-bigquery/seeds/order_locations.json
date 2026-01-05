@@ -1,0 +1,14 @@
+[
+    {
+        "name": "order_id",
+        "type": "STRING"
+    },
+    {
+        "name": "latitude",
+        "type": "FLOAT64"
+    },
+    {
+        "name": "longitude",
+        "type": "FLOAT64"
+    }
+]

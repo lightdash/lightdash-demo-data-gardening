@@ -1,0 +1,23 @@
+models:
+  - name: dbt_order_locations
+    description: 'This table contains geographic location data (latitude and longitude) for orders'
+    meta:
+      label: Order Locations
+    columns:
+      - name: order_id
+        description: 'Unique Order ID for the order.'
+        meta:
+          dimension:
+            type: string
+      - name: latitude
+        description: 'Latitude coordinate of the order location'
+        meta:
+          dimension:
+            type: number
+            round: 4
+      - name: longitude
+        description: 'Longitude coordinate of the order location'
+        meta:
+          dimension:
+            type: number
+            round: 4

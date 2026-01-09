@@ -231,7 +231,7 @@ models:
               format: '[$$]#,##0'
               description: 'Total sales revenue from all orders.'
               spotlight:
-                visibility: show
+                visibility: hide
                 categories:
                   - verified
             average_of_basket_total:

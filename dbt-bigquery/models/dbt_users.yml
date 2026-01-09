@@ -53,6 +53,8 @@ models:
               type: count_distinct
               label: Registered Emails
               description: 'Number of unique email addresses on file.'
+              spotlight:
+                visibility: hide
       - name: shipping_address
         description: 'Full shipping address of the user, as an object.'
         meta:

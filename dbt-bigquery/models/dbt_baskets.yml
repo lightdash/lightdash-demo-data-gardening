@@ -39,6 +39,12 @@ models:
           metrics:
             count_of_product_name:
               type: count
+              label: 'Product Count'
+              description: 'Number of product items in baskets. Every plant finds a home!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
       - name: currency
         description: 'Three letter international currency code of the item price.'
         meta:
@@ -73,12 +79,22 @@ models:
           metrics:
             sum_of_item_profit:
               type: sum
+              label: 'Item Profit'
               format: '[$$]#,##0'
+              description: 'Total profit from individual items sold. See which plants are most profitable!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
             average_of_item_profit:
               type: average
-              label: 'Average item profit'
+              label: 'Average Item Profit'
               format: '[$$]#,##0'
-              description: 'The average of item profit. Apply this metric by week or month to see our average profit per item over a given time period'
+              description: 'Average profit earned per item sold. Track your margins as they grow!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
       - name: basket_total
         description: 'Sum of item prices for each item within the basket.'
         meta:
@@ -88,13 +104,22 @@ models:
           metrics:
             sum_of_basket_total:
               type: sum
-              label: 'Basket total'
+              label: 'Revenue'
               format: '[$$]#,##0'
+              description: 'Total sales revenue from all baskets. Seeds of success!'
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
             average_of_basket_total:
               type: average
-              label: 'Average basket total'
+              label: 'Average Order Value'
               format: '[$$]#,##0'
-              description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+              description: 'Average revenue per basket. What customers typically spend in a single visit.'
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
       - name: order_date
         description: 'Timestamp of order placement by the user.'
         meta:

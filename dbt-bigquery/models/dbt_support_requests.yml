@@ -14,7 +14,12 @@ models:
           metrics:
             count_distinct_request_id:
               type: count_distinct
-              label: Total requests
+              label: Support Tickets
+              description: 'Total number of support requests submitted by customers.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
           dimension:
             type: string
       - name: order_id
@@ -45,7 +50,8 @@ models:
           metrics:
             count_of_reason:
               type: count_distinct
-              label: Number of distinct reasons
+              label: Unique Request Reasons
+              description: 'Number of distinct support request categories. Know what your customers need help with!'
           dimension:
             type: string
       - name: feedback_rating
@@ -54,7 +60,8 @@ models:
           metrics:
             average_of_feedback_rating:
               type: average
-              label: Average feedback rating
+              label: Customer Satisfaction Score
+              description: 'Average customer satisfaction rating from post-support surveys. Keep your customer happiness blooming!'
           dimension:
             type: number
       - name: order_date

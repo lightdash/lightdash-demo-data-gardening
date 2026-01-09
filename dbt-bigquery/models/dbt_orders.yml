@@ -37,9 +37,12 @@ models:
           metrics:
             count_distinct_order_id:
               type: count_distinct
-              label: 'Order count'
-              description: 'This metric counts unique orders based on the Order ID field from
-                the Orders table.'
+              label: 'Order Volume'
+              description: 'Total number of orders placed by customers. Watch your garden grow!'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
           dimension:
             type: string
       - name: order_date
@@ -224,14 +227,22 @@ models:
           metrics:
             sum_of_basket_total:
               type: sum
+              label: 'Revenue'
               format: '[$$]#,##0'
-              description: 'Sums the basket total for orders in your query, grouped by the
-                dimensions you have chosen.'
+              description: 'Total sales revenue from all orders.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
             average_of_basket_total:
               type: average
+              label: 'Average Order Value'
               format: '[$$]#,##0'
-              description: 'Takes the average of basket total for orders in your query,
-                grouped by the dimensions you have chosen.'
+              description: 'Average revenue per order. How much customers spend per visit to the garden center.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
       - name: profit
         description: 'Sum of item profits within the basket. Thus, the total profit of
           the order.'
@@ -242,9 +253,13 @@ models:
           metrics:
             sum_of_profit:
               type: sum
+              label: 'Profit'
               format: '[$$]#,##0'
-              description: 'Sums the profit on all orders in your query, grouped by the
-                dimensions you have chosen.'
+              description: 'Total profit from all orders. The fruits of your labor!'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:
@@ -256,9 +271,12 @@ models:
           metrics:
             count_distinct_user_id:
               type: count_distinct
-              label: 'Total unique users'
-              description: 'Counts the number of unique users (customers) with orders based on
-                their User ID.'
+              label: 'Unique Customers'
+              description: 'Number of unique customers who placed orders.'
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
           dimension:
             type: string
       - name: email

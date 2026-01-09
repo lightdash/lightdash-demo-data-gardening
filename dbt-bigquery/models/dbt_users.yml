@@ -10,7 +10,13 @@ models:
       metrics:
         diff_emails_to_users:
           type: number
+          label: Email-User Variance
+          description: 'Difference between registered emails and user accounts. Useful for identifying data quality issues.'
           sql: ${count_distinct_email} - ${count_distinct_of_user_id}
+          spotlight:
+            visibility: show
+            categories:
+              - beta
     columns:
       - name: browser
         description: 'Web browser that the user used to place the order.'
@@ -45,7 +51,8 @@ models:
           metrics:
             count_distinct_email:
               type: count_distinct
-              label: Total emails
+              label: Registered Emails
+              description: 'Number of unique email addresses on file.'
       - name: shipping_address
         description: 'Full shipping address of the user, as an object.'
         meta:
@@ -57,6 +64,11 @@ models:
           metrics:
             count_distinct_of_user_id:
               type: count_distinct
-              label: Total users
+              label: Total Customers
+              description: 'Total number of registered customer accounts. Your community of plant lovers!'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
           dimension:
             type: string

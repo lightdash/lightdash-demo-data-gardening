@@ -260,6 +260,13 @@ models:
                 visibility: show
                 categories:
                   - verified
+            avg_profit:
+              type: average
+              label: 'Average Profit per Order'
+              format: '[$$]#,##0'
+              description: 'Average profit earned per order. Track your margins as they grow!'
+              spotlight:
+                visibility: hide
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:

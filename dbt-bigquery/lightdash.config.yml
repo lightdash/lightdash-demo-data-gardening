@@ -9,3 +9,9 @@ parameters:
       - "Last 180 Days"
       - "Last 12 Months"
     default: "Last 30 Days"
+
+spotlight:
+  categories:
+    verified:
+      label: Verified
+      color: "green"

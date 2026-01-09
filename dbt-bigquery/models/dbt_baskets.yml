@@ -90,11 +90,19 @@ models:
               type: sum
               label: 'Basket total'
               format: '[$$]#,##0'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
             average_of_basket_total:
               type: average
               label: 'Average basket total'
               format: '[$$]#,##0'
               description: 'The average of total basket values. Apply this metric by week or month to see our average basket total over a given time period'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
       - name: order_date
         description: 'Timestamp of order placement by the user.'
         meta:

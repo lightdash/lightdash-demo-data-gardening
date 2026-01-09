@@ -15,6 +15,10 @@ models:
             count_distinct_request_id:
               type: count_distinct
               label: Total requests
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
           dimension:
             type: string
       - name: order_id

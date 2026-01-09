@@ -58,5 +58,9 @@ models:
             count_distinct_of_user_id:
               type: count_distinct
               label: Total users
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
           dimension:
             type: string

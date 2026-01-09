@@ -43,6 +43,14 @@ models:
                 visibility: show
                 categories:
                   - verified
+            count_order_id:
+              type: count_distinct
+              label: 'Sales Count'
+              description: 'Total number of orders placed by customers. Watch your garden grow!'
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
           dimension:
             type: string
       - name: order_date
@@ -212,6 +220,14 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            average_of_partner_commission:
+              type: average
+              label: 'Average Partner Commission Rate'
+              format: '0.00%'
+              description: 'Average commission rate charged by partners on orders.'
+              spotlight:
+                visibility: hide
       - name: currency
         description: 'Three letter international currency code for the currency the
           order was paid with.'
@@ -232,6 +248,15 @@ models:
               description: 'Total sales revenue from all orders.'
               spotlight:
                 visibility: show
+                categories:
+                  - verified
+            sum_basket_total:
+              type: sum
+              label: 'Total Revenue'
+              format: '[$$]#,##0'
+              description: 'Total sales revenue from all orders.'
+              spotlight:
+                visibility: hide
                 categories:
                   - verified
             average_of_basket_total:

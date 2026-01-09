@@ -231,7 +231,7 @@ models:
               format: '[$$]#,##0'
               description: 'Total sales revenue from all orders.'
               spotlight:
-                visibility: hide
+                visibility: show
                 categories:
                   - verified
             average_of_basket_total:
@@ -265,6 +265,12 @@ models:
               label: 'Average Profit per Order'
               format: '[$$]#,##0'
               description: 'Average profit earned per order. Track your margins as they grow!'
+              spotlight:
+                visibility: hide
+            median_profit:
+              type: median
+              label: 'Median Profit'
+              format: '[$$]#,##0'
               spotlight:
                 visibility: hide
       - name: referrer

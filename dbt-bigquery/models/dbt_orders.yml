@@ -273,6 +273,10 @@ models:
               type: count_distinct
               label: 'Unique Customers'
               description: 'Number of unique customers who placed orders.'
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
           dimension:
             type: string
       - name: email

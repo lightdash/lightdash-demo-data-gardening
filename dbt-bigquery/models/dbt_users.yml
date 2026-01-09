@@ -13,6 +13,10 @@ models:
           label: Email-User Variance
           description: 'Difference between registered emails and user accounts. Useful for identifying data quality issues.'
           sql: ${count_distinct_email} - ${count_distinct_of_user_id}
+          spotlight:
+            visibility: show
+            categories:
+              - beta
     columns:
       - name: browser
         description: 'Web browser that the user used to place the order.'

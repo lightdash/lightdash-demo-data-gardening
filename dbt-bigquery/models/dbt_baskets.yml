@@ -4,8 +4,6 @@ models:
       baskets on our site. There is one basket per order'
     meta:
       label: Baskets
-      spotlight:
-        visibility: hide
       groups:
         product_details:
           label: Product Details
@@ -43,6 +41,10 @@ models:
               type: count
               label: 'Product Count'
               description: 'Number of product items in baskets. Every plant finds a home!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
       - name: currency
         description: 'Three letter international currency code of the item price.'
         meta:
@@ -80,11 +82,19 @@ models:
               label: 'Item Profit'
               format: '[$$]#,##0'
               description: 'Total profit from individual items sold. See which plants are most profitable!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
             average_of_item_profit:
               type: average
               label: 'Average Item Profit'
               format: '[$$]#,##0'
               description: 'Average profit earned per item sold. Track your margins as they grow!'
+              spotlight:
+                visibility: show
+                categories:
+                  - beta
       - name: basket_total
         description: 'Sum of item prices for each item within the basket.'
         meta:
@@ -98,7 +108,7 @@ models:
               format: '[$$]#,##0'
               description: 'Total sales revenue from all baskets. Seeds of success!'
               spotlight:
-                visibility: show
+                visibility: hide
                 categories:
                   - verified
             average_of_basket_total:
@@ -107,7 +117,7 @@ models:
               format: '[$$]#,##0'
               description: 'Average revenue per basket. What customers typically spend in a single visit.'
               spotlight:
-                visibility: show
+                visibility: hide
                 categories:
                   - verified
       - name: order_date

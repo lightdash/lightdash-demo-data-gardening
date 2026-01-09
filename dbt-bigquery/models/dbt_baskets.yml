@@ -4,6 +4,8 @@ models:
       baskets on our site. There is one basket per order'
     meta:
       label: Baskets
+      spotlight:
+        visibility: hide
       groups:
         product_details:
           label: Product Details

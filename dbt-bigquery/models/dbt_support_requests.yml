@@ -15,7 +15,7 @@ models:
             count_distinct_request_id:
               type: count_distinct
               label: Support Tickets
-              description: 'Total number of support requests submitted by customers. Helping gardens flourish!'
+              description: 'Total number of support requests submitted by customers.'
               spotlight:
                 visibility: show
                 categories:

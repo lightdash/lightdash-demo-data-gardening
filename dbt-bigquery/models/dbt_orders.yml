@@ -229,7 +229,7 @@ models:
               type: sum
               label: 'Revenue'
               format: '[$$]#,##0'
-              description: 'Total sales revenue from all orders. The fruits of your labor!'
+              description: 'Total sales revenue from all orders.'
               spotlight:
                 visibility: show
                 categories:
@@ -255,7 +255,7 @@ models:
               type: sum
               label: 'Profit'
               format: '[$$]#,##0'
-              description: 'Total profit from all orders. The greenest number on the dashboard!'
+              description: 'Total profit from all orders. The fruits of your labor!'
               spotlight:
                 visibility: show
                 categories:
@@ -272,7 +272,7 @@ models:
             count_distinct_user_id:
               type: count_distinct
               label: 'Unique Customers'
-              description: 'Number of unique customers who placed orders. Each one helps your business bloom!'
+              description: 'Number of unique customers who placed orders.'
           dimension:
             type: string
       - name: email

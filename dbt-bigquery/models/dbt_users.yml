@@ -48,7 +48,7 @@ models:
             count_distinct_email:
               type: count_distinct
               label: Registered Emails
-              description: 'Number of unique email addresses on file. Growing your newsletter garden!'
+              description: 'Number of unique email addresses on file.'
       - name: shipping_address
         description: 'Full shipping address of the user, as an object.'
         meta:

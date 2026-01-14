@@ -38,13 +38,13 @@ jobs:
       - name: Locate dbt_project.yml
         run: echo "PROJECT_DIR=$(find . -name "dbt_project.yml"  | sed  's/dbt_project.yml//g')" >> $GITHUB_ENV
 
-      - name: Get lightdash version 
-        uses: sergeysova/jq-action@v2
-        id: version 
+      - name: Get lightdash version
+        id: version
         env:
-          LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}   
-        with: 
-          cmd: curl -s "${LIGHTDASH_URL}/api/v1/health" | jq -r '.results.version'
+          LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}
+        run: |
+          VERSION=$(curl -s "$LIGHTDASH_URL/api/v1/health" | jq -r '.results.version')
+          echo "value=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Copy profiles.yml
         env:

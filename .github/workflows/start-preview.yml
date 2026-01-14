@@ -56,7 +56,7 @@ jobs:
           pip install dbt-core==$DBT_VERSION dbt-bigquery==$DBT_VERSION
           dbt deps --project-dir "$PROJECT_DIR"
       - name: Install lightdash CLI
-        run: npm install -g "@lightdash/cli@${{ steps.version.outputs.value }}" || npm install -g @lightdash/cli@latest
+        run: npm install -g "@lightdash/cli@${{ steps.version.outputs.value }}"
 
       - name: Lightdash CLI start preview
         id: start-preview

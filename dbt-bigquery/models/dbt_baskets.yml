@@ -168,3 +168,6 @@ models:
       - name: partner_commission
         description: 'The commission rate the specified parter charges, as a decimal
           fraction.'
+        meta:
+          dimension:
+            type: number

@@ -1,0 +1,101 @@
+name: validate-lightdash
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+env:
+  DBT_VERSION: "1.9.0"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.4.1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.10.x"
+
+      - name: Copy Google credentials file
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        if: "${{ env.GOOGLE_CREDENTIALS != '' }}"
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "googlecredentials.json"
+          json: ${{ env.GOOGLE_CREDENTIALS }}
+
+      - name: Move credentials to /tmp
+        run: mv googlecredentials.json /tmp || true
+
+      - name: Locate dbt_project.yml
+        run: echo "PROJECT_DIR=$(find . -name "dbt_project.yml"  | sed  's/dbt_project.yml//g')" >> $GITHUB_ENV
+
+      - name: Get lightdash version
+        uses: sergeysova/jq-action@v2
+        id: version
+        env:
+          LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}
+        with:
+          cmd: curl -s "${LIGHTDASH_URL}/api/v1/health" | jq -r '.results.version'
+
+      - name: Copy profiles.yml
+        env:
+          config: ${{ secrets.DBT_PROFILES }}
+        run: echo -e "$config" > profiles.yml
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core==$DBT_VERSION dbt-postgres==$DBT_VERSION dbt-redshift==$DBT_VERSION dbt-snowflake==$DBT_VERSION dbt-bigquery==$DBT_VERSION
+          dbt deps --project-dir "$PROJECT_DIR"
+
+      - name: Install lightdash CLI
+        run: npm install -g "@lightdash/cli@${{ steps.version.outputs.value }}" || npm install -g @lightdash/cli@latest
+
+      - name: Lightdash validate
+        id: validate
+        env:
+          LIGHTDASH_API_KEY: ${{ secrets.LIGHTDASH_API_KEY }}
+          LIGHTDASH_PROJECT: ${{ secrets.LIGHTDASH_PROJECT }}
+          LIGHTDASH_URL: ${{ secrets.LIGHTDASH_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS: '/tmp/googlecredentials.json'
+        continue-on-error: true
+        run: |
+          set +e
+          OUTPUT=$(lightdash validate --project-dir "$PROJECT_DIR" --profiles-dir . --profile prod 2>&1)
+          if [ $? -ne 0 ]; then
+            OUTPUT=$(lightdash validate --project-dir "$PROJECT_DIR" --profiles-dir . 2>&1) || true
+          fi
+          set -e
+          # Filter to show only from "Validating" onwards
+          FILTERED_OUTPUT=$(echo "$OUTPUT" | sed -n '/Validating/,$p')
+          echo "$FILTERED_OUTPUT"
+          echo "validation_output<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILTERED_OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - uses: jwalton/gh-find-current-pr@v1
+        id: finder
+
+      - name: Comment validation results on PR
+        if: steps.finder.outputs.pr != ''
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ steps.finder.outputs.pr }}
+          header: lightdash-validate
+          message: |
+            ## Lightdash Validation Results
+
+            ```
+            ${{ steps.validate.outputs.validation_output }}
+            ```
+
+            > This validation check is informational and does not block merging.

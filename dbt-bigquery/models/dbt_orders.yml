@@ -38,7 +38,8 @@ models:
             count_distinct_order_id:
               type: count_distinct
               label: 'Order Volume'
-              description: 'Total number of orders placed by customers. Watch your garden grow!'
+              description: 'Total number of orders placed by customers. Watch your garden
+                grow!'
               spotlight:
                 visibility: show
                 categories:
@@ -113,7 +114,8 @@ models:
                   else 'out of range'
                 end
             order_date_custom_period:
-              description: Date period bucket based on custom Start date and End date parameters
+              description: Date period bucket based on custom Start date and End date
+                parameters
               type: string
               sql: |
                 case
@@ -150,7 +152,7 @@ models:
                   when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
                     and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
                     then 'previous year'
-  
+
                   else 'out of range'
                 end
       - name: partner_id
@@ -238,7 +240,8 @@ models:
               type: average
               label: 'Average Order Value'
               format: '[$$]#,##0'
-              description: 'Average revenue per order. How much customers spend per visit to the garden center.'
+              description: 'Average revenue per order. How much customers spend per visit to
+                the garden center.'
               spotlight:
                 visibility: show
                 categories:
@@ -325,3 +328,35 @@ models:
         meta:
           dimension:
             type: string
+          additional_dimensions:
+            shipping_continent:
+              label: Shipping continent
+              type: string
+              sql: >-
+                CASE 
+                    -- North America
+                    WHEN ${dbt_orders.shipping_country} IN ('US', 'CA', 'MX') THEN 'North America'
+                    
+                    -- South America
+                    WHEN ${dbt_orders.shipping_country}  IN ('BR', 'AR', 'CL', 'CO', 'PE', 'VE', 'EC', 'BO', 'PY', 'UY', 'GY', 'SR', 'GF') THEN 'South America'
+                    
+                    -- Europe
+                    WHEN ${dbt_orders.shipping_country}  IN ('GB', 'DE', 'FR', 'IT', 'ES', 'NL', 'BE', 'CH', 'AT', 'SE', 'NO', 'DK', 'FI', 'IE', 'PT', 'PL', 'CZ', 'RO', 'GR', 'HU', 'SK', 'BG', 'HR', 'SI', 'LT', 'LV', 'EE', 'LU', 'MT', 'CY', 'IS', 'AL', 'RS', 'BA', 'MK', 'ME', 'XK', 'UA', 'BY', 'MD', 'RU', 'TR') THEN 'Europe'
+                    
+                    -- Asia
+                    WHEN ${dbt_orders.shipping_country}  IN ('CN', 'IN', 'JP', 'KR', 'ID', 'TH', 'VN', 'PH', 'MY', 'SG', 'BD', 'PK', 'TW', 'HK', 'MM', 'KH', 'LA', 'NP', 'LK', 'AF', 'MN', 'KZ', 'UZ', 'TM', 'TJ', 'KG', 'BT', 'MV', 'BN', 'TL', 'MO') THEN 'Asia'
+                    
+                    -- Middle East
+                    WHEN ${dbt_orders.shipping_country}  IN ('SA', 'AE', 'IL', 'IQ', 'IR', 'JO', 'LB', 'KW', 'OM', 'QA', 'BH', 'YE', 'SY', 'PS', 'AM', 'AZ', 'GE') THEN 'Middle East'
+                    
+                    -- Africa
+                    WHEN ${dbt_orders.shipping_country}  IN ('ZA', 'NG', 'EG', 'KE', 'GH', 'TZ', 'UG', 'DZ', 'MA', 'AO', 'SD', 'ET', 'MZ', 'CM', 'CI', 'MG', 'BF', 'ML', 'MW', 'ZM', 'SN', 'SO', 'TD', 'ZW', 'RW', 'BJ', 'TN', 'BI', 'SS', 'TG', 'SL', 'LY', 'LR', 'MR', 'CF', 'ER', 'GM', 'BW', 'GA', 'GN', 'LS', 'GW', 'GQ', 'MU', 'SZ', 'DJ', 'RE', 'KM', 'CV', 'ST', 'SC', 'YT', 'EH') THEN 'Africa'
+                    
+                    -- Oceania
+                    WHEN ${dbt_orders.shipping_country}  IN ('AU', 'NZ', 'PG', 'FJ', 'NC', 'PF', 'SB', 'VU', 'GU', 'WS', 'KI', 'FM', 'TO', 'PW', 'MH', 'NR', 'TV', 'AS', 'MP', 'CK', 'NU', 'TK', 'WF') THEN 'Oceania'
+                    
+                    -- Central America & Caribbean
+                    WHEN ${dbt_orders.shipping_country}  IN ('GT', 'HN', 'SV', 'NI', 'CR', 'PA', 'BZ', 'CU', 'DO', 'HT', 'JM', 'TT', 'BS', 'BB', 'LC', 'GD', 'VC', 'AG', 'DM', 'KN', 'KY', 'BM', 'TC', 'VG', 'VI', 'AI', 'MS', 'MF', 'BL', 'GP', 'MQ', 'PR', 'AW', 'CW', 'SX', 'BQ') THEN 'Central America & Caribbean'
+                    
+                    ELSE 'Other'
+                END 

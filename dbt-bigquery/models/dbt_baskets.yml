@@ -24,11 +24,17 @@ models:
           dimension:
             group: [ 'product_details', 'item_details' ]
             type: string
+            spotlight:
+              filter_by: false
+              segment_by: false
       - name: sku
         description: 'Unique Stock Keeping Unit code.'
         meta:
           dimension:
             type: number
+            spotlight:
+              filter_by: false
+              segment_by: false
       - name: product_name
         description: 'Full name of the product.'
         meta:
@@ -89,6 +95,14 @@ models:
                 categories:
                   - beta
                   - finance
+                filter_by:
+                  - product_name
+                  - partner_name
+                  - order_date
+                segment_by:
+                  - product_name
+                  - partner_name
+                  - item_profit_margin_tier
             average_of_item_profit:
               type: average
               label: 'Average Item Profit'
@@ -162,6 +176,9 @@ models:
         meta:
           dimension:
             type: number
+            spotlight:
+              filter_by: false
+              segment_by: false
       - name: partner_name
         description: 'Full name of the partner that is fulfilling the basket.'
         meta:
@@ -174,3 +191,6 @@ models:
         meta:
           dimension:
             type: number
+            spotlight:
+              filter_by: false
+              segment_by: false

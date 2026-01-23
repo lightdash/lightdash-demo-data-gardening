@@ -18,3 +18,15 @@ spotlight:
     beta:
       label: Beta
       color: "yellow"
+    sales:
+      label: Sales
+      color: "blue"
+    finance:
+      label: Finance
+      color: "purple"
+    marketing:
+      label: Marketing
+      color: "pink"
+    operations:
+      label: Operations
+      color: "orange"

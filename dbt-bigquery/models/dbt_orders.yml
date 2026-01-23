@@ -4,6 +4,8 @@ models:
       their status'
     meta:
       label: Orders
+      spotlight:
+        owner: joao@lightdash.com
       parameters:
         orders_dim_toggle:
           label: "Browser/Partner/Referrer"
@@ -43,6 +45,7 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - sales
           dimension:
             type: string
       - name: order_date
@@ -234,6 +237,8 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - sales
+                owner: giorgi@lightdash.com
             average_of_basket_total:
               type: average
               label: 'Average Order Value'
@@ -260,6 +265,7 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - finance
             avg_profit:
               type: average
               label: 'Average Profit per Order'
@@ -290,6 +296,7 @@ models:
                 visibility: hide
                 categories:
                   - verified
+                  - marketing
           dimension:
             type: string
       - name: email

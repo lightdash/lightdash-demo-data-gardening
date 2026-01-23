@@ -72,5 +72,6 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - marketing
           dimension:
             type: string

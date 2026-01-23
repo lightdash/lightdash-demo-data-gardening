@@ -45,6 +45,8 @@ models:
                 visibility: show
                 categories:
                   - beta
+                  - operations
+                owner: giorgi@lightdash.com
       - name: currency
         description: 'Three letter international currency code of the item price.'
         meta:
@@ -86,6 +88,7 @@ models:
                 visibility: show
                 categories:
                   - beta
+                  - finance
             average_of_item_profit:
               type: average
               label: 'Average Item Profit'

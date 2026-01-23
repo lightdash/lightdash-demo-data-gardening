@@ -20,6 +20,7 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - operations
           dimension:
             type: string
       - name: order_id

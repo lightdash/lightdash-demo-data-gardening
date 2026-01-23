@@ -45,6 +45,7 @@ models:
                 visibility: show
                 categories:
                   - beta
+                owner: giorgi@lightdash.com
       - name: currency
         description: 'Three letter international currency code of the item price.'
         meta:

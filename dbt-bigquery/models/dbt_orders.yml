@@ -4,6 +4,8 @@ models:
       their status'
     meta:
       label: Orders
+      spotlight:
+        owner: joao@lightdash.com
       parameters:
         orders_dim_toggle:
           label: "Browser/Partner/Referrer"
@@ -234,6 +236,7 @@ models:
                 visibility: show
                 categories:
                   - verified
+                owner: giorgi@lightdash.com
             average_of_basket_total:
               type: average
               label: 'Average Order Value'

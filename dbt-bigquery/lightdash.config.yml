@@ -23,7 +23,7 @@ spotlight:
       color: "blue"
     finance:
       label: Finance
-      color: "purple"
+      color: "violet"
     marketing:
       label: Marketing
       color: "pink"

@@ -18,6 +18,9 @@ models:
         meta:
           dimension:
             type: string
+          spotlight:
+            filter_by: false
+            segment_by: false
       - name: item_id
         description: 'ID for the product item within the basket.'
         meta:

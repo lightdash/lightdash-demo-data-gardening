@@ -4,6 +4,8 @@ models:
       their status'
     meta:
       label: Orders
+      sql_filter: >
+        ${TABLE}.partner_name IN (${lightdash.attributes.partner_name})
       spotlight:
         owner: joao@lightdash.com
       parameters:

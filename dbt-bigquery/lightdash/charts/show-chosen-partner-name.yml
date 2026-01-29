@@ -1,0 +1,34 @@
+name: Show chosen partner name
+description: ""
+tableName: dbt_orders
+updatedAt: "2025-03-14T15:47:20.112Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_partner_name
+  metrics: []
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_partner_name
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: big_number
+  config:
+    flipColors: false
+    selectedField: dbt_orders_partner_name
+    showComparison: false
+    comparisonFormat: raw
+    showBigNumberLabel: false
+dashboardSlug: sales-updates
+slug: show-chosen-partner-name
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

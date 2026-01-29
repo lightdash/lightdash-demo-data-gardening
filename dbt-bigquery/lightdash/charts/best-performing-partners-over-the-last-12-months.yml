@@ -1,0 +1,94 @@
+name: Best Performing Partners Over the Last 12 Months
+description: >-
+  Displays the top partners by total revenue (sum of basket total) over the past
+  12 months. Each bar represents a partner's total revenue.
+tableName: dbt_orders
+updatedAt: "2025-09-11T20:59:50.063Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_partner_name
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  filters:
+    metrics:
+      id: 8c04de82-5454-41f9-b227-6c693752d7f7
+      and: []
+    dimensions:
+      id: 9767e0f3-f6db-4129-960f-7176087e740c
+      and:
+        - id: 367df744-eccf-4519-b03e-27a83820d4e5
+          target:
+            fieldId: dbt_orders_order_date
+            fieldFilterType: date
+          values:
+            - 12
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+  sorts:
+    - fieldId: dbt_orders_sum_of_basket_total
+      descending: true
+  limit: 10
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        compact: millions
+        currency: USD
+        separator: default
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_basket_total
+      showGridY: false
+    eChartsConfig:
+      grid:
+        top: 5px
+        left: 5px
+        right: 5px
+        bottom: 5px
+        containLabel: true
+      title:
+        text: Best Performing Partners Over the Last 12 Months
+      xAxis:
+        - name: " "
+          type: category
+          rotate: 30
+      yAxis:
+        - name: " "
+          type: value
+        - name: ""
+      legend:
+        show: false
+        type: plain
+      series:
+        - name: dbt_orders_sum_of_basket_total
+          type: bar
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          yAxisIndex: 0
+          isFilteredOut: false
+      tooltip: ""
+dashboardSlug: sales-updates
+slug: best-performing-partners-over-the-last-12-months
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

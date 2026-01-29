@@ -1,0 +1,35 @@
+name: Copy of Start of date range
+description: ""
+tableName: dbt_orders
+updatedAt: "2025-04-15T22:32:00.478Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_order_date_day
+  metrics: []
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_order_date_day
+      descending: true
+  limit: 5
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: big_number
+  config:
+    label: End of date range
+    flipColors: false
+    selectedField: dbt_orders_order_date_day
+    showComparison: false
+    comparisonFormat: raw
+    showBigNumberLabel: true
+dashboardSlug: sales-updates
+slug: copy-of-start-of-date-range-1744755997816
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

@@ -1,0 +1,198 @@
+name: Sales Updates
+description: null
+updatedAt: "2026-01-29T18:40:00.000Z"
+tiles:
+  - x: 0
+    "y": 0
+    h: 9
+    w: 21
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+      chartName: How much revenue does each referrer bring us in per week??
+    tileSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+  - x: 21
+    "y": 0
+    h: 3
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: show-chosen-partner-name
+      chartName: Show chosen partner name
+    tileSlug: show-chosen-partner-name
+  - x: 21
+    "y": 3
+    h: 3
+    w: 7
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: true
+      chartSlug: start-of-date-range
+      chartName: Start of date range
+    tileSlug: start-of-date-range
+  - x: 29
+    "y": 3
+    h: 3
+    w: 7
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: true
+      chartSlug: copy-of-start-of-date-range-1744755997816
+      chartName: Copy of Start of date range
+    tileSlug: copy-of-start-of-date-range-1744755997816
+  - x: 21
+    "y": 6
+    h: 10
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: what-are-the-most-profitable-products-
+      chartName: What are the most profitable products?
+    tileSlug: what-are-the-most-profitable-products-
+  - x: 0
+    "y": 9
+    h: 7
+    w: 21
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: how-much-profit-do-we-receive-per-month-per-partner-
+      chartName: How much profit do we receive per month per partner?
+    tileSlug: how-much-profit-do-we-receive-per-month-per-partner-
+  - x: 0
+    "y": 16
+    h: 8
+    w: 14
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: what-are-the-most-popular-products-
+      chartName: What are the most popular products?
+    tileSlug: what-are-the-most-popular-products-
+  - x: 14
+    "y": 16
+    h: 8
+    w: 22
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: how-much-revenue-are-we-making-each-week-
+      chartName: How much revenue are we making each month?
+    tileSlug: how-much-revenue-are-we-making-each-week-
+  - x: 0
+    "y": 24
+    h: 6
+    w: 16
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: best-performing-partners-over-the-last-12-months
+      chartName: Best Performing Partners Over the Last 12 Months
+    tileSlug: best-performing-partners-over-the-last-12-months
+  - x: 16
+    "y": 24
+    h: 6
+    w: 20
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: 2024-monthly-revenue-by-partner
+      chartName: 2024 Monthly Revenue by Partner
+    tileSlug: 2024-monthly-revenue-by-partner
+  - x: 0
+    "y": 30
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: comission-by-referrer
+      chartName: comission by referrer
+    tileSlug: comission-by-referrer
+  - x: 15
+    "y": 30
+    h: 9
+    w: 21
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: monthly-order-value
+      chartName: Monthly Order Value
+    tileSlug: monthly-order-value
+  - x: 0
+    "y": 31
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: how-is-revenue-distributed-across-browsers-partners-and-referrers
+      chartName: How is revenue distributed across browsers, partners, and referrers?
+    tileSlug: how-is-revenue-distributed-across-browsers-partners-and-referrers
+  - x: 15
+    "y": 39
+    h: 9
+    w: 21
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: new-customers-by-month
+      chartName: New Customers by Month
+    tileSlug: new-customers-by-month
+filters:
+  metrics: []
+  dimensions:
+    - target:
+        fieldId: dbt_baskets_partner_name
+        tableName: dbt_baskets
+      values: []
+      disabled: true
+      operator: equals
+      required: false
+      singleValue: true
+      tileTargets: {}
+    - target:
+        fieldId: dbt_baskets_order_date
+        fieldName: order_date
+        tableName: dbt_baskets
+      values: []
+      disabled: true
+      operator: inBetween
+      tileTargets: {}
+  tableCalculations: []
+tabs: []
+slug: sales-updates
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:46.341Z"

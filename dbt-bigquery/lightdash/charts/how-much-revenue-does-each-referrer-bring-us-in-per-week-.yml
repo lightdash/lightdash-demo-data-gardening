@@ -1,0 +1,243 @@
+name: How much revenue does each referrer bring us in per week??
+description: null
+tableName: dbt_orders
+updatedAt: "2026-01-14T19:58:44.271Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_order_date_week
+    - dbt_orders_referrer
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_order_date_week
+      descending: true
+  limit: 500
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 0
+        currency: USD
+        separator: default
+  dimensionOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_orders_order_date_week
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
+    metadata:
+      dbt_orders_sum_of_basket_total.facebook:
+        color: "#F6FFF9"
+      dbt_orders_sum_of_basket_total.instagram:
+        color: "#D2FFE1"
+    eChartsConfig:
+      xAxis:
+        - name: Date (week)
+      yAxis:
+        - name: Total revenue ($)
+        - {}
+      series:
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: direct
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: twitter
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          color: "#D2FFE1"
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: instagram
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          color: "#F6FFF9"
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: facebook
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: organic
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: ppc
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: direct
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: twitter
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: instagram
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: facebook
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: organic
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: line
+          stack: dbt_orders_count_distinct_order_id
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: ppc
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+pivotConfig:
+  columns:
+    - dbt_orders_referrer
+slug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_referrer
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

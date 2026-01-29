@@ -1,0 +1,56 @@
+name: New Customers by Month
+description: >-
+  Track customer acquisition trends by showing the number of new customer
+  signups each month. Helps identify growth patterns and marketing effectiveness.
+tableName: dbt_users
+updatedAt: "2026-01-29T18:35:00.000Z"
+metricQuery:
+  exploreName: dbt_users
+  dimensions:
+    - dbt_users_created_date_month
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  filters: {}
+  sorts:
+    - fieldId: dbt_users_created_date_month
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_users_created_date_month
+      yField:
+        - dbt_users_count_distinct_of_user_id
+    eChartsConfig:
+      grid:
+        containLabel: true
+      xAxis:
+        - name: Month
+          type: category
+      yAxis:
+        - name: New Customers
+          type: value
+      legend:
+        show: false
+      series:
+        - type: bar
+          label:
+            show: false
+          encode:
+            xRef:
+              field: dbt_users_created_date_month
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+          yAxisIndex: 0
+slug: new-customers-by-month
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_month
+    - dbt_users_count_distinct_of_user_id
+spaceSlug: "-sales"
+version: 1

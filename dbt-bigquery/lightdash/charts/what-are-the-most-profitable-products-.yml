@@ -1,0 +1,42 @@
+name: What are the most profitable products?
+description: null
+tableName: dbt_baskets
+updatedAt: "2026-01-14T19:58:45.745Z"
+metricQuery:
+  exploreName: dbt_baskets
+  dimensions:
+    - dbt_baskets_product_name
+    - dbt_baskets_partner_name
+  metrics:
+    - dbt_baskets_sum_of_item_profit
+  filters: {}
+  sorts:
+    - fieldId: dbt_baskets_sum_of_item_profit
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  dimensionOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: table
+  config:
+    columns: {}
+    metricsAsRows: false
+    showSubtotals: false
+    hideRowNumbers: false
+    showTableNames: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showColumnCalculation: false
+    conditionalFormattings: []
+slug: what-are-the-most-profitable-products-
+tableConfig:
+  columnOrder:
+    - dbt_baskets_product_name
+    - dbt_baskets_partner_name
+    - dbt_baskets_sum_of_item_profit
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.013Z"

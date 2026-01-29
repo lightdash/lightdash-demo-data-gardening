@@ -1,0 +1,225 @@
+name: 2024 Monthly Revenue by Partner
+description: >-
+  This bar chart displays the total revenue (sum of basket total) contributed by
+  each partner, broken down by month for orders placed in 2024. Each bar group
+  represents a month, and each bar within the group represents a partner's
+  revenue for that month.
+tableName: dbt_orders
+updatedAt: "2025-09-11T20:57:26.518Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  filters:
+    metrics:
+      id: 0a0fbcbb-ba8c-461d-bca6-2a1ed3487daa
+      and: []
+    dimensions:
+      id: 3f623478-f27a-4335-a77b-67af902607f8
+      and:
+        - id: fe122803-8ce3-4ddd-8d71-7d637cfab9bc
+          target:
+            fieldId: dbt_orders_order_date_year
+            fieldFilterType: date
+          values:
+            - "2024-01-01"
+          operator: equals
+  sorts:
+    - fieldId: dbt_orders_order_date_month
+      descending: false
+    - fieldId: dbt_orders_sum_of_basket_total
+      descending: true
+  limit: 1000
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 0
+        compact: thousands
+        currency: USD
+        separator: default
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+    eChartsConfig:
+      grid:
+        containLabel: true
+      title:
+        text: 2024 Monthly Revenue by Partner
+      xAxis:
+        - name: Order Month
+          type: category
+      yAxis:
+        - name: Total Revenue
+          type: value
+      legend:
+        show: true
+        type: plain
+      series:
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Sprout Society
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Trowels R Us
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Roots & Shoots
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Plant Paradise
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Garden of Sweden
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+        - type: bar
+          label:
+            show: false
+          stack: dbt_orders_sum_of_basket_total
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Potted Paradise
+          stackLabel:
+            show: true
+          yAxisIndex: 0
+          isFilteredOut: false
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+dashboardSlug: sales-updates
+slug: 2024-monthly-revenue-by-partner
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

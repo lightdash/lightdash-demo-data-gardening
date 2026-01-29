@@ -1,0 +1,37 @@
+name: What are the most popular products?
+description: the most popular products by count of product name
+tableName: dbt_baskets
+updatedAt: "2025-11-17T11:02:39.405Z"
+metricQuery:
+  exploreName: dbt_baskets
+  dimensions:
+    - dbt_baskets_product_name
+  metrics:
+    - dbt_baskets_count_of_product_name
+  filters: {}
+  sorts:
+    - fieldId: dbt_baskets_count_of_product_name
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: table
+  config:
+    columns:
+      dbt_baskets_product_name:
+        name: ""
+      dbt_baskets_count_of_product_name:
+        name: Total number sold
+    showTableNames: false
+    showColumnCalculation: false
+slug: what-are-the-most-popular-products-
+tableConfig:
+  columnOrder:
+    - dbt_baskets_product_name
+    - dbt_baskets_count_of_product_name
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.013Z"

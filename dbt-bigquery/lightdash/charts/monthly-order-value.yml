@@ -1,0 +1,103 @@
+name: Monthly Order Value
+description: Total order value (revenue) by month
+tableName: dbt_orders
+updatedAt: "2026-01-16T12:49:03.221Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_order_date_month
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_order_date_month
+      descending: false
+  limit: 500
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 0
+        compact: thousands
+        currency: USD
+        separator: default
+    dbt_orders_average_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 2
+        currency: USD
+        separator: default
+  dimensionOverrides: {}
+  tableCalculations:
+    - name: partner_rank_by_revenue_top_5_per_quarter_
+      displayName: Partner Rank by Revenue (Top 5 per Quarter)
+      sql: |-
+        ROW_NUMBER() OVER (
+          PARTITION BY EXTRACT(QUARTER FROM ${dbt_orders.order_date_month})
+          ORDER BY ${dbt_orders.sum_of_basket_total} DESC
+        )
+      format:
+        type: default
+        separator: default
+      type: number
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+      flipAxes: false
+      showGridY: true
+      showYAxis: true
+    eChartsConfig:
+      grid:
+        top: 25px
+        left: 25px
+        right: 5px
+        bottom: 30px
+        containLabel: true
+      xAxis:
+        - name: Month
+          rotate: 30
+      yAxis:
+        - name: Order Value
+      series:
+        - type: bar
+          color: "#30CF87"
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          showSymbol: true
+          yAxisIndex: 0
+          isFilteredOut: false
+      tooltip: |
+        <strong>📅 ${dbt_orders_order_date_month}</strong>
+        <br><br>
+        <strong>💰 Total Revenue:</strong> ${dbt_orders_sum_of_basket_total}
+        <br>
+        <strong>📦 Orders:</strong> ${dbt_orders_count_distinct_order_id}
+        <br>
+        <strong>🛒 Avg Basket:</strong> ${dbt_orders_average_of_basket_total}
+      showAxisTicks: false
+dashboardSlug: sales-updates
+slug: monthly-order-value
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+    - partner_rank_by_revenue_top_5_per_quarter_
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

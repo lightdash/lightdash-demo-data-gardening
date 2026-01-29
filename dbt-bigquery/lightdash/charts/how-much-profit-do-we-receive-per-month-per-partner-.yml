@@ -1,0 +1,76 @@
+name: How much profit do we receive per month per partner?
+description: "How much revenue did each sales partner bring in each month? "
+tableName: dbt_orders
+updatedAt: "2026-01-19T20:14:58.084Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_month
+  metrics:
+    - dbt_orders_sum_of_profit
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_order_date_month
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  dimensionOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: user_id_count_distinct
+      label: Count distinct of User id
+      description: >-
+        Count distinct of User id on the table Dbt orders. Lightdash has created
+        this metric automatically.
+      uuid: 613571e1-7fb4-4e24-8fbb-2d426e46c3b3
+      sql: ${TABLE}.user_id
+      table: dbt_orders
+      type: count_distinct
+    - name: order_id_count_distinct
+      label: Count distinct of Order id
+      description: >-
+        Count distinct of Order id on the table Dbt orders. Lightdash has
+        created this metric automatically.
+      uuid: 818b424d-744d-4748-bfc9-836478b2ce68
+      sql: ${TABLE}.order_id
+      table: dbt_orders
+      type: count_distinct
+    - name: partner_id_count_distinct
+      label: Count distinct of Partner id
+      description: >-
+        Count distinct of Partner id on the table Dbt orders. Lightdash has
+        created this metric automatically.
+      uuid: a3cfdc8e-9ccf-4a68-a7d1-cd22564664fa
+      sql: ${TABLE}.partner_id
+      table: dbt_orders
+      type: count_distinct
+    - name: profit_sum_sum_of_profit_xxx_total_profit
+      label: Total Profit
+      description: "Sum of Sum of Profit xxx on the table Orders "
+      uuid: 8c4f96ac-781d-461e-9659-c9030cf9b4e5
+      sql: ${TABLE}.profit
+      table: dbt_orders
+      type: sum
+  customDimensions: []
+chartConfig:
+  type: table
+  config:
+    columns: {}
+    metricsAsRows: false
+    showSubtotals: false
+    hideRowNumbers: false
+    showTableNames: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showColumnCalculation: false
+    conditionalFormattings: []
+slug: how-much-profit-do-we-receive-per-month-per-partner-
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

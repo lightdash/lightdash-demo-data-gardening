@@ -1,0 +1,60 @@
+name: comission by referrer
+description: ""
+tableName: dbt_orders
+updatedAt: "2025-09-11T21:02:28.826Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_referrer
+  metrics:
+    - dbt_orders_partner_commission_sum_of_partner_commission
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_referrer
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: partner_commission_sum_of_partner_commission
+      label: Sum of Partner commission
+      description: "Sum of Sum of Partner commission on the table Orders "
+      uuid: 1840b958-9762-4a30-8172-d71fd6f27f4d
+      sql: ${TABLE}.partner_commission
+      table: dbt_orders
+      type: sum
+      baseDimensionName: partner_commission
+      formatOptions:
+        type: currency
+        compact: thousands
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_orders_referrer
+      yField:
+        - dbt_orders_partner_commission_sum_of_partner_commission
+    eChartsConfig:
+      series:
+        - type: bar
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: dbt_orders_referrer
+            yRef:
+              field: dbt_orders_partner_commission_sum_of_partner_commission
+          yAxisIndex: 0
+          isFilteredOut: false
+dashboardSlug: sales-updates
+slug: comission-by-referrer
+tableConfig:
+  columnOrder:
+    - dbt_orders_referrer
+    - dbt_orders_partner_commission_sum_of_partner_commission
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.013Z"

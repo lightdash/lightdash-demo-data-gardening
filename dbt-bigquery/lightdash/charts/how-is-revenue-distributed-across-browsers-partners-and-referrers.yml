@@ -1,0 +1,60 @@
+name: How is revenue distributed across browsers, partners, and referrers?
+description: >-
+  Revenue breakdown by browser, partner, or referrer source, showing the
+  percentage contribution of each category to total sales.
+tableName: dbt_orders
+updatedAt: "2026-01-15T13:01:44.581Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_orders_dim
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_orders_dim
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  dimensionOverrides: {}
+  tableCalculations:
+    - name: revenue_by_dimension_i_n_c_l_u_d_e_l_o_d_
+      displayName: Revenue by Dimension (INCLUDE LOD)
+      sql: >-
+        SUM(${dbt_orders.sum_of_basket_total}) OVER (PARTITION BY
+        ${dbt_orders.orders_dim})
+      format:
+        type: currency
+        round: 2
+        currency: USD
+        separator: default
+      type: number
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: pie
+  config:
+    isDonut: true
+    metricId: dbt_orders_sum_of_basket_total
+    showValue: false
+    showLegend: false
+    valueLabel: outside
+    groupFieldIds:
+      - dbt_orders_orders_dim
+    legendPosition: horizontal
+    showPercentage: true
+    groupSortOverrides: []
+    groupColorOverrides: {}
+    groupLabelOverrides: {}
+    legendMaxItemLength: 30
+    groupValueOptionOverrides: {}
+dashboardSlug: sales-updates
+slug: how-is-revenue-distributed-across-browsers-partners-and-referrers
+tableConfig:
+  columnOrder:
+    - dbt_orders_orders_dim
+    - dbt_orders_sum_of_basket_total
+    - revenue_by_dimension_i_n_c_l_u_d_e_l_o_d_
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-01-29T18:15:47.012Z"

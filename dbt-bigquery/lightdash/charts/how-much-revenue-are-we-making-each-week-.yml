@@ -1,79 +1,61 @@
 name: How much revenue are we making each month?
-description: ""
+description: Monthly revenue trend showing total basket revenue over time
 tableName: dbt_orders
-updatedAt: "2026-01-15T15:27:45.422Z"
+updatedAt: "2026-01-29T18:45:00.000Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
-    - dbt_orders_partner_name
+    - dbt_orders_order_date_month
   metrics:
-    - dbt_orders_sum_of_profit
+    - dbt_orders_sum_of_basket_total
   filters: {}
   sorts:
-    - fieldId: dbt_orders_partner_name
+    - fieldId: dbt_orders_order_date_month
       descending: false
   limit: 500
-  metricOverrides: {}
-  dimensionOverrides: {}
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 0
+        compact: thousands
+        currency: USD
+        separator: default
   tableCalculations: []
-  additionalMetrics:
-    - name: user_id_count_distinct
-      label: Count distinct of User id
-      description: >-
-        Count distinct of User id on the table Dbt orders. Lightdash has created
-        this metric automatically.
-      uuid: 475ba120-eda2-4130-a77b-cbaebcf1ba78
-      sql: ${TABLE}.user_id
-      table: dbt_orders
-      type: count_distinct
-    - name: order_id_count_distinct
-      label: Count distinct of Order id
-      description: >-
-        Count distinct of Order id on the table Dbt orders. Lightdash has
-        created this metric automatically.
-      uuid: 4eebb325-e75e-41c2-a04c-b306d5fc672b
-      sql: ${TABLE}.order_id
-      table: dbt_orders
-      type: count_distinct
-    - name: partner_id_count_distinct
-      label: Count distinct of Partner id
-      description: >-
-        Count distinct of Partner id on the table Dbt orders. Lightdash has
-        created this metric automatically.
-      uuid: a9d079e6-2043-463f-b408-75290b1200d3
-      sql: ${TABLE}.partner_id
-      table: dbt_orders
-      type: count_distinct
-    - name: basket_total_sum
-      label: Sum of Basket total
-      description: Sum of Basket total on the table Dbt orders
-      uuid: c39227d9-70ec-4475-8fb2-48e5d0e09066
-      sql: ${TABLE}.basket_total
-      table: dbt_orders
-      type: sum
+  additionalMetrics: []
   customDimensions: []
 chartConfig:
-  type: pie
+  type: cartesian
   config:
-    isDonut: true
-    metricId: dbt_orders_sum_of_profit
-    showValue: false
-    showLegend: false
-    valueLabel: outside
-    groupFieldIds:
-      - dbt_orders_partner_name
-    legendPosition: horizontal
-    showPercentage: true
-    groupSortOverrides: []
-    groupColorOverrides: {}
-    groupLabelOverrides: {}
-    legendMaxItemLength: 30
-    groupValueOptionOverrides: {}
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+    eChartsConfig:
+      grid:
+        containLabel: true
+      xAxis:
+        - name: Month
+          type: category
+      yAxis:
+        - name: Revenue
+          type: value
+      legend:
+        show: false
+      series:
+        - type: bar
+          label:
+            show: false
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          yAxisIndex: 0
 slug: how-much-revenue-are-we-making-each-week-
 tableConfig:
   columnOrder:
-    - dbt_orders_partner_name
-    - dbt_orders_sum_of_profit
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.012Z"

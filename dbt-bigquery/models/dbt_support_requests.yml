@@ -38,13 +38,26 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals:
+              [
+                'HOUR',
+                'MINUTE_OF_HOUR_NUM',
+                'HOUR_OF_DAY_NUM',
+                'DAY',
+                'DAY_OF_WEEK_INDEX',
+                'DAY_OF_MONTH_NUM',
+                'DAY_OF_YEAR_NUM',
+                'DAY_OF_WEEK_NAME',
+                'WEEK',
+                'WEEK_NUM',
+                'MONTH',
+                'MONTH_NUM',
+                'MONTH_NAME',
+                'QUARTER',
+                'QUARTER_NUM',
+                'QUARTER_NAME',
+                'YEAR'
+              ]
       - name: reason
         description: 'Determined cause of request.'
         meta:
@@ -52,7 +65,8 @@ models:
             count_of_reason:
               type: count_distinct
               label: Unique Request Reasons
-              description: 'Number of distinct support request categories. Know what your customers need help with!'
+              description: 'Number of distinct support request categories. Know what your
+                customers need help with!'
               spotlight:
                 visibility: hide
           dimension:
@@ -64,7 +78,8 @@ models:
             average_of_feedback_rating:
               type: average
               label: Customer Satisfaction Score
-              description: 'Average customer satisfaction rating from post-support surveys. Keep your customer happiness blooming!'
+              description: 'Average customer satisfaction rating from post-support surveys.
+                Keep your customer happiness blooming!'
               spotlight:
                 visibility: hide
           dimension:
@@ -94,6 +109,12 @@ models:
         meta:
           dimension:
             type: string
+          metrics:
+            partner_id_unique_partners:
+              label: Unique partners
+              description: "Count distinct of Partner id on the table Support requests "
+              type: count_distinct
+              filters: []
       - name: partner_name
         description: ""
         meta:

@@ -110,21 +110,33 @@ tiles:
 
 ## Grid Layout
 
-Dashboards use a 36-column grid system:
+**IMPORTANT: The dashboard uses a 36-column grid system.** To fill the full width of the dashboard, set `w: 36`. Many layouts incorrectly use smaller widths (like 24 or 30), leaving empty space on the right side of the dashboard.
 
 - **x**: Column position (0-35)
 - **y**: Row position (0+)
-- **w**: Width in columns (1-36)
-- **h**: Height in rows
+- **w**: Width in columns (1-36). **Use 36 for full-width tiles.**
+- **h**: Height in rows (minimum 1)
+
+### Width Quick Reference
+
+| Layout | Width (w) | Tiles per row |
+|--------|-----------|---------------|
+| Full width | 36 | 1 |
+| Half width | 18 | 2 |
+| Third width | 12 | 3 |
+| Quarter width | 9 | 4 |
+| Sixth width | 6 | 6 |
+
+**Note:** The default tile width in Lightdash is 15 columns, which is less than half the grid. When creating dashboards, always explicitly set widths to fill the available space.
 
 ### Common Layouts
 
-**Full width:**
+**Full width (w: 36):**
 ```yaml
 x: 0, y: 0, w: 36, h: 6
 ```
 
-**Two columns:**
+**Two columns (w: 18 each, total: 36):**
 ```yaml
 # Left half
 x: 0, y: 0, w: 18, h: 6
@@ -132,14 +144,14 @@ x: 0, y: 0, w: 18, h: 6
 x: 18, y: 0, w: 18, h: 6
 ```
 
-**Three columns:**
+**Three columns (w: 12 each, total: 36):**
 ```yaml
 x: 0, y: 0, w: 12, h: 6
 x: 12, y: 0, w: 12, h: 6
 x: 24, y: 0, w: 12, h: 6
 ```
 
-**Four columns (KPIs):**
+**Four columns/KPIs (w: 9 each, total: 36):**
 ```yaml
 x: 0, y: 0, w: 9, h: 3
 x: 9, y: 0, w: 9, h: 3
@@ -244,9 +256,43 @@ filters:
         completed: true        # Only completed periods
 ```
 
-### Per-Tile Filter Targeting
+### Per-Tile Filter Targeting (tileTargets)
 
-Control which tiles a filter applies to:
+Use `tileTargets` when a single dashboard filter needs to apply to tiles from different explores, mapping the filter to the equivalent field in each explore. This is essential for dashboards that combine data from multiple explores.
+
+**Key concept:** A single conceptual filter (e.g., "Time Period") can target different physical fields across different explores. The default `target` applies to tiles using that explore; use `tileTargets` keyed by tile slug to override for tiles using different explores.
+
+#### Cross-Explore Filter Example
+
+When your dashboard has tiles from multiple explores (e.g., orders and customers), map the filter to the equivalent field in each:
+
+```yaml
+filters:
+  dimensions:
+    - target:
+        fieldId: orders_created_at    # Default: for tiles using orders explore
+        tableName: orders
+      operator: inThePast
+      values: [30]
+      settings:
+        unitOfTime: days
+        completed: false
+      label: "Date Range"
+      tileTargets:
+        sales-by-region:              # Tile slug - uses orders explore (matches default)
+          fieldId: orders_created_at
+          tableName: orders
+        customer-metrics:             # Tile slug - uses customers explore (different field!)
+          fieldId: customers_signup_date
+          tableName: customers
+        revenue-summary:              # Tile slug - uses orders explore
+          fieldId: orders_created_at
+          tableName: orders
+```
+
+#### Excluding Tiles from a Filter
+
+Set a tile target to `false` to exclude it from the filter entirely:
 
 ```yaml
 filters:
@@ -255,13 +301,29 @@ filters:
         fieldId: orders_region
         tableName: orders
       operator: equals
-      values: []               # User selects value
+      values: []
       label: "Region"
       tileTargets:
-        "tile-uuid-1":         # Apply to this tile
-          fieldId: orders_region
-          tableName: orders
-        "tile-uuid-2": false   # Exclude this tile
+        company-overview: false       # This tile ignores the region filter
+```
+
+#### Empty tileTargets
+
+When all tiles use the same explore, you can leave `tileTargets` empty - the filter will apply to all tiles that have the matching field:
+
+```yaml
+filters:
+  dimensions:
+    - target:
+        fieldId: orders_created_at
+        tableName: orders
+      operator: inThePast
+      values: [12]
+      settings:
+        unitOfTime: months
+        completed: true
+      label: "Time Period"
+      tileTargets: {}                 # Applies to all tiles with orders_created_at
 ```
 
 ### Required Filters
@@ -490,6 +552,36 @@ filters:
 3. **Use appropriate operators**: Date ranges vs. exact matches
 4. **Consider required filters**: When context is needed
 5. **Target filters correctly**: Not all filters apply to all charts
+6. **Use tileTargets for multi-explore dashboards**: When tiles come from different explores, use `tileTargets` to map the filter to the equivalent field in each explore
+
+### Filter Troubleshooting
+
+**Problem: Dashboard filter isn't applying to some tiles**
+
+This usually happens when those tiles use a different explore than the filter's `target`. The filter only auto-applies to tiles with a matching `fieldId` and `tableName`.
+
+**Solution:** Add `tileTargets` entries for tiles using different explores:
+
+```yaml
+filters:
+  dimensions:
+    - target:
+        fieldId: orders_date        # Works for orders explore tiles
+        tableName: orders
+      tileTargets:
+        customer-chart:             # This tile uses customers explore
+          fieldId: customers_date   # Map to equivalent field
+          tableName: customers
+```
+
+**Problem: Filter applies to a tile when it shouldn't**
+
+**Solution:** Explicitly exclude the tile:
+
+```yaml
+tileTargets:
+  summary-tile: false               # This tile ignores the filter
+```
 
 ### Performance
 

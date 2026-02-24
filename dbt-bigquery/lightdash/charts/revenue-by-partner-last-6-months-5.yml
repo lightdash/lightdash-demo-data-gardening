@@ -1,0 +1,79 @@
+name: Revenue by Partner (Last 6 Months)
+description: Total revenue per partner over the last 6 completed months.
+tableName: monthly_partner_info
+updatedAt: "2026-02-03T10:44:16.237Z"
+metricQuery:
+  exploreName: monthly_partner_info
+  dimensions:
+    - monthly_partner_info_dbt_orders_partner_name
+  metrics:
+    - monthly_partner_info_total_revenue
+  filters:
+    metrics:
+      id: 6f5b691e-51a5-43c5-8594-e746eead4d6e
+      and: []
+    dimensions:
+      id: 99315c93-81a1-4419-88ba-430d0300569b
+      and:
+        - id: 7f15f638-f82b-40da-9bf2-82259a0cb29d
+          target:
+            fieldId: monthly_partner_info_dbt_orders_order_date_month
+            fieldFilterType: date
+          values:
+            - 6
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+    tableCalculations:
+      id: d7d7b6c0-79b9-4be9-a1df-e8a5a7bcd7ab
+      and: []
+  sorts:
+    - fieldId: monthly_partner_info_total_revenue
+      descending: true
+  limit: 50
+  metricOverrides: {}
+  dimensionOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: monthly_partner_info_dbt_orders_partner_name
+      yField:
+        - monthly_partner_info_total_revenue
+      flipAxes: true
+    eChartsConfig:
+      grid:
+        containLabel: true
+      title:
+        text: Revenue by Partner (Last 6 Months)
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Total revenue (last 6 months)
+      legend:
+        show: true
+        type: scroll
+      series:
+        - name: Total Revenue
+          type: bar
+          encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_partner_name
+            yRef:
+              field: monthly_partner_info_total_revenue
+          yAxisIndex: 0
+          isFilteredOut: false
+      showAxisTicks: false
+dashboardSlug: "-kpi-dashboard"
+slug: revenue-by-partner-last-6-months-5
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_total_revenue
+spaceSlug: "-key-company-dashboards"
+version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

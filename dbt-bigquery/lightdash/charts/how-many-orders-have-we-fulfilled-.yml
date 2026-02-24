@@ -1,0 +1,40 @@
+name: How many orders have we fulfilled??
+description: null
+tableName: dbt_orders
+updatedAt: "2025-11-13T16:55:48.045Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions:
+    - dbt_orders_order_date_month
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_count_distinct_order_id
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: big_number
+  config:
+    label: Orders fulfilled
+    flipColors: false
+    selectedField: dbt_orders_count_distinct_order_id
+    showComparison: true
+    comparisonLabel: MoM
+    comparisonFormat: percentage
+    showBigNumberLabel: true
+    showTableNamesInLabel: true
+slug: how-many-orders-have-we-fulfilled-
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

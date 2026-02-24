@@ -1,0 +1,64 @@
+name: What is our weekly average feedback rating (out of 10)?
+description: null
+tableName: dbt_support_requests
+updatedAt: "2025-10-21T13:37:49.548Z"
+metricQuery:
+  exploreName: dbt_support_requests
+  dimensions:
+    - dbt_support_requests_request_date_week
+  metrics:
+    - dbt_support_requests_average_of_feedback_rating
+  filters: {}
+  sorts:
+    - fieldId: dbt_support_requests_request_date_week
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: dbt_support_requests_request_date_week
+      yField:
+        - dbt_support_requests_average_of_feedback_rating
+      flipAxes: false
+      showXAxis: true
+    eChartsConfig:
+      grid:
+        top: 5px
+        left: 30px
+        right: 5px
+        bottom: 5px
+        containLabel: true
+      xAxis:
+        - name: " "
+          rotate: 30
+      yAxis:
+        - name: Average rating (out of 10)
+        - {}
+      series:
+        - type: line
+          color: "#30CF87"
+          label:
+            show: false
+          encode:
+            xRef:
+              field: dbt_support_requests_request_date_week
+            yRef:
+              field: dbt_support_requests_average_of_feedback_rating
+          smooth: true
+          showSymbol: true
+          yAxisIndex: 0
+          isFilteredOut: false
+      tooltip: ""
+slug: what-is-our-weekly-average-feedback-rating-out-of-10-
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_week
+    - dbt_support_requests_average_of_feedback_rating
+spaceSlug: shared
+version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

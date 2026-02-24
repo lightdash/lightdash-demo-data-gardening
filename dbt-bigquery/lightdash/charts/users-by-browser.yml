@@ -1,0 +1,45 @@
+name: Users by browser
+description: ""
+tableName: dbt_users
+updatedAt: "2025-10-21T13:28:53.367Z"
+metricQuery:
+  exploreName: dbt_users
+  dimensions:
+    - dbt_users_browser
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  filters: {}
+  sorts:
+    - fieldId: dbt_users_count_distinct_of_user_id
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: pie
+  config:
+    isDonut: true
+    metricId: dbt_users_count_distinct_of_user_id
+    showValue: false
+    showLegend: true
+    valueLabel: hidden
+    groupFieldIds:
+      - dbt_users_browser
+    legendPosition: vertical
+    showPercentage: true
+    groupSortOverrides: []
+    groupColorOverrides: {}
+    groupLabelOverrides: {}
+    legendMaxItemLength: 30
+    groupValueOptionOverrides: {}
+dashboardSlug: "-kpi-dashboard"
+slug: users-by-browser
+tableConfig:
+  columnOrder:
+    - dbt_users_browser
+    - dbt_users_count_distinct_of_user_id
+spaceSlug: "-key-company-dashboards"
+version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

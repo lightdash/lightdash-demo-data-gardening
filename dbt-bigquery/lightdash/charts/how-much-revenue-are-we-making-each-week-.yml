@@ -1,7 +1,7 @@
 name: How much revenue are we making each month?
 description: Monthly revenue trend showing total basket revenue over time
 tableName: dbt_orders
-updatedAt: "2026-01-29T18:45:00.000Z"
+updatedAt: "2026-02-03T11:21:12.633Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -21,6 +21,7 @@ metricQuery:
         compact: thousands
         currency: USD
         separator: default
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -32,26 +33,18 @@ chartConfig:
       yField:
         - dbt_orders_sum_of_basket_total
     eChartsConfig:
-      grid:
-        containLabel: true
       xAxis:
         - name: Month
           type: category
       yAxis:
         - name: Revenue
-          type: value
-      legend:
-        show: false
       series:
         - type: bar
-          label:
-            show: false
           encode:
             xRef:
               field: dbt_orders_order_date_month
             yRef:
               field: dbt_orders_sum_of_basket_total
-          yAxisIndex: 0
 slug: how-much-revenue-are-we-making-each-week-
 tableConfig:
   columnOrder:
@@ -59,3 +52,4 @@ tableConfig:
     - dbt_orders_sum_of_basket_total
 spaceSlug: "-sales"
 version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

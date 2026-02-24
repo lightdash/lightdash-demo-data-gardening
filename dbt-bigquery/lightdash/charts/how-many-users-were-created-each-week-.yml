@@ -1,0 +1,76 @@
+name: How many users were created each month?
+description: >-
+  This chart shows how many users were created each month over the given time
+  period.
+tableName: dbt_users
+updatedAt: "2026-01-13T18:26:15.908Z"
+metricQuery:
+  exploreName: dbt_users
+  dimensions:
+    - dbt_users_created_date_month
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  filters: {}
+  sorts:
+    - fieldId: dbt_users_created_date_month
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  dimensionOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      stack: none
+      xField: dbt_users_created_date_month
+      yField:
+        - dbt_users_count_distinct_of_user_id
+      flipAxes: false
+      showGridY: false
+      showYAxis: true
+    eChartsConfig:
+      xAxis:
+        - name: Date (week)
+      yAxis:
+        - name: Number of new users
+        - {}
+      series:
+        - type: bar
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: dbt_users_created_date_month
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+          markLine:
+            data:
+              - name: average
+                type: average
+                uuid: fb478e3a-16fd-4419-948c-0cbcdf4106b4
+                label:
+                  position: end
+                  formatter: "average: {c}"
+                lineStyle:
+                  color: "#000"
+            symbol: none
+            lineStyle:
+              type: solid
+              color: "#000"
+              width: 3
+          yAxisIndex: 0
+          isFilteredOut: false
+      tooltip: ""
+      showAxisTicks: true
+slug: how-many-users-were-created-each-week-
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_month
+    - dbt_users_count_distinct_of_user_id
+spaceSlug: "-sales"
+version: 1
+downloadedAt: "2026-02-24T19:01:19.448Z"

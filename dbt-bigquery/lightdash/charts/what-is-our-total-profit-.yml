@@ -1,0 +1,31 @@
+name: What is our total profit?
+description: null
+tableName: dbt_orders
+updatedAt: "2022-09-06T08:20:21.468Z"
+metricQuery:
+  exploreName: dbt_orders
+  dimensions: []
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  filters: {}
+  sorts:
+    - fieldId: dbt_orders_sum_of_basket_total
+      descending: true
+  limit: 500
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: big_number
+  config:
+    label: Total profit
+    selectedField: dbt_orders_sum_of_profit
+slug: what-is-our-total-profit-
+tableConfig:
+  columnOrder:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+spaceSlug: shared
+version: 1
+downloadedAt: "2026-02-24T19:08:20.827Z"

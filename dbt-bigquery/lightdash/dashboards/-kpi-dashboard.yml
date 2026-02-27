@@ -248,42 +248,6 @@ tiles:
 filters:
   metrics: []
   dimensions:
-    - label: City
-      target:
-        fieldId: dbt_orders_shipping_city
-        fieldName: shipping_city
-        tableName: dbt_orders
-      values: []
-      disabled: true
-      operator: equals
-      required: false
-      tileTargets:
-        what-s-the-average-number-of-weekly-orders-per-user-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        how-is-the-average-order-amount-trending-each-week-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        how-much-revenue-are-we-making-each-week-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        what-is-our-total-revenue-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        what-is-our-weekly-average-feedback-rating-out-of-10-: false
-        users-by-browser: false
-        partner-profit-performance: false
-        what-is-our-total-profit-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        how-many-orders-have-we-fulfilled-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        what-are-the-sales-stats-per-partner-per-month-:
-          fieldId: dbt_orders_shipping_city
-          tableName: dbt_orders
-        how-many-users-were-created-each-week-: false
-        what-support-request-reasons-are-the-most-common-: false
     - target:
         fieldId: dbt_orders_partner_name
         fieldName: partner_name

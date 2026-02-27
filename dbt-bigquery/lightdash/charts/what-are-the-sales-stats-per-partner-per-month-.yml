@@ -36,7 +36,7 @@ chartConfig:
       flipAxes: false
       showGridX: false
       showGridY: true
-      showXAxis: false
+      showXAxis: true
       showYAxis: true
     metadata:
       dbt_orders_sum_of_basket_total.Trowels R Us:

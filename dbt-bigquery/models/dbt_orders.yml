@@ -4,8 +4,7 @@ models:
       their status'
     meta:
       label: Orders
-      sql_filter: >
-        'all' IN (${lightdash.attributes.partner_name}) OR ${TABLE}.partner_name IN (${lightdash.attributes.partner_name})
+
       pre_aggregates:
         - name: orders_partner_daily
           dimensions:

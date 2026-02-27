@@ -21,7 +21,6 @@ tiles:
         Read more about our Company KPIs [here](doc.link.com).  Talk to the
         [#data-team](slack.com) if you have any questions about the KPI
         dashboard or think there's anything missing you'd like to add!
-      hideFrame: true
   - x: 0
     "y": 2
     h: 3
@@ -74,7 +73,6 @@ tiles:
         KPIs around performance of user acquisition, growth of revenue and
         profit. If you have any questions about any of these metrics, just post
         to [#sales](slack.link.com) or [#marketing](slack.link.com) in Slack.
-      hideFrame: false
   - x: 0
     "y": 7
     h: 7
@@ -175,7 +173,6 @@ tiles:
         Feedback scores and number of requests for support are tracked here. If
         you have any questions, ask the [#customer-support](link.to.slack.com)
         team in Slack.
-      hideFrame: false
   - x: 0
     "y": 37
     h: 7
@@ -208,7 +205,6 @@ tiles:
     type: heading
     properties:
       text: Health Dashboard
-      showDivider: true
   - x: 0
     "y": 45
     h: 8

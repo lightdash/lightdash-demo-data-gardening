@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.4.1
+      - uses: actions/setup-node@v6.2.0
 
       - name: Get lightdash version 
         uses: sergeysova/jq-action@v2

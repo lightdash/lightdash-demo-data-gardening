@@ -1,7 +1,7 @@
 name: Partner profit performance (not affected by Partner dashboard filter)
 description: ""
 tableName: dbt_baskets
-updatedAt: "2025-12-09T22:40:58.800Z"
+updatedAt: "2026-03-05T12:25:55.213Z"
 metricQuery:
   exploreName: dbt_baskets
   dimensions:
@@ -16,6 +16,7 @@ metricQuery:
       descending: true
   limit: 500
   metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations:
     - name: profit_margin_1
       displayName: Profit margin
@@ -74,4 +75,4 @@ tableConfig:
     - profit_margin_1
 spaceSlug: "-key-company-dashboards"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

@@ -1,19 +1,28 @@
 name: How is the average order amount ($) trending each week??
 description: How is the average order amount ($) trending each week?
 tableName: dbt_orders
-updatedAt: "2026-01-13T18:26:15.909Z"
+updatedAt: "2026-03-09T14:30:29.525Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
     - dbt_orders_order_date_week
   metrics:
     - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
   filters: {}
   sorts:
     - fieldId: dbt_orders_order_date_week
       descending: true
   limit: 500
-  metricOverrides: {}
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        type: currency
+        round: 0
+        compact: thousands
+        currency: USD
+        separator: default
   dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
@@ -26,6 +35,8 @@ chartConfig:
       xField: dbt_orders_order_date_week
       yField:
         - dbt_orders_average_of_basket_total
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
       flipAxes: false
       showGridY: false
       showYAxis: false
@@ -58,6 +69,22 @@ chartConfig:
           areaStyle: {}
           yAxisIndex: 0
           isFilteredOut: false
+        - type: line
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          yAxisIndex: 0
+          isFilteredOut: true
+        - type: line
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          yAxisIndex: 0
+          isFilteredOut: true
       tooltip: ""
       showAxisTicks: false
 slug: how-is-the-average-order-amount-trending-each-week-
@@ -65,6 +92,8 @@ tableConfig:
   columnOrder:
     - dbt_orders_order_date_week
     - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
 spaceSlug: shared
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

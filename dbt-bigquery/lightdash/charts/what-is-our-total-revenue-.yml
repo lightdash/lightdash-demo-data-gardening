@@ -1,7 +1,7 @@
 name: What is our total revenue this month?
 description: "The total revenue we get every month from all customers "
 tableName: dbt_orders
-updatedAt: "2026-02-20T12:42:11.337Z"
+updatedAt: "2026-03-05T12:25:55.211Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -76,4 +76,4 @@ tableConfig:
     - dbt_orders_sum_of_profit
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

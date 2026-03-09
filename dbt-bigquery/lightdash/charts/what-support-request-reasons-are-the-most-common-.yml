@@ -1,7 +1,7 @@
 name: What support request reasons are the most common by percentage?
 description: null
 tableName: dbt_support_requests
-updatedAt: "2025-10-22T17:19:39.788Z"
+updatedAt: "2026-03-05T12:25:55.212Z"
 metricQuery:
   exploreName: dbt_support_requests
   dimensions:
@@ -17,6 +17,7 @@ metricQuery:
       descending: false
   limit: 500
   metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -133,4 +134,4 @@ tableConfig:
     - dbt_support_requests_count_distinct_request_id
 spaceSlug: shared
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

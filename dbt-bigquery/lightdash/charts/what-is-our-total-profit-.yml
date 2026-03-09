@@ -1,18 +1,32 @@
 name: What is our total profit?
-description: null
+description: >-
+  Profit is defined by using a very complex calculation that will take a while
+  to explain...
 tableName: dbt_orders
-updatedAt: "2022-09-06T08:20:21.468Z"
+updatedAt: "2026-03-05T12:25:55.211Z"
 metricQuery:
   exploreName: dbt_orders
-  dimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
   metrics:
-    - dbt_orders_sum_of_basket_total
     - dbt_orders_sum_of_profit
-  filters: {}
+    - dbt_orders_sum_of_basket_total
+  filters:
+    dimensions:
+      id: 1c575be5-4220-4b4e-9cd2-795930067e8d
+      and:
+        - id: ce668ead-3b3e-4c6b-bc22-89e9a9f9c45d
+          target:
+            fieldId: dbt_orders_basket_total
+          values:
+            - 1
+          operator: greaterThan
   sorts:
-    - fieldId: dbt_orders_sum_of_basket_total
+    - fieldId: dbt_orders_sum_of_profit
       descending: true
   limit: 500
+  metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -20,12 +34,19 @@ chartConfig:
   type: big_number
   config:
     label: Total profit
+    style: thousands
+    flipColors: false
     selectedField: dbt_orders_sum_of_profit
+    showComparison: true
+    comparisonLabel: MoM
+    comparisonFormat: percentage
+    showBigNumberLabel: true
 slug: what-is-our-total-profit-
 tableConfig:
   columnOrder:
-    - dbt_orders_sum_of_basket_total
+    - dbt_orders_order_date_month
     - dbt_orders_sum_of_profit
-spaceSlug: shared
+    - dbt_orders_sum_of_basket_total
+spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-02-24T19:08:20.827Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

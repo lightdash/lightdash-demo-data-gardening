@@ -1,7 +1,7 @@
 name: What are the sales stats per partner, per month?
 description: null
 tableName: dbt_orders
-updatedAt: "2025-11-10T12:12:44.880Z"
+updatedAt: "2026-03-05T12:25:55.211Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -23,6 +23,7 @@ metricQuery:
         round: 0
         currency: USD
         separator: default
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -207,4 +208,4 @@ tableConfig:
     - dbt_orders_average_of_basket_total
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

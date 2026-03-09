@@ -1,7 +1,7 @@
 name: Top 5 products by revenue
 description: Ranks products by total Revenue and returns the top 5 products.
 tableName: dbt_baskets
-updatedAt: "2026-02-03T10:43:46.347Z"
+updatedAt: "2026-03-05T12:25:55.215Z"
 metricQuery:
   exploreName: dbt_baskets
   dimensions:
@@ -66,4 +66,4 @@ tableConfig:
     - dbt_baskets_sum_of_basket_total
 spaceSlug: "-key-company-dashboards"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

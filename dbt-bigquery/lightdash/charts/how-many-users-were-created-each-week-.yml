@@ -3,7 +3,7 @@ description: >-
   This chart shows how many users were created each month over the given time
   period.
 tableName: dbt_users
-updatedAt: "2026-01-13T18:26:15.908Z"
+updatedAt: "2026-03-05T12:25:55.211Z"
 metricQuery:
   exploreName: dbt_users
   dimensions:
@@ -73,4 +73,4 @@ tableConfig:
     - dbt_users_count_distinct_of_user_id
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

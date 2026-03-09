@@ -1,7 +1,7 @@
 name: Users by browser
 description: ""
 tableName: dbt_users
-updatedAt: "2025-10-21T13:28:53.367Z"
+updatedAt: "2026-03-05T12:25:55.212Z"
 metricQuery:
   exploreName: dbt_users
   dimensions:
@@ -14,6 +14,7 @@ metricQuery:
       descending: true
   limit: 500
   metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -42,4 +43,4 @@ tableConfig:
     - dbt_users_count_distinct_of_user_id
 spaceSlug: "-key-company-dashboards"
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

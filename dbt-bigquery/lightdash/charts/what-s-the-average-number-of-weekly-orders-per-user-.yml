@@ -1,7 +1,7 @@
 name: Average order count per user per month
-description: "Bar chart showing average orders per month per user"
+description: Bar chart showing average orders per month per user
 tableName: dbt_orders
-updatedAt: "2026-02-24T19:01:18.409Z"
+updatedAt: "2026-03-09T14:30:31.411Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -31,6 +31,8 @@ chartConfig:
       xField: dbt_orders_order_date_month
       yField:
         - average_orders_per_user
+        - dbt_orders_count_distinct_order_id
+        - dbt_orders_count_distinct_user_id
       flipAxes: false
       showGridY: false
       showYAxis: false
@@ -58,6 +60,22 @@ chartConfig:
               field: average_orders_per_user
           yAxisIndex: 0
           isFilteredOut: false
+        - type: bar
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          yAxisIndex: 0
+          isFilteredOut: true
+        - type: bar
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_user_id
+          yAxisIndex: 0
+          isFilteredOut: true
       showAxisTicks: false
 slug: what-s-the-average-number-of-weekly-orders-per-user-
 tableConfig:
@@ -68,4 +86,4 @@ tableConfig:
     - average_orders_per_user
 spaceSlug: shared
 version: 1
-downloadedAt: "2026-02-24T19:01:19.448Z"
+downloadedAt: "2026-03-09T14:57:46.755Z"

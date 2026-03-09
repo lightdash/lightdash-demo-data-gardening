@@ -1,7 +1,7 @@
 name: How much revenue does each referrer bring us in per week??
 description: null
 tableName: dbt_orders
-updatedAt: "2026-01-14T19:58:44.271Z"
+updatedAt: "2026-02-03T11:25:23.677Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -35,10 +35,18 @@ chartConfig:
         - dbt_orders_sum_of_basket_total
         - dbt_orders_count_distinct_order_id
     metadata:
+      dbt_orders_sum_of_basket_total.ppc:
+        color: "#6BA3A3"
+      dbt_orders_sum_of_basket_total.direct:
+        color: "#D4A574"
+      dbt_orders_sum_of_basket_total.organic:
+        color: "#C97C7C"
+      dbt_orders_sum_of_basket_total.twitter:
+        color: "#9B7CB8"
       dbt_orders_sum_of_basket_total.facebook:
-        color: "#F6FFF9"
+        color: "#5C7F9D"
       dbt_orders_sum_of_basket_total.instagram:
-        color: "#D2FFE1"
+        color: "#7CA982"
     eChartsConfig:
       xAxis:
         - name: Date (week)
@@ -47,6 +55,7 @@ chartConfig:
         - {}
       series:
         - type: bar
+          color: "#D4A574"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -63,6 +72,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#9B7CB8"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -79,7 +89,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
-          color: "#D2FFE1"
+          color: "#7CA982"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -96,7 +106,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
-          color: "#F6FFF9"
+          color: "#5C7F9D"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -113,6 +123,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#C97C7C"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -129,6 +140,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#6BA3A3"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -145,6 +157,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#D4A574"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -159,6 +172,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#9B7CB8"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -173,6 +187,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#7CA982"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -187,6 +202,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#5C7F9D"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -201,6 +217,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#C97C7C"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -215,6 +232,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: line
+          color: "#6BA3A3"
           stack: dbt_orders_count_distinct_order_id
           encode:
             xRef:
@@ -228,6 +246,7 @@ chartConfig:
             show: true
           yAxisIndex: 0
           isFilteredOut: false
+      showAxisTicks: false
 pivotConfig:
   columns:
     - dbt_orders_referrer
@@ -240,4 +259,4 @@ tableConfig:
     - dbt_orders_count_distinct_order_id
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.012Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

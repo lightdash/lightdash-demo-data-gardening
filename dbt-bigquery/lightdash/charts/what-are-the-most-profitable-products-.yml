@@ -1,7 +1,7 @@
 name: What are the most profitable products?
 description: null
 tableName: dbt_baskets
-updatedAt: "2026-01-14T19:58:45.745Z"
+updatedAt: "2026-02-03T11:25:27.026Z"
 metricQuery:
   exploreName: dbt_baskets
   dimensions:
@@ -22,7 +22,13 @@ metricQuery:
 chartConfig:
   type: table
   config:
-    columns: {}
+    columns:
+      dbt_baskets_partner_name:
+        name: ""
+      dbt_baskets_product_name:
+        name: ""
+      dbt_baskets_sum_of_item_profit:
+        name: ""
     metricsAsRows: false
     showSubtotals: false
     hideRowNumbers: false
@@ -30,7 +36,47 @@ chartConfig:
     showResultsTotal: false
     showRowCalculation: false
     showColumnCalculation: false
-    conditionalFormattings: []
+    conditionalFormattings:
+      - color: "#D4E8D4"
+        rules:
+          - id: rule-1
+            values:
+              - 1000
+            operator: greaterThan
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
+      - color: "#B8D4B8"
+        rules:
+          - id: rule-2
+            values:
+              - 5000
+            operator: greaterThan
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
+      - color: "#9CC09C"
+        rules:
+          - id: rule-3
+            values:
+              - 10000
+            operator: greaterThan
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
+      - color: "#80AC80"
+        rules:
+          - id: rule-4
+            values:
+              - 15000
+            operator: greaterThan
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
+      - color: "#649864"
+        rules:
+          - id: rule-5
+            values:
+              - 20000
+            operator: greaterThan
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
 slug: what-are-the-most-profitable-products-
 tableConfig:
   columnOrder:
@@ -39,4 +85,4 @@ tableConfig:
     - dbt_baskets_sum_of_item_profit
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.013Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

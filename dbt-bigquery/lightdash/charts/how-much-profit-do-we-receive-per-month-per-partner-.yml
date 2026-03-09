@@ -1,7 +1,7 @@
 name: How much profit do we receive per month per partner?
 description: "How much revenue did each sales partner bring in each month? "
 tableName: dbt_orders
-updatedAt: "2026-01-19T20:14:58.084Z"
+updatedAt: "2026-02-03T11:21:12.293Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -23,7 +23,7 @@ metricQuery:
       description: >-
         Count distinct of User id on the table Dbt orders. Lightdash has created
         this metric automatically.
-      uuid: 613571e1-7fb4-4e24-8fbb-2d426e46c3b3
+      uuid: 03d88713-ac77-4c06-9f4e-dd9783e69fc9
       sql: ${TABLE}.user_id
       table: dbt_orders
       type: count_distinct
@@ -32,7 +32,7 @@ metricQuery:
       description: >-
         Count distinct of Order id on the table Dbt orders. Lightdash has
         created this metric automatically.
-      uuid: 818b424d-744d-4748-bfc9-836478b2ce68
+      uuid: 2b1a6951-ca37-48b2-818c-76ab6a915e3d
       sql: ${TABLE}.order_id
       table: dbt_orders
       type: count_distinct
@@ -41,14 +41,14 @@ metricQuery:
       description: >-
         Count distinct of Partner id on the table Dbt orders. Lightdash has
         created this metric automatically.
-      uuid: a3cfdc8e-9ccf-4a68-a7d1-cd22564664fa
+      uuid: f7c8e535-f6c0-46d1-acf7-f1719198d732
       sql: ${TABLE}.partner_id
       table: dbt_orders
       type: count_distinct
     - name: profit_sum_sum_of_profit_xxx_total_profit
       label: Total Profit
       description: "Sum of Sum of Profit xxx on the table Orders "
-      uuid: 8c4f96ac-781d-461e-9659-c9030cf9b4e5
+      uuid: 1f3c52f9-25fc-402d-a2a7-ad901013f5ab
       sql: ${TABLE}.profit
       table: dbt_orders
       type: sum
@@ -56,7 +56,13 @@ metricQuery:
 chartConfig:
   type: table
   config:
-    columns: {}
+    columns:
+      dbt_orders_partner_name:
+        name: ""
+      dbt_orders_sum_of_profit:
+        name: ""
+      dbt_orders_order_date_month:
+        name: ""
     metricsAsRows: false
     showSubtotals: false
     hideRowNumbers: false
@@ -64,7 +70,47 @@ chartConfig:
     showResultsTotal: false
     showRowCalculation: false
     showColumnCalculation: false
-    conditionalFormattings: []
+    conditionalFormattings:
+      - color: "#D4E8D4"
+        rules:
+          - id: rule-1
+            values:
+              - 50000
+            operator: greaterThan
+        target:
+          fieldId: dbt_orders_sum_of_profit
+      - color: "#B8D4B8"
+        rules:
+          - id: rule-2
+            values:
+              - 100000
+            operator: greaterThan
+        target:
+          fieldId: dbt_orders_sum_of_profit
+      - color: "#9CC09C"
+        rules:
+          - id: rule-3
+            values:
+              - 150000
+            operator: greaterThan
+        target:
+          fieldId: dbt_orders_sum_of_profit
+      - color: "#80AC80"
+        rules:
+          - id: rule-4
+            values:
+              - 200000
+            operator: greaterThan
+        target:
+          fieldId: dbt_orders_sum_of_profit
+      - color: "#649864"
+        rules:
+          - id: rule-5
+            values:
+              - 250000
+            operator: greaterThan
+        target:
+          fieldId: dbt_orders_sum_of_profit
 slug: how-much-profit-do-we-receive-per-month-per-partner-
 tableConfig:
   columnOrder:
@@ -73,4 +119,4 @@ tableConfig:
     - dbt_orders_sum_of_profit
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.012Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

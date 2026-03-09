@@ -1,7 +1,7 @@
 name: Show chosen partner name
 description: ""
 tableName: dbt_orders
-updatedAt: "2025-03-14T15:47:20.112Z"
+updatedAt: "2026-02-02T21:57:07.226Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -13,6 +13,7 @@ metricQuery:
       descending: false
   limit: 500
   metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -31,4 +32,4 @@ tableConfig:
     - dbt_orders_partner_name
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.012Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

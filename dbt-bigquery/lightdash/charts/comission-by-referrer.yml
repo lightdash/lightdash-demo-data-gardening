@@ -1,7 +1,7 @@
 name: comission by referrer
 description: ""
 tableName: dbt_orders
-updatedAt: "2025-09-11T21:02:28.826Z"
+updatedAt: "2026-02-03T11:25:22.256Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -14,12 +14,13 @@ metricQuery:
       descending: false
   limit: 500
   metricOverrides: {}
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics:
     - name: partner_commission_sum_of_partner_commission
       label: Sum of Partner commission
       description: "Sum of Sum of Partner commission on the table Orders "
-      uuid: 1840b958-9762-4a30-8172-d71fd6f27f4d
+      uuid: 3734a667-ca2a-45e5-aec9-6e6338c040fc
       sql: ${TABLE}.partner_commission
       table: dbt_orders
       type: sum
@@ -36,19 +37,21 @@ chartConfig:
       xField: dbt_orders_referrer
       yField:
         - dbt_orders_partner_commission_sum_of_partner_commission
+      flipAxes: true
     eChartsConfig:
+      xAxis:
+        - name: Referrer
+          type: category
+      yAxis:
+        - name: Commission
       series:
         - type: bar
-          label:
-            show: true
-            position: top
+          color: "#5C7F9D"
           encode:
             xRef:
               field: dbt_orders_referrer
             yRef:
               field: dbt_orders_partner_commission_sum_of_partner_commission
-          yAxisIndex: 0
-          isFilteredOut: false
 dashboardSlug: sales-updates
 slug: comission-by-referrer
 tableConfig:
@@ -57,4 +60,4 @@ tableConfig:
     - dbt_orders_partner_commission_sum_of_partner_commission
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.013Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

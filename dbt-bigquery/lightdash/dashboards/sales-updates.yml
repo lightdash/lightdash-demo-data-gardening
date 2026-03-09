@@ -1,6 +1,6 @@
 name: Sales Updates
 description: null
-updatedAt: "2026-01-29T18:40:00.000Z"
+updatedAt: "2026-02-25T15:06:50.301Z"
 tiles:
   - x: 0
     "y": 0
@@ -184,7 +184,6 @@ filters:
       tileTargets: {}
     - target:
         fieldId: dbt_baskets_order_date
-        fieldName: order_date
         tableName: dbt_baskets
       values: []
       disabled: true
@@ -195,4 +194,4 @@ tabs: []
 slug: sales-updates
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:46.341Z"
+downloadedAt: "2026-03-09T14:59:03.646Z"

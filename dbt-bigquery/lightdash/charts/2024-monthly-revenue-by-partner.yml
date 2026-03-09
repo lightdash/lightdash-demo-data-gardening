@@ -5,7 +5,7 @@ description: >-
   represents a month, and each bar within the group represents a partner's
   revenue for that month.
 tableName: dbt_orders
-updatedAt: "2025-09-11T20:57:26.518Z"
+updatedAt: "2026-02-03T11:21:10.195Z"
 metricQuery:
   exploreName: dbt_orders
   dimensions:
@@ -23,7 +23,6 @@ metricQuery:
         - id: fe122803-8ce3-4ddd-8d71-7d637cfab9bc
           target:
             fieldId: dbt_orders_order_date_year
-            fieldFilterType: date
           values:
             - "2024-01-01"
           operator: equals
@@ -41,6 +40,7 @@ metricQuery:
         compact: thousands
         currency: USD
         separator: default
+  dimensionOverrides: {}
   tableCalculations: []
   additionalMetrics: []
   customDimensions: []
@@ -51,6 +51,25 @@ chartConfig:
       xField: dbt_orders_order_date_month
       yField:
         - dbt_orders_sum_of_basket_total
+    metadata:
+      dbt_orders_sum_of_basket_total.Trowels R Us:
+        color: "#C97C7C"
+      dbt_orders_sum_of_basket_total.Redwood Ranch:
+        color: "#5C7F9D"
+      dbt_orders_sum_of_basket_total.Plant Paradise:
+        color: "#B8A86C"
+      dbt_orders_sum_of_basket_total.Roots & Shoots:
+        color: "#6BA3A3"
+      dbt_orders_sum_of_basket_total.Sprout Society:
+        color: "#9B7CB8"
+      dbt_orders_sum_of_basket_total.Potted Paradise:
+        color: "#A8C97C"
+      dbt_orders_sum_of_basket_total.Garden of Sweden:
+        color: "#8B8FB8"
+      dbt_orders_sum_of_basket_total.Happy Harvesters:
+        color: "#7CA982"
+      dbt_orders_sum_of_basket_total.Peat, Fruits and Leaves:
+        color: "#D4A574"
     eChartsConfig:
       grid:
         containLabel: true
@@ -67,6 +86,7 @@ chartConfig:
         type: plain
       series:
         - type: bar
+          color: "#5C7F9D"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -83,6 +103,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#7CA982"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -99,6 +120,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#D4A574"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -115,6 +137,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#9B7CB8"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -131,6 +154,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#C97C7C"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -147,6 +171,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#6BA3A3"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -163,6 +188,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#B8A86C"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -179,6 +205,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#8B8FB8"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -195,6 +222,7 @@ chartConfig:
           yAxisIndex: 0
           isFilteredOut: false
         - type: bar
+          color: "#A8C97C"
           label:
             show: false
           stack: dbt_orders_sum_of_basket_total
@@ -222,4 +250,4 @@ tableConfig:
     - dbt_orders_sum_of_basket_total
 spaceSlug: "-sales"
 version: 1
-downloadedAt: "2026-01-29T18:15:47.012Z"
+downloadedAt: "2026-03-09T14:59:04.061Z"

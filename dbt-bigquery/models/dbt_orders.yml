@@ -59,7 +59,8 @@ models:
             count_distinct_order_id:
               type: count_distinct
               label: 'Order Volume'
-              description: 'Total number of orders placed by customers. Watch your garden grow!'
+              description: 'Total number of orders placed by customers. Watch your garden
+                grow!'
               spotlight:
                 visibility: show
                 categories:
@@ -135,7 +136,8 @@ models:
                   else 'out of range'
                 end
             order_date_custom_period:
-              description: Date period bucket based on custom Start date and End date parameters
+              description: Date period bucket based on custom Start date and End date
+                parameters
               type: string
               sql: |
                 case
@@ -172,7 +174,7 @@ models:
                   when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
                     and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
                     then 'previous year'
-  
+
                   else 'out of range'
                 end
       - name: partner_id
@@ -262,7 +264,8 @@ models:
               type: average
               label: 'Average Order Value'
               format: '[$$]#,##0'
-              description: 'Average revenue per order. How much customers spend per visit to the garden center.'
+              description: 'Average revenue per order. How much customers spend per visit to
+                the garden center.'
               spotlight:
                 visibility: show
                 categories:
@@ -298,6 +301,13 @@ models:
               format: '[$$]#,##0'
               spotlight:
                 visibility: hide
+            profit_percentile_of_profit:
+              label: Percentile of Profit
+              description: "Percentile of Profit on the table Orders "
+              type: percentile
+              format: "[$$]#,##0"
+              percentile: 50
+              filters: []
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:

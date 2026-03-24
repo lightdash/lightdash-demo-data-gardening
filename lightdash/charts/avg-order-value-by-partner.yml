@@ -1,0 +1,54 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: aov
+          isFilteredOut: false
+          type: bar
+    layout:
+      xField: dbt_orders_partner_name
+      yField:
+        - aov
+  type: cartesian
+contentType: chart
+description: Average order value (Revenue / Orders) by partner
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts: []
+  tableCalculations:
+    - displayName: Average order value
+      format:
+        currency: USD
+        round: 2
+        separator: default
+        type: currency
+      name: aov
+      sql: ${dbt_orders_sum_of_basket_total}/${dbt_orders.order_id}
+      type: number
+name: Average order value by partner
+slug: avg-order-value-by-partner
+spaceSlug: my-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - aov
+tableName: dbt_orders
+verification: null
+version: 1

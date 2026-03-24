@@ -1,0 +1,46 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_week
+    - dbt_orders_browser
+    - dbt_orders_partner_name
+    - dbt_orders_currency
+  exploreName: dbt_orders
+  filters: {}
+  limit: 700
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations: []
+name: test subtotals
+slug: test-subtotals
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_browser
+    - dbt_orders_partner_name
+    - dbt_orders_currency
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

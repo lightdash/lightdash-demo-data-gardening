@@ -1,0 +1,178 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: dashboard with tabs - test saving to
+slug: dashboard-with-tabs-test-saving-to
+spaceSlug: "-sales"
+tabs:
+  - name: Tab 1
+    order: 0
+    uuid: 652f774e-a256-4228-9a50-2febe63af7cb
+  - name: tab 2
+    order: 1
+    uuid: f4db1897-714f-40f5-ad1f-8ec174c274f2
+tiles:
+  - h: 9
+    properties:
+      chartName: How much revenue does each referrer bring us in per week??
+      chartSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: null
+      chartSlug: null
+      hideTitle: false
+      title: ""
+    tabUuid: f4db1897-714f-40f5-ad1f-8ec174c274f2
+    tileSlug: null-1
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: null
+      chartSlug: null
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: null-2
+    type: saved_chart
+    w: 15
+    x: 15
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Basket Total & Profit Breakdown
+      chartSlug: basket-total-profit-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: f4db1897-714f-40f5-ad1f-8ec174c274f2
+    tileSlug: basket-total-profit-breakdown-1
+    type: saved_chart
+    w: 15
+    x: 16
+    "y": 0
+  - h: 9
+    properties:
+      chartName: aoispjdo
+      chartSlug: aoispjdo
+      hideTitle: false
+      title: ""
+    tabUuid: f4db1897-714f-40f5-ad1f-8ec174c274f2
+    tileSlug: aoispjdo
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 2
+  - h: 9
+    properties:
+      chartName: chart with bruno
+      chartSlug: chart-with-bruno
+      hideTitle: false
+      title: ""
+    tabUuid: f4db1897-714f-40f5-ad1f-8ec174c274f2
+    tileSlug: chart-with-bruno
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 3
+  - h: 9
+    properties:
+      chartName: testing saving directly
+      chartSlug: testing-saving-directly
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: testing-saving-directly
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Order Count Breakdown
+      chartSlug: order-count-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: order-count-breakdown-1
+    type: saved_chart
+    w: 15
+    x: 15
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Basket Total & Profit Breakdown
+      chartSlug: basket-total-profit-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: basket-total-profit-breakdown-2
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 18
+  - h: 9
+    properties:
+      chartName: Order Count Breakdown
+      chartSlug: order-count-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: order-count-breakdown-2
+    type: saved_chart
+    w: 15
+    x: 15
+    "y": 18
+  - h: 9
+    properties:
+      chartName: Frozen columns
+      chartSlug: frozen-columns
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: frozen-columns
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 27
+  - h: 9
+    properties:
+      chartName: What are the email addresses, currencies, and partners for all orders?
+      chartSlug: what-are-the-email-addresses-currencies-and-partners-for-all-orders
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: what-are-the-email-addresses-currencies-and-partners-for-all-orders
+    type: saved_chart
+    w: 35
+    x: 0
+    "y": 36
+  - h: 9
+    properties:
+      chartName: Support Request Details by Feedback Rating and Request Reason
+      chartSlug: support-request-details-by-feedback-rating-and-request-reason
+      hideTitle: false
+      title: ""
+    tabUuid: 652f774e-a256-4228-9a50-2febe63af7cb
+    tileSlug: support-request-details-by-feedback-rating-and-request-reason
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 45
+verification: null
+version: 1

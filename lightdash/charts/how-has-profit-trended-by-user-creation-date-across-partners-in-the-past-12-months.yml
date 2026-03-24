@@ -1,0 +1,169 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_user_created_date_raw
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_user_created_date_raw
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_user_created_date_raw
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_user_created_date_raw
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_user_created_date_raw
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_user_created_date_raw
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+description: >-
+  Profit performance over time segmented by partner (Redwood Ranch, Sprout
+  Society, Roots & Shoots, Peat Fruits and Leaves, and Happy Harvesters) for
+  orders from users created in the past 12 months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_user_created_date_raw
+    - dbt_orders_partner_commission
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 1833fb14-c981-4175-b43a-1120eeb17eef
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: hours
+          target:
+            fieldId: dbt_orders_order_date_hour
+          values:
+            - 12
+        - id: ea51d32e-b7dd-4446-94b7-ca6245e0804c
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: years
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 12
+        - id: d3cd6ef4-43b3-4fa0-81c6-9a4b40b415d9
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: weeks
+          target:
+            fieldId: dbt_orders_order_date_week
+          values:
+            - 34
+        - id: 24347a29-66af-452e-a6a0-6b2eb9161ef3
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 12
+        - id: a316559a-c9ca-4309-8ab4-31314906b899
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: quarters
+          target:
+            fieldId: dbt_orders_order_date_quarter
+          values:
+            - 3
+        - id: 172f75c0-b9f5-4d35-9437-ae3e0a860ff7
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: years
+          target:
+            fieldId: dbt_orders_order_date_year
+          values:
+            - 2
+      id: e069ff6a-1472-47fc-a6fe-2ec3b83402a6
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_profit
+  tableCalculations: []
+name: >-
+  How has profit trended by user creation date across partners in the past 12
+  months?
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+slug: >-
+  how-has-profit-trended-by-user-creation-date-across-partners-in-the-past-12-months
+spaceSlug: testing
+tableConfig:
+  columnOrder:
+    - dbt_orders_user_created_date_raw
+    - dbt_orders_partner_commission
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

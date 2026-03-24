@@ -1,0 +1,64 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard-1
+description: >-
+  Monthly order volume from February through August 2025, showing the count of
+  unique orders placed during each month.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 6a0b2e12-fad4-42b6-b396-34c337f3165e
+          operator: inBetween
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - "2025-02-01"
+            - "2025-08-31"
+      id: 42ebc7c3-198c-4527-95d1-c91a03c4250b
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: How many orders were placed each month from February to August 2025?
+slug: >-
+  how-many-orders-were-placed-each-month-from-february-to-august-2025-1768203909805
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

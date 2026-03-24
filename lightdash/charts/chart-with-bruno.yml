@@ -1,0 +1,46 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_users_browser
+            yRef:
+              field: dbt_users_count_distinct_email
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+    layout:
+      flipAxes: false
+      xField: dbt_users_browser
+      yField:
+        - dbt_users_count_distinct_email
+  type: cartesian
+contentType: chart
+dashboardSlug: dashboard-with-tabs-test-saving-to
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_browser
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_users_count_distinct_email
+  sorts:
+    - descending: false
+      fieldId: dbt_users_browser
+  tableCalculations: []
+name: chart with bruno
+slug: chart-with-bruno
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_users_browser
+    - dbt_users_count_distinct_email
+tableName: dbt_users
+verification: null
+version: 1

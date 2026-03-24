@@ -1,0 +1,28 @@
+chartKind: vertical_bar
+config:
+  display: {}
+  fieldConfig:
+    groupBy: []
+    sortBy:
+      - direction: ASC
+        reference: partner_name
+    x:
+      reference: partner_name
+      type: category
+    "y":
+      - aggregation: sum
+        reference: ct
+  metadata:
+    version: 1
+  type: vertical_bar
+contentType: sql_chart
+description: ""
+limit: 500
+name: partner orders bar chart
+slug: partner-orders-bar-chart
+spaceSlug: shared
+sql: |-
+  SELECT partner_name, count(1) ct  
+  FROM `lightdash-healthcare-demo`.`lightdash_gardening_demo`.`dbt_orders` 
+  group by 1 order by 2 desc 
+version: 1

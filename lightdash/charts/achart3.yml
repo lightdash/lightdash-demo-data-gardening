@@ -1,0 +1,42 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_feedback_rating
+            yRef:
+              field: dbt_support_requests_order_id
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_support_requests_feedback_rating
+      yField:
+        - dbt_support_requests_order_id
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_order_id
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metrics: []
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_feedback_rating
+  tableCalculations: []
+name: Achart3
+slug: achart3
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_order_id
+tableName: dbt_support_requests
+verification: null
+version: 1

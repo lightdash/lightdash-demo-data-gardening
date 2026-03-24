@@ -1,0 +1,177 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Potted Paradise
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Trowels R Us
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          stack: dbt_orders_count_distinct_order_id
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Month
+      yAxis:
+        - name: Order count
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: account-management-orders-by-partner
+description: >-
+  Tracks monthly order volume for each partner to identify trends and
+  seasonality.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 946d036d-a84d-469e-b138-1cf3884917db
+    metrics:
+      and: []
+      id: a63f769c-bed1-4fd3-bd59-183e66b271da
+    tableCalculations:
+      and: []
+      id: d9c75dd3-6b0d-45b1-8860-2b508c4cbec9
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Order Volume Trend by Partner (Monthly)
+slug: order-volume-trend-by-partner-monthly
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

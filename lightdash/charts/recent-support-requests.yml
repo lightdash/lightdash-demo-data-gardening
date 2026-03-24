@@ -1,0 +1,57 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: customer-feedback-support-dashboard
+description: Table of recent support requests with key details for operational review.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_id
+    - dbt_support_requests_created_date
+    - dbt_support_requests_user_id
+    - dbt_support_requests_reason
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_feedback_rating
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and: []
+      id: 579e2fcb-131e-4259-ae4f-ab6e75a47e41
+    metrics:
+      and: []
+      id: cfe4568d-c52f-46fc-b1e0-e6d251f6f46d
+    tableCalculations:
+      and: []
+      id: 73eae768-248a-4c4a-a73d-63581df00a9c
+  limit: 20
+  metricOverrides: {}
+  metrics: []
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_created_date
+  tableCalculations: []
+name: Recent Support Requests
+slug: recent-support-requests
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_id
+    - dbt_support_requests_created_date
+    - dbt_support_requests_user_id
+    - dbt_support_requests_reason
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_feedback_rating
+tableName: dbt_support_requests
+verification: null
+version: 1

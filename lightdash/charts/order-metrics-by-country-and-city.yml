@@ -1,0 +1,46 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: true
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: true
+    showTableNames: false
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_shipping_country
+    - dbt_orders_shipping_city
+  exploreName: dbt_orders
+  filters: {}
+  limit: 5000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Order Metrics by Country and City
+slug: order-metrics-by-country-and-city
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_shipping_country
+    - dbt_orders_shipping_city
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

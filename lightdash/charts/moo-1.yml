@@ -1,0 +1,45 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: monthly_partner_info_partner_size
+            yRef:
+              field: monthly_partner_info_dbt_orders_sum_basket_total
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: monthly_partner_info_partner_size
+      yField:
+        - monthly_partner_info_dbt_orders_sum_basket_total
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - monthly_partner_info_partner_size
+    - monthly_partner_info_dbt_orders_sum_basket_total
+  exploreName: monthly_partner_info
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics: []
+  sorts:
+    - descending: false
+      fieldId: monthly_partner_info_partner_size
+  tableCalculations: []
+name: moo
+slug: moo-1
+spaceSlug: magnew
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_partner_size
+    - monthly_partner_info_dbt_orders_sum_basket_total
+tableName: monthly_partner_info
+verification: null
+version: 1

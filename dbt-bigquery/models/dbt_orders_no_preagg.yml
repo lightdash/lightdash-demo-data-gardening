@@ -28,10 +28,12 @@ models:
           label: "Start of custom date range"
           description: "The start of the custom date range"
           type: date
+          allow_custom_values: true
         custom_range_end:
           label: "End of custom date range"
           description: "The end of the custom date range"
           type: date
+          allow_custom_values: true
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'

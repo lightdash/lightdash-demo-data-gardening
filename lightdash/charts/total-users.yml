@@ -1,0 +1,34 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    selectedField: dbt_users_count_distinct_of_user_id
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_created_date_year
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_users_created_date_year
+  tableCalculations: []
+name: Total Users
+slug: total-users
+spaceSlug: "-marketing"
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_year
+    - dbt_users_count_distinct_of_user_id
+tableName: dbt_users
+verification: null
+version: 1

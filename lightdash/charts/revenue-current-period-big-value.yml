@@ -1,0 +1,49 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    comparisonLabel: vs previous period
+    flipColors: false
+    label: Revenue in current period
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: true
+  type: big_number
+contentType: chart
+dashboardSlug: period-over-period-parameters-example
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_period
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: a9e130e4-9dc0-4133-a733-8184b7baa91c
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_period
+          values:
+            - current period
+            - previous period
+      id: fd4e268c-d9d4-40e6-96b7-66d5503fe508
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_period
+  tableCalculations: []
+name: Revenue current period big value
+slug: revenue-current-period-big-value
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_period
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

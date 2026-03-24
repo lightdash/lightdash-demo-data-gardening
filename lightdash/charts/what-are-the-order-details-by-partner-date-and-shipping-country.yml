@@ -1,0 +1,49 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: >-
+  A detailed breakdown of orders showing partner name, order date, shipping
+  country, and associated revenue for each transaction.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+    - dbt_orders_partner_name
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: What are the order details by partner, date, and shipping country?
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+slug: what-are-the-order-details-by-partner-date-and-shipping-country
+spaceSlug: shared/shared-nested/jess-s-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_partner_name
+    - dbt_orders_shipping_country
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

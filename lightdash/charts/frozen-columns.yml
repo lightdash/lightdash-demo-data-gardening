@@ -1,0 +1,80 @@
+chartConfig:
+  config:
+    columns:
+      dbt_support_requests_feedback_rating:
+        frozen: true
+      dbt_support_requests_order_id:
+        frozen: true
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_order_id
+    - dbt_support_requests_reason
+    - dbt_support_requests_request_date_year
+    - dbt_support_requests_request_id
+    - dbt_orders_currency
+    - dbt_orders_partner_id
+    - dbt_orders_partner_name
+    - dbt_orders_profit
+    - dbt_orders_basket_total
+    - dbt_orders_browser
+    - dbt_orders_partner_commission
+    - dbt_orders_email
+    - dbt_orders_referrer
+    - dbt_orders_shipping_city
+    - dbt_orders_shipping_country
+    - dbt_orders_user_id
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_average_of_feedback_rating
+    - dbt_support_requests_count_of_reason
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_request_date_year
+  tableCalculations: []
+name: Frozen columns
+slug: frozen-columns
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_order_id
+    - dbt_support_requests_reason
+    - dbt_support_requests_request_date_year
+    - dbt_support_requests_request_id
+    - dbt_orders_currency
+    - dbt_orders_partner_id
+    - dbt_orders_partner_name
+    - dbt_orders_profit
+    - dbt_orders_basket_total
+    - dbt_orders_browser
+    - dbt_orders_partner_commission
+    - dbt_orders_email
+    - dbt_orders_referrer
+    - dbt_orders_shipping_city
+    - dbt_orders_shipping_country
+    - dbt_orders_user_id
+    - dbt_support_requests_average_of_feedback_rating
+    - dbt_support_requests_count_of_reason
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

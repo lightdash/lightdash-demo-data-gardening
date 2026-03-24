@@ -1,0 +1,120 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#235c0a"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: twitter
+          stack: percent_of_total_revenue
+          type: bar
+        - color: "#a90f0f"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: facebook
+          stack: percent_of_total_revenue
+          type: bar
+        - color: "#31a300"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: ppc
+          name: ppc
+          stack: percent_of_total_revenue
+          type: bar
+        - color: "#87a776"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: instagram
+          stack: percent_of_total_revenue
+          type: bar
+        - color: "#ec2a2a"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: organic
+          name: organic
+          stack: percent_of_total_revenue
+          type: bar
+        - color: "#de68de"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_of_total_revenue
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: direct
+          stack: percent_of_total_revenue
+          type: bar
+      xAxis:
+        - name: Date (week)
+      yAxis:
+        - name: "% of total revenue"
+        - {}
+    layout:
+      xField: dbt_orders_order_date_week
+      yField:
+        - percent_of_total_revenue
+  type: cartesian
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_week
+    - dbt_orders_referrer
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations:
+    - displayName: percent of total revenue
+      name: percent_of_total_revenue
+      sql: >-
+        ${dbt_orders.sum_of_basket_total} /
+        SUM(${dbt_orders.sum_of_basket_total}) OVER(PARTITION BY
+        ${dbt_orders.order_date_week})
+name: What % of the total revenue does each referrer bring in per week?
+pivotConfig:
+  columns:
+    - dbt_orders_referrer
+slug: what-of-the-total-revenue-does-each-referrer-bring-in-per-week-
+spaceSlug: "-marketing"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_referrer
+    - dbt_orders_sum_of_basket_total
+    - percent_of_total_revenue
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,37 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    flipColors: false
+    selectedField: dbt_orders_count_distinct_user_id
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+  type: big_number
+contentType: chart
+dashboardSlug: a-bunch-of-markdown-and-big-values
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_user_id
+  tableCalculations: []
+name: Copy of users
+slug: copy-of-users-1763179384680
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

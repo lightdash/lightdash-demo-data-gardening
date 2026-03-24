@@ -1,0 +1,148 @@
+chartConfig:
+  config:
+    spec:
+      $schema: https://vega.github.io/schema/vega-lite/v5.json
+      columns: 2
+      concat:
+        - encoding:
+            color:
+              value: "#515151"
+            text:
+              field: dbt_orders_count_distinct_user_id
+              type: nominal
+            x:
+              value: -1
+            "y":
+              value: 0
+          mark:
+            align: left
+            baseline: middle
+            fontSize: 30
+            type: text
+          title: UK Redwood Ranch
+          transform:
+            - filter: datum.dbt_orders_browser === 'chrome'
+            - filter: datum.dbt_orders_partner_name === 'Redwood Ranch'
+            - sort:
+                - field: dbt_orders_user_created_date_day
+                  order: descending
+              window:
+                - as: rn
+                  op: row_number
+            - filter: datum.rn === 1
+        - encoding:
+            color:
+              value: "#515151"
+            text:
+              field: dbt_orders_count_distinct_user_id
+              type: nominal
+            x:
+              value: -1
+            "y":
+              value: 0
+          mark:
+            align: left
+            baseline: middle
+            fontSize: 30
+            type: text
+          title: UK Free Trial
+          transform:
+            - filter: datum.dbt_orders_browser === 'chrome'
+            - filter: datum.dbt_orders_partner_name === 'Free Trial'
+            - sort:
+                - field: dbt_orders_user_created_date_day
+                  order: descending
+              window:
+                - as: rn
+                  op: row_number
+            - filter: datum.rn === 1
+        - encoding:
+            color:
+              value: "#515151"
+            text:
+              field: dbt_orders_count_distinct_user_id
+              type: nominal
+            x:
+              value: -1
+            "y":
+              value: 0
+          mark:
+            align: left
+            baseline: middle
+            fontSize: 30
+            type: text
+          title: US Redwood Ranch
+          transform:
+            - filter: datum.dbt_orders_browser === 'Safari'
+            - filter: datum.dbt_orders_partner_name === 'Redwood Ranch'
+            - sort:
+                - field: dbt_orders_user_created_date_day
+                  order: descending
+              window:
+                - as: rn
+                  op: row_number
+            - filter: datum.rn === 1
+        - encoding:
+            color:
+              value: "#515151"
+            text:
+              field: dbt_orders_count_distinct_user_id
+              type: nominal
+            x:
+              value: -1
+            "y":
+              value: 0
+          mark:
+            align: left
+            baseline: middle
+            fontSize: 30
+            type: text
+          title: US Free Trial
+          transform:
+            - filter: datum.dbt_orders_browser === 'Safari'
+            - filter: datum.dbt_orders_partner_name === 'Roots & Shoots'
+            - sort:
+                - field: dbt_orders_user_created_date_day
+                  order: descending
+              window:
+                - as: rn
+                  op: row_number
+            - filter: datum.rn === 1
+      config:
+        view:
+          fill: transparent
+          stroke: ""
+      description: UK/US latest customer totals by Redwood Ranch / Free Trial
+  type: custom
+contentType: chart
+dashboardSlug: my-dashboard
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_user_created_date_day
+    - dbt_orders_partner_name
+    - dbt_orders_browser
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_user_created_date_day
+  tableCalculations: []
+name: example custom viz
+slug: example-custom-viz
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_user_created_date_day
+    - dbt_orders_partner_name
+    - dbt_orders_browser
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

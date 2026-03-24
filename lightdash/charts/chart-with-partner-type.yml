@@ -1,0 +1,55 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_partner_name
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_baskets_partner_name
+      yField:
+        - dbt_baskets_sum_of_basket_total
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions:
+    - dimensionType: string
+      id: partner_type
+      name: partner_type
+      sql: >-
+        case when ${dbt_baskets.partner_name} = 'Redwood Ranch' then 'type A'
+        else 'type B' end 
+      table: dbt_baskets
+      type: sql
+  dimensions:
+    - dbt_baskets_partner_name
+    - partner_type
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_baskets_partner_name
+  tableCalculations: []
+name: chart with partner type
+slug: chart-with-partner-type
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_baskets_partner_name
+    - partner_type
+    - dbt_baskets_sum_of_basket_total
+tableName: dbt_baskets
+verification: null
+version: 1

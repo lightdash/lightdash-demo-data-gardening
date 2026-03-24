@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          name: Revenue
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Revenue
+    layout:
+      flipAxes: true
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: order-revenue-dashboard
+description: Ranks partners by total revenue to identify concentration and key accounts.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 7d725616-e014-4627-9eaf-9d3994a62f4d
+    metrics:
+      and: []
+      id: 217686c8-0f79-4d36-8d9e-174cb5b06b58
+    tableCalculations:
+      and: []
+      id: 46281c7f-c453-46f2-8de9-4307754d20b7
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Top partners by revenue
+slug: top-partners-by-revenue-2
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

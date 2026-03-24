@@ -1,0 +1,64 @@
+chartConfig:
+  config:
+    columns:
+      dbt_orders_order_date_hour:
+        frozen: true
+      dbt_orders_count_distinct_order_id:
+        frozen: false
+      dbt_orders_partner_name:
+        frozen: true
+      dbt_orders_referrer:
+        frozen: true
+      dbt_orders_shipping_country:
+        frozen: true
+      dbt_orders_sum_of_profit:
+        frozen: false
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: >-
+  Detailed breakdown of order volume and profit across order timestamps,
+  fulfilling partners, traffic sources, and customer shipping locations.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_hour
+    - dbt_orders_partner_name
+    - dbt_orders_referrer
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_hour
+  tableCalculations: []
+name: >-
+  How do orders, profit, and referrers vary by date, partner, and shipping
+  country?
+slug: how-do-orders-profit-and-referrers-vary-by-date-partner-and-shipping-country
+spaceSlug: shared/shared-nested/jess-s-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_hour
+    - dbt_orders_partner_name
+    - dbt_orders_referrer
+    - dbt_orders_shipping_country
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

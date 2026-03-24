@@ -1,0 +1,40 @@
+contentType: dashboard
+description: >-
+  A dashboard summarizing Redwood Ranch's order performance, revenue, and trends
+  since Black Friday 2024 (November 29, 2024) to support partner review
+  discussions.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Redwood Ranch Partner Performance Since Black Friday 2024
+slug: redwood-ranch-partner-performance-since-black-friday-2024
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Total Orders from Redwood Ranch Since Black Friday 2024
+      chartSlug: total-orders-from-redwood-ranch-since-black-friday-2024
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-orders-from-redwood-ranch-since-black-friday-2024
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Monthly Order Trend for Redwood Ranch
+      chartSlug: monthly-order-trend-for-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: monthly-order-trend-for-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+verification: null
+version: 1

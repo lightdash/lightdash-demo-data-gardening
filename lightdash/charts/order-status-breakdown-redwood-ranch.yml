@@ -1,0 +1,69 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_selected_dim
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          name: Order count
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Order Status
+      yAxis:
+        - name: Order Count
+    layout:
+      xField: dbt_orders_selected_dim
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: redwood-ranch-partner-performance-dashboard
+description: >-
+  Distribution of order statuses for Redwood Ranch, showing how many orders are
+  fulfilled, pending, etc.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_selected_dim
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: d289c56d-2c40-416b-8e50-36e353b1f096
+          operator: equals
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Redwood Ranch
+      id: 27e5c042-b8ff-4e6e-8b49-74ad92c426d2
+    metrics:
+      and: []
+      id: 17c9f7d8-695d-4306-aa1b-82cf8818397f
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Order Status Breakdown (Redwood Ranch)
+slug: order-status-breakdown-redwood-ranch
+spaceSlug: sql-runner-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_selected_dim
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

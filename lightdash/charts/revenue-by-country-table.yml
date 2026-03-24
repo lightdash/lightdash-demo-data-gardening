@@ -1,0 +1,39 @@
+chartConfig:
+  config: null
+  type: table
+contentType: chart
+dashboardSlug: sales-dashboard
+description: >-
+  This table displays the total revenue (sum of basket total) for each shipping
+  country, allowing for a detailed comparison across countries.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 9c2b8789-1329-4f72-95b4-ac6765cc7205
+    metrics:
+      and: []
+      id: 65c047c5-722d-4192-ba52-66a170482086
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Revenue by Country Table
+slug: revenue-by-country-table
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_shipping_country
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

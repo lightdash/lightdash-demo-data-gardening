@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs previous month
+    flipColors: false
+    label: Revenue last month
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: true
+    style: thousands
+  type: big_number
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: f69e607d-93cf-4f1a-a724-b9392144f74a
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 2
+      id: acf7a1b9-b741-49ff-8a3d-f5b46a806701
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Copy of Copy of Orders
+slug: copy-of-copy-of-orders-1750466595092
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

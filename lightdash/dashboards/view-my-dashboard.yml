@@ -1,0 +1,28 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: "View my dashboard "
+slug: view-my-dashboard
+spaceSlug: private-space-5g1jwjnb5a
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: this is a test chart
+      chartSlug: this-is-a-test-chart
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: this-is-a-test-chart
+    type: saved_chart
+    w: 15
+    x: 15
+    "y": 0
+verification: null
+version: 1

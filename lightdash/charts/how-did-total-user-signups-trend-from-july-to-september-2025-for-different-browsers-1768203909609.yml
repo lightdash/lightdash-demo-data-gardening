@@ -1,0 +1,142 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - color: "#337dff"
+          encode:
+            xRef:
+              field: dbt_users_created_date_week
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+              pivotValues:
+                - field: dbt_users_browser
+                  value: firefox
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: true
+          smooth: true
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_users_created_date_week
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+              pivotValues:
+                - field: dbt_users_browser
+                  value: edge
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: true
+          smooth: true
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_users_created_date_week
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+              pivotValues:
+                - field: dbt_users_browser
+                  value: safari
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: true
+          smooth: true
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_users_created_date_week
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+              pivotValues:
+                - field: dbt_users_browser
+                  value: chrome
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: true
+          smooth: true
+          type: line
+          yAxisIndex: 0
+      showAxisTicks: false
+      tooltip: ""
+    layout:
+      flipAxes: false
+      stack: none
+      xField: dbt_users_created_date_week
+      yField:
+        - dbt_users_count_distinct_of_user_id
+    metadata:
+      dbt_users_count_distinct_of_user_id.firefox:
+        color: "#337dff"
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard-1
+description: >-
+  Weekly user creation trend showing the number of new users signing up each
+  week between August 1 and September 30, 2025.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_created_date_week
+    - dbt_users_browser
+  exploreName: dbt_users
+  filters:
+    dimensions:
+      and:
+        - id: 89f46276-9163-4b62-9044-d0ffea06b9fb
+          operator: inBetween
+          required: false
+          target:
+            fieldId: dbt_users_created_date_week
+          values:
+            - "2025-07-01"
+            - "2025-09-30"
+        - id: 41e81143-826f-48c4-bf56-91d110f5f834
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_users_browser
+          values:
+            - chrome
+            - edge
+            - firefox
+            - safari
+      id: a717997e-eb7a-44a4-82cd-521db7b5e330
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_users_created_date_week
+  tableCalculations: []
+name: >-
+  How did total user signups trend from July to September 2025 for different
+  browsers?
+pivotConfig:
+  columns:
+    - dbt_users_browser
+slug: >-
+  how-did-total-user-signups-trend-from-july-to-september-2025-for-different-browsers-1768203909609
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_week
+    - dbt_users_browser
+    - dbt_users_count_distinct_of_user_id
+tableName: dbt_users
+verification: null
+version: 1

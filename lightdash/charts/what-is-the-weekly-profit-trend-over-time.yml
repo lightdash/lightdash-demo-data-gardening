@@ -1,0 +1,50 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_order_date_week
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+description: >-
+  Visualizes profit performance across weeks to identify seasonal patterns and
+  profitability trends.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_week
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_profit
+  tableCalculations: []
+name: What is the weekly profit trend over time?
+slug: what-is-the-weekly-profit-trend-over-time
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_week
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

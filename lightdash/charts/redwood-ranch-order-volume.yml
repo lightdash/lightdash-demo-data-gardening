@@ -1,0 +1,30 @@
+chartConfig:
+  config:
+    label: Order Volume
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters: {}
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts: []
+  tableCalculations: []
+name: Redwood Ranch Order Volume
+slug: redwood-ranch-order-volume
+spaceSlug: redwood-ranch
+tableConfig:
+  columnOrder:
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

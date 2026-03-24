@@ -1,0 +1,65 @@
+chartConfig:
+  config:
+    spec:
+      layer:
+        - encoding:
+            x:
+              field: dbt_users_created_date_day
+              type: temporal
+            "y":
+              field: dbt_users_count_distinct_of_user_id
+              type: quantitative
+          mark:
+            color: blueviolet
+            interpolate: natural
+            type: square
+        - encoding:
+            text:
+              field: dbt_users_count_distinct_of_user_id
+            x:
+              field: dbt_users_created_date_day
+              type: temporal
+            "y":
+              field: dbt_users_count_distinct_of_user_id
+              type: quantitative
+            yOffset:
+              value: -10
+          mark:
+            color: black
+            interpolate: natural
+            type: text
+  type: custom
+contentType: chart
+description: How many users were created each week?
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_created_date_day
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: false
+      fieldId: dbt_users_created_date_day
+  tableCalculations:
+    - displayName: position
+      format:
+        currency: USD
+        separator: default
+        type: default
+      name: position
+      sql: "10"
+name: Copy of How many users were created each day?
+slug: copy-of-how-many-users-were-created-each-day-
+spaceSlug: katie-s-private-space
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_day
+    - dbt_users_count_distinct_of_user_id
+    - position
+tableName: dbt_users
+verification: null
+version: 1

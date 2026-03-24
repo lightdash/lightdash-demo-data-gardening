@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: MoM
+    conditionalFormattings: []
+    flipColors: false
+    label: Orders fulfilled
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: true
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: How many orders have we fulfilled??
+slug: how-many-orders-have-we-fulfilled-
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,1435 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.09
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.12
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.15
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.18
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.21000000000000002
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.24
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.28
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.3
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.32
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.33
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.35000000000000003
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.36
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.4
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.42000000000000004
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.44
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.44999999999999996
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.48
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.51
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.54
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.55
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.56
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.6
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.66
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.68
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.7000000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.72
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.75
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.8400000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.8500000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.88
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 0.8999999999999999
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.02
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.05
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.08
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.1
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.1900000000000002
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.32
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.36
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.4000000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.44
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.5
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.6
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.6199999999999999
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.65
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.6800000000000002
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.7500000000000002
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.7999999999999998
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.87
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.92
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 1.95
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.1
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.25
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.37
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.3800000000000003
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.4
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.55
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.5500000000000003
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.64
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.6999999999999997
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.75
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.8000000000000003
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.85
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.89
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 2.9699999999999998
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.06
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.2399999999999998
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.3
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.3600000000000003
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.4000000000000004
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.4499999999999997
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.5000000000000004
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.5999999999999996
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.74
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.7800000000000002
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 3.9
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.08
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.25
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.32
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.4
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.5
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.550000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.74
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.8
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 4.9
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.1
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.1000000000000005
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.2
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.250000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.28
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.3999999999999995
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.5
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.53
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.6000000000000005
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.7
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.9399999999999995
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.94
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 5.95
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.32
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.4
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.6
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.65
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.75
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.8
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.800000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.8999999999999995
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 6.930000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.000000000000001
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.15
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.199999999999999
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.5
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.5600000000000005
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.6000000000000005
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.7
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.8
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 7.92
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 8.05
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_quarter
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+              pivotValues:
+                - field: dbt_baskets_item_profit
+                  value: 8.25
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_baskets_order_date_quarter
+      yField:
+        - dbt_baskets_sum_of_basket_total
+  type: cartesian
+contentType: chart
+description: >-
+  The chart illustrates the total basket amounts for various profit margins,
+  highlighting trends in sales over the last four quarters.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_baskets_item_profit
+    - dbt_baskets_order_date_quarter
+  exploreName: dbt_baskets
+  filters:
+    dimensions:
+      and:
+        - id: 8a28a731-56b3-46e6-8742-58abe0f1e714
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: quarters
+          target:
+            fieldId: dbt_baskets_order_date_quarter
+          values:
+            - 4
+      id: 59edb605-9dbe-4440-9fde-64313df9e701
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_baskets_item_profit
+  tableCalculations: []
+name: >-
+  How do basket totals vary by quarter for items with different profit margins
+  in the last 4 quarters?
+pivotConfig:
+  columns:
+    - dbt_baskets_item_profit
+slug: >-
+  how-do-basket-totals-vary-by-quarter-for-items-with-different-profit-margins-in-the-last-4-quarters
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_baskets_item_profit
+    - dbt_baskets_order_date_quarter
+    - dbt_baskets_sum_of_basket_total
+tableName: dbt_baskets
+verification: null
+version: 1

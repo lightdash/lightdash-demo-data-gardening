@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_support_requests_request_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+          name: Total requests
+          type: line
+          yAxisIndex: 0
+      title:
+        text: Support Requests by Month
+      xAxis:
+        - name: Request Month
+          type: time
+      yAxis:
+        - name: Support Requests
+          type: value
+    layout:
+      xField: dbt_support_requests_request_date_month
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+  type: cartesian
+contentType: chart
+dashboardSlug: business-pulse-revenue-users-support-overview
+description: >-
+  Analyze monthly support request volume to understand customer needs and
+  support team workload.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_month
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and: []
+      id: b4d9ecab-dbaf-4c8a-90ef-b653d70f17ae
+    metrics:
+      and: []
+      id: 92dd90dd-859f-4df0-8002-38adb0808dbb
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_request_date_month
+  tableCalculations: []
+name: Support Requests by Month
+slug: support-requests-by-month
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_month
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

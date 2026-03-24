@@ -1,0 +1,68 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+dashboardSlug: pre-aggregates-sneak-peek
+description: >-
+  View total profit broken down by partner name and order month to identify
+  which partners drive the most revenue across different time periods.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 2dd8cfe3-fe3d-4b6a-8043-34bd1d213e46
+          operator: greaterThan
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 2026-01
+      id: a5fd370f-eb08-4e5b-aefb-8a9738bc3bf4
+    metrics:
+      and:
+        - id: 08ce82d8-0b0d-45df-8ca7-d7228c306114
+          operator: greaterThan
+          target:
+            fieldId: dbt_orders_sum_of_profit
+          values:
+            - 100
+      id: c7d5ed9d-67a3-4982-b56f-a97f99d60fa9
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: What is the profit by partner and order month?
+pivotConfig:
+  columns: []
+slug: what-is-the-profit-by-partner-and-order-month
+spaceSlug: shared/dashcachedemo
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_shipping_country
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

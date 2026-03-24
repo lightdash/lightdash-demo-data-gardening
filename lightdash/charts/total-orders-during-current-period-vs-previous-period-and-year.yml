@@ -1,0 +1,74 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        orient: vertical
+        show: false
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_period
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          label:
+            position: inside
+            show: true
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - inverse: true
+          name: " "
+          sortType: default
+    layout:
+      flipAxes: true
+      showXAxis: false
+      showYAxis: true
+      stack: none
+      xField: dbt_orders_order_date_period
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: period-over-period-parameters-example
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_period
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: b8cbcfb6-1972-4855-af32-4b5cfc5e49a5
+          operator: notEquals
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_period
+          values:
+            - out of range
+      id: da4b0213-ed30-492b-bed7-99141490b7bc
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_period
+  tableCalculations: []
+name: Total orders during current period vs. previous period and year
+parameters:
+  dbt_orders.date_range: last 7 days
+pivotConfig:
+  columns: []
+slug: total-orders-during-current-period-vs-previous-period-and-year
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_period
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,38 @@
+chartConfig:
+  config: null
+  type: table
+contentType: chart
+dashboardSlug: business-pulse-revenue-customers-support-overview
+description: See the overall sum of revenue and total number of orders to date.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 0f747b09-f950-44b3-bb78-c88ed4ba0364
+    metrics:
+      and: []
+      id: 706557bb-382c-48b6-9a3d-236dcfa13989
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Total Revenue & Order Count (KPI)
+slug: total-revenue-order-count-kpi
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

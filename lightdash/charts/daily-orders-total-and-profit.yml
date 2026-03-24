@@ -1,0 +1,96 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_order_date_day
+      yField:
+        - dbt_orders_count_distinct_order_id
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: c4a3dd47-7f1c-42dc-a782-c97b717b8dcf
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: days
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 90
+      id: 7b2a84b6-eded-41b6-977d-02965c5139b3
+  limit: 500
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        compact: thousands
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+    dbt_orders_sum_of_profit:
+      formatOptions:
+        compact: thousands
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: Daily orders, total, and profit
+slug: daily-orders-total-and-profit
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

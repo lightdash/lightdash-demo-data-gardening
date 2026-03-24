@@ -1,0 +1,80 @@
+chartConfig:
+  config:
+    columns:
+      dbt_support_requests_feedback_rating:
+        width: 259
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: dashboard-with-tabs-test-saving-to
+description: >-
+  View all support tickets with their associated feedback ratings, request
+  reasons, and other key attributes to identify patterns in customer
+  satisfaction and support request types.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_support_requests_browser
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_partner_id
+    - dbt_support_requests_reason
+    - dbt_orders_currency
+    - dbt_orders_selected_dim
+    - dbt_orders_shipping_city
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+    - dbt_support_requests_count_of_reason
+    - dbt_support_requests_average_of_feedback_rating
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_avg_profit
+    - dbt_orders_distinct_partners
+    - dbt_orders_max_order_profit
+    - dbt_orders_median_profit
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_user_id
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_browser
+  tableCalculations: []
+name: Support Request Details by Feedback Rating and Request Reason
+slug: support-request-details-by-feedback-rating-and-request-reason
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_browser
+    - dbt_support_requests_feedback_rating
+    - dbt_support_requests_partner_id
+    - dbt_support_requests_reason
+    - dbt_orders_currency
+    - dbt_orders_selected_dim
+    - dbt_orders_shipping_city
+    - dbt_support_requests_count_distinct_request_id
+    - dbt_support_requests_count_of_reason
+    - dbt_support_requests_average_of_feedback_rating
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_avg_profit
+    - dbt_orders_distinct_partners
+    - dbt_orders_max_order_profit
+    - dbt_orders_median_profit
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_support_requests
+verification: null
+version: 1

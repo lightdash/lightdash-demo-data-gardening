@@ -1,0 +1,66 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_users_created_date_month_name
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+          name: Total users
+          type: line
+          yAxisIndex: 0
+      title:
+        text: User Growth Over Time
+      xAxis:
+        - name: Signup Month
+          type: time
+      yAxis:
+        - name: New Users
+          type: value
+    layout:
+      xField: dbt_users_created_date_month_name
+      yField:
+        - dbt_users_count_distinct_of_user_id
+  type: cartesian
+contentType: chart
+dashboardSlug: business-pulse-revenue-users-support-overview
+description: >-
+  Track the number of new users joining each month to monitor acquisition
+  trends.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_created_date_month_name
+  exploreName: dbt_users
+  filters:
+    dimensions:
+      and: []
+      id: a091e8a7-83b3-4348-9824-d49f7e1cc7da
+    metrics:
+      and: []
+      id: 34ce0d91-28e3-42ab-bce8-773a3f64ed9b
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: false
+      fieldId: dbt_users_created_date_month_name
+  tableCalculations: []
+name: User Growth Over Time
+slug: user-growth-over-time
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_month_name
+    - dbt_users_count_distinct_of_user_id
+tableName: dbt_users
+verification: null
+version: 1

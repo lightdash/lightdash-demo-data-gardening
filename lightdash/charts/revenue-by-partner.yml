@@ -1,0 +1,91 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          label:
+            position: right
+            show: true
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: true
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          isFilteredOut: true
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Revenue
+      yAxis:
+        - name: ""
+    layout:
+      flipAxes: true
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+description: >-
+  Total revenue by partner, sorted by highest revenue. Respects dashboard date
+  filter.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 50
+  metricOverrides:
+    dbt_orders_average_of_basket_total:
+      formatOptions:
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Revenue by partner
+slug: revenue-by-partner
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

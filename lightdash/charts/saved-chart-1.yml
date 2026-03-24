@@ -1,0 +1,57 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_orders_order_date_day
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_day
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: ccd94e36-ae69-44b2-986d-f95aa5f49a5e
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: quarters
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 6
+      id: b0a40bd0-b799-4b36-886b-ceeca7607dbd
+  limit: 5000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: saved chart
+slug: saved-chart-1
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,61 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_partner_name
+            yRef:
+              field: dbt_baskets_average_of_basket_total
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 1
+        - encode:
+            xRef:
+              field: dbt_baskets_partner_name
+            yRef:
+              field: dbt_baskets_sum_of_item_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      flipAxes: true
+      stack: none
+      xField: dbt_baskets_partner_name
+      yField:
+        - dbt_baskets_average_of_basket_total
+        - dbt_baskets_sum_of_item_profit
+  type: cartesian
+contentType: chart
+description: >-
+  Compares average order value and total item profit by partner to identify
+  which partners drive the most revenue and profitability per transaction.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_partner_name
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_average_of_basket_total
+    - dbt_baskets_sum_of_item_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_baskets_average_of_basket_total
+  tableCalculations: []
+name: How do Average Order Value and Item Profit compare across partners?
+slug: how-do-average-order-value-and-item-profit-compare-across-partners
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_baskets_partner_name
+    - dbt_baskets_average_of_basket_total
+    - dbt_baskets_sum_of_item_profit
+tableName: dbt_baskets
+verification: null
+version: 1

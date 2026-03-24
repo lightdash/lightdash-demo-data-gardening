@@ -1,0 +1,51 @@
+chartConfig:
+  config:
+    columns:
+      dbt_orders_count_distinct_order_id:
+        name: Order count
+      dbt_orders_order_date_month:
+        name: Month
+      dbt_orders_partner_name:
+        name: Partner name
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Pivot table
+pivotConfig:
+  columns:
+    - dbt_orders_order_date_month
+slug: pivot-table
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

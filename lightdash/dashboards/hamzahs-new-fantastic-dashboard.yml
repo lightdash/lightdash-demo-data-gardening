@@ -1,0 +1,205 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions:
+    - disabled: false
+      operator: equals
+      required: false
+      target:
+        fieldId: dbt_baskets_partner_name
+        fieldName: partner_name
+        tableName: dbt_baskets
+      tileTargets:
+        average-quarterly-orders-per-user: false
+        how-do-total-support-requests-vary-by-month-for-different-partners-1: false
+        how-do-total-support-requests-vary-by-month-for-different-partners-2: false
+        how-has-the-monthly-basket-total-changed-over-time-1:
+          fieldId: dbt_baskets_partner_name
+          tableName: dbt_baskets
+        how-has-the-monthly-basket-total-changed-over-time-2: false
+        weekly-orders-year-over-year-with-week-descriptions: false
+        which-partners-have-the-highest-order-counts-1:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        which-partners-have-the-highest-order-counts-2: false
+      values:
+        - Garden of Sweden
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_baskets_partner_name
+        fieldName: partner_name
+        tableName: dbt_baskets
+      tileTargets:
+        how-do-total-support-requests-vary-by-month-for-different-partners-1: false
+        how-has-the-monthly-basket-total-changed-over-time-1: false
+        how-has-the-monthly-basket-total-changed-over-time-2:
+          fieldId: dbt_baskets_partner_name
+          tableName: dbt_baskets
+        which-partners-have-the-highest-order-counts-1: false
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Hamzahs' new fantastic dashboard
+slug: hamzahs-new-fantastic-dashboard
+spaceSlug: shared
+tabs:
+  - name: Partners
+    order: 0
+    uuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+  - name: Orders
+    order: 1
+    uuid: 46e93877-bda3-4795-a95f-c0e5a4f60cdd
+  - name: Copy of Partners
+    order: 2
+    uuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+tiles:
+  - h: 1
+    properties:
+      showDivider: true
+      text: Partner orders
+    tabUuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+    type: heading
+    w: 36
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: What's the average number of quarterly orders per user?
+      chartSlug: average-quarterly-orders-per-user
+      hideTitle: false
+      title: ""
+    tabUuid: 46e93877-bda3-4795-a95f-c0e5a4f60cdd
+    tileSlug: average-quarterly-orders-per-user
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 1
+    properties:
+      showDivider: true
+      text: Partner orders
+    tabUuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+    type: heading
+    w: 36
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: a table of orders
+      chartSlug: a-table-of-orders
+      hideTitle: false
+      title: ""
+    tabUuid: 46e93877-bda3-4795-a95f-c0e5a4f60cdd
+    tileSlug: a-table-of-orders
+    type: sql_chart
+    w: 15
+    x: 15
+    "y": 0
+  - h: 7
+    properties:
+      chartName: Which partners have the highest order counts?
+      chartSlug: which-partners-have-the-highest-order-counts
+      hideTitle: false
+      title: ""
+    tabUuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+    tileSlug: which-partners-have-the-highest-order-counts-1
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 1
+  - h: 7
+    properties:
+      chartName: Which partners have the highest order counts?
+      chartSlug: which-partners-have-the-highest-order-counts
+      hideTitle: false
+      title: ""
+    tabUuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+    tileSlug: which-partners-have-the-highest-order-counts-2
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 1
+  - h: 7
+    properties:
+      chartName: How do total support requests vary by month for different partners?
+      chartSlug: how-do-total-support-requests-vary-by-month-for-different-partners
+      hideTitle: false
+      title: ""
+    tabUuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+    tileSlug: how-do-total-support-requests-vary-by-month-for-different-partners-1
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 1
+  - h: 7
+    properties:
+      chartName: How do total support requests vary by month for different partners?
+      chartSlug: how-do-total-support-requests-vary-by-month-for-different-partners
+      hideTitle: false
+      title: ""
+    tabUuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+    tileSlug: how-do-total-support-requests-vary-by-month-for-different-partners-2
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 1
+  - h: 1
+    properties:
+      showDivider: false
+      text: Basket totals
+    tabUuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+    type: heading
+    w: 36
+    x: 0
+    "y": 8
+  - h: 1
+    properties:
+      showDivider: false
+      text: Basket totals
+    tabUuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+    type: heading
+    w: 36
+    x: 0
+    "y": 8
+  - h: 9
+    properties:
+      chartName: How has the monthly basket total changed over time?
+      chartSlug: how-has-the-monthly-basket-total-changed-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: 3db26b8b-823b-48c7-9e9a-dca751ad7c16
+    tileSlug: how-has-the-monthly-basket-total-changed-over-time-1
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Weekly orders - year over year (with week descriptions)
+      chartSlug: weekly-orders-year-over-year-with-week-descriptions
+      hideTitle: false
+      title: ""
+    tabUuid: 46e93877-bda3-4795-a95f-c0e5a4f60cdd
+    tileSlug: weekly-orders-year-over-year-with-week-descriptions
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: How has the monthly basket total changed over time?
+      chartSlug: how-has-the-monthly-basket-total-changed-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: 8e00523f-b566-4cc1-9d1c-fb92653ccfa2
+    tileSlug: how-has-the-monthly-basket-total-changed-over-time-2
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 9
+verification: null
+version: 1

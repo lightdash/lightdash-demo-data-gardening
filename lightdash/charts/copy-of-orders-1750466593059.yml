@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs previous month
+    flipColors: false
+    label: Orders last month
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+    showComparison: true
+  type: big_number
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: f69e607d-93cf-4f1a-a724-b9392144f74a
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 2
+      id: f4ce6039-b659-47c6-ab8f-1027141a0fcf
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Copy of Orders
+slug: copy-of-orders-1750466593059
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,66 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          name: Sum of basket total
+          type: line
+          yAxisIndex: 0
+      title:
+        text: Revenue Trend by Month
+      xAxis:
+        - name: Order Month
+          type: time
+      yAxis:
+        - name: Total Revenue
+          type: value
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: business-pulse-revenue-users-support-overview
+description: >-
+  Visualize how total revenue evolves month over month to spot seasonality and
+  growth patterns.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: cb251e2a-e26e-410b-a6ec-aca5b9e541a7
+    metrics:
+      and: []
+      id: e0c59c82-462c-41f6-b52b-7ff15c0452e3
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Revenue Trend by Month
+slug: revenue-trend-by-month
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,37 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    selectedField: dbt_orders_sum_of_profit
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+  type: big_number
+contentType: chart
+dashboardSlug: a-bunch-of-markdown-and-big-values
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_profit
+  tableCalculations: []
+name: profit
+slug: profit
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

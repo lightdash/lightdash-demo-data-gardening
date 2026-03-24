@@ -1,0 +1,443 @@
+config:
+  isAddFilterDisabled: true
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: >-
+  This is an overview of our company's performance each week. Use this to get an
+  idea of how we're progressing towards our quarterly goals or if you have a
+  question about high-level data.
+filters:
+  dimensions:
+    - disabled: true
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_orders_partner_name
+        tableName: dbt_orders
+      tileTargets:
+        how-is-the-average-order-amount-trending-each-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-many-orders-have-we-fulfilled-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-many-users-were-created-each-week-: false
+        how-much-revenue-are-we-making-each-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        partner-profit-performance: false
+        revenue-by-partner:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        users-by-browser: false
+        what-are-the-sales-stats-per-partner-per-month-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-total-profit-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-total-revenue-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-weekly-average-feedback-rating-out-of-10-: false
+        what-s-the-average-number-of-weekly-orders-per-user-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-support-request-reasons-are-the-most-common-: false
+      values: []
+    - disabled: false
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_orders_browser
+        tableName: dbt_orders
+      tileTargets:
+        how-is-the-average-order-amount-trending-each-week-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        how-many-orders-have-we-fulfilled-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        how-many-users-were-created-each-week-:
+          fieldId: dbt_users_browser
+          tableName: dbt_users
+        how-much-revenue-are-we-making-each-week-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        orders-per-partner:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        partner-profit-performance: false
+        revenue-by-partner:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        users-by-browser:
+          fieldId: dbt_users_browser
+          tableName: dbt_users
+        what-are-the-sales-stats-per-partner-per-month-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        what-is-our-total-profit-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        what-is-our-total-revenue-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        what-is-our-weekly-average-feedback-rating-out-of-10-: false
+        what-s-the-average-number-of-weekly-orders-per-user-:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        what-support-request-reasons-are-the-most-common-: false
+      values:
+        - chrome
+        - safari
+        - edge
+        - firefox
+    - disabled: false
+      label: Order date
+      operator: inThePast
+      settings:
+        completed: true
+        unitOfTime: weeks
+      target:
+        fieldId: dbt_baskets_order_date_day
+        tableName: dbt_baskets
+      tileTargets:
+        how-is-the-average-order-amount-trending-each-week-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        how-many-orders-have-we-fulfilled-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        how-much-revenue-are-we-making-each-week-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        orders-per-partner:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        partner-profit-performance:
+          fieldId: dbt_baskets_order_date_day
+          tableName: dbt_baskets
+        revenue-by-partner:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        what-are-the-sales-stats-per-partner-per-month-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        what-is-our-total-profit-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        what-is-our-total-revenue-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        what-is-our-weekly-average-feedback-rating-out-of-10-: false
+        what-s-the-average-number-of-weekly-orders-per-user-:
+          fieldId: dbt_orders_order_date_day
+          tableName: dbt_orders
+        what-support-request-reasons-are-the-most-common-: false
+      values:
+        - 26
+    - disabled: true
+      operator: equals
+      required: false
+      target:
+        fieldId: dbt_orders_partner_name
+        tableName: dbt_orders
+      tileTargets:
+        how-is-the-average-order-amount-trending-each-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-many-orders-have-we-fulfilled-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-much-revenue-are-we-making-each-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        orders-per-partner:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        revenue-by-partner:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-are-the-sales-stats-per-partner-per-month-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-total-profit-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-total-revenue-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-is-our-weekly-average-feedback-rating-out-of-10-: false
+        what-s-the-average-number-of-weekly-orders-per-user-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-support-request-reasons-are-the-most-common-: false
+      values: []
+  metrics: []
+  tableCalculations: []
+name: 🧭 KPI dashboard
+slug: "-kpi-dashboard"
+spaceSlug: "-key-company-dashboards"
+tabs:
+  - name: Tab 1
+    order: 0
+    uuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+tiles:
+  - h: 2
+    properties:
+      content: >-
+        ## Stats at a glance 👀
+
+
+        Read more about our Company KPIs [here](doc.link.com).  Talk to the
+        [#data-team](slack.com) if you have any questions about the KPI
+        dashboard or think there's anything missing you'd like to add!
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: How many orders have we fulfilled??
+      chartSlug: how-many-orders-have-we-fulfilled-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: how-many-orders-have-we-fulfilled-
+    type: saved_chart
+    w: 12
+    x: 0
+    "y": 2
+  - h: 3
+    properties:
+      chartName: What is our total revenue this month?
+      chartSlug: what-is-our-total-revenue-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-is-our-total-revenue-
+    type: saved_chart
+    w: 12
+    x: 12
+    "y": 2
+  - h: 3
+    properties:
+      chartName: What is our total profit?
+      chartSlug: what-is-our-total-profit-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-is-our-total-profit-
+    type: saved_chart
+    w: 12
+    x: 24
+    "y": 2
+  - h: 2
+    properties:
+      content: >-
+        ## 💸 Sales and Marketing
+
+
+        KPIs around performance of user acquisition, growth of revenue and
+        profit. If you have any questions about any of these metrics, just post
+        to [#sales](slack.link.com) or [#marketing](slack.link.com) in Slack.
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    type: markdown
+    w: 36
+    x: 0
+    "y": 5
+  - h: 7
+    properties:
+      chartName: How many users were created each month?
+      chartSlug: how-many-users-were-created-each-week-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: how-many-users-were-created-each-week-
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 7
+  - h: 7
+    properties:
+      chartName: Average order count per user per month
+      chartSlug: what-s-the-average-number-of-weekly-orders-per-user-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-s-the-average-number-of-weekly-orders-per-user-
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 7
+  - h: 7
+    properties:
+      chartName: How much revenue are we making each month?
+      chartSlug: how-much-revenue-are-we-making-each-week-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: how-much-revenue-are-we-making-each-week-
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 14
+  - h: 7
+    properties:
+      chartName: How is the average order amount ($) trending each week??
+      chartSlug: how-is-the-average-order-amount-trending-each-week-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: how-is-the-average-order-amount-trending-each-week-
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 14
+  - h: 7
+    properties:
+      chartName: What are the sales stats per partner, per month?
+      chartSlug: what-are-the-sales-stats-per-partner-per-month-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-are-the-sales-stats-per-partner-per-month-
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 21
+  - h: 7
+    properties:
+      chartName: Revenue by partner
+      chartSlug: revenue-by-partner
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: revenue-by-partner
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 28
+  - h: 7
+    properties:
+      chartName: What is our weekly average feedback rating (out of 10)?
+      chartSlug: what-is-our-weekly-average-feedback-rating-out-of-10-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-is-our-weekly-average-feedback-rating-out-of-10-
+    type: saved_chart
+    w: 17
+    x: 0
+    "y": 35
+  - h: 7
+    properties:
+      chartName: What support request reasons are the most common by percentage?
+      chartSlug: what-support-request-reasons-are-the-most-common-
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: what-support-request-reasons-are-the-most-common-
+    type: saved_chart
+    w: 19
+    x: 17
+    "y": 35
+  - h: 2
+    properties:
+      content: >-
+        ## ☎️ Customer Support
+
+
+        Feedback scores and number of requests for support are tracked here. If
+        you have any questions, ask the [#customer-support](link.to.slack.com)
+        team in Slack.
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    type: markdown
+    w: 36
+    x: 0
+    "y": 42
+  - h: 7
+    properties:
+      chartName: Users by browser
+      chartSlug: users-by-browser
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: users-by-browser
+    type: saved_chart
+    w: 14
+    x: 0
+    "y": 44
+  - h: 7
+    properties:
+      chartName: Orders per Partner
+      chartSlug: orders-per-partner
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: orders-per-partner
+    type: saved_chart
+    w: 22
+    x: 14
+    "y": 44
+  - h: 1
+    properties:
+      showDivider: false
+      text: Health Dashboard
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    type: heading
+    w: 36
+    x: 0
+    "y": 51
+  - h: 8
+    properties:
+      chartName: Partner profit performance (not affected by Partner dashboard filter)
+      chartSlug: partner-profit-performance
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: partner-profit-performance
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 52
+  - h: 9
+    properties:
+      chartName: Top 5 products by revenue
+      chartSlug: top-5-products-by-revenue-4
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: top-5-products-by-revenue-4
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 60
+  - h: 9
+    properties:
+      chartName: Revenue by Partner (Last 6 Completed Months)
+      chartSlug: revenue-by-partner-last-6-completed-months
+      hideTitle: false
+      title: ""
+    tabUuid: 134d1921-2a9a-47a0-bb9f-0ac91890d20d
+    tileSlug: revenue-by-partner-last-6-completed-months
+    type: saved_chart
+    w: 20
+    x: 16
+    "y": 60
+verification: null
+version: 1

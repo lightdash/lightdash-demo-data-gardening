@@ -1,0 +1,30 @@
+chartConfig:
+  config:
+    label: Unique Customers
+    selectedField: dbt_orders_unique_customers
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters: {}
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_unique_customers
+  sorts: []
+  tableCalculations: []
+name: Unique Customers
+slug: kpi-unique-customers
+spaceSlug: kpi-metrics
+tableConfig:
+  columnOrder:
+    - dbt_orders_unique_customers
+tableName: dbt_orders
+verification: null
+version: 1

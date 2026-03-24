@@ -1,0 +1,73 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: null
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: profit
+      description: "Average of Profit on the table Orders "
+      format: usd
+      formatOptions:
+        currency: EUR
+        separator: default
+        type: currency
+      label: Average of Profit
+      name: profit_average_of_profit
+      round: 2
+      sql: ${TABLE}.profit
+      table: dbt_orders
+      type: average
+      uuid: 30399d1b-3f58-45af-8db0-070c8369c288
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_profit_average_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations:
+    - displayName: Running total of Order count
+      format:
+        round: 2
+        type: number
+      name: running_total_of_order_count
+      sql: >-
+        SUM(${dbt_orders.count_distinct_order_id}) OVER(ORDER BY
+        `dbt_orders_count_distinct_order_id` DESC  ROWS BETWEEN UNBOUNDED
+        PRECEDING AND CURRENT ROW)
+
+                  
+name: My new chart
+slug: my-new-chart-1
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_profit_average_of_profit
+    - running_total_of_order_count
+tableName: dbt_orders
+verification: null
+version: 1

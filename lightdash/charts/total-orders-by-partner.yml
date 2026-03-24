@@ -1,0 +1,66 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          name: Order count
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Order count
+    layout:
+      stack: false
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: account-management-orders-by-partner
+description: Shows the total number of orders for each partner.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 2d323d19-868f-400c-b710-770842f259a3
+    metrics:
+      and: []
+      id: c730ff3d-79c0-49b6-8d17-7ed97ad61dca
+    tableCalculations:
+      and: []
+      id: fe78dd24-fddb-4a65-8359-1c16322ada28
+  limit: 20
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Total Orders by Partner
+slug: total-orders-by-partner
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

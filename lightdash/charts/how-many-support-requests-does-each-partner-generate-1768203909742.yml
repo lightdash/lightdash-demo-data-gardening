@@ -1,0 +1,54 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_partner_name
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+          isFilteredOut: false
+          label:
+            position: right
+            show: true
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      tooltip: ""
+    layout:
+      flipAxes: true
+      stack: none
+      xField: dbt_support_requests_partner_name
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard-1
+description: >-
+  Total support requests by partner, displayed as a horizontal bar chart to
+  compare request volumes across all partners.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_partner_name
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_count_distinct_request_id
+  tableCalculations: []
+name: How many support requests does each partner generate?
+slug: how-many-support-requests-does-each-partner-generate-1768203909742
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

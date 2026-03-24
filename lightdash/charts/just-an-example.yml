@@ -1,0 +1,75 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - color: "#33f51b"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: percent_change_from_previous_of_sum_of_profit
+          type: bar
+          yAxisIndex: 1
+    layout:
+      xField: dbt_orders_order_date_week
+      yField:
+        - dbt_orders_sum_of_profit
+        - percent_change_from_previous_of_sum_of_profit
+  type: cartesian
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_week
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: aa704ac1-d3d9-404d-87f6-1ebe1716342d
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Peat, Fruits and Leaves
+            - Potted Paradise
+      id: cb7bc848-ea3d-4089-8a4e-2e375f5fff45
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations:
+    - displayName: Percent change from previous of Sum of profit
+      format:
+        round: 2
+        type: percent
+      name: percent_change_from_previous_of_sum_of_profit
+      sql: |-
+        (
+                       CAST( ${dbt_orders.sum_of_profit} AS FLOAT64) /
+                       CAST(NULLIF(LAG(${dbt_orders.sum_of_profit}) OVER(ORDER BY `dbt_orders_order_date_week` ASC ) ,0)  AS FLOAT64)
+                    ) - 1
+name: Just an example
+slug: just-an-example
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_sum_of_profit
+    - percent_change_from_previous_of_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,43 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_users_browser
+            yRef:
+              field: dbt_users_count_distinct_of_user_id
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_users_browser
+      yField:
+        - dbt_users_count_distinct_of_user_id
+  type: cartesian
+contentType: chart
+dashboardSlug: sales-updates
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_browser
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_users_count_distinct_of_user_id
+  tableCalculations: []
+name: testing adding
+slug: testing-adding
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_users_browser
+    - dbt_users_count_distinct_of_user_id
+tableName: dbt_users
+verification: null
+version: 1

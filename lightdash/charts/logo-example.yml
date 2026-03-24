@@ -1,0 +1,44 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_logo
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_partner_logo
+  tableCalculations: []
+name: Logo Example
+slug: logo-example
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_logo
+    - dbt_orders_partner_name
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

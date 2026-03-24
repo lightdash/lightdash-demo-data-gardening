@@ -1,0 +1,37 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    flipColors: false
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+  type: big_number
+contentType: chart
+dashboardSlug: a-bunch-of-markdown-and-big-values
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: total
+slug: total
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

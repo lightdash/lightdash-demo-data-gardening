@@ -1,0 +1,61 @@
+contentType: dashboard
+description: Key performance indicators tracking revenue, orders, profit, and customers.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: KPI Dashboard
+slug: kpi-dashboard
+spaceSlug: kpi-metrics
+tabs: []
+tiles:
+  - h: 3
+    properties:
+      chartName: Total Revenue
+      chartSlug: kpi-total-revenue
+      hideTitle: false
+      title: Total Revenue
+    tabUuid: null
+    tileSlug: kpi-total-revenue
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Total Orders
+      chartSlug: kpi-total-orders
+      hideTitle: false
+      title: Total Orders
+    tabUuid: null
+    tileSlug: kpi-total-orders
+    type: saved_chart
+    w: 9
+    x: 9
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Total Profit
+      chartSlug: kpi-total-profit
+      hideTitle: false
+      title: Total Profit
+    tabUuid: null
+    tileSlug: kpi-total-profit
+    type: saved_chart
+    w: 9
+    x: 18
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Unique Customers
+      chartSlug: kpi-unique-customers
+      hideTitle: false
+      title: Unique Customers
+    tabUuid: null
+    tileSlug: kpi-unique-customers
+    type: saved_chart
+    w: 9
+    x: 27
+    "y": 0
+verification: null
+version: 1

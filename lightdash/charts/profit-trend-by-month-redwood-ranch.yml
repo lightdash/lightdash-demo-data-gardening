@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_profit
+          name: Sum of profit
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Order Month
+      yAxis:
+        - name: Profit
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+dashboardSlug: redwood-ranch-partner-performance-dashboard
+description: Monthly profit generated from Redwood Ranch orders.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 610a263e-01b9-4d33-9868-efba7141a5a9
+          operator: equals
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Redwood Ranch
+      id: 787031dd-0a75-4526-bdcc-91a4f9b85511
+    metrics:
+      and: []
+      id: 0208f764-7bcb-4446-8853-85001a5aaa10
+  limit: 36
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Profit Trend by Month (Redwood Ranch)
+slug: profit-trend-by-month-redwood-ranch
+spaceSlug: sql-runner-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

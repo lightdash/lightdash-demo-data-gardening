@@ -1,0 +1,33 @@
+chartKind: vertical_bar
+config:
+  fieldConfig:
+    x:
+      reference: dbt_baskets_partner_name
+      type: category
+    "y":
+      - aggregation: sum
+        reference: dbt_baskets_sum_of_basket_total
+  metadata:
+    version: 1
+  type: vertical_bar
+contentType: sql_chart
+description: ""
+limit: 500
+name: Partner breakdown
+slug: partner-breakdown
+spaceSlug: "-sales"
+sql: >-
+  SELECT
+    `dbt_baskets`.partner_name AS `dbt_baskets_partner_name`,
+    SUM(`dbt_baskets`.basket_total) AS `dbt_baskets_sum_of_basket_total`
+  FROM `lightdash-analytics`.`lightdash_demo_gardening`.`dbt_baskets` AS
+  `dbt_baskets`
+
+
+
+  GROUP BY 1
+
+  ORDER BY `dbt_baskets_sum_of_basket_total` DESC
+
+  LIMIT 500
+version: 1

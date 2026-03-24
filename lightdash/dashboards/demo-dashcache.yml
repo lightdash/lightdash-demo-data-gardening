@@ -1,0 +1,110 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions:
+    - disabled: true
+      operator: lessThan
+      target:
+        fieldId: dbt_baskets_order_date_day
+        fieldName: order_date_day
+        tableName: dbt_baskets
+      tileTargets:
+        with-dashcache-what-are-the-most-profitable-products-1772186679516:
+          fieldId: dbt_baskets_order_date_day
+          tableName: dbt_baskets
+        without-dashcache-what-are-the-most-profitable-products-1772186715150:
+          fieldId: dbt_baskets_order_date_day
+          tableName: dbt_baskets
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Demo DashCache
+slug: demo-dashcache
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: "[With dashcache] What are the most profitable products?"
+      chartSlug: with-dashcache-what-are-the-most-profitable-products-1772186679516
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: with-dashcache-what-are-the-most-profitable-products-1772186679516
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: "[Without dashcache] What are the most profitable products?"
+      chartSlug: without-dashcache-what-are-the-most-profitable-products-1772186715150
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: without-dashcache-what-are-the-most-profitable-products-1772186715150
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: >-
+        [With DashCache] Orders date day x Revenue x Profit x Shipping Country x
+        Browser
+      chartSlug: >-
+        with-dashcache-orders-date-day-x-revenue-x-profit-x-shipping-country-x-browser
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: >-
+      with-dashcache-orders-date-day-x-revenue-x-profit-x-shipping-country-x-browser
+    type: saved_chart
+    w: 17
+    x: 1
+    "y": 9
+  - h: 9
+    properties:
+      chartName: >-
+        [Without DashCache] Orders date day x Revenue x Profit x Shipping
+        Country x Browser
+      chartSlug: >-
+        without-dashcache-orders-date-day-x-revenue-x-profit-x-shipping-country-x-browser
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: >-
+      without-dashcache-orders-date-day-x-revenue-x-profit-x-shipping-country-x-browser
+    type: saved_chart
+    w: 17
+    x: 18
+    "y": 9
+  - h: 9
+    properties:
+      chartName: "[With DashCache] How do Revenue and Profit trend over time?"
+      chartSlug: with-dashcache-how-do-revenue-and-profit-trend-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: with-dashcache-how-do-revenue-and-profit-trend-over-time
+    type: saved_chart
+    w: 17
+    x: 1
+    "y": 18
+  - h: 9
+    properties:
+      chartName: "[Without DashCache] How do Revenue and Profit trend over time?"
+      chartSlug: without-dashcache-how-do-revenue-and-profit-trend-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: without-dashcache-how-do-revenue-and-profit-trend-over-time
+    type: saved_chart
+    w: 17
+    x: 18
+    "y": 18
+verification: null
+version: 1

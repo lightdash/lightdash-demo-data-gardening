@@ -1,0 +1,73 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          name: Sum of basket total
+          type: line
+          yAxisIndex: 0
+      title:
+        text: Total Revenue Trend (2024)
+      xAxis:
+        - name: Month
+          type: time
+      yAxis:
+        - name: Total Revenue
+          type: value
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: comprehensive-revenue-dashboard
+description: >-
+  Shows the trend of total revenue (sum of basket total) for all partners
+  throughout 2024, broken down by month.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 9ac6e84a-37d9-4294-84f0-83f4fb6dfca3
+          operator: equals
+          target:
+            fieldFilterType: date
+            fieldId: dbt_orders_order_date_year
+          values:
+            - "2024-01-01"
+      id: 295bceb4-e757-4973-ace1-f8044ef37c28
+    metrics:
+      and: []
+      id: 6dca5989-16de-43bc-92ee-c75bdef2f4a8
+  limit: 12
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Total Revenue Trend (2024)
+slug: total-revenue-trend-2024
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

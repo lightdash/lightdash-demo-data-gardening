@@ -1,0 +1,34 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    selectedField: dbt_support_requests_count_of_reason
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+dashboardSlug: user-activity-1
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_of_reason
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_count_of_reason
+  tableCalculations: []
+name: from dashboard
+slug: from-dashboard-1750411848231
+spaceSlug: for-marketing-demos
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_count_of_reason
+tableName: dbt_support_requests
+verification: null
+version: 1

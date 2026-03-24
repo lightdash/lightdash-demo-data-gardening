@@ -1,0 +1,25 @@
+chartKind: vertical_bar
+config:
+  fieldConfig:
+    groupBy:
+      - reference: price_currency
+    x:
+      reference: product_name
+      type: category
+    "y":
+      - aggregation: sum
+        reference: olivers_count
+  metadata:
+    version: 1
+  type: vertical_bar
+contentType: sql_chart
+description: ""
+limit: null
+name: Product pricing
+slug: product-pricing
+spaceSlug: sql-runner-space
+sql: >-
+  SELECT product_name, products.price_currency, sum(price_amount) as
+  olivers_count FROM `lightdash-analytics`.`lightdash_demo_gardening`.`products`
+  group by 1, 2
+version: 1

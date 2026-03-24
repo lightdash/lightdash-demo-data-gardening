@@ -1,0 +1,81 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          name: Revenue
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          name: Order Volume
+          type: line
+          yAxisIndex: 1
+      showAxisTicks: false
+      xAxis:
+        - name: Order month
+      yAxis:
+        - name: Revenue
+        - name: Order Volume
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: sales-dashboard-test
+description: >-
+  Monthly trend of Revenue and Order Volume. Uses a secondary Y-axis for Order
+  Volume.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 6d6db49e-adcb-49ad-9f4e-0aa141852de5
+    metrics:
+      and: []
+      id: 9b1a55e0-7a7b-4a22-b68b-7f4c6ba6fcb4
+    tableCalculations:
+      and: []
+      id: 0ca26558-f5fe-4a57-9625-050903ff7f50
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Revenue vs Order Volume by Month
+slug: revenue-vs-order-volume-by-month
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

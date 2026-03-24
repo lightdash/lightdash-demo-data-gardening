@@ -1,0 +1,60 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_custom_period
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_order_date_custom_period
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: period-over-period-parameters-example
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_custom_period
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: e6ebed5b-46da-4cf9-910b-954d81a5169e
+          operator: notEquals
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_custom_period
+          values:
+            - out of range
+      id: d18ffa14-a09b-4cfb-a3e4-68ba6e6907f6
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_custom_period
+  tableCalculations: []
+name: Custom date range - Orders
+parameters:
+  dbt_orders.custom_range_end: "2025-11-30"
+  dbt_orders.custom_range_start: "2025-10-13"
+slug: copy-of-custom-date-range-1764959616887
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_custom_period
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

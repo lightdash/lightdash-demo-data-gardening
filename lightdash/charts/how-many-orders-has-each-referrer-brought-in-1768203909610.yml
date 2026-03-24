@@ -1,0 +1,142 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#3349ff"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: facebook
+          isFilteredOut: false
+          label:
+            position: inside
+            show: true
+          stack: dbt_orders_count_distinct_order_id
+          stackLabel:
+            show: false
+          type: bar
+          yAxisIndex: 0
+        - color: "#ffc658"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: instagram
+          isFilteredOut: false
+          label:
+            position: inside
+            show: true
+          stack: dbt_orders_count_distinct_order_id
+          stackLabel:
+            show: false
+          type: bar
+          yAxisIndex: 0
+        - color: "#33e6ff"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_referrer
+                  value: organic
+          isFilteredOut: false
+          label:
+            position: inside
+            show: true
+          stack: dbt_orders_count_distinct_order_id
+          stackLabel:
+            show: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - inverse: true
+          rotate: 0
+          sortType: category
+    layout:
+      stack: stack100
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+    metadata:
+      dbt_orders_count_distinct_order_id.Potted Paradise:
+        color: "#ff7eb9"
+      dbt_orders_count_distinct_order_id.Redwood Ranch:
+        color: "#33b1ff"
+      dbt_orders_count_distinct_order_id.Roots & Shoots:
+        color: "#8b8cf6"
+      dbt_orders_count_distinct_order_id.Sprout Society:
+        color: "#ffb898"
+      dbt_orders_count_distinct_order_id.Trowels R Us:
+        color: "#7cde96"
+      dbt_orders_count_distinct_order_id.facebook:
+        color: "#3349ff"
+      dbt_orders_count_distinct_order_id.instagram:
+        color: "#ffc658"
+      dbt_orders_count_distinct_order_id.organic:
+        color: "#33e6ff"
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard-1
+description: >-
+  Order count by partner name, showing which partners have fulfilled the most
+  orders across all transactions.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_referrer
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: da9a831e-8b87-4b74-8e16-f1204a71b856
+          operator: inBetween
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - "2025-02-01"
+            - "2025-08-31"
+        - id: 5a1aaffa-b2fd-44a0-a058-807d85b2bd20
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_orders_referrer
+          values:
+            - facebook
+            - instagram
+            - organic
+      id: 2dae7da2-a673-45e2-83d0-9b53dc0a49c3
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: How many orders has each referrer brought in?
+pivotConfig:
+  columns:
+    - dbt_orders_referrer
+slug: how-many-orders-has-each-referrer-brought-in-1768203909610
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_referrer
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

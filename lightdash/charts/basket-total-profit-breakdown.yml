@@ -1,0 +1,86 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_orders_dim
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          label:
+            show: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_orders_dim
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          label:
+            show: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_orders_dim
+            yRef:
+              field: percentage_profit
+          label:
+            position: top
+            show: true
+          showSymbol: false
+          smooth: false
+          type: line
+          yAxisIndex: 1
+      xAxis:
+        - name: Browser/Partner/Referrer
+    layout:
+      flipAxes: false
+      xField: dbt_orders_orders_dim
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_sum_of_profit
+        - percentage_profit
+  type: cartesian
+contentType: chart
+description: >-
+  This shows the basket total, basket profit and percentage profit broken down
+  by the selected order dimension
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_orders_dim
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: percentage_profit
+  tableCalculations:
+    - displayName: Percentage Profit
+      format:
+        round: 1
+        separator: default
+        type: percent
+      name: percentage_profit
+      sql: ${dbt_orders.sum_of_profit}/${dbt_orders.sum_of_basket_total}
+      type: number
+name: Basket Total & Profit Breakdown
+slug: basket-total-profit-breakdown
+spaceSlug: "-marketing/lightdash-features"
+tableConfig:
+  columnOrder:
+    - dbt_orders_orders_dim
+    - dbt_orders_sum_of_profit
+    - dbt_orders_sum_of_basket_total
+    - percentage_profit
+tableName: dbt_orders
+verification: null
+version: 1

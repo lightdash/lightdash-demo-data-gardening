@@ -1,0 +1,53 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#9233ff"
+          encode:
+            xRef:
+              field: dbt_baskets_product_name
+            yRef:
+              field: dbt_baskets_count_of_product_name
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - name: Product
+          type: category
+      yAxis:
+        - name: Count
+    layout:
+      flipAxes: true
+      xField: dbt_baskets_product_name
+      yField:
+        - dbt_baskets_count_of_product_name
+  type: cartesian
+contentType: chart
+description: the most popular products by count of product name
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_product_name
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_count_of_product_name
+  sorts:
+    - descending: true
+      fieldId: dbt_baskets_count_of_product_name
+  tableCalculations: []
+name: What are the most popular products?
+slug: what-are-the-most-popular-products-
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_baskets_product_name
+    - dbt_baskets_count_of_product_name
+tableName: dbt_baskets
+verification: null
+version: 1

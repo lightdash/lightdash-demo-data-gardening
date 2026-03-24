@@ -1,0 +1,78 @@
+chartConfig:
+  config:
+    columns:
+      dbt_baskets_average_of_item_profit:
+        color: "#8b8cf6"
+        displayStyle: bar
+      dbt_baskets_sum_of_basket_total:
+        displayStyle: text
+      dbt_baskets_sum_of_item_profit:
+        displayStyle: text
+    conditionalFormattings:
+      - color:
+          end: "#8b8cf6"
+          start: "#ffffff"
+        rule:
+          max: auto
+          min: auto
+        target:
+          fieldId: dbt_baskets_sum_of_item_profit
+      - color:
+          end: "#8b8cf6"
+          start: "#ffffff"
+        rule:
+          max: auto
+          min: auto
+        target:
+          fieldId: dbt_baskets_sum_of_basket_total
+    hideRowNumbers: true
+    metricsAsRows: false
+    showColumnCalculation: true
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_partner_name
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_sum_of_basket_total
+    - dbt_baskets_sum_of_item_profit
+    - dbt_baskets_average_of_item_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_baskets_sum_of_item_profit
+  tableCalculations:
+    - displayName: Profit margin
+      format:
+        currency: USD
+        round: 1
+        separator: default
+        type: percent
+      name: profit_margin_1
+      sql: ${dbt_baskets.sum_of_item_profit}/${dbt_baskets.sum_of_basket_total}
+      type: number
+name: Partner profit performance (not affected by Partner dashboard filter)
+slug: partner-profit-performance
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_baskets_partner_name
+    - dbt_baskets_sum_of_basket_total
+    - dbt_baskets_sum_of_item_profit
+    - dbt_baskets_average_of_item_profit
+    - profit_margin_1
+tableName: dbt_baskets
+verification: null
+version: 1

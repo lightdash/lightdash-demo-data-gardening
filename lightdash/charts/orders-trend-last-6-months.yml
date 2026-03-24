@@ -1,0 +1,76 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          name: Order count
+          stack: total
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Order Month
+      yAxis:
+        - name: Order Count
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: orders-support-team-dashboard
+description: Line chart showing order volume trends over the last 6 months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 1f6bbdf9-8dcb-4818-94a2-15132e06f911
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 6
+      id: 6d597638-40cd-437b-8faa-4f0cce35cc54
+    metrics:
+      and: []
+      id: c385871c-dc63-4d73-8e1d-edb855366608
+    tableCalculations:
+      and: []
+      id: 9fe6e4a3-40a7-4a20-807f-41aa9a2410b6
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Orders Trend (Last 6 Months)
+slug: orders-trend-last-6-months
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

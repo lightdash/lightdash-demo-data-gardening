@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs previous week
+    flipColors: false
+    label: Revenue last week
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: true
+    style: thousands
+  type: big_number
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_week
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: f69e607d-93cf-4f1a-a724-b9392144f74a
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: weeks
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 2
+      id: 4ceed0fa-68d5-4e07-821a-86874e396057
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations: []
+name: Copy of Orders
+slug: copy-of-orders-1750424365108
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

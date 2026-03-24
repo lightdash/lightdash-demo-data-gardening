@@ -1,0 +1,62 @@
+config:
+  isDateZoomDisabled: false
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Sales dashboard
+slug: sales-dashboard
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 4
+    properties:
+      content: "## **Stats at a glance 👀**\n\nRead more about our Company KPIs\_[here](https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/doc.link.com). Talk to the\_[#data-team](https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/slack.com)\_if you have any questions about the KPI dashboard or think there's anything missing you'd like to add!"
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 7
+    properties:
+      chartName: What is our total revenue this month?
+      chartSlug: what-is-our-total-revenue-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-is-our-total-revenue-
+    type: saved_chart
+    w: 11
+    x: 0
+    "y": 4
+  - h: 7
+    properties:
+      chartName: How many orders have we fulfilled??
+      chartSlug: how-many-orders-have-we-fulfilled-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-many-orders-have-we-fulfilled-
+    type: saved_chart
+    w: 11
+    x: 11
+    "y": 4
+  - h: 7
+    properties:
+      chartName: null
+      chartSlug: null
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: null
+    type: saved_chart
+    w: 12
+    x: 22
+    "y": 4
+verification: null
+version: 1

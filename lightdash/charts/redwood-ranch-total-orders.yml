@@ -1,0 +1,45 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: c8402de7-5f87-4266-89cf-84d65db151db
+          operator: equals
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Garden of Sweden
+      id: 5a499969-f711-4f29-be20-14a76174c181
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Redwood Ranch total orders
+slug: redwood-ranch-total-orders
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          name: Sum of basket total
+          stack: total
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Month
+      yAxis:
+        - name: Total Revenue
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: sales-kpi-dashboard
+description: Monthly trend of total revenue to monitor sales growth and seasonality.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 6d6f1c94-9459-4919-87e0-973000058e32
+    metrics:
+      and: []
+      id: 10cabcee-b6df-4bc7-ab26-f63eaccec45a
+    tableCalculations:
+      and: []
+      id: d2bd682c-bc0d-4c81-a8d6-377188846fce
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Revenue Trend Over Time
+slug: revenue-trend-over-time
+spaceSlug: shared/apollo
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

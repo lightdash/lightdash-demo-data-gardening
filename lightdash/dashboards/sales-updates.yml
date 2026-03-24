@@ -1,0 +1,212 @@
+config:
+  isAddFilterDisabled: true
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: null
+filters:
+  dimensions:
+    - disabled: true
+      operator: inBetween
+      target:
+        fieldId: dbt_baskets_order_date
+        tableName: dbt_baskets
+      tileTargets: {}
+      values: []
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_orders_partner_name
+        fieldName: partner_name
+        tableName: dbt_orders
+      tileTargets:
+        2024-monthly-revenue-by-partner:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        best-performing-partners-over-the-last-12-months:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        comission-by-referrer:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        copy-of-start-of-date-range-1744755997816:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-much-profit-do-we-receive-per-month-per-partner-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-much-revenue-are-we-making-each-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        how-much-revenue-does-each-referrer-bring-us-in-per-week-:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        monthly-order-value:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        show-chosen-partner-name:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        start-of-date-range:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        what-are-the-most-popular-products-:
+          fieldId: dbt_baskets_partner_name
+          tableName: dbt_baskets
+        what-are-the-most-profitable-products-:
+          fieldId: dbt_baskets_partner_name
+          tableName: dbt_baskets
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Sales Updates
+slug: sales-updates
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: How much revenue does each referrer bring us in per week??
+      chartSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-much-revenue-does-each-referrer-bring-us-in-per-week-
+    type: saved_chart
+    w: 21
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Show chosen partner name
+      chartSlug: show-chosen-partner-name
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: show-chosen-partner-name
+    type: saved_chart
+    w: 15
+    x: 21
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Start of date range
+      chartSlug: start-of-date-range
+      hideTitle: true
+      title: ""
+    tabUuid: null
+    tileSlug: start-of-date-range
+    type: saved_chart
+    w: 7
+    x: 21
+    "y": 3
+  - h: 3
+    properties:
+      chartName: Copy of Start of date range
+      chartSlug: copy-of-start-of-date-range-1744755997816
+      hideTitle: true
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-start-of-date-range-1744755997816
+    type: saved_chart
+    w: 7
+    x: 29
+    "y": 3
+  - h: 10
+    properties:
+      chartName: What are the most profitable products?
+      chartSlug: what-are-the-most-profitable-products-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-are-the-most-profitable-products-
+    type: saved_chart
+    w: 15
+    x: 21
+    "y": 6
+  - h: 7
+    properties:
+      chartName: How much profit do we receive per month per partner?
+      chartSlug: how-much-profit-do-we-receive-per-month-per-partner-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-much-profit-do-we-receive-per-month-per-partner-
+    type: saved_chart
+    w: 21
+    x: 0
+    "y": 9
+  - h: 8
+    properties:
+      chartName: What are the most popular products?
+      chartSlug: what-are-the-most-popular-products-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-are-the-most-popular-products-
+    type: saved_chart
+    w: 14
+    x: 0
+    "y": 16
+  - h: 8
+    properties:
+      chartName: How much revenue are we making each month?
+      chartSlug: how-much-revenue-are-we-making-each-week-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-much-revenue-are-we-making-each-week-
+    type: saved_chart
+    w: 22
+    x: 14
+    "y": 16
+  - h: 6
+    properties:
+      chartName: Best Performing Partners Over the Last 12 Months
+      chartSlug: best-performing-partners-over-the-last-12-months
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: best-performing-partners-over-the-last-12-months
+    type: saved_chart
+    w: 16
+    x: 0
+    "y": 24
+  - h: 6
+    properties:
+      chartName: 2024 Monthly Revenue by Partner
+      chartSlug: 2024-monthly-revenue-by-partner
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: 2024-monthly-revenue-by-partner
+    type: saved_chart
+    w: 20
+    x: 16
+    "y": 24
+  - h: 9
+    properties:
+      chartName: comission by referrer
+      chartSlug: comission-by-referrer
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: comission-by-referrer
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 30
+  - h: 9
+    properties:
+      chartName: Monthly Order Value
+      chartSlug: monthly-order-value
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: monthly-order-value
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 30
+verification: null
+version: 1

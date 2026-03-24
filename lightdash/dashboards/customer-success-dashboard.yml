@@ -1,0 +1,65 @@
+contentType: dashboard
+description: >-
+  A comprehensive dashboard to monitor customer success KPIs, including customer
+  growth, order activity, support ticket trends, and customer satisfaction. This
+  dashboard helps identify areas for improvement in customer experience and
+  support.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Customer Success Dashboard
+slug: customer-success-dashboard
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Total Customers
+      chartSlug: total-customers
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-customers
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Customer Satisfaction Score
+      chartSlug: customer-satisfaction-score
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: customer-satisfaction-score
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Support Tickets by Reason
+      chartSlug: support-tickets-by-reason
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: support-tickets-by-reason
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Support Ticket Volume Trend
+      chartSlug: support-ticket-volume-trend
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: support-ticket-volume-trend
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 9
+verification: null
+version: 1

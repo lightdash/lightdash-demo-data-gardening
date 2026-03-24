@@ -1,0 +1,65 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          stack: stack-all-series
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions:
+    - dimensionType: number
+      id: test_cd
+      name: test cd
+      sql: "case when ${dbt_orders.partner_commission} > .1 then 1 else 0 end "
+      table: dbt_orders
+      type: sql
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+    - dbt_orders_partner_commission
+    - test_cd
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 74c18f5f-d6b3-4fb9-b024-1c815dcaedf7
+          operator: equals
+          required: false
+          target:
+            fieldId: test_cd
+          values:
+            - "1"
+      id: addad5af-ed01-4094-9fe2-3be3698b1aa5
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: chart w/cd
+slug: chart-w-cd
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_partner_commission
+    - dbt_orders_count_distinct_order_id
+    - test_cd
+tableName: dbt_orders
+verification: null
+version: 1

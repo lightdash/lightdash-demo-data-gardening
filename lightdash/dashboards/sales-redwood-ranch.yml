@@ -1,0 +1,37 @@
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Sales -  Redwood Ranch
+slug: sales-redwood-ranch
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Redwood Ranch total orders
+      chartSlug: redwood-ranch-total-orders
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: redwood-ranch-total-orders
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Monthly Order Counts by Partner (Redwood Ranch Highlighted) - Last Year
+      chartSlug: monthly-order-counts-by-partner-redwood-ranch-highlighted-last-year
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: monthly-order-counts-by-partner-redwood-ranch-highlighted-last-year
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 1
+verification: null
+version: 1

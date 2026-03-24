@@ -1,0 +1,233 @@
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: a bunch of markdown and big values
+slug: a-bunch-of-markdown-and-big-values
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: This is a corner
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 0
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: first column
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 6
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: second column
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 12
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: third column
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 18
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: fourth column
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 24
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: fifth column
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 30
+    "y": 0
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: first row
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 0
+    "y": 2
+  - h: 2
+    properties:
+      chartName: profit
+      chartSlug: profit
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: profit
+    type: saved_chart
+    w: 6
+    x: 6
+    "y": 2
+  - h: 2
+    properties:
+      chartName: users
+      chartSlug: users-1
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: users-1
+    type: saved_chart
+    w: 6
+    x: 12
+    "y": 2
+  - h: 2
+    properties:
+      chartName: avg total
+      chartSlug: avg-total
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: avg-total
+    type: saved_chart
+    w: 6
+    x: 18
+    "y": 2
+  - h: 2
+    properties:
+      chartName: total
+      chartSlug: total
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total
+    type: saved_chart
+    w: 6
+    x: 24
+    "y": 2
+  - h: 2
+    properties:
+      chartName: total pct change
+      chartSlug: total-pct-change
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-pct-change
+    type: saved_chart
+    w: 6
+    x: 30
+    "y": 2
+  - h: 2
+    properties:
+      content: ""
+      hideFrame: false
+      hideTitle: false
+      title: second row
+    tabUuid: null
+    type: markdown
+    w: 6
+    x: 0
+    "y": 4
+  - h: 2
+    properties:
+      chartName: Copy of profit
+      chartSlug: copy-of-profit-1763179331929
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-profit-1763179331929
+    type: saved_chart
+    w: 6
+    x: 6
+    "y": 4
+  - h: 2
+    properties:
+      chartName: Copy of users
+      chartSlug: copy-of-users-1763179384680
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-users-1763179384680
+    type: saved_chart
+    w: 6
+    x: 12
+    "y": 4
+  - h: 2
+    properties:
+      chartName: Copy of avg total
+      chartSlug: copy-of-avg-total-1763179455727
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-avg-total-1763179455727
+    type: saved_chart
+    w: 6
+    x: 18
+    "y": 4
+  - h: 2
+    properties:
+      chartName: Copy of total
+      chartSlug: copy-of-total-1763179515720
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-total-1763179515720
+    type: saved_chart
+    w: 6
+    x: 24
+    "y": 4
+  - h: 2
+    properties:
+      chartName: Copy of total pct change
+      chartSlug: copy-of-total-pct-change-1763179607904
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-total-pct-change-1763179607904
+    type: saved_chart
+    w: 6
+    x: 30
+    "y": 4
+  - h: 9
+    properties:
+      chartName: How are orders distributed across custom time periods?
+      chartSlug: how-are-orders-distributed-across-custom-time-periods
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-are-orders-distributed-across-custom-time-periods
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 5
+verification: null
+version: 1

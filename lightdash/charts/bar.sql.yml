@@ -1,0 +1,22 @@
+chartKind: vertical_bar
+config:
+  display: {}
+  fieldConfig:
+    groupBy: []
+    x:
+      reference: partner_id
+      type: category
+    "y":
+      - aggregation: sum
+        reference: profit
+  metadata:
+    version: 1
+  type: vertical_bar
+contentType: sql_chart
+description: ""
+limit: 500
+name: bar
+slug: bar
+spaceSlug: "-sales"
+sql: "SELECT * FROM `lightdash-analytics`.`lightdash_demo_gardening`.`orders` "
+version: 1

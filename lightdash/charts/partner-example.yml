@@ -1,0 +1,43 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          type: bar
+          yAxisIndex: 0
+    layout:
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_average_of_basket_total
+  tableCalculations: []
+name: Partner example
+slug: partner-example
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

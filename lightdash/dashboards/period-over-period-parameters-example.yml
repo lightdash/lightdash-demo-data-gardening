@@ -1,0 +1,172 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions:
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_orders_partner_name
+        fieldName: partner_name
+        tableName: dbt_orders
+      tileTargets:
+        copy-of-revenue-current-period-big-value-1762296574876:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        copy-of-total-orders-during-current-period-vs-previous-period-and-year-1762297425191:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        revenue-current-period-big-value:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+        total-orders-during-current-period-vs-previous-period-and-year:
+          fieldId: dbt_orders_partner_name
+          tableName: dbt_orders
+      values: []
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_orders_browser
+        fieldName: browser
+        tableName: dbt_orders
+      tileTargets:
+        copy-of-revenue-current-period-big-value-1762296574876:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        copy-of-total-orders-during-current-period-vs-previous-period-and-year-1762297425191:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        revenue-current-period-big-value:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        total-orders-during-current-period-vs-previous-period-and-year:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+      values: []
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_orders_referrer
+        fieldName: referrer
+        tableName: dbt_orders
+      tileTargets:
+        copy-of-revenue-current-period-big-value-1762296574876:
+          fieldId: dbt_orders_referrer
+          tableName: dbt_orders
+        copy-of-total-orders-during-current-period-vs-previous-period-and-year-1762297425191:
+          fieldId: dbt_orders_referrer
+          tableName: dbt_orders
+        revenue-current-period-big-value:
+          fieldId: dbt_orders_referrer
+          tableName: dbt_orders
+        total-orders-during-current-period-vs-previous-period-and-year:
+          fieldId: dbt_orders_referrer
+          tableName: dbt_orders
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Period over period parameters example
+slug: period-over-period-parameters-example
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 2
+    properties:
+      content: "# Preset date range examples"
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 4
+    properties:
+      chartName: Revenue current period big value
+      chartSlug: revenue-current-period-big-value
+      hideTitle: true
+      title: ""
+    tabUuid: null
+    tileSlug: revenue-current-period-big-value
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 2
+  - h: 8
+    properties:
+      chartName: Total orders during current period vs. previous period and year
+      chartSlug: total-orders-during-current-period-vs-previous-period-and-year
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-orders-during-current-period-vs-previous-period-and-year
+    type: saved_chart
+    w: 15
+    x: 9
+    "y": 2
+  - h: 8
+    properties:
+      chartName: Total profit current period vs. previous period
+      chartSlug: >-
+        copy-of-total-orders-during-current-period-vs-previous-period-and-year-1762297425191
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: >-
+      copy-of-total-orders-during-current-period-vs-previous-period-and-year-1762297425191
+    type: saved_chart
+    w: 12
+    x: 24
+    "y": 2
+  - h: 4
+    properties:
+      chartName: Copy of Revenue current period big value
+      chartSlug: copy-of-revenue-current-period-big-value-1762296574876
+      hideTitle: true
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-revenue-current-period-big-value-1762296574876
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 6
+  - h: 2
+    properties:
+      content: "# Custom date range examples"
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 10
+  - h: 5
+    properties:
+      chartName: Custom date range - Profit
+      chartSlug: custom-date-range
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: custom-date-range
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 12
+  - h: 5
+    properties:
+      chartName: Custom date range - Orders
+      chartSlug: copy-of-custom-date-range-1764959616887
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: copy-of-custom-date-range-1764959616887
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 12
+verification: null
+version: 1

@@ -1,0 +1,74 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#5C7F9D"
+          encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          type: bar
+      xAxis:
+        - name: Partner
+          type: category
+      yAxis:
+        - name: Revenue
+    layout:
+      flipAxes: true
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: sales-updates
+description: >-
+  Displays the top partners by total revenue (sum of basket total) over the past
+  12 months. Each bar represents a partner's total revenue.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 367df744-eccf-4519-b03e-27a83820d4e5
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date
+          values:
+            - 12
+      id: 9767e0f3-f6db-4129-960f-7176087e740c
+    metrics:
+      and: []
+      id: 8c04de82-5454-41f9-b227-6c693752d7f7
+  limit: 10
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        compact: millions
+        currency: USD
+        separator: default
+        type: currency
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Best Performing Partners Over the Last 12 Months
+slug: best-performing-partners-over-the-last-12-months
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

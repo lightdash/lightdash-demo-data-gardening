@@ -1,0 +1,95 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_partner_name
+            yRef:
+              field: monthly_partner_info_total_orders
+          isFilteredOut: false
+          name: Total Orders
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_partner_name
+            yRef:
+              field: monthly_partner_info_total_revenue
+          isFilteredOut: false
+          name: Total Revenue
+          type: bar
+          yAxisIndex: 1
+      showAxisTicks: false
+      xAxis:
+        - name: Partner Name
+      yAxis:
+        - name: Total Orders
+        - name: Total Revenue
+    layout:
+      stack: false
+      xField: monthly_partner_info_dbt_orders_partner_name
+      yField:
+        - monthly_partner_info_total_orders
+        - monthly_partner_info_total_revenue
+  type: cartesian
+contentType: chart
+dashboardSlug: partner-performance-dashboard
+description: Compare order volume and revenue by partner name to identify top performers.
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: dbt_orders_count_distinct_order_id
+      description: Count of distinct order IDs for each partner.
+      label: Total Orders
+      name: total_orders
+      sql: "`dbt_orders_count_distinct_order_id`"
+      table: monthly_partner_info
+      type: sum
+      uuid: 3e7dc734-9e93-412d-8090-986d97fce710
+    - baseDimensionName: dbt_orders_sum_basket_total
+      description: Sum of basket totals across all orders for each partner.
+      label: Total Revenue
+      name: total_revenue
+      sql: "`dbt_orders_sum_of_basket_total`"
+      table: monthly_partner_info
+      type: sum
+      uuid: a822b5cc-d6a0-4430-9ec9-fe4b2670ce76
+  customDimensions: []
+  dimensions:
+    - monthly_partner_info_dbt_orders_partner_name
+  exploreName: monthly_partner_info
+  filters:
+    dimensions:
+      and: []
+      id: 904b9f2b-adf1-488b-98e2-d98708cfe6df
+    metrics:
+      and: []
+      id: f6d87d58-a425-4f09-b15a-a90644b29222
+    tableCalculations:
+      and: []
+      id: 3518a936-8f43-4fef-a4a1-454fbba29226
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - monthly_partner_info_total_orders
+    - monthly_partner_info_total_revenue
+  sorts:
+    - descending: true
+      fieldId: monthly_partner_info_total_revenue
+  tableCalculations: []
+name: Orders and Revenue by Partner
+slug: orders-and-revenue-by-partner
+spaceSlug: shared/apollo
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_total_orders
+    - monthly_partner_info_total_revenue
+tableName: monthly_partner_info
+verification: null
+version: 1

@@ -1,0 +1,31 @@
+chartConfig:
+  config:
+    label: Total Profit
+    selectedField: dbt_orders_total_profit
+    showBigNumberLabel: true
+    style: K
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters: {}
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_total_profit
+  sorts: []
+  tableCalculations: []
+name: Total Profit
+slug: kpi-total-profit
+spaceSlug: kpi-metrics
+tableConfig:
+  columnOrder:
+    - dbt_orders_total_profit
+tableName: dbt_orders
+verification: null
+version: 1

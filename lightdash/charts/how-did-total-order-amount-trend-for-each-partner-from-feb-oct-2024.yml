@@ -1,0 +1,118 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_order_date_month
+            yRef:
+              field: monthly_partner_info_dbt_orders_sum_basket_total
+              pivotValues:
+                - field: monthly_partner_info_dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          type: scatter
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_order_date_month
+            yRef:
+              field: monthly_partner_info_dbt_orders_sum_basket_total
+              pivotValues:
+                - field: monthly_partner_info_dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          type: scatter
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_order_date_month
+            yRef:
+              field: monthly_partner_info_dbt_orders_sum_basket_total
+              pivotValues:
+                - field: monthly_partner_info_dbt_orders_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          type: scatter
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_order_date_month
+            yRef:
+              field: monthly_partner_info_dbt_orders_sum_basket_total
+              pivotValues:
+                - field: monthly_partner_info_dbt_orders_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          type: scatter
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - name: Order Month
+      yAxis:
+        - name: Revenue
+        - {}
+    layout:
+      flipAxes: false
+      stack: none
+      xField: monthly_partner_info_dbt_orders_order_date_month
+      yField:
+        - monthly_partner_info_dbt_orders_sum_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard
+description: >-
+  Revenue patterns across four partners (Garden of Sweden, Happy Harvesters,
+  Peat Fruits and Leaves, Plant Paradise) during the February to October 2024
+  period, showing individual performance trajectories over time.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_dbt_orders_order_date_month
+  exploreName: monthly_partner_info
+  filters:
+    dimensions:
+      and:
+        - id: 4f4c1abd-b9f2-4837-afdf-3c2e56ff943b
+          operator: equals
+          required: false
+          target:
+            fieldId: monthly_partner_info_dbt_orders_partner_name
+          values:
+            - Garden of Sweden
+            - Happy Harvesters
+            - Peat, Fruits and Leaves
+            - Plant Paradise
+        - id: b20b1605-ed2c-4855-bf84-1efbf2ab8a62
+          operator: inBetween
+          required: false
+          target:
+            fieldId: monthly_partner_info_dbt_orders_order_date_month
+          values:
+            - "2024-02-01T00:00:00-05:00"
+            - "2024-10-31T00:00:00-04:00"
+      id: 15701014-bc78-42ff-bfac-2b9e14f14553
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - monthly_partner_info_dbt_orders_sum_basket_total
+  sorts:
+    - descending: true
+      fieldId: monthly_partner_info_dbt_orders_sum_basket_total
+  tableCalculations: []
+name: How did total order amount trend for each partner from Feb-Oct 2024?
+pivotConfig:
+  columns:
+    - monthly_partner_info_dbt_orders_partner_name
+slug: how-did-total-order-amount-trend-for-each-partner-from-feb-oct-2024
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_dbt_orders_order_date_month
+    - monthly_partner_info_dbt_orders_sum_basket_total
+tableName: monthly_partner_info
+verification: null
+version: 1

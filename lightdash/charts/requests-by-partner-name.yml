@@ -1,0 +1,54 @@
+chartConfig:
+  config:
+    groupColorOverrides: {}
+    groupFieldIds:
+      - dbt_support_requests_partner_name
+    groupLabelOverrides: {}
+    groupSortOverrides: []
+    groupValueOptionOverrides: {}
+    isDonut: true
+    legendMaxItemLength: 30
+    legendPosition: horizontal
+    metricId: dbt_support_requests_count_distinct_request_id
+    showLegend: true
+    showPercentage: true
+    showValue: false
+    valueLabel: hidden
+  type: pie
+contentType: chart
+dashboardSlug: customer-feedback-support-dashboard
+description: Breakdown of support requests by partner name.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_partner_name
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and: []
+      id: 6bafe76b-d78a-44db-a446-2f945daf21e8
+    metrics:
+      and: []
+      id: 2a08d800-7cb7-4855-8fff-3e6cdc64e32b
+    tableCalculations:
+      and: []
+      id: 12dbe137-efde-470e-9cd3-36db8f96f9b2
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_count_distinct_request_id
+  tableCalculations: []
+name: Requests by Partner Name
+slug: requests-by-partner-name
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

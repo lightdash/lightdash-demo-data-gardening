@@ -1,0 +1,55 @@
+chartConfig:
+  config:
+    groupColorOverrides: {}
+    groupFieldIds:
+      - dbt_orders_browser
+    groupLabelOverrides: {}
+    groupSortOverrides: []
+    groupValueOptionOverrides: {}
+    isDonut: true
+    legendMaxItemLength: 30
+    legendPosition: horizontal
+    metricId: dbt_orders_sum_of_basket_total
+    showLegend: true
+    showPercentage: true
+    showValue: false
+    valueLabel: hidden
+  type: pie
+contentType: chart
+dashboardSlug: sales-dashboard-test
+description: Compares Revenue by customer browser (top 10).
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_browser
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 5ce158b3-3ba9-44ce-b4c3-f7a4b1434bf7
+    metrics:
+      and: []
+      id: 0cd2aa55-e249-46a4-b5dd-3344f66d59a7
+    tableCalculations:
+      and: []
+      id: c5ad1625-618c-4993-9a33-43e8f0a38a3e
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Revenue by Browser
+slug: revenue-by-browser
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_browser
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

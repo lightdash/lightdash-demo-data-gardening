@@ -1,0 +1,65 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        bottom: 5px
+        containLabel: true
+        left: 30px
+        right: 5px
+        top: 5px
+      series:
+        - color: "#30CF87"
+          encode:
+            xRef:
+              field: dbt_support_requests_request_date_week
+            yRef:
+              field: dbt_support_requests_average_of_feedback_rating
+          isFilteredOut: false
+          label:
+            show: false
+          showSymbol: true
+          smooth: true
+          type: line
+          yAxisIndex: 0
+      tooltip: ""
+      xAxis:
+        - name: " "
+          rotate: 30
+      yAxis:
+        - name: Average rating (out of 10)
+        - {}
+    layout:
+      flipAxes: false
+      showXAxis: true
+      xField: dbt_support_requests_request_date_week
+      yField:
+        - dbt_support_requests_average_of_feedback_rating
+  type: cartesian
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_support_requests_request_date_week
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_average_of_feedback_rating
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_request_date_week
+  tableCalculations: []
+name: What is our weekly average feedback rating (out of 10)?
+slug: what-is-our-weekly-average-feedback-rating-out-of-10-
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_week
+    - dbt_support_requests_average_of_feedback_rating
+tableName: dbt_support_requests
+verification: null
+version: 1

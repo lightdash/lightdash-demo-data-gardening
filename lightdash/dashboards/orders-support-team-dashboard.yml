@@ -1,0 +1,76 @@
+contentType: dashboard
+description: >-
+  A comprehensive dashboard for the support team to monitor order activity,
+  trends, and key metrics. Includes order volumes, trends over time, partner
+  breakdowns, shipping country analysis, and profitability insights.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Orders Support Team Dashboard
+slug: orders-support-team-dashboard
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Total Orders (Last 30 Days)
+      chartSlug: total-orders-last-30-days
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-orders-last-30-days
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Orders Trend (Last 6 Months)
+      chartSlug: orders-trend-last-6-months
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: orders-trend-last-6-months
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Orders by Partner (Last 6 Months)
+      chartSlug: orders-by-partner-last-6-months
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: orders-by-partner-last-6-months
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Orders by Shipping Country (Last 6 Months)
+      chartSlug: orders-by-shipping-country-last-6-months
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: orders-by-shipping-country-last-6-months
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Order Profitability by Partner (Last 6 Months)
+      chartSlug: order-profitability-by-partner-last-6-months
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: order-profitability-by-partner-last-6-months
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 18
+verification: null
+version: 1

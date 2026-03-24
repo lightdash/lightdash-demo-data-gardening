@@ -1,0 +1,55 @@
+chartConfig:
+  config:
+    groupColorOverrides: {}
+    groupFieldIds:
+      - dbt_orders_shipping_country
+    groupLabelOverrides: {}
+    groupSortOverrides: []
+    groupValueOptionOverrides: {}
+    isDonut: true
+    legendMaxItemLength: 30
+    legendPosition: horizontal
+    metricId: dbt_orders_sum_of_basket_total
+    showLegend: true
+    showPercentage: true
+    showValue: false
+    valueLabel: hidden
+  type: pie
+contentType: chart
+dashboardSlug: sales-kpi-dashboard
+description: Pie chart showing the distribution of revenue by shipping country.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: dab1c9e7-4aec-41bc-b481-057e1514e226
+    metrics:
+      and: []
+      id: 33ed601a-d29c-40c0-8d21-b3e8f3bf8e2f
+    tableCalculations:
+      and: []
+      id: 9db830b4-7301-4387-9f23-0a38c91da0de
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Revenue by Country
+slug: revenue-by-country
+spaceSlug: shared/apollo
+tableConfig:
+  columnOrder:
+    - dbt_orders_shipping_country
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

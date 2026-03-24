@@ -1,0 +1,176 @@
+contentType: dashboard
+description: >-
+  Performance overview for Redwood Ranch partner - revenue, profit, order
+  volume, and trends
+filters:
+  dimensions:
+    - disabled: false
+      label: Partner
+      operator: equals
+      target:
+        fieldId: dbt_orders_partner_name
+        tableName: dbt_orders
+      tileTargets: {}
+      values:
+        - Redwood Ranch
+    - disabled: false
+      label: Date Range
+      operator: inThePast
+      settings:
+        completed: false
+        unitOfTime: months
+      target:
+        fieldId: dbt_orders_order_date_month
+        tableName: dbt_orders
+      tileTargets: {}
+      values:
+        - 12
+    - disabled: false
+      label: Referrer
+      operator: equals
+      target:
+        fieldId: dbt_orders_referrer
+        tableName: dbt_orders
+      tileTargets: {}
+      values: []
+    - disabled: false
+      label: Browser
+      operator: equals
+      target:
+        fieldId: dbt_orders_browser
+        tableName: dbt_orders
+      tileTargets: {}
+      values: []
+    - disabled: false
+      label: Country
+      operator: equals
+      target:
+        fieldId: dbt_orders_shipping_country
+        tableName: dbt_orders
+      tileTargets: {}
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Redwood Ranch Performance
+slug: redwood-ranch-performance
+spaceSlug: redwood-ranch
+tabs: []
+tiles:
+  - h: 2
+    properties:
+      content: >
+        # Redwood Ranch
+
+        How our most purple partner is performing across revenue, profit, and
+        customer activity.
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Redwood Ranch Revenue
+      chartSlug: redwood-ranch-revenue
+      hideTitle: false
+      title: Revenue
+    tabUuid: null
+    tileSlug: redwood-ranch-revenue
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Redwood Ranch Profit
+      chartSlug: redwood-ranch-profit
+      hideTitle: false
+      title: Profit
+    tabUuid: null
+    tileSlug: redwood-ranch-profit
+    type: saved_chart
+    w: 9
+    x: 9
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Redwood Ranch Order Volume
+      chartSlug: redwood-ranch-order-volume
+      hideTitle: false
+      title: Order Volume
+    tabUuid: null
+    tileSlug: redwood-ranch-order-volume
+    type: saved_chart
+    w: 9
+    x: 18
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Redwood Ranch Avg Order Value
+      chartSlug: redwood-ranch-avg-order-value
+      hideTitle: false
+      title: Avg Order Value
+    tabUuid: null
+    tileSlug: redwood-ranch-avg-order-value
+    type: saved_chart
+    w: 9
+    x: 27
+    "y": 2
+  - h: 1
+    properties:
+      content: |
+        ### Where's the money growing?
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 5
+  - h: 8
+    properties:
+      chartName: Redwood Ranch Revenue Trend
+      chartSlug: redwood-ranch-revenue-trend
+      hideTitle: false
+      title: Revenue Trend
+    tabUuid: null
+    tileSlug: redwood-ranch-revenue-trend
+    type: saved_chart
+    w: 22
+    x: 0
+    "y": 6
+  - h: 8
+    properties:
+      chartName: Redwood Ranch Orders by Referrer
+      chartSlug: redwood-ranch-orders-by-referrer
+      hideTitle: false
+      title: Orders by Referrer
+    tabUuid: null
+    tileSlug: redwood-ranch-orders-by-referrer
+    type: saved_chart
+    w: 14
+    x: 22
+    "y": 6
+  - h: 2
+    properties:
+      content: >
+        ---
+
+        **About this dashboard** | Redwood Ranch is one of our key fulfillment
+        partners. This dashboard tracks their contribution to overall sales,
+        profit margins, and which referral channels drive orders their way. Use
+        the partner filter above to compare with other partners.
+      hideFrame: false
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 14
+verification: null
+version: 1

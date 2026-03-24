@@ -1,0 +1,169 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Potted Paradise
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Trowels R Us
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Order Month
+      yAxis:
+        - name: Order Count
+    layout:
+      stack: false
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: orders-support-team-dashboard
+description: Bar chart showing order counts for each partner over the last 6 months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 3cc417e6-3d6d-4d8c-af37-5d6f5f865f00
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 6
+      id: b503473b-a8c9-4381-b955-241e36b65687
+    metrics:
+      and: []
+      id: a1d4d8e1-0ebc-4a65-9334-4ded140fe26d
+    tableCalculations:
+      and: []
+      id: 0349dfcb-ad4a-4d00-bf0f-b0f285e96edf
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+    - descending: false
+      fieldId: dbt_orders_partner_name
+  tableCalculations: []
+name: Orders by Partner (Last 6 Months)
+slug: orders-by-partner-last-6-months
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

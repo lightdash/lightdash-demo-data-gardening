@@ -1,0 +1,30 @@
+chartConfig:
+  config:
+    label: Avg Order Value
+    selectedField: dbt_orders_average_of_basket_total
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters: {}
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+  sorts: []
+  tableCalculations: []
+name: Redwood Ranch Avg Order Value
+slug: redwood-ranch-avg-order-value
+spaceSlug: redwood-ranch
+tableConfig:
+  columnOrder:
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,127 @@
+contentType: dashboard
+description: how busy can things get
+filters:
+  dimensions:
+    - disabled: false
+      operator: inThePast
+      settings:
+        completed: false
+        unitOfTime: years
+      target:
+        fieldId: dbt_orders_order_date
+        fieldName: order_date
+        tableName: dbt_orders
+      tileTargets:
+        basket-total-profit-breakdown:
+          fieldId: dbt_orders_order_date
+          tableName: dbt_orders
+        order-count-breakdown:
+          fieldId: dbt_orders_order_date
+          tableName: dbt_orders
+      values:
+        - 1
+  metrics: []
+  tableCalculations: []
+name: A very busy dashboard
+slug: parameters-example-2
+spaceSlug: "-marketing/lightdash-features"
+tabs:
+  - name: Tab 1
+    order: 0
+    uuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+  - name: dsa
+    order: 1
+    uuid: 2811bbdf-547b-47ae-85eb-4653cfd80730
+  - name: asdasd
+    order: 2
+    uuid: 123a03d2-3d8c-40f7-a411-173140b5fbdd
+tiles:
+  - h: 7
+    properties:
+      content: >-
+        This dashboard is an example of how you can use a parameter to change
+        the grouping dimension of your data. 
+
+
+        In this case you can select the following grouing dimensions from the
+        `orders` table:  
+
+        - `partner_name`
+
+        - `browser`
+
+        - `referrer` as the grouping dimension. 
+
+
+
+        Your charts are updated to display the data grouped by the selected
+        dimension and the selected dimension is displayed in a big value chart. 
+      hideFrame: false
+      hideTitle: false
+      title: Change How Your Data is Grouped with Parameters
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    type: markdown
+    w: 15
+    x: 0
+    "y": 0
+  - h: 7
+    properties:
+      chartName: selected dimension
+      chartSlug: selected-dimension-1762175399090
+      hideTitle: false
+      title: ""
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    tileSlug: selected-dimension-1762175399090
+    type: saved_chart
+    w: 6
+    x: 15
+    "y": 0
+  - h: 7
+    properties:
+      hideTitle: false
+      title: Parameters Demo
+      url: >-
+        https://www.loom.com/share/84c7e03d0cf4470eabb2f48f3e70c5ac?sid=cc722739-eb91-4340-b2bf-741ff36f5b22
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    type: loom
+    w: 15
+    x: 21
+    "y": 0
+  - h: 10
+    properties:
+      chartName: Order Count Breakdown
+      chartSlug: order-count-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    tileSlug: order-count-breakdown
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 7
+  - h: 6
+    properties:
+      chartName: Weekly Order Count Breakdown
+      chartSlug: weekly-order-count-breakdown-1762175399098
+      hideTitle: false
+      title: ""
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    tileSlug: weekly-order-count-breakdown-1762175399098
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 7
+  - h: 7
+    properties:
+      chartName: Basket Total & Profit Breakdown
+      chartSlug: basket-total-profit-breakdown
+      hideTitle: false
+      title: ""
+    tabUuid: 08d09cd8-29b2-4eb9-abd3-981bc8921197
+    tileSlug: basket-total-profit-breakdown
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 13
+verification: null
+version: 1

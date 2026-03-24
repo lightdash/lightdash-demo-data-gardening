@@ -1,0 +1,15 @@
+contentType: dashboard
+description: >-
+  A comprehensive dashboard providing insights into order volume, profit,
+  revenue, and partner performance over time.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Orders Overview
+slug: orders-overview
+spaceSlug: ai-agent-generated
+tabs: []
+tiles: []
+verification: null
+version: 1

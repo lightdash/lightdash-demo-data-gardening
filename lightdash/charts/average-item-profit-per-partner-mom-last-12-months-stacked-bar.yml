@@ -1,0 +1,184 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Potted Paradise
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_average_of_item_profit
+              pivotValues:
+                - field: dbt_baskets_partner_name
+                  value: Trowels R Us
+          isFilteredOut: false
+          stack: dbt_baskets_average_of_item_profit
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      title:
+        text: Average Item Profit per Partner, MoM (Last 12 Months) - Stacked Bar
+      xAxis:
+        - name: Order date month
+      yAxis:
+        - name: Average Item Profit
+    layout:
+      stack: true
+      xField: dbt_baskets_order_date_month
+      yField:
+        - dbt_baskets_average_of_item_profit
+  type: cartesian
+contentType: chart
+description: >-
+  Displays the average item profit per partner, broken down by month, for the
+  last 12 months as a stacked bar chart. Each bar represents a month, and
+  segments within the bar represent different partners.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_order_date_month
+    - dbt_baskets_partner_name
+  exploreName: dbt_baskets
+  filters:
+    dimensions:
+      and:
+        - id: cc37701c-fc49-4d24-9c1b-5c4088874759
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldFilterType: date
+            fieldId: dbt_baskets_order_date_month
+          values:
+            - 12
+      id: 88f39982-f30e-4722-87ac-3a653b714ffb
+    metrics:
+      and: []
+      id: 90c32333-2900-4841-a588-d6bda836ddcd
+    tableCalculations:
+      and: []
+      id: 5245a998-b648-43c0-8d2e-dfb9e9165a79
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_average_of_item_profit
+  sorts:
+    - descending: false
+      fieldId: dbt_baskets_order_date_month
+    - descending: false
+      fieldId: dbt_baskets_partner_name
+  tableCalculations: []
+name: Average Item Profit per Partner, MoM (Last 12 Months) - Stacked Bar
+slug: average-item-profit-per-partner-mom-last-12-months-stacked-bar
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_baskets_order_date_month
+    - dbt_baskets_partner_name
+    - dbt_baskets_average_of_item_profit
+tableName: dbt_baskets
+verification: null
+version: 1

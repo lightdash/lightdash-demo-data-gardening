@@ -21,29 +21,10 @@ For full schema details, see [chart-as-code-1.0.json](schemas/chart-as-code-1.0.
 ## Basic Structure
 
 ```yaml
-version: 1
-name: "My Cartesian Chart"
-slug: "my-cartesian-chart"
-spaceSlug: "analytics"
-tableName: "my_explore"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "my_explore_category"
-  metrics:
-    - "my_explore_total_sales"
-  filters: {}
-  sorts: []
-  limit: 500
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "my_explore_category"
-      yField:
-        - "my_explore_total_sales"
     eChartsConfig:
       series:
         - type: "bar"
@@ -52,6 +33,24 @@ chartConfig:
               field: "my_explore_category"
             yRef:
               field: "my_explore_total_sales"
+    layout:
+      xField: "my_explore_category"
+      yField:
+        - "my_explore_total_sales"
+metricQuery:
+  exploreName: "my_explore"
+  dimensions:
+    - "my_explore_category"
+  filters: {}
+  limit: 500
+  metrics:
+    - "my_explore_total_sales"
+  sorts: []
+name: "My Cartesian Chart"
+slug: "my-cartesian-chart"
+spaceSlug: "analytics"
+tableName: "my_explore"
+version: 1
 ```
 
 ## Key Configuration Properties
@@ -92,31 +91,10 @@ Optional properties:
 ### Bar Chart
 
 ```yaml
-version: 1
-name: "Sales by Partner"
-slug: "sales-by-partner"
-spaceSlug: "sales"
-tableName: "orders"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "orders_partner_name"
-  metrics:
-    - "orders_total_sales"
-  filters: {}
-  sorts:
-    - fieldId: "orders_total_sales"
-      descending: true
-  limit: 10
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "orders_partner_name"
-      yField:
-        - "orders_total_sales"
     eChartsConfig:
       series:
         - type: "bar"
@@ -125,42 +103,36 @@ chartConfig:
               field: "orders_partner_name"
             yRef:
               field: "orders_total_sales"
+    layout:
+      xField: "orders_partner_name"
+      yField:
+        - "orders_total_sales"
+metricQuery:
+  exploreName: "orders"
+  dimensions:
+    - "orders_partner_name"
+  filters: {}
+  limit: 10
+  metrics:
+    - "orders_total_sales"
+  sorts:
+    - fieldId: "orders_total_sales"
+      descending: true
+name: "Sales by Partner"
+slug: "sales-by-partner"
+spaceSlug: "sales"
+tableName: "orders"
+version: 1
 ```
 
 ### Line Chart with Trend
 
 ```yaml
-version: 1
-name: "Monthly Revenue Trend"
-slug: "monthly-revenue-trend"
-spaceSlug: "finance"
-tableName: "orders"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "orders_order_date_month"
-  metrics:
-    - "orders_total_revenue"
-  filters: {}
-  sorts:
-    - fieldId: "orders_order_date_month"
-      descending: false
-  limit: 500
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "orders_order_date_month"
-      yField:
-        - "orders_total_revenue"
-      showGridY: true
     eChartsConfig:
-      xAxis:
-        - name: "Month"
-      yAxis:
-        - name: "Revenue ($)"
       series:
         - type: "line"
           encode:
@@ -168,49 +140,47 @@ chartConfig:
               field: "orders_order_date_month"
             yRef:
               field: "orders_total_revenue"
-          smooth: true
           showSymbol: true
+          smooth: true
+      xAxis:
+        - name: "Month"
+      yAxis:
+        - name: "Revenue ($)"
+    layout:
+      showGridY: true
+      xField: "orders_order_date_month"
+      yField:
+        - "orders_total_revenue"
+metricQuery:
+  exploreName: "orders"
+  dimensions:
+    - "orders_order_date_month"
+  filters: {}
+  limit: 500
+  metrics:
+    - "orders_total_revenue"
+  sorts:
+    - fieldId: "orders_order_date_month"
+      descending: false
+name: "Monthly Revenue Trend"
+slug: "monthly-revenue-trend"
+spaceSlug: "finance"
+tableName: "orders"
+version: 1
 ```
 
 ### Stacked Area Chart
 
 ```yaml
-version: 1
-name: "Revenue by Category"
-slug: "revenue-by-category"
-spaceSlug: "sales"
-tableName: "orders"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "orders_order_date_month"
-    - "orders_product_category"
-  metrics:
-    - "orders_total_revenue"
-  filters: {}
-  sorts:
-    - fieldId: "orders_order_date_month"
-      descending: false
-  limit: 500
-
-pivotConfig:
-  columns:
-    - "orders_product_category"
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "orders_order_date_month"
-      yField:
-        - "orders_total_revenue"
     eChartsConfig:
       legend:
         show: true
       series:
         - type: "line"
-          stack: "total"
           areaStyle: {}
           encode:
             xRef:
@@ -220,40 +190,41 @@ chartConfig:
               pivotValues:
                 - field: "orders_product_category"
                   value: "Electronics"
+          stack: "total"
+    layout:
+      xField: "orders_order_date_month"
+      yField:
+        - "orders_total_revenue"
+metricQuery:
+  exploreName: "orders"
+  dimensions:
+    - "orders_order_date_month"
+    - "orders_product_category"
+  filters: {}
+  limit: 500
+  metrics:
+    - "orders_total_revenue"
+  sorts:
+    - fieldId: "orders_order_date_month"
+      descending: false
+name: "Revenue by Category"
+pivotConfig:
+  columns:
+    - "orders_product_category"
+slug: "revenue-by-category"
+spaceSlug: "sales"
+tableName: "orders"
+version: 1
 ```
 
 ### Scatter Chart
 
 ```yaml
-version: 1
-name: "Order Value vs Profit"
-slug: "order-value-vs-profit"
-spaceSlug: "analytics"
-tableName: "orders"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "orders_order_id"
-  metrics:
-    - "orders_basket_total"
-    - "orders_profit"
-  filters: {}
-  sorts: []
-  limit: 1000
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "orders_basket_total"
-      yField:
-        - "orders_profit"
     eChartsConfig:
-      xAxis:
-        - name: "Order Value ($)"
-      yAxis:
-        - name: "Profit ($)"
       series:
         - type: "scatter"
           encode:
@@ -261,68 +232,134 @@ chartConfig:
               field: "orders_basket_total"
             yRef:
               field: "orders_profit"
+      xAxis:
+        - name: "Order Value ($)"
+      yAxis:
+        - name: "Profit ($)"
+    layout:
+      xField: "orders_basket_total"
+      yField:
+        - "orders_profit"
+metricQuery:
+  exploreName: "orders"
+  dimensions:
+    - "orders_order_id"
+  filters: {}
+  limit: 1000
+  metrics:
+    - "orders_basket_total"
+    - "orders_profit"
+  sorts: []
+name: "Order Value vs Profit"
+slug: "order-value-vs-profit"
+spaceSlug: "analytics"
+tableName: "orders"
+version: 1
 ```
 
 ### Dual Y-Axis Chart
 
 ```yaml
-version: 1
-name: "Revenue & Profit Margin"
-slug: "revenue-profit-margin"
-spaceSlug: "finance"
-tableName: "orders"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions:
-    - "orders_order_date_month"
-  metrics:
-    - "orders_total_revenue"
-  tableCalculations:
-    - name: "profit_margin"
-      displayName: "Profit Margin %"
-      sql: "${orders.profit}/${orders.total_revenue} * 100"
-  filters: {}
-  sorts:
-    - fieldId: "orders_order_date_month"
-      descending: false
-  limit: 500
-
+contentType: chart
 chartConfig:
   type: "cartesian"
   config:
-    layout:
-      xField: "orders_order_date_month"
-      yField:
-        - "orders_total_revenue"
-        - "profit_margin"
     eChartsConfig:
-      yAxis:
-        - name: "Revenue ($)"
-        - name: "Profit Margin (%)"
       series:
         - type: "bar"
-          name: "Revenue"
           encode:
             xRef:
               field: "orders_order_date_month"
             yRef:
               field: "orders_total_revenue"
+          name: "Revenue"
           yAxisIndex: 0
         - type: "line"
-          name: "Profit Margin"
           encode:
             xRef:
               field: "orders_order_date_month"
             yRef:
               field: "profit_margin"
-          yAxisIndex: 1
+          name: "Profit Margin"
           smooth: true
+          yAxisIndex: 1
+      yAxis:
+        - name: "Revenue ($)"
+        - name: "Profit Margin (%)"
+    layout:
+      xField: "orders_order_date_month"
+      yField:
+        - "orders_total_revenue"
+        - "profit_margin"
+metricQuery:
+  exploreName: "orders"
+  dimensions:
+    - "orders_order_date_month"
+  filters: {}
+  limit: 500
+  metrics:
+    - "orders_total_revenue"
+  sorts:
+    - fieldId: "orders_order_date_month"
+      descending: false
+  tableCalculations:
+    - name: "profit_margin"
+      displayName: "Profit Margin %"
+      sql: "${orders.profit}/${orders.total_revenue} * 100"
+name: "Revenue & Profit Margin"
+slug: "revenue-profit-margin"
+spaceSlug: "finance"
+tableName: "orders"
+version: 1
 ```
 
 ## Tips
 
-1. **Choose the right chart type**:
+1. **Match `metricQuery.dimensions` to chart config — no extras.** Every dimension in `metricQuery.dimensions` must appear in exactly one of: `layout.xField`, `layout.yField`, or `pivotConfig.columns`. An unused dimension silently adds a GROUP BY clause to the SQL, inflating row counts and producing incorrect metric values. Lightdash flags this as a "Results may be incorrect" warning.
+
+   ```yaml
+   # BAD — orders_status is queried but not used in the chart
+   metricQuery:
+     dimensions:
+       - orders_order_date_month
+       - orders_status            # not on any axis or pivot!
+     metrics:
+       - orders_total_revenue
+   chartConfig:
+     type: cartesian
+     config:
+       layout:
+         xField: orders_order_date_month
+         yField:
+           - orders_total_revenue
+
+   # GOOD — every dimension has a job
+   metricQuery:
+     dimensions:
+       - orders_order_date_month
+       - orders_status
+     metrics:
+       - orders_total_revenue
+   pivotConfig:
+     columns:
+       - orders_status          # used as pivot
+   chartConfig:
+     type: cartesian
+     config:
+       layout:
+         xField: orders_order_date_month
+         yField:
+           - orders_total_revenue
+
+   # ALSO GOOD — just remove the dimension you don't need
+   metricQuery:
+     dimensions:
+       - orders_order_date_month
+     metrics:
+       - orders_total_revenue
+   ```
+
+2. **Choose the right chart type**:
    - Bar: Comparing discrete categories
    - Line: Showing trends over time
    - Area: Emphasizing cumulative totals or composition

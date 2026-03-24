@@ -1,0 +1,37 @@
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: SQLCharts
+slug: sqlcharts
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: bar
+      chartSlug: bar
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: bar
+    type: sql_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: pie
+      chartSlug: pie
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: pie
+    type: sql_chart
+    w: 15
+    x: 0
+    "y": 1
+verification: null
+version: 1

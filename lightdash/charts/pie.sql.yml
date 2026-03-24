@@ -1,0 +1,23 @@
+chartKind: pie
+config:
+  display:
+    isDonut: false
+  fieldConfig:
+    groupBy: []
+    x:
+      reference: partner_id
+      type: category
+    "y":
+      - aggregation: avg
+        reference: profit
+  metadata:
+    version: 1
+  type: pie
+contentType: sql_chart
+description: ""
+limit: 500
+name: pie
+slug: pie
+spaceSlug: shared
+sql: "SELECT * FROM `lightdash-analytics`.`lightdash_demo_gardening`.`orders` "
+version: 1

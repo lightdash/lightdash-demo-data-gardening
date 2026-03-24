@@ -1,0 +1,102 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions:
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_baskets_order_date_day
+        tableName: dbt_baskets
+      tileTargets:
+        total-units-sold:
+          fieldId: dbt_baskets_order_date_day
+          tableName: dbt_baskets
+        what-are-the-most-popular-products-:
+          fieldId: dbt_baskets_order_date_day
+          tableName: dbt_baskets
+      values:
+        - "2023-08-04"
+  metrics: []
+  tableCalculations: []
+name: My Dashboard
+slug: my-dashboard
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 5
+    properties:
+      chartName: Total units sold
+      chartSlug: total-units-sold
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-units-sold
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 0
+  - h: 5
+    properties:
+      chartName: Average order count per user per month
+      chartSlug: what-s-the-average-number-of-weekly-orders-per-user-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-s-the-average-number-of-weekly-orders-per-user-
+    type: saved_chart
+    w: 9
+    x: 9
+    "y": 0
+  - h: 9
+    properties:
+      chartName: What are the most popular products?
+      chartSlug: what-are-the-most-popular-products-
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-are-the-most-popular-products-
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 5
+  - h: 6
+    properties:
+      chartName: test dash
+      chartSlug: test-dash
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: test-dash
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 7
+  - h: 9
+    properties:
+      chartName: example custom viz
+      chartSlug: example-custom-viz
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: example-custom-viz
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 8
+  - h: 9
+    properties:
+      chartName: null
+      chartSlug: null
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: null
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 9
+verification: null
+version: 1

@@ -1,0 +1,65 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_shipping_country
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          name: Order count
+          type: bar
+          yAxisIndex: 0
+      title:
+        text: Orders by Country (Top 10)
+      xAxis:
+        - name: Country
+          type: category
+      yAxis:
+        - name: Order Count
+          type: value
+    layout:
+      xField: dbt_orders_shipping_country
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: business-performance-executive-dashboard
+description: Highlights the top 10 countries by order volume to reveal key markets.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 94610683-4474-4ffc-9665-ba883d3d1709
+    metrics:
+      and: []
+      id: b1b05975-5994-4b9e-81b5-ebea21a986df
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Orders by Country (Top 10)
+slug: orders-by-country-top-10
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_shipping_country
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

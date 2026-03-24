@@ -1,0 +1,155 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Trowels R Us
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_profit
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Potted Paradise
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_profit
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      stack: stack
+      xField: dbt_orders_order_date_day
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+dashboardSlug: pre-aggregates-sneak-peek
+description: >-
+  Stacked daily profit by partner name reveals which partners contribute most to
+  total profit and how profitability fluctuates across order dates.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: How does daily profit trend across all partners over time?
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+slug: how-does-daily-profit-trend-across-all-partners-over-time-3
+spaceSlug: shared/dashcachedemo
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,66 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_user_id
+          name: Total unique users
+          type: line
+          yAxisIndex: 0
+      title:
+        text: Customer Growth Over Time
+      xAxis:
+        - name: Order Month
+          type: time
+      yAxis:
+        - name: Unique Customers
+          type: value
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_user_id
+  type: cartesian
+contentType: chart
+dashboardSlug: business-pulse-revenue-customers-support-overview
+description: >-
+  Monitor how your customer base is growing by tracking unique users placing
+  orders each month.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 0d65a1ef-23ee-41a2-a032-0649d295873f
+    metrics:
+      and: []
+      id: 72c6af3d-8b6d-4a88-b94d-837181e3ff12
+  limit: 36
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_user_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Customer Growth Over Time
+slug: customer-growth-over-time
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

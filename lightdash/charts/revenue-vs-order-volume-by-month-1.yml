@@ -1,0 +1,81 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          name: Revenue
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          name: Order Volume
+          type: line
+          yAxisIndex: 1
+      showAxisTicks: false
+      xAxis:
+        - name: Order Month
+      yAxis:
+        - name: Revenue
+        - name: Order Volume
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: order-revenue-dashboard
+description: >-
+  Compare revenue (primary axis) against order volume (secondary axis) to see
+  whether growth is driven by more orders or higher value per order.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: a3a110a1-d97b-46e6-a17e-82bd3dbce98c
+    metrics:
+      and: []
+      id: 84925e57-bed3-4ac3-90da-7d20c5d4dce6
+    tableCalculations:
+      and: []
+      id: e2f1d0da-79ef-4f9a-a0fe-0cb4e84b8697
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Revenue vs Order Volume by month
+slug: revenue-vs-order-volume-by-month-1
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

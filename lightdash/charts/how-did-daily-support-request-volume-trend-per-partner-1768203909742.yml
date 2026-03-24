@@ -1,0 +1,121 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#a78bfa"
+          encode:
+            xRef:
+              field: dbt_support_requests_created_date_day
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          label:
+            show: false
+          type: scatter
+          yAxisIndex: 0
+        - color: "#ffb898"
+          encode:
+            xRef:
+              field: dbt_support_requests_created_date_day
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          label:
+            show: false
+          type: scatter
+          yAxisIndex: 0
+        - color: "#7cde96"
+          encode:
+            xRef:
+              field: dbt_support_requests_created_date_day
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          label:
+            show: false
+          type: scatter
+          yAxisIndex: 0
+      showAxisTicks: false
+      tooltip: ""
+      yAxis:
+        - name: Requests
+        - {}
+    layout:
+      flipAxes: false
+      stack: none
+      xField: dbt_support_requests_created_date_day
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+    metadata:
+      dbt_support_requests_count_distinct_request_id.Garden of Sweden:
+        color: "#7cde96"
+      dbt_support_requests_count_distinct_request_id.Happy Harvesters:
+        color: "#a78bfa"
+      dbt_support_requests_count_distinct_request_id.Peat, Fruits and Leaves:
+        color: "#ffb898"
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard-1
+description: >-
+  Daily support request counts plotted over time with an average trend line,
+  revealing patterns in request volume and typical daily request levels during
+  the specified period.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_created_date_day
+    - dbt_support_requests_partner_name
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and:
+        - id: d71a444b-2453-438e-832d-9a2fa115789b
+          operator: inBetween
+          required: false
+          target:
+            fieldId: dbt_support_requests_created_date_month
+          values:
+            - "2023-09-25"
+            - "2023-10-31"
+        - id: 17ea06c8-5df3-4cbf-9b03-ae22ef496103
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_support_requests_partner_name
+          values:
+            - Garden of Sweden
+            - Happy Harvesters
+            - Peat, Fruits and Leaves
+      id: 100f8878-b72d-480d-86dd-291da789af9c
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_created_date_day
+  tableCalculations: []
+name: How did daily support request volume trend per partner?
+pivotConfig:
+  columns:
+    - dbt_support_requests_partner_name
+slug: how-did-daily-support-request-volume-trend-per-partner-1768203909742
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_created_date_day
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

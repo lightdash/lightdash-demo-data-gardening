@@ -1,0 +1,68 @@
+chartConfig:
+  config:
+    spec:
+      $schema: https://vega.github.io/schema/vega-lite/v5.json
+      encoding:
+        size:
+          field: dbt_orders_sum_of_profit
+          type: quantitative
+        tooltip:
+          - field: dbt_orders_order_date_week
+            title: Order Week
+            type: temporal
+          - field: dbt_orders_order_date_week_num
+            title: Week of Year
+            type: quantitative
+          - field: dbt_orders_sum_of_profit
+            format: $,.2f
+            title: Profit (USD)
+            type: quantitative
+        x:
+          axis:
+            labelColor: "#6e7079"
+            tickColor: "#6e7079"
+            title: week of year
+          field: dbt_orders_order_date_week_num
+          type: quantitative
+        "y":
+          axis:
+            format: $,.2f
+            labelColor: "#6e7079"
+            tickColor: "#6e7079"
+            title: profit (USD)
+          field: dbt_orders_sum_of_profit
+          type: quantitative
+      mark: point
+  type: custom
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_week_num
+    - dbt_orders_order_date_week
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations: []
+name: Profit by week of year bubble chart
+slug: profit-by-week-of-year-bubble-chart
+spaceSlug: shared/custom-visuals
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week_num
+    - dbt_orders_order_date_week
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

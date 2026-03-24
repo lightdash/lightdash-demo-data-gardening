@@ -1,0 +1,69 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_reason
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+          isFilteredOut: false
+          name: Support Tickets
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - name: Support Request Reason
+      yAxis:
+        - name: Support Tickets
+    layout:
+      stack: false
+      xField: dbt_support_requests_reason
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+  type: cartesian
+contentType: chart
+dashboardSlug: customer-success-dashboard
+description: >-
+  Breakdown of support tickets by reason to identify common customer pain
+  points.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_support_requests_reason
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and: []
+      id: 2ddf0a57-c680-4e15-b1a3-c34ff463793b
+    metrics:
+      and: []
+      id: 00b06699-14e7-4ceb-810f-8da6db224586
+    tableCalculations:
+      and: []
+      id: db0ea1b2-5249-4e3a-8087-7a15d5990e37
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_count_distinct_request_id
+  tableCalculations: []
+name: Support Tickets by Reason
+slug: support-tickets-by-reason
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_reason
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

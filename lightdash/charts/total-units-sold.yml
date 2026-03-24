@@ -1,0 +1,77 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    label: Total units sold
+    selectedField: dbt_baskets_count_of_product_name
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics:
+    - description: >-
+        Count distinct of Order id on the table Dbt baskets. Lightdash has
+        created this metric automatically.
+      label: Count distinct of Order id
+      name: order_id_count_distinct
+      sql: ${TABLE}.order_id
+      table: dbt_baskets
+      type: count_distinct
+      uuid: 06559023-6044-4697-a4c8-8bd0e552baea
+    - description: >-
+        Count distinct of Partner id on the table Dbt baskets. Lightdash has
+        created this metric automatically.
+      label: Count distinct of Partner id
+      name: partner_id_count_distinct
+      sql: ${TABLE}.partner_id
+      table: dbt_baskets
+      type: count_distinct
+      uuid: a742165f-6dae-4fb5-8de6-a2e7fa2dad8b
+    - description: >-
+        Count distinct of Basket item id on the table Dbt baskets. Lightdash has
+        created this metric automatically.
+      label: Count distinct of Basket item id
+      name: basket_item_id_count_distinct
+      sql: ${TABLE}.basket_item_id
+      table: dbt_baskets
+      type: count_distinct
+      uuid: d7d4eebb-a5c0-4990-8b35-facab4c7b1d9
+    - description: Count of Partner name on the table Dbt baskets
+      label: Count of Partner name
+      name: partner_name_count
+      sql: ${TABLE}.partner_name
+      table: dbt_baskets
+      type: count
+      uuid: 4a64bafb-d0ba-4bb7-acdf-4796ea03805e
+    - description: "Count of Count of Product name on the table Baskets "
+      formatOptions:
+        separator: default
+        type: default
+      label: Total Products Sold
+      name: product_name_count_total_products_sold
+      sql: ${TABLE}.product_name
+      table: dbt_baskets
+      type: count
+      uuid: 6f17ef60-9528-483f-8921-703d8eefb7e4
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_baskets_product_name_count_total_products_sold
+    - dbt_baskets_order_id_count_distinct
+  sorts: []
+  tableCalculations: []
+name: Total units sold
+slug: total-units-sold
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_baskets_product_name_count_total_products_sold
+    - dbt_baskets_order_id_count_distinct
+tableName: dbt_baskets
+verification: null
+version: 1

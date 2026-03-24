@@ -1,0 +1,49 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_basket_total
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_basket_total
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+dashboardSlug: view-my-dashboard
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_basket_total
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_basket_total
+  tableCalculations: []
+name: this is a test chart
+slug: this-is-a-test-chart
+spaceSlug: private-space-5g1jwjnb5a
+tableConfig:
+  columnOrder:
+    - dbt_orders_basket_total
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

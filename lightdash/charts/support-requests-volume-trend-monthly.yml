@@ -1,0 +1,66 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_request_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+          name: Total requests
+          type: line
+          yAxisIndex: 0
+      title:
+        text: Support Requests Volume Trend (Monthly)
+      xAxis:
+        - name: Request Month
+          type: time
+      yAxis:
+        - name: Support Requests
+          type: value
+    layout:
+      xField: dbt_support_requests_request_date_month
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+  type: cartesian
+contentType: chart
+dashboardSlug: business-performance-executive-dashboard
+description: >-
+  Shows the monthly volume of support requests to monitor customer service
+  demand and spot spikes.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_month
+  exploreName: dbt_support_requests
+  filters:
+    dimensions:
+      and: []
+      id: e0edd4c0-8811-4804-88d2-f027de91d662
+    metrics:
+      and: []
+      id: 909ca136-feae-48b1-b687-7fba902837e9
+  limit: 36
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_request_date_month
+  tableCalculations: []
+name: Support Requests Volume Trend (Monthly)
+slug: support-requests-volume-trend-monthly
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_month
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

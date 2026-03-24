@@ -1,0 +1,33 @@
+chartKind: vertical_bar
+config:
+  display: {}
+  fieldConfig:
+    groupBy:
+      - reference: grp
+    sortBy:
+      - direction: ASC
+        reference: mth
+    x:
+      reference: mth
+      type: time
+    "y":
+      - aggregation: sum
+        reference: revenue
+  metadata:
+    version: 1
+  type: vertical_bar
+contentType: sql_chart
+description: ""
+limit: 5000
+name: many SQL runner groups example
+slug: many-sql-runner-groups-example
+spaceSlug: "-sales"
+sql: |-
+  select 
+    left(shipping_city,1) as grp,
+    timestamp_trunc(order_date, month) as mth, 
+    sum(basket_total) as revenue 
+  from `lightdash-analytics`.`lightdash_demo_gardening`.`dbt_orders`
+  where order_date between '2024-12-01' and '2025-01-31'
+  group by 1,2
+version: 1

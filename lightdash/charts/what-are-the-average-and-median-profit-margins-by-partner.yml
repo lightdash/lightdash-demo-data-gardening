@@ -1,0 +1,70 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: true
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: >-
+  Compares average and median profit across all partners to identify which
+  partners generate the highest and most consistent profitability.
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: profit
+      description: "Average of Profit on the table Orders "
+      formatOptions:
+        separator: default
+        type: default
+      label: Average of Profit
+      name: profit_average_of_profit
+      round: 2
+      sql: ${TABLE}.profit
+      table: dbt_orders
+      type: average
+      uuid: bf3c3b71-5b09-459e-9c2f-2c2a1618d82b
+    - baseDimensionName: profit
+      description: "Median of Profit on the table Orders "
+      formatOptions:
+        separator: default
+        type: default
+      label: Median of Profit
+      name: profit_median_of_profit
+      sql: ${TABLE}.profit
+      table: dbt_orders
+      type: median
+      uuid: 4dac2641-eaf4-4f23-a68e-c3b20adde32a
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_profit_average_of_profit
+    - dbt_orders_profit_median_of_profit
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_partner_name
+  tableCalculations: []
+name: What are the average and median profit margins by partner?
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+slug: what-are-the-average-and-median-profit-margins-by-partner
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_profit_average_of_profit
+    - dbt_orders_profit_median_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

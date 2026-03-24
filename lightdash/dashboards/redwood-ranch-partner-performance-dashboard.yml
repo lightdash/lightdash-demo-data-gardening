@@ -1,0 +1,88 @@
+contentType: dashboard
+description: >-
+  A comprehensive dashboard to review Redwood Ranch's performance for business
+  review calls. Includes revenue, order volume, average order value, profit,
+  shipping destinations, and order status breakdowns.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Redwood Ranch Partner Performance Dashboard
+slug: redwood-ranch-partner-performance-dashboard
+spaceSlug: sql-runner-space
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Monthly Revenue Trend (Redwood Ranch)
+      chartSlug: monthly-revenue-trend-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: monthly-revenue-trend-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Order Volume by Month (Redwood Ranch)
+      chartSlug: order-volume-by-month-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: order-volume-by-month-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Average Order Value by Month (Redwood Ranch)
+      chartSlug: average-order-value-by-month-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: average-order-value-by-month-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Top Shipping Countries for Redwood Ranch Orders
+      chartSlug: top-shipping-countries-for-redwood-ranch-orders
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: top-shipping-countries-for-redwood-ranch-orders
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Profit Trend by Month (Redwood Ranch)
+      chartSlug: profit-trend-by-month-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: profit-trend-by-month-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 18
+  - h: 9
+    properties:
+      chartName: Order Status Breakdown (Redwood Ranch)
+      chartSlug: order-status-breakdown-redwood-ranch
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: order-status-breakdown-redwood-ranch
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 18
+verification: null
+version: 1

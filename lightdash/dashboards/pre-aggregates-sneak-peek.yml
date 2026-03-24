@@ -1,0 +1,49 @@
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Pre aggregates sneak peek
+slug: pre-aggregates-sneak-peek
+spaceSlug: shared/dashcachedemo
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: What is the profit by partner and order month?
+      chartSlug: what-is-the-profit-by-partner-and-order-month
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-is-the-profit-by-partner-and-order-month
+    type: saved_chart
+    w: 21
+    x: 15
+    "y": 0
+  - h: 9
+    properties:
+      chartName: What is the average order value by partner?
+      chartSlug: what-is-the-average-order-value-by-partner
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: what-is-the-average-order-value-by-partner
+    type: saved_chart
+    w: 15
+    x: 15
+    "y": 9
+  - h: 9
+    properties:
+      chartName: How does daily profit trend across all partners over time?
+      chartSlug: how-does-daily-profit-trend-across-all-partners-over-time-3
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-does-daily-profit-trend-across-all-partners-over-time-3
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 10
+verification: null
+version: 1

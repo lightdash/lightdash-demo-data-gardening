@@ -1,0 +1,60 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: sales-dashboard-test
+description: >-
+  Partner-level table to compare Revenue, Order Volume, Average Order Value,
+  Profit, and Profit Margin (%).
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 3b95b944-64df-4eae-978a-173dccc21ee2
+    metrics:
+      and: []
+      id: e1f694e4-5374-4286-af41-3a2fe9ca58fb
+    tableCalculations:
+      and: []
+      id: 0aa57da4-9a67-4218-a7e8-80558927bedc
+  limit: 50
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_profit
+    - dbt_orders_profit_margin
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+name: Partner Performance (Revenue, Orders, AOV, Profit Margin)
+slug: partner-performance-revenue-orders-aov-profit-margin
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_profit
+    - dbt_orders_profit_margin
+tableName: dbt_orders
+verification: null
+version: 1

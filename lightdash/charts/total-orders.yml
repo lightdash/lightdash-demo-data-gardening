@@ -1,0 +1,35 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    label: Total orders
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Total Orders
+slug: total-orders
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

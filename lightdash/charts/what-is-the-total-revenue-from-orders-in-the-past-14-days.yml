@@ -1,0 +1,53 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+  type: big_number
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: >-
+  Total sales revenue generated from all orders placed in the last 14 days, with
+  comparison to the prior period to track revenue trends.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 49cd5540-1b7d-45c3-bf85-2dec78150ed4
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: days
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 14
+      id: 81560317-4761-4b29-94fa-30db1015f640
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: What is the total revenue from orders in the past 14 days?
+slug: what-is-the-total-revenue-from-orders-in-the-past-14-days
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

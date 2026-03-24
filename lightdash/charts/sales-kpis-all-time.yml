@@ -1,0 +1,58 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: sales-dashboard-test
+description: >-
+  High-level KPIs: Revenue, Order Volume, Average Order Value, Profit, Profit
+  Margin (%), Unique Customers.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 15a75ae8-aa33-4838-8a6d-3593084bf5f4
+    metrics:
+      and: []
+      id: 2da9723c-f3de-480b-80fa-8057f29c13fc
+    tableCalculations:
+      and: []
+      id: 94a6ff03-d967-4e2b-93a7-bd1636feecb0
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_profit
+    - dbt_orders_profit_margin
+    - dbt_orders_count_distinct_user_id
+  sorts: []
+  tableCalculations: []
+name: Sales KPIs (All time)
+slug: sales-kpis-all-time
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_profit
+    - dbt_orders_profit_margin
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

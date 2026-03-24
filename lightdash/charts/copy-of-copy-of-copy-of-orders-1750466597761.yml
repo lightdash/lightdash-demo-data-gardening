@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs previous month
+    flipColors: false
+    label: Profit last month
+    selectedField: dbt_orders_sum_of_profit
+    showBigNumberLabel: true
+    showComparison: true
+    style: thousands
+  type: big_number
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: f69e607d-93cf-4f1a-a724-b9392144f74a
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 2
+      id: 86221118-0c29-4959-a58d-c5d98e67072d
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Copy of Copy of Copy of Orders
+slug: copy-of-copy-of-copy-of-orders-1750466597761
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

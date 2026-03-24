@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          isFilteredOut: false
+          name: Average of basket total
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Average order value
+    layout:
+      flipAxes: true
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: account-management-orders-by-partner
+description: >-
+  Shows the average order value for each partner, helping to identify high-value
+  partners.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: a574afb6-939c-44eb-aad7-6c21f44a0259
+    metrics:
+      and: []
+      id: 4ea60603-39f5-4f51-a60e-357c6f6beee8
+    tableCalculations:
+      and: []
+      id: a4473df2-b02f-491a-8bcb-79eda11734f7
+  limit: 20
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_average_of_basket_total
+  tableCalculations: []
+name: Average Order Value by Partner
+slug: average-order-value-by-partner
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

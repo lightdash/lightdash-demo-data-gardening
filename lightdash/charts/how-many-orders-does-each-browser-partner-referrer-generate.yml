@@ -1,0 +1,48 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_orders_dim
+            yRef:
+              field: dbt_orders_email
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_orders_dim
+      yField:
+        - dbt_orders_email
+  type: cartesian
+contentType: chart
+description: >-
+  This bar chart displays the count of orders by browser, partner, or referrer
+  source, revealing which channels drive the most order volume.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_orders_dim
+    - dbt_orders_email
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics: []
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_orders_dim
+  tableCalculations: []
+name: How many orders does each browser/partner/referrer generate?
+slug: how-many-orders-does-each-browser-partner-referrer-generate
+spaceSlug: test-space
+tableConfig:
+  columnOrder:
+    - dbt_orders_orders_dim
+    - dbt_orders_email
+tableName: dbt_orders
+verification: null
+version: 1

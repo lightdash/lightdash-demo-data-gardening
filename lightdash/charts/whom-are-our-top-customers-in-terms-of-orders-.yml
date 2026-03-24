@@ -1,0 +1,36 @@
+chartConfig:
+  config:
+    columns:
+      dbt_orders_count_distinct_order_id:
+        name: Total number of orders
+    showColumnCalculation: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_email
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Whom are our top customers (in terms of orders)?
+slug: whom-are-our-top-customers-in-terms-of-orders-
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_email
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,51 @@
+contentType: dashboard
+description: >-
+  A dashboard providing a comprehensive overview of revenue, including total
+  revenue trends, revenue by partner, and monthly breakdowns for 2024.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Comprehensive Revenue Dashboard
+slug: comprehensive-revenue-dashboard
+spaceSlug: ai-agent-generated
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Total Revenue Trend (2024)
+      chartSlug: total-revenue-trend-2024
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-revenue-trend-2024
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Revenue by Partner (2024)
+      chartSlug: revenue-by-partner-2024
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: revenue-by-partner-2024
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Monthly Revenue by Partner (2024)
+      chartSlug: monthly-revenue-by-partner-2024
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: monthly-revenue-by-partner-2024
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 9
+verification: null
+version: 1

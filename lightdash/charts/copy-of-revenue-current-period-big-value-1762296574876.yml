@@ -1,0 +1,48 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs previous year
+    flipColors: false
+    label: Revenue same period last year
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+dashboardSlug: period-over-period-parameters-example
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_period
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: f8d95116-e12a-4d16-a86d-2e0624e6b21e
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_orders_order_date_period
+          values:
+            - previous year
+      id: 38decad6-fe1d-4c7d-90b0-d071286cfe09
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_period
+  tableCalculations: []
+name: Copy of Revenue current period big value
+slug: copy-of-revenue-current-period-big-value-1762296574876
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_period
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,155 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Garden of Sweden
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Peat, Fruits and Leaves
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Plant Paradise
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Potted Paradise
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Roots & Shoots
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Sprout Society
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_support_requests_order_date_month
+            yRef:
+              field: dbt_support_requests_count_distinct_request_id
+              pivotValues:
+                - field: dbt_support_requests_partner_name
+                  value: Trowels R Us
+          isFilteredOut: false
+          stack: dbt_support_requests_count_distinct_request_id
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      tooltip: ""
+    layout:
+      stack: stack
+      xField: dbt_support_requests_order_date_month
+      yField:
+        - dbt_support_requests_count_distinct_request_id
+  type: cartesian
+contentType: chart
+dashboardSlug: hamzahs-new-fantastic-dashboard
+description: >-
+  The chart illustrates the monthly distribution of total support requests
+  across various partners, highlighting trends and patterns in request volume.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_order_date_month
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_distinct_request_id
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_partner_name
+  tableCalculations: []
+name: How do total support requests vary by month for different partners?
+pivotConfig:
+  columns:
+    - dbt_support_requests_partner_name
+slug: how-do-total-support-requests-vary-by-month-for-different-partners
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_order_date_month
+    - dbt_support_requests_count_distinct_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

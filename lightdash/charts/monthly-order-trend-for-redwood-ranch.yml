@@ -1,0 +1,75 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: plain
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          name: Order count
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Month
+      yAxis:
+        - name: Order Count
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+dashboardSlug: redwood-ranch-partner-performance-since-black-friday-2024
+description: >-
+  Shows how order volume from Redwood Ranch has changed each month since Black
+  Friday 2024.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 38c73a78-e1fc-4e3e-8a70-8410594d5f1b
+          operator: equals
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Redwood Ranch
+        - id: 973b173a-1372-4b42-b9e5-06b76360d3c5
+          operator: greaterThanOrEqual
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - "2024-11-29"
+      id: b62566e9-821b-41ab-b703-40590d714b9c
+    metrics:
+      and: []
+      id: edeec7c4-0519-4459-8ae2-2995e2385abd
+  limit: 100
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Monthly Order Trend for Redwood Ranch
+slug: monthly-order-trend-for-redwood-ranch
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

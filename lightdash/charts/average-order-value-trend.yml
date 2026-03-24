@@ -1,0 +1,67 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          isFilteredOut: false
+          name: Average of basket total
+          stack: total
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - name: Month
+      yAxis:
+        - name: Average Order Value
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: sales-kpi-dashboard
+description: Monthly trend of average order value to assess changes in customer spending.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: af0a2ca8-3383-48d4-85d6-c1a2c423f05d
+    metrics:
+      and: []
+      id: dd41f834-2d33-4bc8-a64a-1036dd2d50af
+    tableCalculations:
+      and: []
+      id: b26dddd1-855b-4917-a1ee-8787b171765d
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Average Order Value Trend
+slug: average-order-value-trend
+spaceSlug: shared/apollo
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

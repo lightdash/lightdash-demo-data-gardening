@@ -1,0 +1,83 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: Shows some example sales data, focused on email domains
+filters:
+  dimensions:
+    - disabled: true
+      operator: equals
+      target:
+        fieldId: dbt_orders_browser
+        fieldName: browser
+        tableName: dbt_orders
+      tileTargets:
+        how-many-orders-do-gmail-customers-make-compared-to-all-others:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+        partner-sales:
+          fieldId: dbt_orders_browser
+          tableName: dbt_orders
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Sales Example
+slug: sales-example
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 3
+    properties:
+      content: >-
+        Welcome to the sales dashboard - to use this dashboard, check out some
+        of the filters that are available and explore from there.
+
+
+        Note I could also add [links](www.example.com) here if I want, or even
+        embed images!
+      hideFrame: false
+      hideTitle: false
+      title: Sales Dashboard
+    tabUuid: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: How many orders do gmail customers make compared to all others?
+      chartSlug: how-many-orders-do-gmail-customers-make-compared-to-all-others
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: how-many-orders-do-gmail-customers-make-compared-to-all-others
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 3
+  - h: 9
+    properties:
+      chartName: Partner Sales
+      chartSlug: partner-sales
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: partner-sales
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 3
+  - h: 9
+    properties:
+      chartName: sort order issue
+      chartSlug: sort-order-issue
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: sort-order-issue
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 12
+verification: null
+version: 1

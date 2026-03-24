@@ -1,0 +1,71 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_product_name
+            yRef:
+              field: dbt_baskets_sum_of_basket_total
+          isFilteredOut: false
+          name: Revenue
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      title:
+        text: Top 5 products by revenue
+      xAxis:
+        - name: Product
+      yAxis:
+        - name: Revenue
+    layout:
+      stack: false
+      xField: dbt_baskets_product_name
+      yField:
+        - dbt_baskets_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: >-
+  Ranks products by total sales revenue (sum of basket totals) and shows the top
+  5 products.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_product_name
+  exploreName: dbt_baskets
+  filters:
+    dimensions:
+      and: []
+      id: 74d8cb4c-f97a-4c8d-a541-1c335066db42
+    metrics:
+      and: []
+      id: 0ec8fdf9-b942-4408-ac80-1ff5aff91011
+    tableCalculations:
+      and: []
+      id: 8f75fea2-610b-40ad-ba85-0da709cf400f
+  limit: 5
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_baskets_sum_of_basket_total
+  tableCalculations: []
+name: Top 5 products by revenue
+slug: top-5-products-by-revenue-1
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_baskets_product_name
+    - dbt_baskets_sum_of_basket_total
+tableName: dbt_baskets
+verification: null
+version: 1

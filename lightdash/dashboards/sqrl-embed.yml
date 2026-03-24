@@ -1,0 +1,37 @@
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: SQRL Embed
+slug: sqrl-embed
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 9
+    properties:
+      chartName: Our example chart
+      chartSlug: our-example-chrat
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: our-example-chrat
+    type: saved_chart
+    w: 15
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: SQL Chart
+      chartSlug: sql-chart-1
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: sql-chart-1
+    type: sql_chart
+    w: 15
+    x: 0
+    "y": 1
+verification: null
+version: 1

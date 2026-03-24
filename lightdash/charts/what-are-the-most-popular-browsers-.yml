@@ -1,0 +1,34 @@
+chartConfig:
+  config:
+    columns:
+      dbt_users_count_distinct_of_user_id:
+        name: Number of users
+    showColumnCalculation: true
+    showTableNames: false
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_browser
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metrics:
+    - dbt_users_count_distinct_of_user_id
+  sorts:
+    - descending: true
+      fieldId: dbt_users_count_distinct_of_user_id
+  tableCalculations: []
+name: What are the most popular browsers?
+slug: what-are-the-most-popular-browsers-
+spaceSlug: "-marketing"
+tableConfig:
+  columnOrder:
+    - dbt_users_browser
+    - dbt_users_count_distinct_of_user_id
+tableName: dbt_users
+verification: null
+version: 1

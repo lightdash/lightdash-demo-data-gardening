@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    groupFieldIds:
+      - dbt_orders_referrer
+    isDonut: true
+    legendPosition: vertical
+    metricId: dbt_orders_count_distinct_order_id
+    showLegend: true
+    showPercentage: true
+    showValue: false
+    valueLabel: inside
+  type: pie
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_referrer
+  exploreName: dbt_orders
+  filters: {}
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_count_distinct_order_id
+  tableCalculations: []
+name: Redwood Ranch Orders by Referrer
+slug: redwood-ranch-orders-by-referrer
+spaceSlug: redwood-ranch
+tableConfig:
+  columnOrder:
+    - dbt_orders_referrer
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

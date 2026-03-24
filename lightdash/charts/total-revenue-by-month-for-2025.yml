@@ -1,0 +1,75 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_total_revenue
+          isFilteredOut: false
+          name: Total revenue
+          type: line
+          yAxisIndex: 0
+      showAxisTicks: false
+      title:
+        text: Total revenue by month for 2025
+      xAxis:
+        - name: Order date month (2025)
+      yAxis:
+        - name: Total revenue
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_total_revenue
+  type: cartesian
+contentType: chart
+description: >-
+  Monthly breakdown of total order revenue for calendar year 2025, based on
+  Orders data.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 4dfd2656-7256-4795-9723-6909c8e633af
+          operator: equals
+          target:
+            fieldFilterType: date
+            fieldId: dbt_orders_order_date_year
+          values:
+            - "2025-01-01"
+      id: 9c8ecbc5-4754-4b5b-a975-cb030ec65e70
+    metrics:
+      and: []
+      id: 6ce3340f-2669-4499-87b5-bc5ebcb039a2
+    tableCalculations:
+      and: []
+      id: c48a1a47-616a-48e9-925f-7ec8a35f1582
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Total revenue by month for 2025
+slug: total-revenue-by-month-for-2025
+spaceSlug: for-marketing-demos
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

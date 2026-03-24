@@ -1,0 +1,2856 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_sum_of_basket_total
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AD
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AE
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AF
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AG
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AI
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AL
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AM
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AO
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AQ
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AR
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AS
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AT
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AU
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AW
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AX
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: lynx
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: netscape
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: AZ
+                - field: dbt_orders_browser
+                  value: safari
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: chrome
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: edge
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: firefox
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_day
+            yRef:
+              field: dbt_orders_avg_profit
+              pivotValues:
+                - field: dbt_orders_shipping_country
+                  value: BA
+                - field: dbt_orders_browser
+                  value: internet_explorer
+          isFilteredOut: false
+          stack: dbt_orders_avg_profit
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      stack: stack
+      xField: dbt_orders_order_date_day
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_avg_profit
+  type: cartesian
+contentType: chart
+description: >-
+  Stacked bar chart comparing daily revenue and profit performance across
+  multiple country and browser combinations, revealing which geographic and
+  browser segments drive the most sales and profitability.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+    - dbt_orders_shipping_country
+    - dbt_orders_browser
+  exploreName: dbt_orders
+  filters: {}
+  limit: 10000
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_avg_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: >-
+  [Without DashCache] Orders date day x Revenue x Profit x Shipping Country x
+  Browser
+pivotConfig:
+  columns:
+    - dbt_orders_shipping_country
+    - dbt_orders_browser
+slug: >-
+  without-dashcache-orders-date-day-x-revenue-x-profit-x-shipping-country-x-browser
+spaceSlug: shared/dashcachedemo
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+    - dbt_orders_shipping_country
+    - dbt_orders_browser
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_avg_profit
+tableName: dbt_orders
+verification: null
+version: 1

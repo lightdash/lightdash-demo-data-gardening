@@ -1,0 +1,36 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    flipColors: false
+    label: Start of date range
+    selectedField: dbt_orders_order_date_day
+    showBigNumberLabel: true
+    showComparison: false
+  type: big_number
+contentType: chart
+dashboardSlug: sales-updates
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_day
+  exploreName: dbt_orders
+  filters: {}
+  limit: 5
+  metricOverrides: {}
+  metrics: []
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_day
+  tableCalculations: []
+name: Start of date range
+slug: start-of-date-range
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_day
+tableName: dbt_orders
+verification: null
+version: 1

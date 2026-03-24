@@ -1,0 +1,49 @@
+chartConfig:
+  config:
+    columns:
+      dbt_orders_sum_of_basket_total:
+        displayStyle: text
+      dbt_orders_sum_of_profit:
+        displayStyle: bar
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: >-
+  The table compares the total profit and basket totals for each partner,
+  highlighting their financial performance.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_logo
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_profit
+  tableCalculations: []
+name: Which partners generate the highest profit and basket totals?
+pivotConfig:
+  columns: []
+slug: which-partners-generate-the-highest-profit-and-basket-totals
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_logo
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

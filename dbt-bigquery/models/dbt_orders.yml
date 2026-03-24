@@ -309,6 +309,17 @@ models:
               format: '[$$]#,##0'
               spotlight:
                 visibility: hide
+            profit_margin:
+              type: number
+              sql: "ROUND(100.0 * SUM(${TABLE}.profit) / NULLIF(SUM(${TABLE}.basket_total), 0), 2)"
+              label: 'Profit Margin (%)'
+              format: '0.00"%"'
+              description: 'Profit as a percentage of total revenue.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - finance
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:

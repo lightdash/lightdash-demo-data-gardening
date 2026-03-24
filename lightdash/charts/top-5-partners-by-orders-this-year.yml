@@ -1,0 +1,97 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: partner-performance-dashboard
+description: Highlight the top 5 partners by order count for the current year.
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: dbt_orders_count_distinct_order_id
+      description: Count of distinct order IDs for each partner.
+      label: Total Orders
+      name: total_orders
+      sql: "`dbt_orders_count_distinct_order_id`"
+      table: monthly_partner_info
+      type: sum
+      uuid: f72642f2-a492-47c0-bbd8-ac144bdff558
+    - baseDimensionName: dbt_orders_sum_basket_total
+      description: Sum of basket totals across all orders for each partner.
+      label: Total Revenue
+      name: total_revenue
+      sql: "`dbt_orders_sum_of_basket_total`"
+      table: monthly_partner_info
+      type: sum
+      uuid: 6cffb2bb-e048-47a3-b44f-2b83655e55b1
+  customDimensions: []
+  dimensions:
+    - monthly_partner_info_dbt_orders_partner_name
+  exploreName: monthly_partner_info
+  filters:
+    dimensions:
+      and:
+        - id: 2b1f2dab-d175-4f64-97ce-b9d664945e13
+          operator: inTheCurrent
+          settings:
+            completed: false
+            unitOfTime: years
+          target:
+            fieldId: monthly_partner_info_dbt_orders_order_date_month
+          values:
+            - 1
+      id: c70f36f0-f3ed-4c11-869d-efaef7e3526e
+    metrics:
+      and: []
+      id: 97a069a6-521b-46fd-9806-395aedfc952a
+    tableCalculations:
+      and:
+        - id: c999043d-8c4c-47db-9c67-96e82d4d9c5f
+          operator: lessThanOrEqual
+          target:
+            fieldId: row_number_by_partner
+          values:
+            - 5
+      id: aced2658-4a54-49b4-b3bf-9518b9d7e5d1
+  limit: 1000
+  metricOverrides: {}
+  metrics:
+    - monthly_partner_info_total_orders
+    - monthly_partner_info_total_revenue
+  sorts:
+    - descending: true
+      fieldId: monthly_partner_info_total_orders
+  tableCalculations:
+    - displayName: Rank by Orders
+      format:
+        separator: default
+        type: number
+      name: row_number_by_partner
+      template:
+        fieldId: null
+        orderBy:
+          - fieldId: monthly_partner_info_total_orders
+            order: desc
+        partitionBy: []
+        type: window_function
+        windowFunction: row_number
+      type: number
+name: Top 5 Partners by Orders (This Year)
+slug: top-5-partners-by-orders-this-year
+spaceSlug: shared/apollo
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_total_orders
+    - monthly_partner_info_total_revenue
+    - row_number_by_partner
+tableName: monthly_partner_info
+verification: null
+version: 1

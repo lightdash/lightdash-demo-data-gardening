@@ -1,0 +1,46 @@
+chartConfig:
+  config:
+    columns:
+      dbt_orders_order_date_month:
+        name: Order date (month)
+      dbt_orders_count_distinct_order_id:
+        name: Total number of orders
+      dbt_orders_sum_of_basket_total:
+        name: Total revenue
+      dbt_orders_sum_of_profit:
+        name: Total profit
+    showColumnCalculation: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: null
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: What are the monthly sales stats?
+slug: what-are-the-monthly-sales-stats-
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

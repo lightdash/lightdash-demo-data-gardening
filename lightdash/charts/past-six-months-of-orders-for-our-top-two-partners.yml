@@ -1,0 +1,106 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#7162FF"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Happy Harvesters
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: false
+          type: bar
+          yAxisIndex: 0
+        - color: "#E8DDFB"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+              pivotValues:
+                - field: dbt_orders_partner_name
+                  value: Redwood Ranch
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          showSymbol: false
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - name: Month
+      yAxis:
+        - name: Orders
+        - {}
+    layout:
+      flipAxes: false
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+    metadata:
+      dbt_orders_count_distinct_order_id.Happy Harvesters:
+        color: "#7162FF"
+      dbt_orders_count_distinct_order_id.Redwood Ranch:
+        color: "#E8DDFB"
+  type: cartesian
+contentType: chart
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: fbe48a9d-3a23-4415-b8f5-1b57f010b0ca
+          operator: equals
+          required: false
+          target:
+            fieldId: dbt_orders_partner_name
+          values:
+            - Happy Harvesters
+            - Redwood Ranch
+        - id: 1c47688a-54ae-44bc-9ef5-ac830f731e14
+          operator: inThePast
+          required: false
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 6
+      id: 3c3454a3-03f8-4f98-9d4b-c42fe5a3babe
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Past six months of orders for our top two partners
+pivotConfig:
+  columns:
+    - dbt_orders_partner_name
+slug: past-six-months-of-orders-for-our-top-two-partners
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

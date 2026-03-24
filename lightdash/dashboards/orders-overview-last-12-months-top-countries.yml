@@ -1,0 +1,15 @@
+contentType: dashboard
+description: >-
+  A dashboard focused on order volume, revenue, and partner/country breakdowns
+  for the last 12 months, with country breakdown limited to the top 7.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Orders Overview (Last 12 Months) – Top Countries
+slug: orders-overview-last-12-months-top-countries
+spaceSlug: ai-agent-generated
+tabs: []
+tiles: []
+verification: null
+version: 1

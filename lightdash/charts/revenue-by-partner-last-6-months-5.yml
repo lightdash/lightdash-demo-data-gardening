@@ -1,0 +1,79 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - encode:
+            xRef:
+              field: monthly_partner_info_dbt_orders_partner_name
+            yRef:
+              field: monthly_partner_info_total_revenue
+          isFilteredOut: false
+          name: Total Revenue
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+      title:
+        text: Revenue by Partner (Last 6 Months)
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Total revenue (last 6 months)
+    layout:
+      flipAxes: true
+      xField: monthly_partner_info_dbt_orders_partner_name
+      yField:
+        - monthly_partner_info_total_revenue
+  type: cartesian
+contentType: chart
+dashboardSlug: "-kpi-dashboard"
+description: Total revenue per partner over the last 6 completed months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - monthly_partner_info_dbt_orders_partner_name
+  exploreName: monthly_partner_info
+  filters:
+    dimensions:
+      and:
+        - id: 7f15f638-f82b-40da-9bf2-82259a0cb29d
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldFilterType: date
+            fieldId: monthly_partner_info_dbt_orders_order_date_month
+          values:
+            - 6
+      id: 99315c93-81a1-4419-88ba-430d0300569b
+    metrics:
+      and: []
+      id: 6f5b691e-51a5-43c5-8594-e746eead4d6e
+    tableCalculations:
+      and: []
+      id: d7d7b6c0-79b9-4be9-a1df-e8a5a7bcd7ab
+  limit: 50
+  metricOverrides: {}
+  metrics:
+    - monthly_partner_info_total_revenue
+  sorts:
+    - descending: true
+      fieldId: monthly_partner_info_total_revenue
+  tableCalculations: []
+name: Revenue by Partner (Last 6 Months)
+slug: revenue-by-partner-last-6-months-5
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - monthly_partner_info_dbt_orders_partner_name
+    - monthly_partner_info_total_revenue
+tableName: monthly_partner_info
+verification: null
+version: 1

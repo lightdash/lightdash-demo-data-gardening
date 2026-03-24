@@ -1,0 +1,98 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        bottom: 30px
+        containLabel: true
+        left: 25px
+        right: 5px
+        top: 5px
+      series:
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          stack: stack-all-series
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: true
+          type: line
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_week
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: true
+          type: line
+          yAxisIndex: 0
+      showAxisTicks: false
+      xAxis:
+        - name: Week
+          rotate: 30
+      yAxis:
+        - max: "200"
+          min: "50"
+          name: Average order amount ($)
+        - {}
+    layout:
+      flipAxes: false
+      showGridY: false
+      showYAxis: false
+      stack: stack
+      xField: dbt_orders_order_date_week
+      yField:
+        - dbt_orders_average_of_basket_total
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_count_distinct_order_id
+  type: cartesian
+contentType: chart
+description: How is the average order amount ($) trending each week?
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_week
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        compact: thousands
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+  metrics:
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_week
+  tableCalculations: []
+name: How is the average order amount ($) trending each week??
+slug: how-is-the-average-order-amount-trending-each-week-
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_week
+    - dbt_orders_average_of_basket_total
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

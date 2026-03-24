@@ -1,0 +1,75 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: running_total_of_order_count_1
+          label:
+            position: top
+            show: true
+          type: line
+          yAxisIndex: 1
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+        - running_total_of_order_count_1
+  type: cartesian
+contentType: chart
+dashboardSlug: example-dash
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations:
+    - displayName: Running total of Order count
+      format:
+        currency: USD
+        round: 2
+        separator: default
+        type: number
+      name: running_total_of_order_count_1
+      sql: >-
+        SUM(${dbt_orders.order_id}) OVER(ORDER BY
+        `dbt_orders_order_date_month`   ROWS BETWEEN UNBOUNDED PRECEDING AND
+        CURRENT ROW)
+
+                  
+      type: number
+name: monthly orders
+slug: monthly-orders-1
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+    - running_total_of_order_count_1
+tableName: dbt_orders
+verification: null
+version: 1

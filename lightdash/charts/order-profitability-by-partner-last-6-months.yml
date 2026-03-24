@@ -1,0 +1,63 @@
+chartConfig:
+  config:
+    columns: {}
+    conditionalFormattings: []
+    hideRowNumbers: false
+    metricsAsRows: false
+    showColumnCalculation: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showSubtotals: false
+    showTableNames: true
+  type: table
+contentType: chart
+dashboardSlug: orders-support-team-dashboard
+description: >-
+  Table showing order count and average profit per order by partner for the last
+  6 months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 4c81cda1-023a-4013-a68a-2d3823c2bb90
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+          values:
+            - 6
+      id: b7b1b0ce-88f0-489d-b011-2f4bceade24b
+    metrics:
+      and: []
+      id: d4abb593-4321-4823-b8ee-9889cbbd31bd
+    tableCalculations:
+      and: []
+      id: 47a6cad4-487f-4a84-a59f-37264be32f22
+  limit: 20
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_avg_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_avg_profit
+  tableCalculations: []
+name: Order Profitability by Partner (Last 6 Months)
+slug: order-profitability-by-partner-last-6-months
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_avg_profit
+tableName: dbt_orders
+verification: null
+version: 1

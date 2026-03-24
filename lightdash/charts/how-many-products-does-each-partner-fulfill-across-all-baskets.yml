@@ -1,0 +1,48 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_partner_name
+            yRef:
+              field: dbt_baskets_count_of_product_name
+          isFilteredOut: false
+          type: bar
+          yAxisIndex: 0
+      showAxisTicks: false
+    layout:
+      xField: dbt_baskets_partner_name
+      yField:
+        - dbt_baskets_count_of_product_name
+  type: cartesian
+contentType: chart
+description: >-
+  Compares the total product count fulfilled by each partner, revealing which
+  partners handle the highest volume of items.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_baskets_partner_name
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_count_of_product_name
+  sorts:
+    - descending: false
+      fieldId: dbt_baskets_partner_name
+  tableCalculations: []
+name: How many products does each partner fulfill across all baskets?
+slug: how-many-products-does-each-partner-fulfill-across-all-baskets
+spaceSlug: test
+tableConfig:
+  columnOrder:
+    - dbt_baskets_partner_name
+    - dbt_baskets_count_of_product_name
+tableName: dbt_baskets
+verification: null
+version: 1

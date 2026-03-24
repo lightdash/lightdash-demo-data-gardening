@@ -1,0 +1,169 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: ""
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: 💰 Orders, Revenue, Profit (a tabs demo)
+slug: a-dashboard-with-tabs
+spaceSlug: shared
+tabs:
+  - name: Weekly Breakdown
+    order: 0
+    uuid: 03d39348-d416-41b4-ac2e-e66fb1787752
+  - name: Monthly Breakdown
+    order: 1
+    uuid: b339e60f-fb4f-4474-9037-c6a1ccebcd8e
+  - name: Copy of Weekly Breakdown
+    order: 2
+    uuid: 6b4857f7-9d25-4e51-bd0a-41b83078ce21
+tiles:
+  - h: 9
+    properties:
+      chartName: Daily orders, total, and profit
+      chartSlug: daily-orders-total-and-profit
+      hideTitle: false
+      title: ""
+    tabUuid: 03d39348-d416-41b4-ac2e-e66fb1787752
+    tileSlug: daily-orders-total-and-profit-1
+    type: saved_chart
+    w: 26
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Daily orders, total, and profit
+      chartSlug: daily-orders-total-and-profit
+      hideTitle: false
+      title: ""
+    tabUuid: 6b4857f7-9d25-4e51-bd0a-41b83078ce21
+    tileSlug: daily-orders-total-and-profit-2
+    type: saved_chart
+    w: 26
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Monthly orders, total, and profit
+      chartSlug: copy-of-weekly-orders-total-and-profit-1750466589969
+      hideTitle: false
+      title: ""
+    tabUuid: b339e60f-fb4f-4474-9037-c6a1ccebcd8e
+    tileSlug: copy-of-weekly-orders-total-and-profit-1750466589969
+    type: saved_chart
+    w: 25
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Orders
+      chartSlug: orders-1
+      hideTitle: true
+      title: ""
+    tabUuid: 03d39348-d416-41b4-ac2e-e66fb1787752
+    tileSlug: orders-1-1
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Orders
+      chartSlug: orders-1
+      hideTitle: true
+      title: ""
+    tabUuid: 6b4857f7-9d25-4e51-bd0a-41b83078ce21
+    tileSlug: orders-1-2
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Copy of Orders
+      chartSlug: copy-of-orders-1750466593059
+      hideTitle: true
+      title: ""
+    tabUuid: b339e60f-fb4f-4474-9037-c6a1ccebcd8e
+    tileSlug: copy-of-orders-1750466593059
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Copy of Orders
+      chartSlug: copy-of-orders-1750424365108
+      hideTitle: true
+      title: ""
+    tabUuid: 03d39348-d416-41b4-ac2e-e66fb1787752
+    tileSlug: copy-of-orders-1750424365108-1
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 3
+  - h: 3
+    properties:
+      chartName: Copy of Orders
+      chartSlug: copy-of-orders-1750424365108
+      hideTitle: true
+      title: ""
+    tabUuid: 6b4857f7-9d25-4e51-bd0a-41b83078ce21
+    tileSlug: copy-of-orders-1750424365108-2
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 3
+  - h: 3
+    properties:
+      chartName: Copy of Copy of Orders
+      chartSlug: copy-of-copy-of-orders-1750466595092
+      hideTitle: true
+      title: ""
+    tabUuid: b339e60f-fb4f-4474-9037-c6a1ccebcd8e
+    tileSlug: copy-of-copy-of-orders-1750466595092
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 3
+  - h: 3
+    properties:
+      chartName: Copy of Copy of Orders
+      chartSlug: copy-of-copy-of-orders-1750424371854
+      hideTitle: true
+      title: ""
+    tabUuid: 03d39348-d416-41b4-ac2e-e66fb1787752
+    tileSlug: copy-of-copy-of-orders-1750424371854-1
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 6
+  - h: 3
+    properties:
+      chartName: Copy of Copy of Orders
+      chartSlug: copy-of-copy-of-orders-1750424371854
+      hideTitle: true
+      title: ""
+    tabUuid: 6b4857f7-9d25-4e51-bd0a-41b83078ce21
+    tileSlug: copy-of-copy-of-orders-1750424371854-2
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 6
+  - h: 3
+    properties:
+      chartName: Copy of Copy of Copy of Orders
+      chartSlug: copy-of-copy-of-copy-of-orders-1750466597761
+      hideTitle: true
+      title: ""
+    tabUuid: b339e60f-fb4f-4474-9037-c6a1ccebcd8e
+    tileSlug: copy-of-copy-of-copy-of-orders-1750466597761
+    type: saved_chart
+    w: 10
+    x: 26
+    "y": 6
+verification: null
+version: 1

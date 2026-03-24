@@ -1,0 +1,92 @@
+chartKind: table
+config:
+  columns:
+    basket_total:
+      frozen: false
+      label: basket_total
+      reference: basket_total
+      visible: true
+    browser:
+      frozen: false
+      label: browser
+      reference: browser
+      visible: true
+    currency:
+      frozen: false
+      label: currency
+      reference: currency
+      visible: true
+    email:
+      frozen: false
+      label: email
+      reference: email
+      visible: true
+    order_date:
+      frozen: false
+      label: order_date
+      reference: order_date
+      visible: true
+    order_id:
+      frozen: false
+      label: order_id
+      reference: order_id
+      visible: true
+    partner_commission:
+      frozen: false
+      label: partner_commission
+      reference: partner_commission
+      visible: true
+    partner_id:
+      frozen: false
+      label: partner_id
+      reference: partner_id
+      visible: true
+    partner_name:
+      frozen: false
+      label: partner_name
+      reference: partner_name
+      visible: true
+    profit:
+      frozen: false
+      label: profit
+      reference: profit
+      visible: true
+    referrer:
+      frozen: false
+      label: referrer
+      reference: referrer
+      visible: true
+    shipping_city:
+      frozen: false
+      label: shipping_city
+      reference: shipping_city
+      visible: true
+    shipping_country:
+      frozen: false
+      label: shipping_country
+      reference: shipping_country
+      visible: true
+    user_created_date:
+      frozen: false
+      label: user_created_date
+      reference: user_created_date
+      visible: true
+    user_id:
+      frozen: false
+      label: user_id
+      reference: user_id
+      visible: true
+  display: {}
+  metadata:
+    version: 1
+  type: table
+contentType: sql_chart
+description: ""
+limit: 100000
+name: big table
+slug: big-table
+spaceSlug: "-sales"
+sql: >-
+  SELECT * FROM
+  `lightdash-healthcare-demo`.`lightdash_gardening_demo`.`dbt_orders` 
+version: 1

@@ -1,0 +1,116 @@
+config:
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: >-
+  A comprehensive dashboard tracking all main sales KPIs, including revenue,
+  order volume, profit, average order value, and user activity. Visualizes
+  trends, breakdowns, and key performance indicators for sales performance
+  monitoring.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Sales KPI Dashboard
+slug: sales-kpi-dashboard
+spaceSlug: shared/apollo
+tabs: []
+tiles:
+  - h: 3
+    properties:
+      chartName: Total Revenue, Orders, Profit, and Unique Users (Summary)
+      chartSlug: total-revenue-orders-profit-and-unique-users-summary
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: total-revenue-orders-profit-and-unique-users-summary
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Revenue Trend Over Time
+      chartSlug: revenue-trend-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: revenue-trend-over-time
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Order Volume Trend Over Time
+      chartSlug: order-volume-trend-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: order-volume-trend-over-time
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 3
+  - h: 9
+    properties:
+      chartName: Average Order Value Trend
+      chartSlug: average-order-value-trend
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: average-order-value-trend
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 9
+  - h: 9
+    properties:
+      chartName: Profit Trend Over Time
+      chartSlug: profit-trend-over-time
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: profit-trend-over-time
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 12
+  - h: 9
+    properties:
+      chartName: Top Partners by Revenue
+      chartSlug: top-partners-by-revenue
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: top-partners-by-revenue
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 18
+  - h: 6
+    properties:
+      chartName: Revenue by Country
+      chartSlug: revenue-by-country
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: revenue-by-country
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 21
+  - h: 9
+    properties:
+      chartName: Orders by Referrer
+      chartSlug: orders-by-referrer
+      hideTitle: false
+      title: ""
+    tabUuid: null
+    tileSlug: orders-by-referrer
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 27
+verification: null
+version: 1

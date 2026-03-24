@@ -1,0 +1,68 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#33b1ff"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          name: Orders
+          type: bar
+          yAxisIndex: 0
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          label:
+            position: top
+            show: true
+          type: line
+          yAxisIndex: 1
+      showAxisTicks: false
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: lightdash-dashboard
+description: >-
+  Order count and median profit by month reveal whether order volume and typical
+  profitability move together or diverge, helping identify periods of strong
+  sales activity and healthy profit margins.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: How do order volume and median profit trend over time?
+slug: how-do-order-volume-and-median-profit-trend-over-time
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

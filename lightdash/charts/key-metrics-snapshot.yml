@@ -1,0 +1,37 @@
+chartConfig:
+  config: null
+  type: table
+contentType: chart
+dashboardSlug: business-pulse-revenue-users-support-overview
+description: >-
+  A summary table showing total revenue, total unique users, and total support
+  requests for a high-level business overview.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and: []
+      id: 8a0e93d3-ea62-461c-b2a7-45353db8bd42
+    metrics:
+      and: []
+      id: b6d189e7-13da-4c0c-b12d-f7c32e240dcd
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_user_id
+  sorts: []
+  tableCalculations: []
+name: Key Metrics Snapshot
+slug: key-metrics-snapshot
+spaceSlug: ai-agent-generated
+tableConfig:
+  columnOrder:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,105 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - color: "#D4F7E9"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_order_id
+          isFilteredOut: false
+          label:
+            position: inside
+            show: true
+          type: bar
+          yAxisIndex: 0
+        - color: "#E8DDFB"
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          isFilteredOut: false
+          showSymbol: true
+          type: line
+          yAxisIndex: 1
+        - areaStyle: {}
+          encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_profit
+          isFilteredOut: false
+          label:
+            position: top
+            show: true
+          type: line
+          yAxisIndex: 1
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_order_id
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+dashboardSlug: a-dashboard-with-tabs
+description: ""
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensionOverrides: {}
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: c4a3dd47-7f1c-42dc-a782-c97b717b8dcf
+          operator: inThePast
+          required: false
+          settings:
+            completed: false
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_day
+          values:
+            - 18
+      id: c4353d5c-4fb1-4b75-8ba4-3a11b8a2b385
+  limit: 500
+  metricOverrides:
+    dbt_orders_sum_of_basket_total:
+      formatOptions:
+        compact: thousands
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+    dbt_orders_sum_of_profit:
+      formatOptions:
+        compact: thousands
+        currency: USD
+        round: 0
+        separator: default
+        type: currency
+  metrics:
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+name: Monthly orders, total, and profit
+slug: copy-of-weekly-orders-total-and-profit-1750466589969
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

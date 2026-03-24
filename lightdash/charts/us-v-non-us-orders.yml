@@ -4,16 +4,16 @@ chartConfig:
       series:
         - encode:
             xRef:
-              field: dbt_orders_count_distinct_order_id_u_s_orders
+              field: dbt_orders_order_id_u_s_orders
             yRef:
-              field: dbt_orders_count_distinct_order_id_non_u_s
+              field: dbt_orders_order_id_non_u_s
           isFilteredOut: false
           type: bar
           yAxisIndex: 0
     layout:
-      xField: dbt_orders_count_distinct_order_id_u_s_orders
+      xField: dbt_orders_order_id_u_s_orders
       yField:
-        - dbt_orders_count_distinct_order_id_non_u_s
+        - dbt_orders_order_id_non_u_s
   type: cartesian
 contentType: chart
 description: null
@@ -69,14 +69,14 @@ metricQuery:
         - id: 07d3ec88-ce02-4010-a253-4e8f54c1ff66
           operator: equals
           target:
-            fieldId: dbt_orders_count_distinct_order_id
+            fieldId: dbt_orders_order_id
           values: []
       id: ad3a8d42-2931-427e-9329-c7926b4645a8
   limit: 500
   metricOverrides: {}
   metrics:
-    - dbt_orders_count_distinct_order_id_u_s_orders
-    - dbt_orders_count_distinct_order_id_non_u_s
+    - dbt_orders_order_id_u_s_orders
+    - dbt_orders_order_id_non_u_s
   sorts:
     - descending: false
       fieldId: dbt_orders_partner_name
@@ -87,8 +87,8 @@ spaceSlug: shared
 tableConfig:
   columnOrder:
     - dbt_orders_partner_name
-    - dbt_orders_count_distinct_order_id_u_s_orders
-    - dbt_orders_count_distinct_order_id_non_u_s
+    - dbt_orders_order_id_u_s_orders
+    - dbt_orders_order_id_non_u_s
 tableName: dbt_orders
 verification: null
 version: 1

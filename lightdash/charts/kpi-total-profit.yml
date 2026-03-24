@@ -1,7 +1,7 @@
 chartConfig:
   config:
     label: Total Profit
-    selectedField: dbt_orders_total_profit
+    selectedField: dbt_orders_sum_of_profit
     showBigNumberLabel: true
     style: K
   type: big_number
@@ -17,7 +17,7 @@ metricQuery:
   limit: 1
   metricOverrides: {}
   metrics:
-    - dbt_orders_total_profit
+    - dbt_orders_sum_of_profit
   sorts: []
   tableCalculations: []
 name: Total Profit
@@ -25,7 +25,7 @@ slug: kpi-total-profit
 spaceSlug: kpi-metrics
 tableConfig:
   columnOrder:
-    - dbt_orders_total_profit
+    - dbt_orders_sum_of_profit
 tableName: dbt_orders
 verification: null
 version: 1

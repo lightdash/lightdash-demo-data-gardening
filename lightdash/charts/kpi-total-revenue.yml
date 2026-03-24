@@ -1,7 +1,7 @@
 chartConfig:
   config:
     label: Total Revenue
-    selectedField: dbt_orders_total_revenue
+    selectedField: dbt_orders_sum_of_basket_total
     showBigNumberLabel: true
     style: K
   type: big_number
@@ -17,7 +17,7 @@ metricQuery:
   limit: 1
   metricOverrides: {}
   metrics:
-    - dbt_orders_total_revenue
+    - dbt_orders_sum_of_basket_total
   sorts: []
   tableCalculations: []
 name: Total Revenue
@@ -25,7 +25,7 @@ slug: kpi-total-revenue
 spaceSlug: kpi-metrics
 tableConfig:
   columnOrder:
-    - dbt_orders_total_revenue
+    - dbt_orders_sum_of_basket_total
 tableName: dbt_orders
 verification: null
 version: 1

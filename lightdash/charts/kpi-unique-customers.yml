@@ -1,7 +1,7 @@
 chartConfig:
   config:
     label: Unique Customers
-    selectedField: dbt_orders_unique_customers
+    selectedField: dbt_orders_count_distinct_user_id
     showBigNumberLabel: true
   type: big_number
 contentType: chart
@@ -16,7 +16,7 @@ metricQuery:
   limit: 1
   metricOverrides: {}
   metrics:
-    - dbt_orders_unique_customers
+    - dbt_orders_count_distinct_user_id
   sorts: []
   tableCalculations: []
 name: Unique Customers
@@ -24,7 +24,7 @@ slug: kpi-unique-customers
 spaceSlug: kpi-metrics
 tableConfig:
   columnOrder:
-    - dbt_orders_unique_customers
+    - dbt_orders_count_distinct_user_id
 tableName: dbt_orders
 verification: null
 version: 1

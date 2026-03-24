@@ -19,7 +19,7 @@ metricQuery:
   additionalMetrics: []
   customDimensions: []
   dimensions:
-    - dbt_orders_count_distinct_order_id
+    - dbt_orders_order_id
     - dbt_orders_order_date_day
   exploreName: dbt_orders
   filters: {}
@@ -29,14 +29,14 @@ metricQuery:
     - dbt_orders_sum_of_profit
   sorts:
     - descending: false
-      fieldId: dbt_orders_count_distinct_order_id
+      fieldId: dbt_orders_order_id
   tableCalculations: []
 name: How does profit vary by order date?
 slug: how-does-profit-vary-by-order-date
 spaceSlug: shared
 tableConfig:
   columnOrder:
-    - dbt_orders_count_distinct_order_id
+    - dbt_orders_order_id
     - dbt_orders_order_date_day
     - dbt_orders_sum_of_profit
 tableName: dbt_orders

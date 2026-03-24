@@ -11,7 +11,7 @@ chartConfig:
             xRef:
               field: dbt_orders_order_date_month
             yRef:
-              field: dbt_orders_total_revenue
+              field: dbt_orders_sum_of_basket_total
           isFilteredOut: false
           name: Total revenue
           type: line
@@ -26,7 +26,7 @@ chartConfig:
     layout:
       xField: dbt_orders_order_date_month
       yField:
-        - dbt_orders_total_revenue
+        - dbt_orders_sum_of_basket_total
   type: cartesian
 contentType: chart
 description: >-

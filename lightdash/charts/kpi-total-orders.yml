@@ -1,7 +1,7 @@
 chartConfig:
   config:
     label: Total Orders
-    selectedField: dbt_orders_total_orders
+    selectedField: dbt_orders_count_distinct_order_id
     showBigNumberLabel: true
   type: big_number
 contentType: chart
@@ -16,7 +16,7 @@ metricQuery:
   limit: 1
   metricOverrides: {}
   metrics:
-    - dbt_orders_total_orders
+    - dbt_orders_count_distinct_order_id
   sorts: []
   tableCalculations: []
 name: Total Orders
@@ -24,7 +24,7 @@ slug: kpi-total-orders
 spaceSlug: kpi-metrics
 tableConfig:
   columnOrder:
-    - dbt_orders_total_orders
+    - dbt_orders_count_distinct_order_id
 tableName: dbt_orders
 verification: null
 version: 1

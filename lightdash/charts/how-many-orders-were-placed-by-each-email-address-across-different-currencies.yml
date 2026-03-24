@@ -26,7 +26,7 @@ metricQuery:
   customDimensions: []
   dimensionOverrides: {}
   dimensions:
-    - dbt_orders_count_distinct_order_id
+    - dbt_orders_order_id
     - dbt_orders_email
     - dbt_orders_browser
     - dbt_orders_currency
@@ -53,7 +53,7 @@ slug: how-many-orders-were-placed-by-each-email-address-across-different-currenc
 spaceSlug: testing
 tableConfig:
   columnOrder:
-    - dbt_orders_count_distinct_order_id
+    - dbt_orders_order_id
     - dbt_orders_email
     - dbt_orders_browser
     - dbt_orders_currency

@@ -4,25 +4,25 @@ models:
       their status'
     meta:
       label: Orders
-      # pre_aggregates:
-      #   - name: orders_partner_daily
-      #     dimensions:
-      #       - partner_name
-      #     metrics:
-      #       - sum_of_basket_total
-      #       - sum_of_profit
-      #     time_dimension: order_date
-      #     granularity: DAY
-      #   - name: orders_partner_geo_daily
-      #     dimensions:
-      #       - partner_name
-      #       - shipping_country
-      #       - browser
-      #     metrics:
-      #       - sum_of_basket_total
-      #       - sum_of_profit
-      #     time_dimension: order_date
-      #     granularity: DAY
+      pre_aggregates:
+        - name: orders_partner_daily
+          dimensions:
+            - partner_name
+          metrics:
+            - sum_of_basket_total
+            - sum_of_profit
+          time_dimension: order_date
+          granularity: DAY
+        - name: orders_partner_geo_daily
+          dimensions:
+            - partner_name
+            - shipping_country
+            - browser
+          metrics:
+            - sum_of_basket_total
+            - sum_of_profit
+          time_dimension: order_date
+          granularity: DAY
       spotlight:
         owner: joao@lightdash.com
       parameters:

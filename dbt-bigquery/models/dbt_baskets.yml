@@ -15,6 +15,18 @@ models:
           refresh:
             # every 5 minutes
             cron: "*/5 * * * *"
+        - name: baskets_product_partner_recent_daily
+          dimensions:
+            - product_name
+            - partner_name
+            - order_date
+          metrics:
+            - sum_of_item_profit
+            - count_of_product_name
+          filters:
+            - order_date: inThePast 52 weeks
+          time_dimension: order_date
+          granularity: DAY
       groups:
         product_details:
           label: Product Details

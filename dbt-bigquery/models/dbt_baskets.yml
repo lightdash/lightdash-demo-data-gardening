@@ -90,6 +90,12 @@ models:
           dimension:
             group: [ 'product_details', 'item_details' ]
             type: number
+          metrics:
+            item_price_average_of_item_price:
+              label: Average of Item price
+              description: "Average of Item price on the table Baskets "
+              type: average
+              filters: []
       - name: item_profit
         description: 'Profit made for the individual item.'
         meta:
@@ -115,7 +121,8 @@ models:
               type: sum
               label: 'Item Profit'
               format: '[$$]#,##0'
-              description: 'Total profit from individual items sold. See which plants are most profitable!'
+              description: 'Total profit from individual items sold. See which plants are most
+                profitable!'
               spotlight:
                 visibility: show
                 categories:
@@ -133,7 +140,8 @@ models:
               type: average
               label: 'Average Item Profit'
               format: '[$$]#,##0'
-              description: 'Average profit earned per item sold. Track your margins as they grow!'
+              description: 'Average profit earned per item sold. Track your margins as they
+                grow!'
               spotlight:
                 visibility: show
                 categories:
@@ -158,7 +166,8 @@ models:
               type: average
               label: 'Average Order Value'
               format: '[$$]#,##0'
-              description: 'Average revenue per basket. What customers typically spend in a single visit.'
+              description: 'Average revenue per basket. What customers typically spend in a
+                single visit.'
               spotlight:
                 visibility: hide
                 categories:
@@ -174,13 +183,26 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals:
+              [
+                'HOUR',
+                'MINUTE_OF_HOUR_NUM',
+                'HOUR_OF_DAY_NUM',
+                'DAY',
+                'DAY_OF_WEEK_INDEX',
+                'DAY_OF_MONTH_NUM',
+                'DAY_OF_YEAR_NUM',
+                'DAY_OF_WEEK_NAME',
+                'WEEK',
+                'WEEK_NUM',
+                'MONTH',
+                'MONTH_NUM',
+                'MONTH_NAME',
+                'QUARTER',
+                'QUARTER_NUM',
+                'QUARTER_NAME',
+                'YEAR'
+              ]
           additional_dimensions:
             order_date_is_in_future:
               type: boolean
@@ -192,7 +214,8 @@ models:
                   else false
                 end
       - name: profit
-        description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
+        description: 'Sum of item profits within the basket. Thus, the total profit of
+          the basket.'
         meta:
           dimension:
             format: '[$$]#,##0'

@@ -11,6 +11,7 @@ models:
           metrics:
             - average_of_feedback_rating
             - count_of_request_id_agg
+            - count_distinct_request_id
           time_dimension: request_date
           granularity: DAY
       joins:

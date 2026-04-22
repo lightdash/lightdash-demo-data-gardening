@@ -9,6 +9,7 @@ models:
             - browser
           metrics:
             - count_of_user_id_agg
+            - count_distinct_of_user_id
           time_dimension: created_date
           granularity: DAY
       joins:

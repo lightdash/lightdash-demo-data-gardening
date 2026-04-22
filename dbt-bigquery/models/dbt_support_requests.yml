@@ -4,6 +4,14 @@ models:
       received'
     meta:
       label: Support requests
+      pre_aggregates:
+        - name: support_requests_daily
+          dimensions:
+            - reason
+          metrics:
+            - average_of_feedback_rating
+          time_dimension: request_date
+          granularity: DAY
       joins:
         - join: dbt_orders
           sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}

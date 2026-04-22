@@ -25,8 +25,6 @@ models:
             - sum_of_item_profit
             - count_of_product_name
             - sum_of_basket_total
-          filters:
-            - order_date: inThePast 52 weeks
           time_dimension: order_date
           granularity: DAY
       groups:

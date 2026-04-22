@@ -8,6 +8,7 @@ models:
         - name: orders_partner_daily
           dimensions:
             - partner_name
+            - basket_total
           metrics:
             - sum_of_basket_total
             - sum_of_profit
@@ -22,6 +23,7 @@ models:
             - partner_commission
             - shipping_country
             - browser
+            - basket_total
           metrics:
             - sum_of_basket_total
             - sum_of_profit

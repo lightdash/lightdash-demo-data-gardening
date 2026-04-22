@@ -13,6 +13,7 @@ models:
             - sum_of_profit
             - average_of_basket_total
             - avg_profit
+            - count_of_order_id_agg
           time_dimension: order_date
           granularity: DAY
         - name: orders_partner_geo_daily
@@ -26,6 +27,7 @@ models:
             - sum_of_profit
             - average_of_basket_total
             - avg_profit
+            - count_of_order_id_agg
           time_dimension: order_date
           granularity: DAY
       spotlight:
@@ -72,6 +74,16 @@ models:
                 categories:
                   - verified
                   - sales
+            count_of_order_id_agg:
+              type: count
+              label: 'Order Volume (aggregatable)'
+              description: >-
+                Re-aggregatable proxy for count_distinct_order_id. Used
+                internally for pre-aggregation. dbt_orders has one row per
+                order_id, so count ≡ count_distinct.
+              hidden: true
+              spotlight:
+                visibility: hide
           dimension:
             type: string
       - name: order_date

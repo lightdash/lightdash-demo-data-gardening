@@ -8,7 +8,7 @@ models:
           dimensions:
             - browser
           metrics:
-            - count_of_user_id_agg
+            - count_of_user_id
           time_dimension: created_date
           granularity: DAY
       joins:
@@ -81,15 +81,18 @@ models:
                 categories:
                   - verified
                   - marketing
-            count_of_user_id_agg:
+            count_of_user_id:
               type: count
-              label: Total Customers (aggregatable)
+              label: Total Customers
               description: >-
-                Re-aggregatable proxy for count_distinct_of_user_id. Used
-                internally for pre-aggregation. dbt_users has one row per
-                user_id, so count ≡ count_distinct.
-              hidden: true
+                Count of customers. dbt_users is one row per user_id, so this
+                is equivalent to count_distinct_of_user_id — but it's
+                re-aggregatable, so it can live in pre-aggregates and be
+                used in time-window roll-ups without query-time work.
               spotlight:
-                visibility: hide
+                visibility: show
+                categories:
+                  - verified
+                  - marketing
           dimension:
             type: string

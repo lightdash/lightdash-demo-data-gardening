@@ -9,12 +9,14 @@ models:
           dimensions:
             - partner_name
             - basket_total
+            - referrer
           metrics:
             - sum_of_basket_total
             - sum_of_profit
             - average_of_basket_total
             - avg_profit
-            - count_of_order_id_agg
+            - count_of_order_id
+            - sum_of_partner_commission
           time_dimension: order_date
           granularity: DAY
         - name: orders_partner_geo_daily
@@ -24,12 +26,14 @@ models:
             - shipping_country
             - browser
             - basket_total
+            - referrer
           metrics:
             - sum_of_basket_total
             - sum_of_profit
             - average_of_basket_total
             - avg_profit
-            - count_of_order_id_agg
+            - count_of_order_id
+            - sum_of_partner_commission
           time_dimension: order_date
           granularity: DAY
       spotlight:
@@ -76,16 +80,19 @@ models:
                 categories:
                   - verified
                   - sales
-            count_of_order_id_agg:
+            count_of_order_id:
               type: count
-              label: 'Order Volume (aggregatable)'
+              label: 'Order Volume'
               description: >-
-                Re-aggregatable proxy for count_distinct_order_id. Used
-                internally for pre-aggregation. dbt_orders has one row per
-                order_id, so count ≡ count_distinct.
-              hidden: true
+                Count of orders. dbt_orders is one row per order_id, so this
+                is equivalent to count_distinct_order_id — but it's
+                re-aggregatable, so it can live in pre-aggregates and be
+                used in time-window roll-ups without query-time work.
               spotlight:
-                visibility: hide
+                visibility: show
+                categories:
+                  - verified
+                  - sales
           dimension:
             type: string
       - name: order_date
@@ -255,6 +262,16 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            sum_of_partner_commission:
+              type: sum
+              label: 'Sum of Partner commission'
+              description: 'Total commission paid to partners across orders.'
+              format: '[$$]#,##0'
+              spotlight:
+                visibility: show
+                categories:
+                  - finance
       - name: currency
         description: 'Three letter international currency code for the currency the
           order was paid with.'

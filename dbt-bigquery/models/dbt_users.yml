@@ -3,6 +3,14 @@ models:
     description: 'This table contains information on all of our users and customers'
     meta:
       label: Users
+      pre_aggregates:
+        - name: users_daily_by_browser
+          dimensions:
+            - browser
+          metrics:
+            - count_of_user_id_agg
+          time_dimension: created_date
+          granularity: DAY
       joins:
         - join: dbt_orders
           sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
@@ -73,5 +81,15 @@ models:
                 categories:
                   - verified
                   - marketing
+            count_of_user_id_agg:
+              type: count
+              label: Total Customers (aggregatable)
+              description: >-
+                Re-aggregatable proxy for count_distinct_of_user_id. Used
+                internally for pre-aggregation. dbt_users has one row per
+                user_id, so count ≡ count_distinct.
+              hidden: true
+              spotlight:
+                visibility: hide
           dimension:
             type: string

@@ -10,6 +10,7 @@ models:
             - reason
           metrics:
             - average_of_feedback_rating
+            - count_of_request_id_agg
           time_dimension: request_date
           granularity: DAY
       joins:
@@ -29,6 +30,16 @@ models:
                 categories:
                   - verified
                   - operations
+            count_of_request_id_agg:
+              type: count
+              label: Support Tickets (aggregatable)
+              description: >-
+                Re-aggregatable proxy for count_distinct_request_id. Used
+                internally for pre-aggregation. dbt_support_requests has one
+                row per request_id, so count ≡ count_distinct.
+              hidden: true
+              spotlight:
+                visibility: hide
           dimension:
             type: string
       - name: order_id

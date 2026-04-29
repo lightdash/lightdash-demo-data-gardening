@@ -5,17 +5,14 @@ models:
     meta:
       label: Baskets
       pre_aggregates:
-        - name: baskets_product_partner
-          dimensions:
-            - product_name
-            - partner_name
-          metrics:
-            - sum_of_item_profit
-            - count_of_product_name
-            - sum_of_basket_total
-          refresh:
-            # every 5 minutes
-            cron: "*/5 * * * *"
+        # - name: baskets_product_partner
+        #   dimensions:
+        #     - product_name
+        #     - partner_name
+        #   metrics:
+        #     - sum_of_item_profit
+        #     - count_of_product_name
+        #     - sum_of_basket_total
         - name: baskets_product_partner_recent_daily
           dimensions:
             - product_name

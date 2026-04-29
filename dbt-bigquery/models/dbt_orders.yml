@@ -5,20 +5,20 @@ models:
     meta:
       label: Orders
       pre_aggregates:
-        - name: orders_partner_daily
-          dimensions:
-            - partner_name
-            - basket_total
-            - referrer
-          metrics:
-            - sum_of_basket_total
-            - sum_of_profit
-            - average_of_basket_total
-            - avg_profit
-            - count_of_order_id
-            - sum_of_partner_commission
-          time_dimension: order_date
-          granularity: DAY
+        # - name: orders_partner_daily
+        #   dimensions:
+        #     - partner_name
+        #     - basket_total
+        #     - referrer
+        #   metrics:
+        #     - sum_of_basket_total
+        #     - sum_of_profit
+        #     - average_of_basket_total
+        #     - avg_profit
+        #     - count_of_order_id
+        #     - sum_of_partner_commission
+        #   time_dimension: order_date
+        #   granularity: DAY
         - name: orders_partner_geo_daily
           dimensions:
             - partner_name

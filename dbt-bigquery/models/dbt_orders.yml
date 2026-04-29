@@ -4,7 +4,7 @@ models:
       their status'
     meta:
       label: Orders
-      pre_aggregates:
+      # pre_aggregates:
         # - name: orders_partner_daily
         #   dimensions:
         #     - partner_name

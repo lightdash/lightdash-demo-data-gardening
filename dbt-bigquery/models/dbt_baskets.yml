@@ -16,7 +16,7 @@ models:
       #       - average_of_item_profit
       #     time_dimension: order_date
       #     granularity: DAY
-      groups:
+      group_details:
         product_details:
           label: Product Details
           description: Fields that have information about the products in the basket.

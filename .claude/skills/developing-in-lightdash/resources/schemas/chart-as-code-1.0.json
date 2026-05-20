@@ -308,6 +308,18 @@
         },
         "CartesianChart": {
             "properties": {
+                "columnLimit": {
+                    "description": "Maximum number of pivot columns to display",
+                    "format": "double",
+                    "type": "number"
+                },
+                "conditionalFormattings": {
+                    "description": "Conditional formatting rules",
+                    "items": {
+                        "$ref": "#/$defs/ConditionalFormattingConfig"
+                    },
+                    "type": "array"
+                },
                 "eChartsConfig": {
                     "$ref": "#/$defs/EChartsConfig",
                     "description": "ECharts-specific configuration"
@@ -319,6 +331,10 @@
                 "metadata": {
                     "$ref": "#/$defs/Record_string.SeriesMetadata_",
                     "description": "Metadata for series (colors, etc.)"
+                },
+                "rowLimit": {
+                    "$ref": "#/$defs/RowLimit",
+                    "description": "Limit displayed rows to first/last N"
                 }
             },
             "required": ["eChartsConfig", "layout"],
@@ -730,6 +746,31 @@
             "enum": ["chart"],
             "type": "string"
         },
+        "ContentVerificationInfo": {
+            "properties": {
+                "verifiedAt": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "verifiedBy": {
+                    "properties": {
+                        "firstName": {
+                            "type": "string"
+                        },
+                        "lastName": {
+                            "type": "string"
+                        },
+                        "userUuid": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["lastName", "firstName", "userUuid"],
+                    "type": "object"
+                }
+            },
+            "required": ["verifiedAt", "verifiedBy"],
+            "type": "object"
+        },
         "CustomBinDimension": {
             "anyOf": [
                 {
@@ -1127,7 +1168,8 @@
                 "inTheCurrent",
                 "notInTheCurrent",
                 "inBetween",
-                "notInBetween"
+                "notInBetween",
+                "inPeriodToDate"
             ],
             "type": "string"
         },
@@ -1258,6 +1300,23 @@
                 "percent"
             ],
             "type": "string"
+        },
+        "FormulaTableCalculation": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/TableCalculationBase"
+                },
+                {
+                    "properties": {
+                        "formula": {
+                            "description": "Spreadsheet-like formula compiled to SQL at query time",
+                            "type": "string"
+                        }
+                    },
+                    "required": ["formula"],
+                    "type": "object"
+                }
+            ]
         },
         "FrameBoundary": {
             "properties": {
@@ -1508,6 +1567,10 @@
                     "description": "URL to custom GeoJSON file",
                     "type": "string"
                 },
+                "darkModeTileBackground": {
+                    "$ref": "#/$defs/MapTileBackground",
+                    "description": "Map tile background style for dark mode (uses dark default when undefined)"
+                },
                 "dataLayerOpacity": {
                     "description": "Data layer opacity (0.1 to 1)",
                     "format": "double",
@@ -1650,7 +1713,14 @@
             "type": "object"
         },
         "MapTileBackground": {
-            "enum": ["none", "openstreetmap", "light", "dark", "satellite"],
+            "enum": [
+                "none",
+                "openstreetmap",
+                "light",
+                "dark",
+                "satellite",
+                "voyager"
+            ],
             "type": "string"
         },
         "MarkLine": {
@@ -2359,6 +2429,27 @@
             "properties": {},
             "type": "object"
         },
+        "RowLimit": {
+            "properties": {
+                "count": {
+                    "description": "Number of rows to show or hide",
+                    "format": "double",
+                    "type": "number"
+                },
+                "direction": {
+                    "description": "Whether to target the first or last N rows",
+                    "enum": ["first", "last"],
+                    "type": "string"
+                },
+                "mode": {
+                    "description": "Whether to show or hide the selected rows",
+                    "enum": ["show", "hide"],
+                    "type": "string"
+                }
+            },
+            "required": ["count", "direction", "mode"],
+            "type": "object"
+        },
         "SankeyChart": {
             "properties": {
                 "metricFieldId": {
@@ -2549,60 +2640,62 @@
             "required": ["descending", "fieldId"],
             "type": "object"
         },
-        "TableCalculation": {
+        "SqlTableCalculation": {
             "allOf": [
                 {
-                    "properties": {
-                        "displayName": {
-                            "description": "Display name shown in the UI",
-                            "type": "string"
-                        },
-                        "format": {
-                            "$ref": "#/$defs/CustomFormat",
-                            "description": "Formatting options for the calculation"
-                        },
-                        "index": {
-                            "description": "Display order index",
-                            "format": "double",
-                            "type": "number"
-                        },
-                        "name": {
-                            "description": "Internal name of the table calculation",
-                            "type": "string"
-                        },
-                        "type": {
-                            "$ref": "#/$defs/TableCalculationType",
-                            "description": "Data type of the calculation result"
-                        }
-                    },
-                    "required": ["displayName", "name"],
-                    "type": "object"
+                    "$ref": "#/$defs/TableCalculationBase"
                 },
                 {
-                    "anyOf": [
-                        {
-                            "properties": {
-                                "sql": {
-                                    "description": "SQL expression for the calculation (can reference fields with ${table.field})",
-                                    "type": "string"
-                                }
-                            },
-                            "required": ["sql"],
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "template": {
-                                    "$ref": "#/$defs/TableCalculationTemplate",
-                                    "description": "Template-based calculation (alternative to sql)"
-                                }
-                            },
-                            "required": ["template"],
-                            "type": "object"
+                    "properties": {
+                        "sql": {
+                            "description": "SQL expression for the calculation (can reference fields with ${table.field})",
+                            "type": "string"
                         }
-                    ]
+                    },
+                    "required": ["sql"],
+                    "type": "object"
                 }
             ]
+        },
+        "TableCalculation": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/SqlTableCalculation"
+                },
+                {
+                    "$ref": "#/$defs/TemplateTableCalculation"
+                },
+                {
+                    "$ref": "#/$defs/FormulaTableCalculation"
+                }
+            ]
+        },
+        "TableCalculationBase": {
+            "properties": {
+                "displayName": {
+                    "description": "Display name shown in the UI",
+                    "type": "string"
+                },
+                "format": {
+                    "$ref": "#/$defs/CustomFormat",
+                    "description": "Formatting options for the calculation"
+                },
+                "index": {
+                    "description": "Display order index",
+                    "format": "double",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "Internal name of the table calculation",
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/$defs/TableCalculationType",
+                    "description": "Data type of the calculation result"
+                }
+            },
+            "required": ["displayName", "name"],
+            "type": "object"
         },
         "TableCalculationTemplate": {
             "anyOf": [
@@ -2832,6 +2925,10 @@
                     "description": "Display metrics as rows instead of columns",
                     "type": "boolean"
                 },
+                "rowLimit": {
+                    "$ref": "#/$defs/RowLimit",
+                    "description": "Limit displayed rows to first/last N"
+                },
                 "showColumnCalculation": {
                     "description": "Show column totals/calculations",
                     "type": "boolean"
@@ -2868,6 +2965,23 @@
             },
             "required": ["type"],
             "type": "object"
+        },
+        "TemplateTableCalculation": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/TableCalculationBase"
+                },
+                {
+                    "properties": {
+                        "template": {
+                            "$ref": "#/$defs/TableCalculationTemplate",
+                            "description": "Template-based calculation (alternative to sql)"
+                        }
+                    },
+                    "required": ["template"],
+                    "type": "object"
+                }
+            ]
         },
         "TimeFrames": {
             "enum": [
@@ -3257,6 +3371,25 @@
             "description": "Not modifiable by user, but useful to know if it has been updated. Defaults to now if omitted.",
             "format": "date-time",
             "type": "string"
+        },
+        "verification": {
+            "anyOf": [
+                {
+                    "allOf": [
+                        {
+                            "$ref": "#/$defs/ContentVerificationInfo"
+                        }
+                    ],
+                    "description": "Detailed verification info (who/when). Read-only; ignored on upload."
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "verified": {
+            "description": "Declarative verification state.\n`true` verifies the chart on upload, `false` unverifies it, `undefined` leaves the\ncurrent state untouched. Download sets this to `true` when the chart is verified.",
+            "type": "boolean"
         },
         "version": {
             "const": 1,

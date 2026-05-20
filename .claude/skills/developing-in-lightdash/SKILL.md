@@ -23,6 +23,7 @@ Build and deploy Lightdash analytics projects. This skill covers the **semantic 
 | Explore data warehouse | `lightdash sql` to execute raw sql, read .csv results | [CLI Reference](./resources/cli-reference.md) |
 | Define metrics & dimensions | Edit dbt YAML or Lightdash YAML | [Metrics](./resources/metrics-reference.md), [Dimensions](./resources/dimensions-reference.md) |
 | Create charts | `lightdash download`, edit YAML, `lightdash upload` | [Chart Types](#chart-types) |
+| Add period comparisons | Add PoP additional metrics to chart YAML | [Period over Period](./resources/period-over-period-reference.md) |
 | Build dashboards | `lightdash download`, edit YAML, `lightdash upload` | [Dashboard Reference](./resources/dashboard-reference.md) |
 | Lint yaml files | `lightdash lint` | [CLI Reference](./resources/cli-reference.md) |
 | Set warehouse connection | `lightdash set-warehouse` from profiles.yml | [CLI Reference](./resources/cli-reference.md) |
@@ -36,6 +37,7 @@ Build and deploy Lightdash analytics projects. This skill covers the **semantic 
 | **Guessing filter values** | Case mismatches (`'Payment'` vs `'payment'`) cause charts to silently return no data | Always run `lightdash sql "SELECT DISTINCT column FROM table LIMIT 50" -o values.csv` and use exact values |
 | **Not updating dashboard tiles after renaming a chart** | Dashboard tile still shows old title — `title` and `chartName` are independent overrides that do NOT auto-update | Download the dashboard, find tiles with matching `chartSlug`, update `title` and `chartName` to match |
 | **Including unused dimensions in metricQuery** | "Results may be incorrect" warning — extra dimensions change SQL grouping and produce wrong numbers | Every dimension in `metricQuery.dimensions` must appear in the chart config. For cartesian: `layout.xField`, `layout.yField`, or `pivotConfig.columns` |
+| **Unsorted YAML keys** | `lightdash upload` warns "unsorted YAML keys" and diffs become noisy | Always sort keys alphabetically at every nesting level — the CLI writes with `sortKeys: true` |
 | **Deploying to wrong project** | Overwrites production content | Always run `lightdash config get-project` before deploying |
 | **Missing `contentType` field** | Content type can't be determined without relying on directory structure | Always include `contentType: chart`, `contentType: dashboard`, or `contentType: sql_chart` at the top level |
 
@@ -58,12 +60,25 @@ lightdash config set-project --name "My Project"  # Switch project
 | Type | Detection | Key Difference |
 |------|-----------|----------------|
 | **dbt Project** | Has `dbt_project.yml` | Metadata nested under `meta:` |
+| **dbt Fusion / dbt 1.10+** | Has `dbt_project.yml`, uses dbt Fusion or dbt >= 1.10 | Metadata nested under `config: meta:` |
 | **Pure Lightdash** | Has `lightdash.config.yml`, no dbt | Top-level properties |
 
 ```bash
 ls dbt_project.yml 2>/dev/null && echo "dbt project" || echo "Not dbt"
 ls lightdash.config.yml 2>/dev/null && echo "Pure Lightdash" || echo "Not pure Lightdash"
 ```
+
+> **dbt Fusion / dbt 1.10+:** Lightdash metadata must be nested under `config: meta:` instead of `meta:`. The properties are identical — only the nesting changes. Example:
+> ```yaml
+> models:
+>   - name: orders
+>     config:
+>       meta:
+>         metrics:
+>           total_revenue:
+>             type: sum
+>             sql: "${TABLE}.amount"
+> ```
 
 ### Syntax Comparison
 
@@ -210,21 +225,22 @@ The semantic layer defines your data model. See individual references for full c
 - [Metrics Reference](./resources/metrics-reference.md) — aggregated calculations (`count`, `sum`, `average`, `min`, `max`, `number`, etc.)
 - [Dimensions Reference](./resources/dimensions-reference.md) — attributes for grouping/filtering (`string`, `number`, `boolean`, `date`, `timestamp`)
 - [Joins Reference](./resources/joins-reference.md) — cross-table relationships
+- [User Attributes Reference](./resources/user-attributes-reference.md) — SQL variables, row-level security, access control
 
 ## Chart Types
 
 All charts share a common base structure:
 
 ```yaml
-contentType: chart              # Required: chart, dashboard, or sql_chart
 chartConfig:
-  type: <type>
   config: {}        # Type-specific — see individual references
+  type: <type>
+contentType: chart              # Required: chart, dashboard, or sql_chart
 dashboardSlug: my-dashboard  # Optional: scopes chart to dashboard (won't appear in space)
 metricQuery:
-  exploreName: my_explore     # Required: which explore to query
   dimensions:
     - my_explore_category
+  exploreName: my_explore     # Required: which explore to query
   filters: {}
   limit: 500
   metrics:
@@ -239,6 +255,8 @@ tableName: my_explore           # Required: top-level explore/table name
 version: 1
 ```
 
+**Key ordering:** All YAML keys must be sorted alphabetically at every nesting level. The CLI writes files with `sortKeys: true` and warns on upload if keys are unsorted. When writing or editing YAML by hand, keep keys in alphabetical order to avoid warnings and noisy diffs.
+
 **Chart scoping:** Use `spaceSlug` only for shared charts. Add `dashboardSlug` to scope a chart to a specific dashboard (it won't appear in the space).
 
 ### Choosing the Right Chart Type
@@ -252,6 +270,7 @@ version: 1
 | Conversion stages | `funnel` | Visualizes drop-off between sequential steps |
 | Progress toward target | `gauge` | Shows current value relative to goal |
 | Geographic data | `map` | Plots data points or regions on a map |
+| Flow between categories | `sankey` | Shows how values move from source to target nodes |
 | Detailed records | `table` | Displays raw data with sorting and formatting |
 | Advanced custom needs | `custom` | Full Vega-Lite spec for custom visualizations |
 
@@ -265,6 +284,7 @@ version: 1
 | `gauge` | Progress indicators | [Gauge](./resources/gauge-chart-reference.md) |
 | `treemap` | Hierarchical data | [Treemap](./resources/treemap-chart-reference.md) |
 | `map` | Geographic data | [Map](./resources/map-chart-reference.md) |
+| `sankey` | Flow diagrams | [Sankey](./resources/sankey-chart-reference.md) |
 | `custom` | Vega-Lite | [Custom Viz](./resources/custom-viz-reference.md) |
 
 ## Dashboards
@@ -303,6 +323,7 @@ See [Workflows Reference](./resources/workflows-reference.md) for detailed examp
 - [Metrics Reference](./resources/metrics-reference.md)
 - [Tables Reference](./resources/tables-reference.md)
 - [Joins Reference](./resources/joins-reference.md)
+- [User Attributes Reference](./resources/user-attributes-reference.md)
 
 ### Charts
 - [Cartesian Chart Reference](./resources/cartesian-chart-reference.md) - Bar, line, area, scatter
@@ -313,7 +334,9 @@ See [Workflows Reference](./resources/workflows-reference.md) for detailed examp
 - [Gauge Chart Reference](./resources/gauge-chart-reference.md)
 - [Treemap Chart Reference](./resources/treemap-chart-reference.md)
 - [Map Chart Reference](./resources/map-chart-reference.md)
+- [Sankey Chart Reference](./resources/sankey-chart-reference.md)
 - [Custom Viz Reference](./resources/custom-viz-reference.md)
+- [Period over Period Reference](./resources/period-over-period-reference.md) - PoP comparisons (YoY, MoM, etc.)
 
 ### Dashboards & Workflows
 - [Dashboard Reference](./resources/dashboard-reference.md)

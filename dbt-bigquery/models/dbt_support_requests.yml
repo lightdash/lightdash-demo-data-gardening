@@ -97,52 +97,68 @@ models:
           dimension:
             type: timestamp
       - name: basket_total
-        description: ""
+        description: 'Order basket total linked to the support request.'
         meta:
+          metrics:
+            sum_of_basket_total:
+              type: sum
+              label: Support Request Revenue
+              description: 'Total order revenue associated with support tickets.'
+              format: '[$$]#,##0'
+              spotlight:
+                visibility: hide
           dimension:
             type: number
       - name: profit
-        description: ""
+        description: 'Order profit linked to the support request.'
         meta:
+          metrics:
+            sum_of_profit:
+              type: sum
+              label: Support Request Profit
+              description: 'Total order profit associated with support tickets.'
+              format: '[$$]#,##0'
+              spotlight:
+                visibility: hide
           dimension:
             type: number
       - name: referrer
-        description: ""
+        description: 'Marketing referrer for the order tied to the support request.'
         meta:
           dimension:
             type: string
       - name: partner_id
-        description: ""
+        description: 'Partner ID for the order tied to the support request.'
         meta:
           dimension:
             type: string
       - name: partner_name
-        description: ""
+        description: 'Partner name for the order tied to the support request.'
         meta:
           dimension:
             type: string
       - name: partner_commission
-        description: ""
+        description: 'Partner commission rate for the order tied to the support request.'
         meta:
           dimension:
             type: number
       - name: user_id
-        description: ""
+        description: 'User ID of the customer who submitted the support request.'
         meta:
           dimension:
             type: string
       - name: email
-        description: ""
+        description: 'Email of the customer who submitted the support request.'
         meta:
           dimension:
             type: string
       - name: created_date
-        description: ""
+        description: 'Timestamp when the customer account was created.'
         meta:
           dimension:
             type: timestamp
       - name: browser
-        description: ""
+        description: 'Browser used by the customer associated with the support request.'
         meta:
           dimension:
             type: string

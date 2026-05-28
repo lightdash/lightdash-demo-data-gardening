@@ -1,0 +1,95 @@
+models:
+  - name: dbt_kpi_summary
+    description: >-
+      Daily cross-domain KPI summary. One row per order date, with orders,
+      revenue, support requests, and new user registrations pre-aggregated to
+      day grain. Dates are shifted to match the time-adjusted convention used
+      across all other explores. Use domain-specific explores (Orders, Users,
+      Support requests) for detailed drill-downs; use this model for top-level
+      trend monitoring across all business areas.
+    meta:
+      label: KPI Summary
+      spotlight:
+        owner: joao@lightdash.com
+      metrics:
+        avg_order_value:
+          type: number
+          label: Average Order Value
+          description: 'Average revenue per order in the selected period.'
+          sql: ${total_revenue} / NULLIF(${total_orders}, 0)
+          format: '[$$]#,##0'
+          spotlight:
+            visibility: show
+            categories:
+              - verified
+              - sales
+    columns:
+      - name: snapshot_date
+        description: 'Calendar date of the KPI snapshot, aligned to order placement dates.'
+        meta:
+          dimension:
+            type: date
+            time_intervals: ['DAY', 'WEEK', 'MONTH', 'QUARTER', 'YEAR']
+      - name: orders_count
+        description: 'Number of distinct orders placed on this date.'
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_orders:
+              type: sum
+              label: Total Orders
+              description: 'Total number of orders placed in the selected period.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - sales
+      - name: revenue
+        description: 'Sum of basket totals for orders placed on this date.'
+        meta:
+          dimension:
+            type: number
+            format: '[$$]#,##0'
+          metrics:
+            total_revenue:
+              type: sum
+              label: Revenue
+              format: '[$$]#,##0'
+              description: 'Total sales revenue in the selected period.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - sales
+                  - finance
+      - name: support_requests_count
+        description: 'Number of support requests submitted on this date.'
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_support_requests:
+              type: sum
+              label: Support Tickets
+              description: 'Total support requests received in the selected period.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - operations
+      - name: new_users_count
+        description: 'Number of new user accounts registered on this date.'
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_new_users:
+              type: sum
+              label: New Customers
+              description: 'Total new customer registrations in the selected period.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - marketing

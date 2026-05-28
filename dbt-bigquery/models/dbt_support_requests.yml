@@ -16,6 +16,19 @@ models:
       joins:
         - join: dbt_orders
           sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+      metrics:
+        support_requests_per_order:
+          type: number
+          label: Support Requests per Order
+          description: >-
+            Average number of support requests per affected order. Only counts
+            orders that generated at least one request.
+          sql: ${count_of_request_id} / NULLIF(${orders_with_support_requests}, 0)
+          format: '#,##0.0'
+          spotlight:
+            visibility: show
+            categories:
+              - operations
     columns:
       - name: request_id
         description: 'Unique ID of the request.'
@@ -48,6 +61,15 @@ models:
       - name: order_id
         description: 'Unique Order ID that pertains to this request.'
         meta:
+          metrics:
+            orders_with_support_requests:
+              type: count_distinct
+              label: Orders with Support Requests
+              description: 'Number of unique orders that generated at least one support request.'
+              spotlight:
+                visibility: show
+                categories:
+                  - operations
           dimension:
             type: string
       - name: request_date
@@ -127,8 +149,17 @@ models:
           dimension:
             type: number
       - name: user_id
-        description: ""
+        description: 'User ID of the customer who submitted the support request.'
         meta:
+          metrics:
+            users_with_support_requests:
+              type: count_distinct
+              label: Users with Support Requests
+              description: 'Number of unique customers who submitted at least one support request.'
+              spotlight:
+                visibility: show
+                categories:
+                  - operations
           dimension:
             type: string
       - name: email

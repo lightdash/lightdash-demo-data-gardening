@@ -87,6 +87,19 @@ models:
       - name: order_date
         description: 'Timestamp of order placement by user.'
         meta:
+          metrics:
+            min_of_order_date:
+              type: min
+              label: 'First Order Date'
+              description: >-
+                Earliest order date in the current query context. When used in
+                the Users explore grouped by user, this gives the first order
+                date per customer.
+              spotlight:
+                visibility: show
+                categories:
+                  - sales
+                  - marketing
           dimension:
             time_intervals:
               [

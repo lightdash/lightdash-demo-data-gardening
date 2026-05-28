@@ -4,21 +4,27 @@ models:
       their status'
     meta:
       label: Orders
-      # pre_aggregates:
-        # - name: orders_partner_daily
-        #   dimensions:
-        #     - partner_name
-        #     - basket_total
-        #     - referrer
-        #   metrics:
-        #     - sum_of_basket_total
-        #     - sum_of_profit
-        #     - average_of_basket_total
-        #     - avg_profit
-        #     - count_of_order_id
-        #     - sum_of_partner_commission
-        #   time_dimension: order_date
-        #   granularity: DAY
+      pre_aggregates:
+        - name: orders_daily
+          dimensions:
+            - partner_name
+          metrics:
+            - count_of_order_id
+            - sum_of_basket_total
+            - sum_of_profit
+            - average_of_basket_total
+          time_dimension: order_date
+          granularity: DAY
+        - name: orders_monthly
+          dimensions:
+            - partner_name
+          metrics:
+            - count_of_order_id
+            - sum_of_basket_total
+            - sum_of_profit
+            - average_of_basket_total
+          time_dimension: order_date
+          granularity: MONTH
       spotlight:
         owner: joao@lightdash.com
       parameters:
@@ -81,6 +87,19 @@ models:
       - name: order_date
         description: 'Timestamp of order placement by user.'
         meta:
+          metrics:
+            min_of_order_date:
+              type: min
+              label: 'First Order Date'
+              description: >-
+                Earliest order date in the current query context. When used in
+                the Users explore grouped by user, this gives the first order
+                date per customer.
+              spotlight:
+                visibility: show
+                categories:
+                  - sales
+                  - marketing
           dimension:
             time_intervals:
               [

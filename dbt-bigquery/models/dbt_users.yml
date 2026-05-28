@@ -14,7 +14,7 @@ models:
       joins:
         - join: dbt_orders
           sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
-          fields: [ count_distinct_order_id ]
+          fields: [ count_distinct_order_id, min_of_order_date, sum_of_basket_total, average_of_basket_total ]
       metrics:
         diff_emails_to_users:
           type: number
@@ -25,6 +25,19 @@ models:
             visibility: show
             categories:
               - beta
+        orders_per_user:
+          type: number
+          label: Orders per User
+          description: >-
+            Average number of completed orders per registered user. Measures
+            purchase frequency across the customer base.
+          sql: ${dbt_orders.count_distinct_order_id} / NULLIF(${count_distinct_of_user_id}, 0)
+          format: '#,##0.0'
+          spotlight:
+            visibility: show
+            categories:
+              - sales
+              - marketing
     columns:
       - name: browser
         description: 'Web browser that the user used to place the order.'

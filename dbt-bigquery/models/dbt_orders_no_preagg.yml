@@ -250,6 +250,16 @@ models:
                 visibility: show
                 categories:
                   - verified
+            median_order_value:
+              type: median
+              label: 'Median order value'
+              format: '[$$]#,##0'
+              description: 'Median value of individual orders. This returns the 50th percentile of order value across the selected orders.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - sales
       - name: profit
         description: 'Sum of item profits within the basket. Thus, the total profit of
           the order.'

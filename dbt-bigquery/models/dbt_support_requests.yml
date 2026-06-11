@@ -67,6 +67,12 @@ models:
               'MONTH', 'MONTH_NUM', 'MONTH_NAME',
               'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
               'YEAR' ]
+          additional_dimensions:
+            request_date_week_starting_friday:
+              label: Week Starting Friday
+              description: Start of the week, with weeks beginning on Friday.
+              type: date
+              sql: date_trunc(date(${request_date}), week(friday))
       - name: reason
         description: 'Determined cause of request.'
         meta:

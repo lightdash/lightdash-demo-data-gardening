@@ -1,6 +1,0 @@
-numpy
-pandas
-setuptools
-python-dateutil
-pytz
-six

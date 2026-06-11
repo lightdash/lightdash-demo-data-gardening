@@ -255,6 +255,13 @@ models:
                 visibility: show
                 categories:
                   - finance
+            total_ranch_revenue:
+              type: sum
+              label: 'Total Ranch Revenue'
+              description: 'Total partner commission for the Redwood Ranch partner only.'
+              format: '[$$]#,##0'
+              filters:
+                - partner_name: 'Redwood Ranch'
       - name: currency
         description: 'Three letter international currency code for the currency the
           order was paid with.'

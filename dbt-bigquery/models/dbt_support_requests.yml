@@ -63,7 +63,7 @@ models:
             time_intervals: [
               'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
               'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
+              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_FRIDAY', 'WEEK_NUM',
               'MONTH', 'MONTH_NUM', 'MONTH_NAME',
               'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
               'YEAR' ]

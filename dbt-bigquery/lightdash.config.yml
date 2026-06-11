@@ -1,3 +1,8 @@
+custom_granularities:
+  WEEK_FRIDAY:
+    label: "Week (starting Friday)"
+    sql: "TIMESTAMP_TRUNC({{ value }}, WEEK(FRIDAY))"
+
 parameters:
   # Parameter with simple options list
   period_comparison:

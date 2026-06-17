@@ -4,6 +4,20 @@ models:
       received'
     meta:
       label: Support requests
+      metrics:
+        support_tickets_per_customer:
+          type: number
+          label: Support Tickets per Customer
+          description: >-
+            Average number of support tickets submitted per customer, calculated
+            as total support tickets divided by unique customers.
+          sql: ${count_of_request_id} / NULLIF(${count_distinct_user_id}, 0)
+          round: 2
+          spotlight:
+            visibility: show
+            categories:
+              - verified
+              - operations
       pre_aggregates:
         - name: support_requests_daily
           dimensions:
@@ -11,6 +25,7 @@ models:
           metrics:
             - average_of_feedback_rating
             - count_of_request_id
+            - count_distinct_user_id
           time_dimension: request_date
           granularity: DAY
       joins:
@@ -129,6 +144,16 @@ models:
       - name: user_id
         description: ""
         meta:
+          metrics:
+            count_distinct_user_id:
+              type: count_distinct
+              label: Unique Customers
+              description: Number of unique customers who submitted support tickets.
+              spotlight:
+                visibility: hide
+                categories:
+                  - verified
+                  - operations
           dimension:
             type: string
       - name: email

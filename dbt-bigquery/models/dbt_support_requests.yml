@@ -44,6 +44,16 @@ models:
                 categories:
                   - verified
                   - operations
+            support_tickets_per_customer:
+              type: number
+              sql: "ROUND(1.0 * COUNT(${TABLE}.request_id) / NULLIF(COUNT(DISTINCT ${TABLE}.user_id), 0), 2)"
+              label: "Support Tickets per Customer"
+              description: "Average number of support tickets submitted per unique customer. Calculated as total support tickets divided by unique customers with tickets."
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - operations
           dimension:
             type: string
       - name: order_id

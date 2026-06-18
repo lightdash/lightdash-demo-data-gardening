@@ -17,6 +17,17 @@ models:
       joins:
         - join: dbt_orders
           sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+      metrics:
+        support_tickets_per_customer:
+          type: number
+          label: Support Tickets per Customer
+          description: Average support ticket volume per unique customer. Calculated as total support tickets divided by unique customers who submitted a support ticket.
+          sql: ${count_of_request_id} / NULLIF(${count_distinct_user_id}, 0)
+          round: 2
+          spotlight:
+            visibility: show
+            categories:
+              - operations
     columns:
       - name: request_id
         description: 'Unique ID of the request.'

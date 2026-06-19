@@ -1,0 +1,15 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 1
+entries:
+  - id: unique-visitors
+    kind: definition
+    content: In this project, 'unique visitors' refers to the count of distinct registered user accounts in the dbt_users table, not web sessions or page views. If session-level or page-view-level visitor data is needed, it is not currently available in the semantic layer.
+    terms:
+      - unique visitors
+      - website visitors
+      - visitor count
+    objects:
+      - dbt_users

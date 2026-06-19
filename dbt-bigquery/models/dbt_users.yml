@@ -14,7 +14,7 @@ models:
       joins:
         - join: dbt_orders
           sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
-          fields: [ count_distinct_order_id ]
+          fields: [ count_of_order_id ]
       metrics:
         diff_emails_to_users:
           type: number

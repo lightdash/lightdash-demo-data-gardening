@@ -93,6 +93,7 @@ models:
                 'DAY_OF_YEAR_NUM',
                 'DAY_OF_WEEK_NAME',
                 'WEEK',
+                'WEEK_FRIDAY',
                 'WEEK_NUM',
                 'MONTH',
                 'MONTH_NUM',

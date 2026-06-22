@@ -87,7 +87,7 @@ jobs:
 
       - name: Comment validation results on PR
         if: steps.finder.outputs.pr != ''
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           number: ${{ steps.finder.outputs.pr }}
           header: lightdash-validate

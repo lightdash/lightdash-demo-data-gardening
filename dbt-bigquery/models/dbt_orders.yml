@@ -76,6 +76,16 @@ models:
                 categories:
                   - verified
                   - sales
+            count_distinct_order_id_chrome:
+              type: count_distinct
+              label: 'Chrome Order Volume'
+              description: 'Total number of orders placed by customers using the Chrome web browser.'
+              filters:
+                - browser: "chrome"
+              spotlight:
+                visibility: show
+                categories:
+                  - sales
           dimension:
             type: string
       - name: order_date

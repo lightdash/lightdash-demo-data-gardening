@@ -31,6 +31,12 @@ models:
         meta:
           dimension:
             type: string
+      - name: favourite_colour
+        description: 'Synthetic/placeholder favourite colour for each user, deterministically generated from user_id for demo and segmentation purposes. This is NOT real collected user preference data — no such data currently exists upstream. Replace with a real sourced column if favourite-colour data is ever actually collected.'
+        meta:
+          dimension:
+            type: string
+            label: Favourite Colour
       - name: created_date
         description: 'Timestamp of user creation.'
         meta:

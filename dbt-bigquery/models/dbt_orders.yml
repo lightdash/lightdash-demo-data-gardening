@@ -328,6 +328,12 @@ models:
               format: '[$$]#,##0'
               spotlight:
                 visibility: hide
+            max_profit:
+              type: max
+              label: 'Max Profit'
+              format: '[$$]#,##0'
+              spotlight:
+                visibility: hide
             profit_margin:
               type: number
               sql: "ROUND(100.0 * SUM(${TABLE}.profit) / NULLIF(SUM(${TABLE}.basket_total), 0), 2)"

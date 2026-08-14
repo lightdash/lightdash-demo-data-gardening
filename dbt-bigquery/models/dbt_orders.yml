@@ -3,6 +3,7 @@ models:
     description: 'This table contains information on all the confirmed orders and
       their status'
     meta:
+      ai_hint: "Use Orders (dbt_orders) to analyse order trends and counts broken down by referrer (traffic source), order date, partner name, browser, or shipping location. This is the primary explore for order-level referrer attribution. Do not confuse with dbt_support_requests, which also has a referrer field scoped to support ticket context, not order placement."
       label: Orders
       # pre_aggregates:
         # - name: orders_partner_daily
@@ -343,6 +344,7 @@ models:
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:
           dimension:
+            ai_hint: "Use this field in Orders (dbt_orders) to break down order counts or revenue by traffic source (e.g. google, instagram, direct). A referrer field also exists in dbt_support_requests, but that is scoped to support ticket context — use dbt_orders when the question is about order volume or revenue by referrer."
             type: string
       - name: user_id
         description: 'Unique user ID for the user that placed the order.'

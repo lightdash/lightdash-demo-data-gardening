@@ -1,0 +1,15 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 1
+entries:
+  - id: kpis
+    kind: definition
+    content: KPIs in this project refer to the primary business metrics tracked across Orders (revenue, order counts, AOV, profit), Baskets (totals, items sold, Patio Pack performance), Users (active users, signups, engagement), Support requests (volume, resolution trends), and Partners (monthly performance).
+    terms:
+      - KPIs
+      - key performance indicators
+      - latest metrics
+      - current performance
+    objects: []

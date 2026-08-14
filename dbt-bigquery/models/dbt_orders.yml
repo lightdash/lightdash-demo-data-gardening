@@ -272,7 +272,8 @@ models:
               type: sum
               label: 'Revenue'
               format: '[$$]#,##0'
-              description: 'Total sales revenue from all orders.'
+              description: 'Canonical revenue metric for financial reporting. Total sales revenue across all confirmed orders (one row per order). Default to this field for any revenue, sales, or income question. Prefer over dbt_baskets Revenue (item-level granularity) and dbt_orders_no_preagg Revenue (non-pre-aggregated clone used for testing).'
+              ai_hint: 'This is the single canonical Revenue metric. Always default to dbt_orders.sum_of_basket_total for revenue, sales, or income questions. Only deviate when the user explicitly asks for product/item-level revenue (use dbt_baskets) or when deduplication across a fan-out join is needed (use sum_distinct_basket_total).'
               spotlight:
                 visibility: show
                 categories:
@@ -285,7 +286,8 @@ models:
               sql: ${basket_total}
               distinct_keys: [order_id]
               format: '[$$]#,##0'
-              description: 'Total sales revenue from all orders, counting each unique order total only once.'
+              description: 'Total sales revenue deduplicating by order_id. Use only when a join fans out order rows and could cause double-counting. For standard revenue reporting use sum_of_basket_total.'
+              ai_hint: 'Secondary revenue metric for deduplication. Only choose this over sum_of_basket_total when the query joins to a table that multiplies order rows (fan-out). For all standard revenue questions default to sum_of_basket_total.'
               spotlight:
                 visibility: hide
             average_of_basket_total:

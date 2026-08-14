@@ -151,6 +151,17 @@ models:
                 categories:
                   - verified
                   - operations
+            support_tickets_per_customer:
+              type: number
+              label: Support Tickets per Customer
+              description: >-
+                Average number of support tickets submitted per unique customer. Calculated as support tickets divided by unique customers.
+              sql: "${count_of_request_id} / nullif(${count_distinct_user_id}, 0)"
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - operations
           dimension:
             type: string
       - name: email

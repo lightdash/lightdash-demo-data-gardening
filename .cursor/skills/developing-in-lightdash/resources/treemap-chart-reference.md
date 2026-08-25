@@ -29,11 +29,11 @@ Treemap charts are ideal for:
 
 ```yaml
 chartConfig:
-  type: treemap
   config:
     groupFieldIds:
       - category_field
     sizeMetricId: size_metric
+  type: treemap
 ```
 
 ## Key Properties
@@ -58,32 +58,31 @@ chartConfig:
 Show category and subcategory revenue with nested rectangles.
 
 ```yaml
-version: 1
-name: "Category & Subcategory Revenue"
-slug: category-subcategory-revenue
-spaceSlug: sales
-tableName: products
-
-metricQuery:
-  exploreName: products
-  dimensions:
-    - products_category
-    - products_subcategory
-  metrics:
-    - products_total_revenue
-  sorts:
-    - fieldId: products_total_revenue
-      descending: true
-  limit: 50
-
 chartConfig:
-  type: treemap
   config:
     groupFieldIds:
       - products_category
       - products_subcategory
     sizeMetricId: products_total_revenue
     visibleMin: 1000           # Hide rectangles smaller than $1000
+  type: treemap
+contentType: chart
+metricQuery:
+  dimensions:
+    - products_category
+    - products_subcategory
+  exploreName: products
+  limit: 50
+  metrics:
+    - products_total_revenue
+  sorts:
+    - descending: true
+      fieldId: products_total_revenue
+name: "Category & Subcategory Revenue"
+slug: category-subcategory-revenue
+spaceSlug: sales
+tableName: products
+version: 1
 ```
 
 **Use case**: Understand revenue composition at both category and subcategory levels. The `visibleMin` setting prevents tiny rectangles from cluttering the view.
@@ -93,33 +92,32 @@ chartConfig:
 Size by revenue, color by profit margin to show profitability.
 
 ```yaml
-version: 1
-name: "Revenue & Margin by Category"
-slug: revenue-margin-by-category
-spaceSlug: sales
-tableName: products
-
+chartConfig:
+  config:
+    colorMetricId: products_profit_margin
+    endColor: "#22c55e"        # Green for high margin
+    groupFieldIds:
+      - products_category
+    sizeMetricId: products_total_revenue
+    startColor: "#ef4444"      # Red for low margin
+  type: treemap
+contentType: chart
 metricQuery:
-  exploreName: products
   dimensions:
     - products_category
+  exploreName: products
+  limit: 25
   metrics:
     - products_total_revenue
     - products_profit_margin
   sorts:
-    - fieldId: products_total_revenue
-      descending: true
-  limit: 25
-
-chartConfig:
-  type: treemap
-  config:
-    groupFieldIds:
-      - products_category
-    sizeMetricId: products_total_revenue
-    colorMetricId: products_profit_margin
-    startColor: "#ef4444"      # Red for low margin
-    endColor: "#22c55e"        # Green for high margin
+    - descending: true
+      fieldId: products_total_revenue
+name: "Revenue & Margin by Category"
+slug: revenue-margin-by-category
+spaceSlug: sales
+tableName: products
+version: 1
 ```
 
 **Use case**: Quickly identify large revenue categories (big rectangles) with poor margins (red color) that need attention.
@@ -189,6 +187,6 @@ chartConfig:
 
 ## Related Documentation
 
-- [Chart Types Reference](./chart-types-reference.md) - Overview of all chart types
+- [Chart Types](../SKILL.md#chart-types) - Overview of all chart types
 - [Dashboard Reference](./dashboard-reference.md) - Using treemaps in dashboards
 - [Workflows Reference](./workflows-reference.md) - Charts-as-code workflow

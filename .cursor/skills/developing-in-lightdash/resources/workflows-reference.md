@@ -63,18 +63,18 @@ jobs:
       LIGHTDASH_PROJECT: ${{ secrets.PROJECT_UUID }}
       CI: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
       - name: Install Lightdash CLI
         run: npm install -g @lightdash/cli
 
       - name: Setup Python (for dbt)
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -173,12 +173,12 @@ jobs:
       LIGHTDASH_URL: https://app.lightdash.cloud
       CI: "true"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
       - name: Install Lightdash CLI
         run: npm install -g @lightdash/cli
@@ -190,7 +190,7 @@ jobs:
         run: lightdash start-preview --name "pr-${{ github.event.number }}"
 
       - name: Comment on PR
-        uses: actions/github-script@v9
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.issues.createComment({
@@ -332,7 +332,7 @@ jobs:
       LIGHTDASH_URL: https://app.lightdash.cloud
       CI: "true"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Install tools
         run: |

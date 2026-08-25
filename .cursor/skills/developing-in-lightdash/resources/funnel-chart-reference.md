@@ -16,27 +16,26 @@ For full schema details, see [chart-as-code-1.0.json](schemas/chart-as-code-1.0.
 ### Basic Configuration
 
 ```yaml
-version: 1
+chartConfig:
+  config:
+    dataInput: row
+    fieldId: leads_count
+  type: funnel
+contentType: chart
+metricQuery:
+  dimensions:
+    - leads_stage
+  exploreName: leads
+  metrics:
+    - leads_count
+  sorts:
+    - descending: false
+      fieldId: leads_stage
 name: "Sales Funnel"
 slug: sales-funnel
 spaceSlug: sales
 tableName: leads
-
-metricQuery:
-  exploreName: leads
-  dimensions:
-    - leads_stage
-  metrics:
-    - leads_count
-  sorts:
-    - fieldId: leads_stage
-      descending: false
-
-chartConfig:
-  type: funnel
-  config:
-    fieldId: leads_count
-    dataInput: row
+version: 1
 ```
 
 ### Key Configuration Options
@@ -106,52 +105,47 @@ config:
 ## Complete Example
 
 ```yaml
-version: 1
+chartConfig:
+  config:
+    # Custom stage colors
+    colorOverrides:
+      opportunities_stage_closed: "#8b5cf6"
+      opportunities_stage_lead: "#3b82f6"
+      opportunities_stage_negotiation: "#f59e0b"
+      opportunities_stage_proposal: "#10b981"
+      opportunities_stage_qualified: "#06b6d4"
+    dataInput: row
+    fieldId: opportunities_count
+    # Custom stage labels
+    labelOverrides:
+      opportunities_stage_closed: "Closed Won"
+      opportunities_stage_lead: "New Leads"
+      opportunities_stage_negotiation: "In Negotiation"
+      opportunities_stage_proposal: "Proposal Sent"
+      opportunities_stage_qualified: "Qualified Opportunities"
+    labels:
+      position: inside
+      showPercentage: true
+      showValue: true
+    legendPosition: vertical
+    showLegend: true
+  type: funnel
+contentType: chart
+metricQuery:
+  dimensions:
+    - opportunities_stage
+  exploreName: opportunities
+  limit: 10
+  metrics:
+    - opportunities_count
+  sorts:
+    - descending: false
+      fieldId: opportunities_stage
 name: "Sales Pipeline"
 slug: sales-pipeline
 spaceSlug: sales
 tableName: opportunities
-
-metricQuery:
-  exploreName: opportunities
-  dimensions:
-    - opportunities_stage
-  metrics:
-    - opportunities_count
-  sorts:
-    - fieldId: opportunities_stage
-      descending: false
-  limit: 10
-
-chartConfig:
-  type: funnel
-  config:
-    fieldId: opportunities_count
-    dataInput: row
-
-    # Custom stage labels
-    labelOverrides:
-      opportunities_stage_lead: "New Leads"
-      opportunities_stage_qualified: "Qualified Opportunities"
-      opportunities_stage_proposal: "Proposal Sent"
-      opportunities_stage_negotiation: "In Negotiation"
-      opportunities_stage_closed: "Closed Won"
-
-    # Custom stage colors
-    colorOverrides:
-      opportunities_stage_lead: "#3b82f6"
-      opportunities_stage_qualified: "#06b6d4"
-      opportunities_stage_proposal: "#10b981"
-      opportunities_stage_negotiation: "#f59e0b"
-      opportunities_stage_closed: "#8b5cf6"
-
-    labels:
-      position: inside
-      showValue: true
-      showPercentage: true
-
-    showLegend: true
-    legendPosition: vertical
+version: 1
 ```
 
 ## Best Practices
@@ -188,8 +182,8 @@ chartConfig:
 ```yaml
 metricQuery:
   sorts:
-    - fieldId: stage_field
-      descending: false
+    - descending: false
+      fieldId: stage_field
 ```
 
 ### Issue: Labels are cut off or overlapping

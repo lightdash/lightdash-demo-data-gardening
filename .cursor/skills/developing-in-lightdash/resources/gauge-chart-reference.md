@@ -47,42 +47,41 @@ The gauge `config` object supports these key properties:
 Gauge with red/yellow/green performance zones:
 
 ```yaml
-version: 1
+chartConfig:
+  config:
+    customLabel: "CSAT Score"
+    max: 10
+    min: 0
+    sections:
+      # Red zone: 0-5 (poor)
+      - color: "#DC2626"
+        max: 5
+        min: 0
+      # Yellow zone: 5-7 (fair)
+      - color: "#FBBF24"
+        max: 7
+        min: 5
+      # Green zone: 7-10 (excellent)
+      - color: "#10B981"
+        max: 10
+        min: 7
+    selectedField: "customer_metrics_csat_score"
+    showAxisLabels: true
+  type: "gauge"
+contentType: chart
+metricQuery:
+  dimensions: []
+  exploreName: "customer_metrics"
+  filters: []
+  limit: 1
+  metrics:
+    - "customer_metrics_csat_score"
+  sorts: []
 name: "Customer Satisfaction Score"
 slug: "customer-satisfaction"
 spaceSlug: "metrics"
 tableName: "customer_metrics"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions: []
-  metrics:
-    - "customer_metrics_csat_score"
-  filters: []
-  sorts: []
-  limit: 1
-
-chartConfig:
-  type: "gauge"
-  config:
-    selectedField: "customer_metrics_csat_score"
-    min: 0
-    max: 10
-    showAxisLabels: true
-    customLabel: "CSAT Score"
-    sections:
-      # Red zone: 0-5 (poor)
-      - min: 0
-        max: 5
-        color: "#DC2626"
-      # Yellow zone: 5-7 (fair)
-      - min: 5
-        max: 7
-        color: "#FBBF24"
-      # Green zone: 7-10 (excellent)
-      - min: 7
-        max: 10
-        color: "#10B981"
+version: 1
 ```
 
 ### Example 2: Dynamic Max with Percentage Display
@@ -90,41 +89,40 @@ chartConfig:
 Progress gauge against a dynamic target:
 
 ```yaml
-version: 1
+chartConfig:
+  config:
+    customPercentageLabel: "% Complete"
+    maxFieldId: "project_metrics_total_tasks"
+    min: 0
+    sections:
+      - color: "#EF4444"
+        max: 50
+        min: 0
+      - color: "#F59E0B"
+        max: 75
+        min: 50
+      - color: "#22C55E"
+        max: 100
+        min: 75
+    selectedField: "project_metrics_tasks_completed"
+    showAxisLabels: true
+    showPercentage: true
+  type: "gauge"
+contentType: chart
+metricQuery:
+  dimensions: []
+  exploreName: "project_metrics"
+  filters: []
+  limit: 1
+  metrics:
+    - "project_metrics_tasks_completed"
+    - "project_metrics_total_tasks"
+  sorts: []
 name: "Project Completion"
 slug: "project-completion"
 spaceSlug: "projects"
 tableName: "project_metrics"
-updatedAt: "2024-01-01T00:00:00.000Z"
-
-metricQuery:
-  dimensions: []
-  metrics:
-    - "project_metrics_tasks_completed"
-    - "project_metrics_total_tasks"
-  filters: []
-  sorts: []
-  limit: 1
-
-chartConfig:
-  type: "gauge"
-  config:
-    selectedField: "project_metrics_tasks_completed"
-    min: 0
-    maxFieldId: "project_metrics_total_tasks"
-    showAxisLabels: true
-    showPercentage: true
-    customPercentageLabel: "% Complete"
-    sections:
-      - min: 0
-        max: 50
-        color: "#EF4444"
-      - min: 50
-        max: 75
-        color: "#F59E0B"
-      - min: 75
-        max: 100
-        color: "#22C55E"
+version: 1
 ```
 
 ## Common Patterns
@@ -133,30 +131,30 @@ chartConfig:
 
 ```yaml
 config:
-  selectedField: "kpi_current_value"
-  maxFieldId: "kpi_target_value"
-  showPercentage: true
   customPercentageLabel: "of Target"
+  maxFieldId: "kpi_target_value"
   sections:
-    - min: 0
+    - color: "#DC2626"  # Red: below target
       max: 80
-      color: "#DC2626"  # Red: below target
-    - min: 80
+      min: 0
+    - color: "#FBBF24"  # Yellow: approaching target
       max: 100
-      color: "#FBBF24"  # Yellow: approaching target
-    - min: 100
+      min: 80
+    - color: "#10B981"  # Green: exceeding target
       max: 120
-      color: "#10B981"  # Green: exceeding target
+      min: 100
+  selectedField: "kpi_current_value"
+  showPercentage: true
 ```
 
 ### Simple Progress Indicator
 
 ```yaml
 config:
-  selectedField: "completed_count"
   maxFieldId: "total_count"
-  showPercentage: true
+  selectedField: "completed_count"
   showAxisLabels: true
+  showPercentage: true
 ```
 
 ## Tips

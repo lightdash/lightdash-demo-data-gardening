@@ -279,6 +279,17 @@ models:
                   - verified
                   - sales
                 owner: giorgi@lightdash.com
+            ranch_revenue:
+              type: sum
+              label: 'Ranch Revenue'
+              format: '[$$]#,##0'
+              description: 'Total revenue from the Redwood Ranch partner only.'
+              filters:
+                - operator: equals
+                  target:
+                    fieldRef: partner_name
+                  values:
+                    - 'Redwood Ranch'
             sum_distinct_basket_total:
               type: sum_distinct
               label: 'Revenue (distinct)'

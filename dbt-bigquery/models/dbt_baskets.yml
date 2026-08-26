@@ -1,7 +1,6 @@
 models:
   - name: dbt_baskets
-    description: 'This table contains all the information on customer shopping
-      baskets on our site. There is one basket per order'
+    description: 'This table contains all the information on customer shopping baskets on our site. There is one basket per order'
     meta:
       label: Baskets
       # pre_aggregates:
@@ -163,13 +162,7 @@ models:
                 interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
               )
             type: timestamp
-            time_intervals: [
-              'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM',
-              'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 
-              'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 
-              'MONTH', 'MONTH_NUM', 'MONTH_NAME',
-              'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
-              'YEAR' ]
+            time_intervals: [ 'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM', 'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 'MONTH', 'MONTH_NUM', 'MONTH_NAME', 'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME', 'YEAR' ]
           additional_dimensions:
             order_date_is_in_future:
               type: boolean
@@ -201,11 +194,16 @@ models:
             label: 'Partner name'
             type: string
       - name: partner_commission
-        description: 'The commission rate the specified parter charges, as a decimal
-          fraction.'
+        description: 'The commission rate the specified parter charges, as a decimal fraction.'
         meta:
           dimension:
             type: number
             spotlight:
               filter_by: false
               segment_by: false
+          metrics:
+            partner_commission_max_of_partner_commission:
+              label: Max of Partner commission
+              description: "Max of Partner commission on the table Baskets "
+              type: max
+              filters: []

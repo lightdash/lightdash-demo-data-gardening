@@ -16,5 +16,5 @@ dbt_packages/
 logs/
 dbt_internal_packages/
 
-.cursor
-.claude
+.cursor/
+.claude/

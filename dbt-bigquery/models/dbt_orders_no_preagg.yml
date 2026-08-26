@@ -281,6 +281,16 @@ models:
               format: '[$$]#,##0'
               spotlight:
                 visibility: hide
+            profit_per_customer:
+              type: number
+              label: 'Profit per Customer'
+              sql: "ROUND(SUM(${TABLE}.profit) / NULLIF(COUNT(DISTINCT ${TABLE}.user_id), 0), 2)"
+              format: '[$$]#,##0.00'
+              description: 'Average profit generated per unique customer in the current filter context.'
+              spotlight:
+                visibility: show
+                categories:
+                  - finance
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:

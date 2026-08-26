@@ -76,6 +76,16 @@ models:
                 categories:
                   - verified
                   - sales
+            count_chrome_browser_orders:
+              type: count
+              label: 'Chrome Browser Orders'
+              description: 'Count of orders placed using the Chrome browser.'
+              filters:
+                - target:
+                    fieldRef: browser
+                  operator: equals
+                  values:
+                    - Chrome
           dimension:
             type: string
       - name: order_date

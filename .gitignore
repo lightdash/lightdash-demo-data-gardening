@@ -3,6 +3,10 @@
 .venv
 venv
 env
+VemV/
+
+# personal agent notes (local only)
+AGENTS.md
 
 # node
 node_modules/

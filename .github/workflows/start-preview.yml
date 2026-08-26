@@ -73,7 +73,7 @@ jobs:
         id: finder
         
       - name: Leave a comment after deployment
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           number: ${{ steps.finder.outputs.pr }}
           message: |

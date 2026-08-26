@@ -1,0 +1,17 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 1
+entries:
+  - id: philippines
+    kind: context
+    content: Philippines is a key sales region. Sales data should be queryable by country or location to segment Philippines performance separately from other regions.
+    terms:
+      - Philippines
+      - country
+      - location
+      - region
+      - sales by country
+    objects:
+      - dbt_orders

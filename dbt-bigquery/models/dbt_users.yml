@@ -48,6 +48,12 @@ models:
               'MONTH', 'MONTH_NUM', 'MONTH_NAME',
               'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME',
               'YEAR' ]
+          additional_dimensions:
+            created_date_week_starting_friday:
+              label: Week Starting Friday
+              description: Start of the week, with weeks beginning on Friday.
+              type: date
+              sql: date_trunc(date(${created_date}), week(friday))
       - name: email
         description: 'Email address of the user.'
         meta:

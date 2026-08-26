@@ -189,6 +189,16 @@ models:
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
         meta:
+          metrics:
+            count_distinct_partner_id:
+              type: count_distinct
+              label: 'Number of Partners'
+              description: 'Number of unique partners fulfilling orders.'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - sales
           dimension:
             type: string
       - name: partner_name

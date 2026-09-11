@@ -1,0 +1,17 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 1
+entries:
+  - id: referrer
+    kind: definition
+    content: '''Referrer'' is the source from which a user was linked to the Thyme to Shine website (e.g., organic search, paid ad, social media); ''Partner name'' is the name of a business partner or reseller. These are distinct dimensions in the orders explore.'
+    terms:
+      - referrer
+      - partner name
+      - user acquisition source
+      - business partner
+    objects:
+      - dbt_orders_referrer
+      - dbt_orders_partner_name

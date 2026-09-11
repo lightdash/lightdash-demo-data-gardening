@@ -12,9 +12,12 @@ lightdash/charts/           31 charts copied from Thyme to Shine Market
 lightdash/dashboards/       4 dashboards copied from Thyme to Shine Market
 lightdash/chart-types/      custom chart type used by one of those dashboards
 lightdash/apps/             the Revenue forecaster data app
-seeds/                      raw CSVs, loaded to BigQuery by load-seeds.sh
 load-seeds.sh               bq-based replacement for `dbt seed` / `dbt build`
 ```
+
+The seed CSVs deliberately stay in `../dbt-bigquery/seeds/` so that project is
+untouched and `dbt seed` there still works. `load-seeds.sh` reads them from
+there; override with `SEEDS=/path/to/csvs`.
 
 ## Loading data
 

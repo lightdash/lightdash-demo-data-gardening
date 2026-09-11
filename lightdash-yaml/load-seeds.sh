@@ -17,7 +17,8 @@
 set -e
 
 DATASET="${DATASET:-lightdash-healthcare-demo:lightdash_gardening_demo}"
-SEEDS="$(cd "$(dirname "$0")/seeds" && pwd)"
+# The CSVs stay in the dbt project so `dbt seed` there keeps working.
+SEEDS="${SEEDS:-$(cd "$(dirname "$0")/../dbt-bigquery/seeds" && pwd)}"
 
 load() {
   table="$1"

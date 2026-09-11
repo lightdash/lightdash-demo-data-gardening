@@ -1,0 +1,23 @@
+models:
+  - name: semi_additive_testing
+    columns:
+      - name: balance
+        label: "Balance"
+        meta:
+          dimension:
+            type: number
+      - name: account_id
+        label: "Account id"
+        meta:
+          dimension:
+            type: string
+      - name: account_type
+        label: "Account type"
+        meta:
+          dimension:
+            type: string
+      - name: snapshot_date
+        label: "Snapshot date"
+        meta:
+          dimension:
+            type: date

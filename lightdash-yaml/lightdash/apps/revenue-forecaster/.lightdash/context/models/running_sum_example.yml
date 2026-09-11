@@ -1,0 +1,28 @@
+models:
+  - name: running_sum_example
+    columns:
+      - name: running_total
+        label: "Running total"
+        meta:
+          dimension:
+            type: number
+      - name: dbt_orders_referrer
+        label: "Dbt orders referrer"
+        meta:
+          dimension:
+            type: string
+      - name: dbt_orders_order_date_day
+        label: "Dbt orders order date day"
+        meta:
+          dimension:
+            type: date
+      - name: dbt_orders_order_date_month
+        label: "Dbt orders order date month"
+        meta:
+          dimension:
+            type: date
+      - name: dbt_orders_sum_of_basket_total
+        label: "Dbt orders sum of basket total"
+        meta:
+          dimension:
+            type: number

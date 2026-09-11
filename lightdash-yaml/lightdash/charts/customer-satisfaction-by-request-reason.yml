@@ -1,0 +1,62 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        bottom: 5px
+        containLabel: true
+        left: 5px
+        right: 5px
+        top: 5px
+      series:
+        - color: "#7E57C2"
+          encode:
+            xRef:
+              field: dbt_support_requests_reason
+            yRef:
+              field: dbt_support_requests_average_of_feedback_rating
+          isFilteredOut: false
+          label:
+            show: false
+          type: bar
+          yAxisIndex: 0
+      tooltip: ""
+      xAxis:
+        - name: Request reason
+      yAxis:
+        - name: Average rating (out of 10)
+        - {}
+    layout:
+      flipAxes: true
+      showGridY: false
+      xField: dbt_support_requests_reason
+      yField:
+        - dbt_support_requests_average_of_feedback_rating
+  type: cartesian
+contentType: chart
+description: Average customer satisfaction score grouped by support request reason.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_reason
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_average_of_feedback_rating
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_average_of_feedback_rating
+  tableCalculations: []
+  timezone: project_timezone
+name: Customer satisfaction by request reason
+slug: customer-satisfaction-by-request-reason
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_reason
+    - dbt_support_requests_average_of_feedback_rating
+tableName: dbt_support_requests
+verification: null
+version: 1

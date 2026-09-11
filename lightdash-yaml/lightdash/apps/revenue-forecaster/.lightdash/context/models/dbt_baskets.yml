@@ -1,0 +1,224 @@
+models:
+  - name: dbt_baskets
+    description: "This table contains all the information on customer shopping baskets on our site. There is one basket per order"
+    meta:
+      metrics:
+        sum_of_item_profit:
+          type: sum
+          label: "Item Profit"
+          description: "Total profit from individual items sold. See which plants are most profitable!"
+        sum_of_basket_total:
+          type: sum
+          label: "Revenue"
+          description: "Total sales revenue from all baskets. Seeds of success!"
+        count_of_product_name:
+          type: count
+          label: "Product Count"
+          description: "Number of product items in baskets. Every plant finds a home!"
+        average_of_item_profit:
+          type: average
+          label: "Average Item Profit"
+          description: "Average profit earned per item sold. Track your margins as they grow!"
+        average_of_basket_total:
+          type: average
+          label: "Average Order Value"
+          description: "Average revenue per basket. What customers typically spend in a single visit."
+    columns:
+      - name: sku
+        label: "Sku"
+        description: "Unique Stock Keeping Unit code."
+        meta:
+          dimension:
+            type: number
+      - name: profit
+        label: "Profit"
+        description: "Sum of item profits within the basket. Thus, the total profit of the basket."
+        meta:
+          dimension:
+            type: number
+      - name: item_id
+        label: "Item id"
+        description: "ID for the product item within the basket."
+        meta:
+          dimension:
+            type: string
+      - name: currency
+        label: "Currency"
+        description: "Three letter international currency code of the item price."
+        meta:
+          dimension:
+            type: string
+      - name: order_id
+        label: "Order id"
+        description: "Unique Order ID that the basket relates to."
+        meta:
+          dimension:
+            type: string
+      - name: item_price
+        label: "Item price"
+        description: "Price of the item in the specified currency."
+        meta:
+          dimension:
+            type: number
+      - name: order_date
+        label: "Order date"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: partner_id
+        label: "Partner id"
+        description: "Unique ID of the partner that is fulfilling the basket."
+        meta:
+          dimension:
+            type: number
+      - name: item_profit
+        label: "Item profit"
+        description: "Profit made for the individual item."
+        meta:
+          dimension:
+            type: number
+      - name: basket_total
+        label: "Basket total"
+        description: "Sum of item prices for each item within the basket."
+        meta:
+          dimension:
+            type: number
+      - name: partner_name
+        label: "Partner name"
+        description: "Full name of the partner that is fulfilling the basket."
+        meta:
+          dimension:
+            type: string
+      - name: product_name
+        label: "Product name"
+        description: "Full name of the product."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_day
+        label: "Order date day"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_hour
+        label: "Order date hour"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_week
+        label: "Order date week"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_year
+        label: "Order date year"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_month
+        label: "Order date month"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: date
+      - name: item_profit_margin
+        label: "Item profit margin"
+        description: "Item profit divided by item price"
+        meta:
+          dimension:
+            type: number
+      - name: order_date_quarter
+        label: "Order date quarter"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: date
+      - name: partner_commission
+        label: "Partner commission"
+        description: "The commission rate the specified parter charges, as a decimal fraction."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_week_num
+        label: "Order date week (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_month_num
+        label: "Order date month (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_month_name
+        label: "Order date month (name)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_quarter_num
+        label: "Order date quarter (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: item_profit_margin_tier
+        label: "Item profit margin tier"
+        description: "True if item has profit margin greater than 12%"
+        meta:
+          dimension:
+            type: string
+      - name: order_date_is_in_future
+        label: "Order date is in future"
+        description: "True if order date is in the future, otherwise False"
+        meta:
+          dimension:
+            type: boolean
+      - name: order_date_quarter_name
+        label: "Order date quarter (name)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_day_of_year_num
+        label: "Order date day of the year (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_hour_of_day_num
+        label: "Order date hour of day (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_day_of_month_num
+        label: "Order date day of the month (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_day_of_week_name
+        label: "Order date day of the week (name)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_day_of_week_index
+        label: "Order date day of the week (index)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_minute_of_hour_num
+        label: "Order date minute of hour (number)"
+        description: "Timestamp of order placement by the user."
+        meta:
+          dimension:
+            type: number

@@ -1,0 +1,175 @@
+config:
+  isAddFilterDisabled: false
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: >-
+  Operational view of customer support ticket volume, customer satisfaction, and
+  request drivers by partner, reason, and browser.
+filters:
+  dimensions:
+    - disabled: false
+      label: Request date
+      operator: inThePast
+      required: false
+      settings:
+        completed: true
+        unitOfTime: weeks
+      target:
+        fieldId: dbt_support_requests_request_date_day
+        tableName: dbt_support_requests
+      tileTargets: {}
+      values:
+        - 12
+    - disabled: false
+      label: Request reason
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_support_requests_reason
+        tableName: dbt_support_requests
+      tileTargets: {}
+      values: []
+    - disabled: false
+      label: Partner
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_support_requests_partner_name
+        tableName: dbt_support_requests
+      tileTargets: {}
+      values: []
+    - disabled: false
+      label: Browser
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_support_requests_browser
+        tableName: dbt_support_requests
+      tileTargets: {}
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Customer Support Dashboard
+parameters: {}
+slug: customer-support-dashboard
+spaceSlug: shared
+tabs:
+  - hidden: false
+    name: Overview
+    order: 0
+    slug: overview
+tiles:
+  - h: 4
+    properties:
+      chartName: Support tickets this month
+      chartSlug: support-tickets-this-month
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: support-tickets-this-month
+    type: saved_chart
+    w: 10
+    x: 0
+    "y": 0
+  - h: 4
+    properties:
+      chartName: Customer satisfaction score this month
+      chartSlug: customer-satisfaction-score-this-month
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: customer-satisfaction-score-this-month
+    type: saved_chart
+    w: 17
+    x: 10
+    "y": 0
+  - h: 4
+    properties:
+      chartName: Copy of Customer satisfaction score this month
+      chartSlug: copy-of-customer-satisfaction-score-this-month-1779707299783
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: copy-of-customer-satisfaction-score-this-month-1779707299783
+    type: saved_chart
+    w: 9
+    x: 27
+    "y": 0
+  - h: 8
+    properties:
+      chartName: Support tickets by week
+      chartSlug: support-tickets-by-week
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: support-tickets-by-week
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 4
+  - h: 8
+    properties:
+      chartName: What is our weekly average feedback rating (out of 10)?
+      chartSlug: what-is-our-weekly-average-feedback-rating-out-of-10-
+      hideTitle: false
+      title: Weekly average feedback rating
+    tabSlug: overview
+    tileSlug: what-is-our-weekly-average-feedback-rating-out-of-10-
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 4
+  - h: 8
+    properties:
+      chartName: What support request reasons are the most common by percentage?
+      chartSlug: what-support-request-reasons-are-the-most-common-
+      hideTitle: false
+      title: Support request reason mix
+    tabSlug: overview
+    tileSlug: what-support-request-reasons-are-the-most-common-
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 12
+  - h: 8
+    properties:
+      chartName: Support tickets by partner
+      chartSlug: support-tickets-by-partner
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: support-tickets-by-partner
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 12
+  - h: 8
+    properties:
+      chartName: Customer satisfaction by request reason
+      chartSlug: customer-satisfaction-by-request-reason
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: customer-satisfaction-by-request-reason
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 20
+  - h: 8
+    properties:
+      chartName: Support requests by day and segment
+      chartSlug: support-requests-by-day-and-segment
+      hideTitle: false
+      title: ""
+    tabSlug: overview
+    tileSlug: support-requests-by-day-and-segment
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 20
+verification: null
+version: 1

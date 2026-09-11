@@ -1,0 +1,23 @@
+models:
+  - name: example
+    columns:
+      - name: dbt_orders_partner_id
+        label: "Dbt orders partner id"
+        meta:
+          dimension:
+            type: string
+      - name: dbt_orders_partner_name
+        label: "Dbt orders partner name"
+        meta:
+          dimension:
+            type: string
+      - name: dbt_orders_sum_of_profit
+        label: "Dbt orders sum of profit"
+        meta:
+          dimension:
+            type: number
+      - name: dbt_orders_count_distinct_order_id
+        label: "Dbt orders count distinct order id"
+        meta:
+          dimension:
+            type: number

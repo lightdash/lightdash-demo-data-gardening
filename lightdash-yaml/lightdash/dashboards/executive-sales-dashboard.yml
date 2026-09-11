@@ -1,0 +1,115 @@
+config:
+  isAddFilterDisabled: false
+  isDateZoomDisabled: false
+contentType: dashboard
+description: >-
+  Executive view of headline sales performance: revenue, order volume,
+  customers, and profitability over the trailing 12 completed months, with
+  partner and country breakdowns.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Executive Sales Dashboard
+slug: executive-sales-dashboard
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 6
+    properties:
+      chartName: Total Revenue
+      chartSlug: exec-total-revenue-kpi
+      hideTitle: false
+      title: Total Revenue
+    tabSlug: null
+    tileSlug: exec-total-revenue-kpi
+    type: saved_chart
+    w: 6
+    x: 0
+    "y": 0
+  - h: 6
+    properties:
+      chartName: Order Volume
+      chartSlug: exec-order-volume-kpi
+      hideTitle: false
+      title: Order Volume
+    tabSlug: null
+    tileSlug: exec-order-volume-kpi
+    type: saved_chart
+    w: 6
+    x: 6
+    "y": 0
+  - h: 6
+    properties:
+      chartName: Unique Customers
+      chartSlug: exec-unique-customers-kpi
+      hideTitle: false
+      title: Unique Customers
+    tabSlug: null
+    tileSlug: exec-unique-customers-kpi
+    type: saved_chart
+    w: 6
+    x: 12
+    "y": 0
+  - h: 6
+    properties:
+      chartName: Profit Margin
+      chartSlug: exec-profit-margin-kpi
+      hideTitle: false
+      title: Profit Margin
+    tabSlug: null
+    tileSlug: exec-profit-margin-kpi
+    type: saved_chart
+    w: 6
+    x: 18
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Monthly Revenue Trend
+      chartSlug: exec-monthly-revenue-trend
+      hideTitle: false
+      title: Monthly Revenue Trend
+    tabSlug: null
+    tileSlug: exec-monthly-revenue-trend
+    type: saved_chart
+    w: 12
+    x: 0
+    "y": 6
+  - h: 9
+    properties:
+      chartName: Monthly Unique Customers Trend
+      chartSlug: exec-monthly-customers-trend
+      hideTitle: false
+      title: Monthly Unique Customers Trend
+    tabSlug: null
+    tileSlug: exec-monthly-customers-trend
+    type: saved_chart
+    w: 12
+    x: 12
+    "y": 6
+  - h: 9
+    properties:
+      chartName: Revenue by Partner
+      chartSlug: exec-revenue-by-partner
+      hideTitle: false
+      title: Revenue by Partner
+    tabSlug: null
+    tileSlug: exec-revenue-by-partner
+    type: saved_chart
+    w: 12
+    x: 0
+    "y": 15
+  - h: 9
+    properties:
+      chartName: Revenue by Shipping Country
+      chartSlug: exec-revenue-by-country
+      hideTitle: false
+      title: Revenue by Shipping Country
+    tabSlug: null
+    tileSlug: exec-revenue-by-country
+    type: saved_chart
+    w: 12
+    x: 12
+    "y": 15
+verification: null
+version: 1

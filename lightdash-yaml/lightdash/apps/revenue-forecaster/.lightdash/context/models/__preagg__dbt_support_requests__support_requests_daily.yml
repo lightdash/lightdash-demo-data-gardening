@@ -1,0 +1,104 @@
+models:
+  - name: __preagg__dbt_support_requests__support_requests_daily
+    description: "This table contains information on all the support requests we’ve received"
+    meta:
+      metrics:
+        count_of_request_id:
+          type: count
+          label: "Support Tickets"
+          description: "Count of support tickets. dbt_support_requests is one row per request_id, so this is equivalent to count_distinct_request_id — but it's re-aggregatable, so it can live in pre-aggregates and be used i…"
+        average_of_feedback_rating:
+          type: average
+          label: "Customer Satisfaction Score"
+          description: "Average customer satisfaction rating from post-support surveys. Keep your customer happiness blooming!"
+    columns:
+      - name: reason
+        label: "Reason"
+        description: "Determined cause of request."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_day
+        label: "Request date day"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_week
+        label: "Request date week"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_year
+        label: "Request date year"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_month
+        label: "Request date month"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_quarter
+        label: "Request date quarter"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_week_num
+        label: "Request date week (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_month_num
+        label: "Request date month (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_month_name
+        label: "Request date month (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_quarter_num
+        label: "Request date quarter (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_quarter_name
+        label: "Request date quarter (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_day_of_year_num
+        label: "Request date day of the year (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_day_of_month_num
+        label: "Request date day of the month (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_day_of_week_name
+        label: "Request date day of the week (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_day_of_week_index
+        label: "Request date day of the week (index)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number

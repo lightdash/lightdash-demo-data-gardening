@@ -1,0 +1,175 @@
+config:
+  dateZoomGranularities:
+    - Day
+    - Week
+    - Month
+    - Quarter
+    - Year
+  isAddFilterDisabled: false
+  isDateZoomDisabled: true
+  pinnedParameters: []
+contentType: dashboard
+description: >-
+  Executive view of partner performance. Headline KPIs, partner rankings,
+  revenue trends, and a full partner scorecard for monthly leadership reviews.
+filters:
+  dimensions:
+    - disabled: true
+      label: Partner
+      operator: equals
+      required: false
+      singleValue: false
+      target:
+        fieldId: dbt_orders_partner_name
+        tableName: dbt_orders
+      tileTargets: {}
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Partner Performance — Executive View
+parameters: {}
+slug: partner-performance-exec
+spaceSlug: "-key-company-dashboards"
+tabs: []
+tiles:
+  - h: 2
+    properties:
+      content: >-
+        ## Partner Performance — Executive View
+
+
+        How our fulfillment partners drove revenue, profit, and orders over the
+        selected period. Use the **Time Period** filter to zoom in on a quarter
+        or year, and the **Partner** filter to isolate a single account.
+      hideFrame: false
+      title: ""
+    tabSlug: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: Partner Performance — Total Revenue
+      chartSlug: partner-perf-total-revenue
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-total-revenue
+    type: saved_chart
+    w: 9
+    x: 0
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Partner Performance — Total Profit
+      chartSlug: partner-perf-total-profit
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-total-profit
+    type: saved_chart
+    w: 9
+    x: 9
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Partner Performance — Order Volume
+      chartSlug: partner-perf-order-volume
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-order-volume
+    type: saved_chart
+    w: 9
+    x: 18
+    "y": 2
+  - h: 3
+    properties:
+      chartName: Partner Performance — Commission Paid
+      chartSlug: partner-perf-commission-paid
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-commission-paid
+    type: saved_chart
+    w: 9
+    x: 27
+    "y": 2
+  - h: 1
+    properties:
+      showDivider: true
+      text: Partner Rankings
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 5
+  - h: 8
+    properties:
+      chartName: Revenue by Partner
+      chartSlug: partner-perf-revenue-by-partner
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-revenue-by-partner
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 6
+  - h: 8
+    properties:
+      chartName: Profit by Partner
+      chartSlug: partner-perf-profit-by-partner
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-profit-by-partner
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 6
+  - h: 1
+    properties:
+      showDivider: true
+      text: Trends Over Time
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 14
+  - h: 8
+    properties:
+      chartName: Revenue Trend by Partner
+      chartSlug: partner-perf-revenue-trend
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-revenue-trend
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 15
+  - h: 7
+    properties:
+      chartName: Average Order Value by Partner
+      chartSlug: partner-perf-aov-by-partner
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: partner-perf-aov-by-partner
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 23
+  - h: 1
+    properties:
+      showDivider: true
+      text: Partner Scorecard
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 30
+verification: null
+version: 1

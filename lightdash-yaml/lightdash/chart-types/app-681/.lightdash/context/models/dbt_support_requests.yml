@@ -1,0 +1,280 @@
+models:
+  - name: dbt_support_requests
+    description: "This table contains information on all the support requests we’ve received"
+    meta:
+      metrics:
+        count_of_reason:
+          type: count_distinct
+          label: "Unique Request Reasons"
+          description: "Number of distinct support request categories. Know what your customers need help with!"
+        count_of_request_id:
+          type: count
+          label: "Support Tickets"
+          description: "Count of support tickets. dbt_support_requests is one row per request_id, so this is equivalent to count_distinct_request_id — but it's re-aggregatable, so it can live in pre-aggregates and be used i…"
+        count_distinct_user_id:
+          type: count_distinct
+          label: "Unique Customers"
+          description: "Number of unique customers who submitted support tickets."
+        count_distinct_request_id:
+          type: count_distinct
+          label: "Support Tickets"
+          description: "Total number of support requests submitted by customers."
+        average_of_feedback_rating:
+          type: average
+          label: "Customer Satisfaction Score"
+          description: "Average customer satisfaction rating from post-support surveys. Keep your customer happiness blooming!"
+        support_tickets_per_customer:
+          type: number
+          label: "Support Tickets per Customer"
+          description: "Average support ticket volume per unique customer. Calculated as total support tickets divided by unique customers who submitted a support ticket."
+      joins:
+        - join: dbt_orders
+          sql_on: "${dbt_orders.order_id} = ${dbt_support_requests.order_id}"
+    columns:
+      - name: email
+        label: "Email"
+        meta:
+          dimension:
+            type: string
+      - name: profit
+        label: "Profit"
+        meta:
+          dimension:
+            type: number
+      - name: reason
+        label: "Reason"
+        description: "Determined cause of request."
+        meta:
+          dimension:
+            type: string
+      - name: browser
+        label: "Browser"
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        label: "User id"
+        meta:
+          dimension:
+            type: string
+      - name: order_id
+        label: "Order id"
+        description: "Unique Order ID that pertains to this request."
+        meta:
+          dimension:
+            type: string
+      - name: referrer
+        label: "Referrer"
+        meta:
+          dimension:
+            type: string
+      - name: order_date
+        label: "Order date"
+        meta:
+          dimension:
+            type: timestamp
+      - name: partner_id
+        label: "Partner id"
+        meta:
+          dimension:
+            type: string
+      - name: request_id
+        label: "Request id"
+        description: "Unique ID of the request."
+        meta:
+          dimension:
+            type: string
+      - name: basket_total
+        label: "Basket total"
+        meta:
+          dimension:
+            type: number
+      - name: created_date
+        label: "Created date"
+        meta:
+          dimension:
+            type: timestamp
+      - name: partner_name
+        label: "Partner name"
+        meta:
+          dimension:
+            type: string
+      - name: request_date
+        label: "Request date"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_day
+        label: "Order date day"
+        meta:
+          dimension:
+            type: date
+      - name: order_date_raw
+        label: "Order date raw"
+        meta:
+          dimension:
+            type: timestamp
+      - name: feedback_rating
+        label: "Feedback rating"
+        description: "Feedback rating out of ten as received by post-request user survey."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_week
+        label: "Order date week"
+        meta:
+          dimension:
+            type: date
+      - name: order_date_year
+        label: "Order date year"
+        meta:
+          dimension:
+            type: date
+      - name: created_date_day
+        label: "Created date day"
+        meta:
+          dimension:
+            type: date
+      - name: created_date_raw
+        label: "Created date raw"
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_month
+        label: "Order date month"
+        meta:
+          dimension:
+            type: date
+      - name: request_date_day
+        label: "Request date day"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_week
+        label: "Created date week"
+        meta:
+          dimension:
+            type: date
+      - name: created_date_year
+        label: "Created date year"
+        meta:
+          dimension:
+            type: date
+      - name: request_date_hour
+        label: "Request date hour"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: request_date_week
+        label: "Request date week"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_year
+        label: "Request date year"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_month
+        label: "Created date month"
+        meta:
+          dimension:
+            type: date
+      - name: order_date_quarter
+        label: "Order date quarter"
+        meta:
+          dimension:
+            type: date
+      - name: partner_commission
+        label: "Partner commission"
+        meta:
+          dimension:
+            type: number
+      - name: request_date_month
+        label: "Request date month"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_quarter
+        label: "Created date quarter"
+        meta:
+          dimension:
+            type: date
+      - name: request_date_quarter
+        label: "Request date quarter"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: date
+      - name: request_date_week_num
+        label: "Request date week (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_month_num
+        label: "Request date month (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_month_name
+        label: "Request date month (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_quarter_num
+        label: "Request date quarter (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_quarter_name
+        label: "Request date quarter (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_day_of_year_num
+        label: "Request date day of the year (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_hour_of_day_num
+        label: "Request date hour of day (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_day_of_month_num
+        label: "Request date day of the month (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_day_of_week_name
+        label: "Request date day of the week (name)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: string
+      - name: request_date_day_of_week_index
+        label: "Request date day of the week (index)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number
+      - name: request_date_minute_of_hour_num
+        label: "Request date minute of hour (number)"
+        description: "Timestamp of request submission by the user."
+        meta:
+          dimension:
+            type: number

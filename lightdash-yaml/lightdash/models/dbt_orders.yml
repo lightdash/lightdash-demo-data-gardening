@@ -1,0 +1,384 @@
+description: This table contains information on all the confirmed orders and their status
+dimensions:
+  - description: Unique Order ID for the order.
+    metrics:
+      count_distinct_order_id:
+        description: Total number of orders placed by customers. Watch your garden grow!
+        label: Order Volume
+        spotlight:
+          categories:
+            - verified
+            - sales
+          visibility: show
+        type: count_distinct
+      count_of_order_id:
+        description: >-
+          Count of orders. dbt_orders is one row per order_id, so this
+          is equivalent to count_distinct_order_id — but it's
+          re-aggregatable, so it can live in pre-aggregates and be
+          used in time-window roll-ups without query-time work.
+        label: Order Volume
+        spotlight:
+          categories:
+            - verified
+            - sales
+          visibility: show
+        type: count
+    name: order_id
+    sql: ${TABLE}.order_id
+    type: string
+  - additional_dimensions:
+      is_sunday:
+        description: true if the date is a sunday
+        sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
+        type: boolean
+      order_date_custom_period:
+        description: Date period bucket based on custom Start date and End date parameters
+        sql: |
+          case
+            --invalid date range
+            when ${lightdash.parameters.dbt_orders.custom_range_start} is null
+              or ${lightdash.parameters.dbt_orders.custom_range_end} is null
+              or ${lightdash.parameters.dbt_orders.custom_range_start} > ${lightdash.parameters.dbt_orders.custom_range_end}
+              then 'invalid date range'
+
+            --current period
+            when ${order_date_day} >= ${lightdash.parameters.dbt_orders.custom_range_start}
+              and ${order_date_day} <= ${lightdash.parameters.dbt_orders.custom_range_end}
+              then 'current period'
+
+            --previous period
+            when ${order_date_day} between date_sub(
+              ${lightdash.parameters.dbt_orders.custom_range_start},
+              interval (date_diff(
+                ${lightdash.parameters.dbt_orders.custom_range_end},
+                ${lightdash.parameters.dbt_orders.custom_range_start},
+                day
+              ) + 1) day
+            ) and date_sub(
+              ${lightdash.parameters.dbt_orders.custom_range_end},
+              interval (date_diff(
+                ${lightdash.parameters.dbt_orders.custom_range_end},
+                ${lightdash.parameters.dbt_orders.custom_range_start},
+                day
+              ) + 1) day
+            )
+              then 'previous period'
+
+            --previous year
+            when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
+              and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
+              then 'previous year'
+
+            else 'out of range'
+          end
+        type: string
+      order_date_period:
+        description: >-
+          Date period (current period or previous period or previous year or out
+          of range) chosen by the date_range parameter
+        sql: >
+          case
+            -- current period
+            when (
+              (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(current_date(), interval 1 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(current_date(), interval 7 day) and date_sub(current_date(), interval 1 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(current_date(), interval 30 day) and date_sub(current_date(), interval 1 day))
+            )
+            then 'current period'
+
+            -- previous period
+            when (
+              (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(current_date(), interval 2 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(current_date(), interval 14 day) and date_sub(current_date(), interval 8 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(current_date(), interval 60 day) and date_sub(current_date(), interval 31 day))
+            )
+            then 'previous period'
+
+            -- previous year
+            when (
+              (${lightdash.parameters.dbt_orders.date_range} = 'yesterday' and date(${order_date}) = date_sub(date_sub(current_date(), interval 1 year), interval 1 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 7 days' and date(${order_date}) between date_sub(date_sub(current_date(), interval 1 year), interval 7 day) and date_sub(date_sub(current_date(), interval 1 year), interval 1 day)) or
+              (${lightdash.parameters.dbt_orders.date_range} = 'last 30 days' and date(${order_date}) between date_sub(date_sub(current_date(), interval 1 year), interval 30 day) and date_sub(date_sub(current_date(), interval 1 year), interval 1 day))
+            )
+            then 'previous year'
+
+            else 'out of range'
+          end
+        type: string
+    description: Timestamp of order placement by user.
+    name: order_date
+    sql: >
+      timestamp_add(
+        ${TABLE}.order_date,
+        interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+      )
+    time_intervals:
+      - HOUR
+      - MINUTE_OF_HOUR_NUM
+      - HOUR_OF_DAY_NUM
+      - DAY
+      - DAY_OF_WEEK_INDEX
+      - DAY_OF_MONTH_NUM
+      - DAY_OF_YEAR_NUM
+      - DAY_OF_WEEK_NAME
+      - WEEK
+      - WEEK_NUM
+      - MONTH
+      - MONTH_NUM
+      - MONTH_NAME
+      - QUARTER
+      - QUARTER_NUM
+      - QUARTER_NAME
+      - YEAR
+    type: timestamp
+  - description: ID of the partner that is fulfilling the order.
+    name: partner_id
+    sql: ${TABLE}.partner_id
+    type: string
+  - additional_dimensions:
+      orders_dim:
+        description: Use this dimension to swap between referrer, partner_name, browser
+        label: Browser/Partner/Referrer
+        sql: |
+          case
+            when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'partner_name' then ${partner_name}
+            when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'browser' then ${browser}
+            when ${lightdash.parameters.dbt_orders.orders_dim_toggle} = 'referrer' then ${referrer}
+          end
+        type: string
+      selected_dim:
+        description: The dimension that is currently selected in the orders_dim_toggle parameter
+        label: Selected dimension
+        sql: ${lightdash.parameters.dbt_orders.orders_dim_toggle}
+        type: string
+    colors:
+      "Garden of Sweden": "#D1CCFF"
+      "Happy Harvesters": "#DBFE95"
+      "Peat, Fruits and Leaves": "#8001FE"
+      "Plant Paradise": "#FF0E53"
+      "Potted Paradise": "#EDFBD0"
+      "Redwood Ranch": "#5E4CFF"
+      "Roots & Shoots": "#ED651C"
+      "Sprout Society": "#30CF87"
+      "Trowels R Us": "#FFC54D"
+    description: Full name of the partner that is fulfilling the order.
+    name: partner_name
+    sql: ${TABLE}.partner_name
+    type: string
+    urls:
+      - label: View partner KPI dashboard
+        url: https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/view?filters=%7B"dimensions"%3A%5B%7B"id"%3A"fc5f8c1a-7673-4054-ba00-765d33033bfe"%2C"operator"%3A"equals"%2C"target"%3A%7B"fieldId"%3A"dbt_orders_partner_name"%2C"tableName"%3A"dbt_orders"%2C"fieldName"%3A"partner_name"%7D%2C"disabled"%3Afalse%2C"values"%3A%5B"${
+          value.formatted | url_encode
+          }"%5D%7D%5D%2C"metrics"%3A%5B%5D%2C"tableCalculations"%3A%5B%5D%7D
+      - label: View partner account in Salesforce
+        url: https://docs.lightdash.com/references/dimensions#urls
+  - description: URL of the partner logo
+    image:
+      fit: cover
+      height: 128
+      url: "${value.raw}"
+      width: 128
+    name: partner_logo
+    sql: ${TABLE}.partner_logo
+    type: string
+  - description: Commission rate the specified parter charges, as a decimal fraction.
+    metrics:
+      sum_of_partner_commission:
+        description: Total commission paid to partners across orders.
+        format: '[$$]#,##0'
+        label: Sum of Partner commission
+        spotlight:
+          categories:
+            - finance
+          visibility: show
+        type: sum
+    name: partner_commission
+    sql: ${TABLE}.partner_commission
+    type: number
+  - description: >-
+      Three letter international currency code for the currency the order was
+      paid with.
+    name: currency
+    sql: ${TABLE}.currency
+    type: string
+  - description: Sum of item prices for each item within the basket.
+    format: '[$$]#,##0'
+    metrics:
+      average_of_basket_total:
+        description: Average revenue per order. How much customers spend per visit to the garden center.
+        format: '[$$]#,##0'
+        label: Average Order Value
+        spotlight:
+          categories:
+            - verified
+          visibility: show
+        type: average
+      sum_distinct_basket_total:
+        description: >-
+          Total sales revenue from all orders, counting each unique order total
+          only once. Pure Lightdash YAML has no sum_distinct type; dbt_orders is
+          one row per order_id, so a plain sum is equivalent at this grain.
+        format: '[$$]#,##0'
+        label: Revenue (distinct)
+        spotlight:
+          visibility: hide
+        sql: ${basket_total}
+        type: sum
+      sum_of_basket_total:
+        description: Total sales revenue from all orders.
+        format: '[$$]#,##0'
+        label: Revenue
+        spotlight:
+          categories:
+            - verified
+            - sales
+          owner: giorgi@lightdash.com
+          visibility: show
+        type: sum
+    name: basket_total
+    sql: ${TABLE}.basket_total
+    type: number
+  - description: Sum of item profits within the basket. Thus, the total profit of the order.
+    format: '[$$]#,##0'
+    metrics:
+      avg_profit:
+        description: Average profit earned per order. Track your margins as they grow!
+        format: '[$$]#,##0'
+        label: Average Profit per Order
+        spotlight:
+          visibility: hide
+        type: average
+      median_profit:
+        format: '[$$]#,##0'
+        label: Median Profit
+        spotlight:
+          visibility: hide
+        type: median
+      profit_margin:
+        description: Profit as a percentage of total revenue.
+        format: '0.00"%"'
+        label: Profit Margin (%)
+        spotlight:
+          categories:
+            - verified
+            - finance
+          visibility: show
+        sql: "ROUND(100.0 * SUM(${TABLE}.profit) / NULLIF(SUM(${TABLE}.basket_total), 0), 2)"
+        type: number
+      sum_of_profit:
+        description: Total profit from all orders. The fruits of your labor!
+        format: '[$$]#,##0'
+        label: Profit
+        spotlight:
+          categories:
+            - verified
+            - finance
+          visibility: show
+        type: sum
+    name: profit
+    sql: ${TABLE}.profit
+    type: number
+  - description: Source from which the user was linked to the Thyme to Shine website.
+    name: referrer
+    sql: ${TABLE}.referrer
+    type: string
+  - description: Unique user ID for the user that placed the order.
+    metrics:
+      count_distinct_user_id:
+        description: Number of unique customers who placed orders.
+        label: Unique Customers
+        spotlight:
+          categories:
+            - verified
+            - marketing
+          visibility: hide
+        type: count_distinct
+    name: user_id
+    sql: ${TABLE}.user_id
+    type: string
+  - description: Email address of the user that placed the order.
+    name: email
+    sql: ${TABLE}.email
+    type: string
+    urls:
+      - label: Send email
+        url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
+  - description: Timestamp of user creation.
+    name: user_created_date
+    sql: >
+      timestamp_add(
+        ${TABLE}.user_created_date,
+        interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+      )
+    type: timestamp
+  - description: Web browser that the user used to place the order.
+    name: browser
+    sql: ${TABLE}.browser
+    type: string
+  - description: Shipping city of the user that placed the order.
+    name: shipping_city
+    sql: ${TABLE}.shipping_city
+    type: string
+  - description: Shipping country of the user that placed the order.
+    name: shipping_country
+    sql: ${TABLE}.shipping_country
+    type: string
+label: Orders
+name: dbt_orders
+parameters:
+  custom_range_end:
+    allow_custom_values: true
+    description: The end of the custom date range
+    label: End of custom date range
+    type: date
+  custom_range_start:
+    allow_custom_values: true
+    description: The start of the custom date range
+    label: Start of custom date range
+    type: date
+  date_range:
+    default: "last 7 days"
+    description: Choose a date range
+    label: Date Range
+    options:
+      - "yesterday"
+      - "last 7 days"
+      - "last 30 days"
+  orders_dim_toggle:
+    default: "partner_name"
+    description: Swap between browser, partner, referrer
+    label: Browser/Partner/Referrer
+    multiple: false
+    options:
+      - "browser"
+      - "referrer"
+      - "partner_name"
+spotlight:
+  owner: joao@lightdash.com
+sql_from: |-
+  (
+    select
+      cast(orders.order_id as string) as order_id,
+      orders.order_date,
+      cast(orders.partner_id as string) as partner_id,
+      partners.partner_name,
+      partners.partner_logo,
+      partners.partner_commission,
+      orders.currency,
+      orders.basket_total,
+      orders.profit,
+      orders.referrer,
+      cast(orders.user_id as string) as user_id,
+      users.email,
+      users.created_date as user_created_date,
+      users.browser,
+      json_extract_scalar(users.shipping_address, '$.city') as shipping_city,
+      json_extract_scalar(users.shipping_address, '$.country') as shipping_country
+    from `lightdash-healthcare-demo.lightdash_gardening_demo.orders` as orders
+      left join `lightdash-healthcare-demo.lightdash_gardening_demo.users` as users
+        on cast(orders.user_id as string) = cast(users.user_id as string)
+      left join `lightdash-healthcare-demo.lightdash_gardening_demo.partners` as partners
+        on cast(orders.partner_id as string) = cast(partners.partner_id as string)
+  )
+type: model

@@ -1,0 +1,58 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_shipping_country
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          type: bar
+    layout:
+      flipAxes: true
+      xField: dbt_orders_shipping_country
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+dashboardSlug: executive-sales-dashboard
+description: Total revenue over the trailing 12 completed months by shipping country.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_shipping_country
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: ecf959db-e4fc-4e6a-9a62-7e43e572fa01
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+            tableName: dbt_orders
+          values:
+            - 12
+      id: 0e9aecbe-f606-41ef-a4c0-d69e498c6933
+  limit: 15
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+  timezone: project_timezone
+name: Revenue by Shipping Country
+slug: exec-revenue-by-country
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_shipping_country
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

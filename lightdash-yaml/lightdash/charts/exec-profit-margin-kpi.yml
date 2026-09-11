@@ -1,0 +1,45 @@
+chartConfig:
+  config:
+    label: Profit Margin
+    selectedField: dbt_orders_profit_margin
+    showBigNumberLabel: true
+    style: K
+  type: big_number
+contentType: chart
+dashboardSlug: executive-sales-dashboard
+description: Profit as a percentage of total revenue over the trailing 12 completed months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 1efa7638-c0b9-40b5-8722-5b06c2980c4a
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+            tableName: dbt_orders
+          values:
+            - 12
+      id: b1d78762-993c-4f73-b97f-40326e8869d3
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_profit_margin
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: Profit Margin
+slug: exec-profit-margin-kpi
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_profit_margin
+tableName: dbt_orders
+verification: null
+version: 1

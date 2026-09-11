@@ -1,0 +1,50 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: false
+      series:
+        - color: "#FF0000"
+          encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_average_of_basket_total
+          name: Avg Order Value
+          type: bar
+    layout:
+      flipAxes: false
+      showGridX: false
+      showGridY: true
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_average_of_basket_total
+  type: cartesian
+contentType: chart
+description: Average order value per partner.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 25
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_average_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_average_of_basket_total
+  tableCalculations: []
+  timezone: project_timezone
+name: Average Order Value by Partner
+slug: partner-perf-aov-by-partner
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_average_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

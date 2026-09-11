@@ -1,0 +1,335 @@
+models:
+  - name: dbt_orders
+    description: "This table contains information on all the confirmed orders and their status"
+    meta:
+      metrics:
+        avg_profit:
+          type: average
+          label: "Average Profit per Order"
+          description: "Average profit earned per order. Track your margins as they grow!"
+        median_profit:
+          type: median
+          label: "Median Profit"
+          description: "Median of Profit"
+        profit_margin:
+          type: number
+          label: "Profit Margin (%)"
+          description: "Profit as a percentage of total revenue."
+        sum_of_profit:
+          type: sum
+          label: "Profit"
+          description: "Total profit from all orders. The fruits of your labor!"
+        count_of_order_id:
+          type: count
+          label: "Order Volume"
+          description: "Count of orders. dbt_orders is one row per order_id, so this is equivalent to count_distinct_order_id — but it's re-aggregatable, so it can live in pre-aggregates and be used in time-window roll-ups …"
+        sum_of_basket_total:
+          type: sum
+          label: "Revenue"
+          description: "Total sales revenue from all orders."
+        count_distinct_user_id:
+          type: count_distinct
+          label: "Unique Customers"
+          description: "Number of unique customers who placed orders."
+        average_of_basket_total:
+          type: average
+          label: "Average Order Value"
+          description: "Average revenue per order. How much customers spend per visit to the garden center."
+        count_distinct_order_id:
+          type: count_distinct
+          label: "Order Volume"
+          description: "Total number of orders placed by customers. Watch your garden grow!"
+        sum_distinct_basket_total:
+          type: sum_distinct
+          label: "Revenue (distinct)"
+          description: "Total sales revenue from all orders, counting each unique order total only once."
+        sum_of_partner_commission:
+          type: sum
+          label: "Sum of Partner commission"
+          description: "Total commission paid to partners across orders."
+      parameters:
+        date_range:
+          label: "Date Range"
+          description: "Choose a date range"
+          options: ["yesterday", "last 7 days", "last 30 days"]
+          default: "last 7 days"
+        custom_range_end:
+          label: "End of custom date range"
+          description: "The end of the custom date range"
+          type: date
+          allow_custom_values: true
+        orders_dim_toggle:
+          label: "Browser/Partner/Referrer"
+          description: "Swap between browser, partner, referrer"
+          options: ["browser", "referrer", "partner_name"]
+          default: "partner_name"
+        custom_range_start:
+          label: "Start of custom date range"
+          description: "The start of the custom date range"
+          type: date
+          allow_custom_values: true
+    columns:
+      - name: email
+        label: "Email"
+        description: "Email address of the user that placed the order."
+        meta:
+          dimension:
+            type: string
+      - name: profit
+        label: "Profit"
+        description: "Sum of item profits within the basket. Thus, the total profit of the order."
+        meta:
+          dimension:
+            type: number
+      - name: browser
+        label: "Browser"
+        description: "Web browser that the user used to place the order."
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        label: "User id"
+        description: "Unique user ID for the user that placed the order."
+        meta:
+          dimension:
+            type: string
+      - name: currency
+        label: "Currency"
+        description: "Three letter international currency code for the currency the order was paid with."
+        meta:
+          dimension:
+            type: string
+      - name: order_id
+        label: "Order id"
+        description: "Unique Order ID for the order."
+        meta:
+          dimension:
+            type: string
+      - name: referrer
+        label: "Referrer"
+        description: "Source from which the user was linked to the Thyme to Shine website."
+        meta:
+          dimension:
+            type: string
+      - name: is_sunday
+        label: "Is sunday"
+        description: "true if the date is a sunday"
+        meta:
+          dimension:
+            type: boolean
+      - name: order_date
+        label: "Order date"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: orders_dim
+        label: "Browser/Partner/Referrer"
+        description: "Use this dimension to swap between referrer, partner_name, browser"
+        meta:
+          dimension:
+            type: string
+      - name: partner_id
+        label: "Partner id"
+        description: "ID of the partner that is fulfilling the order."
+        meta:
+          dimension:
+            type: string
+      - name: basket_total
+        label: "Basket total"
+        description: "Sum of item prices for each item within the basket."
+        meta:
+          dimension:
+            type: number
+      - name: partner_logo
+        label: "Partner logo"
+        description: "URL of the partner logo"
+        meta:
+          dimension:
+            type: string
+      - name: partner_name
+        label: "Partner name"
+        description: "Full name of the partner that is fulfilling the order."
+        meta:
+          dimension:
+            type: string
+      - name: selected_dim
+        label: "Selected dimension"
+        description: "The dimension that is currently selected in the orders_dim_toggle parameter"
+        meta:
+          dimension:
+            type: string
+      - name: shipping_city
+        label: "Shipping city"
+        description: "Shipping city of the user that placed the order."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_day
+        label: "Order date day"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_hour
+        label: "Order date hour"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_week
+        label: "Order date week"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_year
+        label: "Order date year"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_month
+        label: "Order date month"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: date
+      - name: shipping_country
+        label: "Shipping country"
+        description: "Shipping country of the user that placed the order."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_period
+        label: "Order date period"
+        description: "Date period (current period or previous period or previous year or out of range) chosen by the date_range parameter"
+        meta:
+          dimension:
+            type: string
+      - name: user_created_date
+        label: "User created date"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_quarter
+        label: "Order date quarter"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: date
+      - name: partner_commission
+        label: "Partner commission"
+        description: "Commission rate the specified parter charges, as a decimal fraction."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_week_num
+        label: "Order date week (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_month_num
+        label: "Order date month (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_month_name
+        label: "Order date month (name)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: string
+      - name: user_created_date_day
+        label: "User created date day"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: user_created_date_raw
+        label: "User created date raw"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: timestamp
+      - name: order_date_quarter_num
+        label: "Order date quarter (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: user_created_date_week
+        label: "User created date week"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: user_created_date_year
+        label: "User created date year"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_quarter_name
+        label: "Order date quarter (name)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: string
+      - name: user_created_date_month
+        label: "User created date month"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_custom_period
+        label: "Order date custom period"
+        description: "Date period bucket based on custom Start date and End date parameters"
+        meta:
+          dimension:
+            type: string
+      - name: user_created_date_quarter
+        label: "User created date quarter"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: order_date_day_of_year_num
+        label: "Order date day of the year (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_hour_of_day_num
+        label: "Order date hour of day (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_day_of_month_num
+        label: "Order date day of the month (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_day_of_week_name
+        label: "Order date day of the week (name)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: string
+      - name: order_date_day_of_week_index
+        label: "Order date day of the week (index)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number
+      - name: order_date_minute_of_hour_num
+        label: "Order date minute of hour (number)"
+        description: "Timestamp of order placement by user."
+        meta:
+          dimension:
+            type: number

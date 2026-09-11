@@ -1,0 +1,68 @@
+models:
+  - name: example_charges
+    columns:
+      - name: apc
+        label: "Apc"
+        meta:
+          dimension:
+            type: string
+      - name: total_paid
+        label: "Total paid"
+        meta:
+          dimension:
+            type: number
+      - name: provider_id
+        label: "Provider id"
+        meta:
+          dimension:
+            type: number
+      - name: service_year
+        label: "Service year"
+        meta:
+          dimension:
+            type: date
+      - name: provider_city
+        label: "Provider city"
+        meta:
+          dimension:
+            type: string
+      - name: provider_name
+        label: "Provider name"
+        meta:
+          dimension:
+            type: string
+      - name: provider_state
+        label: "Provider state"
+        meta:
+          dimension:
+            type: string
+      - name: number_services
+        label: "Number services"
+        meta:
+          dimension:
+            type: number
+      - name: provider_region
+        label: "Provider region"
+        meta:
+          dimension:
+            type: string
+      - name: total_estimated
+        label: "Total estimated"
+        meta:
+          dimension:
+            type: number
+      - name: provider_division
+        label: "Provider division"
+        meta:
+          dimension:
+            type: string
+      - name: provider_name_and_id
+        label: "Provider name and id"
+        meta:
+          dimension:
+            type: string
+      - name: hospital_referral_region
+        label: "Hospital referral region"
+        meta:
+          dimension:
+            type: string

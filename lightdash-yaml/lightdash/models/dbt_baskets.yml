@@ -1,0 +1,225 @@
+description: >-
+  This table contains all the information on customer shopping baskets on our
+  site. There is one basket per order
+dimensions:
+  - description: Unique Order ID that the basket relates to.
+    name: order_id
+    spotlight:
+      filter_by: false
+      segment_by: false
+    sql: ${TABLE}.order_id
+    type: string
+  - description: ID for the product item within the basket.
+    groups:
+      - product_details
+      - item_details
+    name: item_id
+    spotlight:
+      filter_by: false
+      segment_by: false
+    sql: ${TABLE}.item_id
+    type: string
+  - description: Unique Stock Keeping Unit code.
+    name: sku
+    spotlight:
+      filter_by: false
+      segment_by: false
+    sql: ${TABLE}.sku
+    type: number
+  - description: Full name of the product.
+    groups:
+      - product_details
+    label: Product name
+    metrics:
+      count_of_product_name:
+        description: Number of product items in baskets. Every plant finds a home!
+        label: Product Count
+        spotlight:
+          categories:
+            - beta
+            - operations
+          owner: giorgi@lightdash.com
+          visibility: show
+        type: count
+    name: product_name
+    sql: ${TABLE}.product_name
+    type: string
+  - description: Three letter international currency code of the item price.
+    name: currency
+    sql: ${TABLE}.currency
+    type: string
+  - description: Price of the item in the specified currency.
+    groups:
+      - product_details
+      - item_details
+    name: item_price
+    sql: ${TABLE}.item_price
+    type: number
+  - additional_dimensions:
+      item_profit_margin:
+        description: Item profit divided by item price
+        sql: ${item_profit} / ${item_price}
+        type: number
+      item_profit_margin_tier:
+        description: Profit margin banding for the item
+        sql: |
+          case
+            when ${item_profit_margin} < .08 then 'Low profit margin'
+            when ${item_profit_margin} > .12 then 'High profit margin'
+            else 'Mid profit margin' end
+        type: string
+    description: Profit made for the individual item.
+    format: '[$$]#,##0'
+    groups:
+      - product_details
+      - item_details
+    metrics:
+      average_of_item_profit:
+        description: Average profit earned per item sold. Track your margins as they grow!
+        format: '[$$]#,##0'
+        label: Average Item Profit
+        spotlight:
+          categories:
+            - beta
+          visibility: show
+        type: average
+      sum_of_item_profit:
+        description: Total profit from individual items sold. See which plants are most profitable!
+        format: '[$$]#,##0'
+        label: Item Profit
+        spotlight:
+          categories:
+            - beta
+            - finance
+          filter_by:
+            - product_name
+            - partner_name
+            - order_date
+          segment_by:
+            - product_name
+            - partner_name
+            - item_profit_margin_tier
+          visibility: show
+        type: sum
+    name: item_profit
+    sql: ${TABLE}.item_profit
+    type: number
+  - description: Sum of item prices for each item within the basket.
+    format: '[$$]#,##0'
+    metrics:
+      average_of_basket_total:
+        description: Average revenue per basket. What customers typically spend in a single visit.
+        format: '[$$]#,##0'
+        label: Average Order Value
+        spotlight:
+          categories:
+            - verified
+          visibility: hide
+        type: average
+      sum_of_basket_total:
+        description: Total sales revenue from all baskets. Seeds of success!
+        format: '[$$]#,##0'
+        label: Revenue
+        spotlight:
+          categories:
+            - verified
+          visibility: hide
+        type: sum
+    name: basket_total
+    sql: ${TABLE}.basket_total
+    type: number
+  - additional_dimensions:
+      order_date_is_in_future:
+        description: True if order date is in the future, otherwise False
+        sql: |
+          case
+            when ${TABLE}.order_date > current_date()
+              then true
+            else false
+          end
+        type: boolean
+    description: Timestamp of order placement by the user.
+    label: Order date
+    name: order_date
+    sql: >
+      timestamp_add(
+        ${TABLE}.order_date,
+        interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+      )
+    time_intervals:
+      - HOUR
+      - MINUTE_OF_HOUR_NUM
+      - HOUR_OF_DAY_NUM
+      - DAY
+      - DAY_OF_WEEK_INDEX
+      - DAY_OF_MONTH_NUM
+      - DAY_OF_YEAR_NUM
+      - DAY_OF_WEEK_NAME
+      - WEEK
+      - WEEK_NUM
+      - MONTH
+      - MONTH_NUM
+      - MONTH_NAME
+      - QUARTER
+      - QUARTER_NUM
+      - QUARTER_NAME
+      - YEAR
+    type: timestamp
+  - description: Sum of item profits within the basket. Thus, the total profit of the basket.
+    format: '[$$]#,##0'
+    name: profit
+    sql: ${TABLE}.profit
+    type: number
+  - description: Unique ID of the partner that is fulfilling the basket.
+    name: partner_id
+    spotlight:
+      filter_by: false
+      segment_by: false
+    sql: ${TABLE}.partner_id
+    type: number
+  - description: Full name of the partner that is fulfilling the basket.
+    label: Partner name
+    name: partner_name
+    sql: ${TABLE}.partner_name
+    type: string
+  - description: The commission rate the specified parter charges, as a decimal fraction.
+    name: partner_commission
+    spotlight:
+      filter_by: false
+      segment_by: false
+    sql: ${TABLE}.partner_commission
+    type: number
+group_details:
+  item_details:
+    description: Fields that have informaton about the items in the basket.
+    label: Item Details
+  product_details:
+    description: Fields that have information about the products in the basket.
+    label: Product Details
+label: Baskets
+name: dbt_baskets
+sql_from: |-
+  (
+    select
+      cast(basket.order_id as string) as order_id,
+      cast(basket.basket_item_id as string) as item_id,
+      basket.ordered_product_skus as sku,
+      product.product_name,
+      product.price_currency as currency,
+      basket.price_amount as item_price,
+      basket.basket_total,
+      orders.order_date,
+      orders.profit,
+      (basket.price_amount * partners.partner_commission) as item_profit,
+      orders.partner_id,
+      partners.partner_name,
+      partners.partner_commission
+    from `lightdash-healthcare-demo.lightdash_gardening_demo.baskets` as basket
+      left join `lightdash-healthcare-demo.lightdash_gardening_demo.products` as product
+        on cast(basket.ordered_product_skus as string) = cast(product.sku as string)
+      left join `lightdash-healthcare-demo.lightdash_gardening_demo.orders` as orders
+        on cast(basket.order_id as string) = cast(orders.order_id as string)
+      left join `lightdash-healthcare-demo.lightdash_gardening_demo.partners` as partners
+        on cast(orders.partner_id as string) = cast(partners.partner_id as string)
+  )
+type: model

@@ -54,15 +54,6 @@ models:
         description: 'Unique Order ID for the order.'
         meta:
           metrics:
-            count_distinct_order_id:
-              type: count_distinct
-              label: 'Order Volume'
-              description: 'Total number of orders placed by customers. Watch your garden grow!'
-              spotlight:
-                visibility: show
-                categories:
-                  - verified
-                  - sales
             count_of_order_id:
               type: count
               label: 'Order Volume'

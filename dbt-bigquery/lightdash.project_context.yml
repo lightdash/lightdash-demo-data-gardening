@@ -1,0 +1,15 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 1
+entries:
+  - id: jess-s-flower-shop
+    kind: definition
+    content: '''Jess''s flower shop'' is a partner in the Orders data; confirm the exact partner_name value stored in dbt_orders.partner_name and map it to this business term.'
+    terms:
+      - Jess's flower shop
+      - Jess flower shop
+      - flower shop
+    objects:
+      - dbt_orders_partner_name

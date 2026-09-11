@@ -1,0 +1,62 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        bottom: 5px
+        containLabel: true
+        left: 5px
+        right: 5px
+        top: 5px
+      series:
+        - color: "#7E57C2"
+          encode:
+            xRef:
+              field: dbt_support_requests_partner_name
+            yRef:
+              field: dbt_support_requests_count_of_request_id
+          isFilteredOut: false
+          label:
+            show: false
+          type: bar
+          yAxisIndex: 0
+      tooltip: ""
+      xAxis:
+        - name: Partner
+      yAxis:
+        - name: Support tickets
+        - {}
+    layout:
+      flipAxes: true
+      showGridY: false
+      xField: dbt_support_requests_partner_name
+      yField:
+        - dbt_support_requests_count_of_request_id
+  type: cartesian
+contentType: chart
+description: Top partners by support ticket volume.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_partner_name
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 10
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_of_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_count_of_request_id
+  tableCalculations: []
+  timezone: project_timezone
+name: Support tickets by partner
+slug: support-tickets-by-partner
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_count_of_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

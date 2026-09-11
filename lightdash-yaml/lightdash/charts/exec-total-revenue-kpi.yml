@@ -1,0 +1,45 @@
+chartConfig:
+  config:
+    label: Total Revenue
+    selectedField: dbt_orders_sum_of_basket_total
+    showBigNumberLabel: true
+    style: M
+  type: big_number
+contentType: chart
+dashboardSlug: executive-sales-dashboard
+description: Total sales revenue over the trailing 12 completed months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: ca939ef7-2b69-4099-a4db-cdd7fc969e6d
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+            tableName: dbt_orders
+          values:
+            - 12
+      id: 805c0bba-0a13-4bfc-8b21-5e80cdf9533a
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: Total Revenue
+slug: exec-total-revenue-kpi
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

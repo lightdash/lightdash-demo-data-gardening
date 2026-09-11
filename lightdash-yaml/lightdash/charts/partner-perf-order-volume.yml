@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs. previous period
+    flipColors: false
+    label: Order Volume
+    selectedField: dbt_orders_count_distinct_order_id
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+    style: thousands
+  type: big_number
+contentType: chart
+description: Total number of partner-fulfilled orders.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_order_id
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Partner Performance — Order Volume
+slug: partner-perf-order-volume
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_order_id
+tableName: dbt_orders
+verification: null
+version: 1

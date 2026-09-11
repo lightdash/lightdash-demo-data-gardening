@@ -1,0 +1,157 @@
+models:
+  - name: dbt_users
+    description: "This table contains information on all of our users and customers"
+    meta:
+      metrics:
+        count_of_user_id:
+          type: count
+          label: "Total Customers"
+          description: "Count of customers. dbt_users is one row per user_id, so this is equivalent to count_distinct_of_user_id — but it's re-aggregatable, so it can live in pre-aggregates and be used in time-window roll-u…"
+        count_distinct_email:
+          type: count_distinct
+          label: "Registered Emails"
+          description: "Number of unique email addresses on file."
+        diff_emails_to_users:
+          type: number
+          label: "Email-User Variance"
+          description: "Difference between registered emails and user accounts. Useful for identifying data quality issues."
+        count_distinct_of_user_id:
+          type: count_distinct
+          label: "Total Customers"
+          description: "Total number of registered customer accounts. Your community of plant lovers!"
+      joins:
+        - join: dbt_orders
+          sql_on: "${dbt_users.user_id} = ${dbt_orders.user_id}"
+    columns:
+      - name: email
+        label: "Email"
+        description: "Email address of the user."
+        meta:
+          dimension:
+            type: string
+      - name: browser
+        label: "Browser"
+        description: "Web browser that the user used to place the order."
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        label: "User id"
+        description: "Unique user ID for the user."
+        meta:
+          dimension:
+            type: string
+      - name: created_date
+        label: "Created date"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: timestamp
+      - name: created_date_day
+        label: "Created date day"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: shipping_address
+        label: "Shipping address"
+        description: "Full shipping address of the user, as an object."
+        meta:
+          dimension:
+            type: string
+      - name: created_date_hour
+        label: "Created date hour"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: timestamp
+      - name: created_date_week
+        label: "Created date week"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_year
+        label: "Created date year"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_month
+        label: "Created date month"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_quarter
+        label: "Created date quarter"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: date
+      - name: created_date_week_num
+        label: "Created date week (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_month_num
+        label: "Created date month (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_month_name
+        label: "Created date month (name)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: string
+      - name: created_date_quarter_num
+        label: "Created date quarter (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_quarter_name
+        label: "Created date quarter (name)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: string
+      - name: created_date_day_of_year_num
+        label: "Created date day of the year (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_hour_of_day_num
+        label: "Created date hour of day (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_day_of_month_num
+        label: "Created date day of the month (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_day_of_week_name
+        label: "Created date day of the week (name)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: string
+      - name: created_date_day_of_week_index
+        label: "Created date day of the week (index)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number
+      - name: created_date_minute_of_hour_num
+        label: "Created date minute of hour (number)"
+        description: "Timestamp of user creation."
+        meta:
+          dimension:
+            type: number

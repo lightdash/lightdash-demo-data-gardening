@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    dataAppVizSlug: app-681
+    fieldMapping:
+      period: dbt_orders_order_date_month
+      value: dbt_orders_sum_of_profit
+    optionValues:
+      backgroundColor: "#1E293B"
+      negativeColor: "#6B7280"
+      neutralColor: "#9CA3AF"
+      positiveColor: "#2563EB"
+      textColor: "#F1F5F9"
+  type: data_app_viz
+contentType: chart
+description: >-
+  Profit is defined by using a very complex calculation that will take a while
+  to explain...
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: ce668ead-3b3e-4c6b-bc22-89e9a9f9c45d
+          operator: greaterThan
+          target:
+            fieldId: dbt_orders_basket_total
+          values:
+            - 1
+      id: 1c575be5-4220-4b4e-9cd2-795930067e8d
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: What is our total profit?
+slug: what-is-our-total-profit-
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

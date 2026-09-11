@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.141 0.005 285.823);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.141 0.005 285.823);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.141 0.005 285.823);
+    --primary: oklch(0.21 0.006 285.885);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.967 0.001 286.375);
+    --muted-foreground: oklch(0.552 0.016 285.938);
+    --accent: oklch(0.967 0.001 286.375);
+    --accent-foreground: oklch(0.21 0.006 285.885);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.92 0.004 286.32);
+    --input: oklch(0.92 0.004 286.32);
+    --ring: oklch(0.705 0.015 286.067);
+    --chart-1: oklch(0.871 0.006 286.286);
+    --chart-2: oklch(0.552 0.016 285.938);
+    --chart-3: oklch(0.442 0.017 285.786);
+    --chart-4: oklch(0.37 0.013 285.805);
+    --chart-5: oklch(0.274 0.006 286.033);
+    --radius: 0.5rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.141 0.005 285.823);
+    --sidebar-primary: oklch(0.21 0.006 285.885);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.967 0.001 286.375);
+    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+    --sidebar-border: oklch(0.92 0.004 286.32);
+    --sidebar-ring: oklch(0.705 0.015 286.067)}
+  .dark {
+    --background: oklch(0.141 0.005 285.823);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.21 0.006 285.885);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.21 0.006 285.885);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.92 0.004 286.32);
+    --primary-foreground: oklch(0.21 0.006 285.885);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.274 0.006 286.033);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(0.274 0.006 286.033);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.552 0.016 285.938);
+    --chart-1: oklch(0.871 0.006 286.286);
+    --chart-2: oklch(0.552 0.016 285.938);
+    --chart-3: oklch(0.442 0.017 285.786);
+    --chart-4: oklch(0.37 0.013 285.805);
+    --chart-5: oklch(0.274 0.006 286.033);
+    --sidebar: oklch(0.21 0.006 285.885);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.274 0.006 286.033);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.552 0.016 285.938)}
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ── Custom range slider styling ────────────────────────────────────────── */
+.param-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 14px;        /* tall enough to contain the thumb */
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.param-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7262ff;
+  cursor: pointer;
+  margin-top: -5px;    /* center 14px thumb on 4px track: (4 - 14) / 2 */
+  box-shadow: 0 0 0 3px rgba(114, 98, 255, 0.2);
+  transition: box-shadow 0.15s ease;
+}
+
+.param-range::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 5px rgba(114, 98, 255, 0.3);
+}
+
+.param-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background: #7262ff;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(114, 98, 255, 0.2);
+}
+
+.param-range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: #dee2e6;
+}
+
+.param-range::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: #dee2e6;
+}
+
+/* ── Forecast horizon slider — gradient fill tracks growing uncertainty ──── */
+.horizon-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.horizon-range::-webkit-slider-runnable-track {
+  height: 7px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #4f3fd6 0%, #7262ff var(--pct, 50%), #dee2e6 var(--pct, 50%), #dee2e6 100%);
+}
+
+.horizon-range::-moz-range-track {
+  height: 7px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #4f3fd6 0%, #7262ff var(--pct, 50%), #dee2e6 var(--pct, 50%), #dee2e6 100%);
+}
+
+.horizon-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f3fd6, #7262ff);
+  border: 3px solid white;
+  cursor: pointer;
+  margin-top: -7px;    /* center 20px thumb on 7px track: (7 - 20) / 2 */
+  box-shadow: 0 2px 6px rgba(79, 63, 214, 0.45), 0 0 0 3px rgba(79, 63, 214, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.horizon-range::-webkit-slider-thumb:hover,
+.horizon-range::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+  box-shadow: 0 2px 10px rgba(114, 98, 255, 0.55), 0 0 0 5px rgba(114, 98, 255, 0.2);
+}
+
+.horizon-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f3fd6, #7262ff);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(79, 63, 214, 0.45), 0 0 0 3px rgba(79, 63, 214, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.horizon-range::-moz-range-thumb:hover,
+.horizon-range::-moz-range-thumb:active {
+  transform: scale(1.15);
+  box-shadow: 0 2px 10px rgba(114, 98, 255, 0.55), 0 0 0 5px rgba(114, 98, 255, 0.2);
+}

@@ -1,0 +1,130 @@
+config:
+  dateZoomGranularities:
+    - Day
+    - Week
+    - Month
+    - Quarter
+    - Year
+  defaultDateZoomGranularity: Month
+  isAddFilterDisabled: false
+  isDateZoomDisabled: false
+contentType: dashboard
+description: >-
+  High-level sales performance dashboard covering revenue, profit, orders,
+  trends, and partner performance.
+filters:
+  dimensions:
+    - disabled: false
+      label: Date Range
+      operator: inThePast
+      settings:
+        completed: true
+        unitOfTime: months
+      target:
+        fieldId: dbt_orders_order_date_month
+        tableName: dbt_orders
+      tileTargets: {}
+      values:
+        - 12
+    - disabled: false
+      label: Shipping Country
+      operator: equals
+      target:
+        fieldId: dbt_orders_shipping_country
+        tableName: dbt_orders
+      tileTargets: {}
+      values: []
+  metrics: []
+  tableCalculations: []
+name: Sales Dashboard Overview
+parameters: {}
+slug: sales-dashboard-overview
+spaceSlug: "-sales"
+tabs: []
+tiles:
+  - h: 2
+    properties:
+      content: >-
+        Track core sales KPIs, revenue trends, and partner performance in one
+        place.
+      hideFrame: false
+      title: Sales Dashboard Overview
+    tabSlug: null
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: What is our total revenue this month?
+      chartSlug: what-is-our-total-revenue-
+      hideTitle: false
+      title: Revenue
+    tabSlug: null
+    tileSlug: what-is-our-total-revenue-
+    type: saved_chart
+    w: 12
+    x: 0
+    "y": 2
+  - h: 3
+    properties:
+      chartName: What is our total profit?
+      chartSlug: what-is-our-total-profit-
+      hideTitle: false
+      title: Profit
+    tabSlug: null
+    tileSlug: what-is-our-total-profit-
+    type: saved_chart
+    w: 12
+    x: 12
+    "y": 2
+  - h: 3
+    properties:
+      chartName: How many orders have we fulfilled??
+      chartSlug: how-many-orders-have-we-fulfilled-
+      hideTitle: false
+      title: Orders Fulfilled
+    tabSlug: null
+    tileSlug: how-many-orders-have-we-fulfilled-
+    type: saved_chart
+    w: 12
+    x: 24
+    "y": 2
+  - h: 8
+    properties:
+      chartName: How much revenue are we making each month?
+      chartSlug: how-much-revenue-are-we-making-each-week-
+      hideTitle: false
+      title: Monthly Revenue Trend
+    tabSlug: null
+    tileSlug: how-much-revenue-are-we-making-each-week-
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 5
+  - h: 8
+    properties:
+      chartName: What are the monthly sales stats?
+      chartSlug: what-are-the-monthly-sales-stats-
+      hideTitle: false
+      title: Monthly Sales Stats
+    tabSlug: null
+    tileSlug: what-are-the-monthly-sales-stats-
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 5
+  - h: 8
+    properties:
+      chartName: Partner Sales
+      chartSlug: partner-sales
+      hideTitle: false
+      title: Partner Sales
+    tabSlug: null
+    tileSlug: partner-sales
+    type: saved_chart
+    w: 36
+    x: 0
+    "y": 13
+verification: null
+version: 1

@@ -1,0 +1,65 @@
+chartConfig:
+  config:
+    comparisonFormat: raw
+    comparisonLabel: MoM
+    conditionalFormattings:
+      - color: "#7E57C2"
+        darkColor: "#B39DDB"
+        rules:
+          - id: a6857d76-9c0b-4ed7-9ed5-fcb1ad87a0af
+            operator: lessThan
+            values:
+              - 7
+        target: null
+      - color: "#7E57C2"
+        darkColor: "#B39DDB"
+        rules:
+          - id: 9d6354e3-d4a2-462b-b399-e6fd30d36fed
+            operator: inBetween
+            values:
+              - 7
+              - 8
+        target: null
+      - color: "#7E57C2"
+        darkColor: "#B39DDB"
+        rules:
+          - id: 8a8cdb4d-2f75-439a-961d-d4fb0a78cfd2
+            operator: greaterThanOrEqual
+            values:
+              - 8
+        target: null
+    flipColors: false
+    label: Customer satisfaction score
+    selectedField: dbt_support_requests_average_of_feedback_rating
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+  type: big_number
+contentType: chart
+description: Average post-support feedback rating in the latest month, scored out of 10.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_month
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 2
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_average_of_feedback_rating
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_request_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Copy of Customer satisfaction score this month
+slug: copy-of-customer-satisfaction-score-this-month-1779707299783
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_month
+    - dbt_support_requests_average_of_feedback_rating
+tableName: dbt_support_requests
+verification: null
+version: 1

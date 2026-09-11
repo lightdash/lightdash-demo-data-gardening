@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: false
+      series:
+        - color: "#FF0000"
+          encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          name: Revenue
+          type: bar
+      xAxis:
+        - inverse: true
+    layout:
+      flipAxes: true
+      showGridX: true
+      showGridY: false
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_basket_total
+  type: cartesian
+contentType: chart
+description: Total revenue by partner, ranked highest to lowest.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 25
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_basket_total
+  tableCalculations: []
+  timezone: project_timezone
+name: Revenue by Partner
+slug: partner-perf-revenue-by-partner
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_basket_total
+tableName: dbt_orders
+verification: null
+version: 1

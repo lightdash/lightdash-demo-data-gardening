@@ -1,0 +1,52 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: false
+      series:
+        - color: "#FF0000"
+          encode:
+            xRef:
+              field: dbt_orders_partner_name
+            yRef:
+              field: dbt_orders_sum_of_profit
+          name: Profit
+          type: bar
+      xAxis:
+        - inverse: true
+    layout:
+      flipAxes: true
+      showGridX: true
+      showGridY: false
+      xField: dbt_orders_partner_name
+      yField:
+        - dbt_orders_sum_of_profit
+  type: cartesian
+contentType: chart
+description: Total profit by partner, ranked highest to lowest.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_partner_name
+  exploreName: dbt_orders
+  filters: {}
+  limit: 25
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_sum_of_profit
+  tableCalculations: []
+  timezone: project_timezone
+name: Profit by Partner
+slug: partner-perf-profit-by-partner
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_partner_name
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

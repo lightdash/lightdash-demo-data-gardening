@@ -1,0 +1,48 @@
+models:
+  - name: spot_on_demo_table
+    columns:
+      - name: email
+        label: "Email"
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        label: "User id"
+        meta:
+          dimension:
+            type: string
+      - name: job_title
+        label: "Job title"
+        meta:
+          dimension:
+            type: string
+      - name: account_id
+        label: "Account id"
+        meta:
+          dimension:
+            type: string
+      - name: created_at
+        label: "Created at"
+        meta:
+          dimension:
+            type: timestamp
+      - name: first_logged_in_at
+        label: "First logged in at"
+        meta:
+          dimension:
+            type: timestamp
+      - name: experience_in_years
+        label: "Experience in years"
+        meta:
+          dimension:
+            type: number
+      - name: latest_logged_in_at
+        label: "Latest logged in at"
+        meta:
+          dimension:
+            type: timestamp
+      - name: is_marketing_opted_in
+        label: "Is marketing opted in"
+        meta:
+          dimension:
+            type: boolean

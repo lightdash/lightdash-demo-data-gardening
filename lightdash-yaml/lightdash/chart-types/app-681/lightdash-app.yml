@@ -1,0 +1,120 @@
+codeVersion: 1
+slug: app-681
+version: 2
+name: KPI Matrix With Trend Arrows
+description: Displays a core KPI in the center with color-coded directional
+  arrows indicating positive or negative performance compared to the previous
+  period.
+template: data_app_viz
+icon: null
+vizSchema:
+  fields:
+    - name: period
+      type: dimension
+      label: Period (date or ordered dimension)
+      required: false
+    - name: value
+      type: metric
+      label: KPI value
+      required: true
+  colorPalette: null
+  configOptions:
+    - name: title
+      type: text
+      group: KPI
+      label: Title
+      default: Revenue
+    - max: 220
+      min: 16
+      name: kpiFontSize
+      type: number
+      group: KPI
+      label: KPI font size (px)
+      default: 72
+    - name: showDelta
+      type: boolean
+      group: KPI
+      label: Show % change
+      default: true
+    - name: deltaSuffix
+      type: text
+      group: KPI
+      label: Change label
+      default: vs prior period
+    - name: compareTo
+      type: select
+      group: KPI
+      label: Compare current value to
+      choices:
+        - label: Previous period
+          value: previous
+        - label: First period
+          value: first
+        - label: Average of prior periods
+          value: average
+      default: previous
+    - max: 72
+      min: 6
+      name: arrowSize
+      type: number
+      group: Arrows
+      label: Arrow size (px)
+      default: 18
+    - max: 80
+      min: 4
+      name: columnCount
+      type: number
+      group: Arrows
+      label: Arrow columns
+      default: 28
+    - max: 1
+      min: 0.05
+      name: arrowOpacity
+      type: number
+      group: Arrows
+      label: Arrow opacity
+      default: 0.55
+    - name: glow
+      type: boolean
+      group: Arrows
+      label: Neon glow
+      default: true
+    - name: animate
+      type: boolean
+      group: Motion
+      label: Animate arrow rain
+      default: true
+    - max: 40
+      min: 1
+      name: animationSpeed
+      type: number
+      group: Motion
+      label: Seconds per loop
+      default: 6
+    - name: positiveColor
+      type: color
+      group: Colours
+      label: Positive (up) colour
+      default: "#22C55E"
+    - name: negativeColor
+      type: color
+      group: Colours
+      label: Negative (down) colour
+      default: "#EF4444"
+    - name: neutralColor
+      type: color
+      group: Colours
+      label: No-change colour
+      default: "#6B7280"
+    - name: backgroundColor
+      type: color
+      group: Colours
+      label: Background colour
+      default: "#000000"
+    - name: textColor
+      type: color
+      group: Colours
+      label: Text colour
+      default: "#FFFFFF"
+downloadedAt: 2026-09-11T13:41:30.453Z
+scaffoldingVersion: 2.196.2

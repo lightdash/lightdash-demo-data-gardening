@@ -1,0 +1,4 @@
+# The semantic layer is sharded across one YAML file per model in models/.
+# Start with models/_index.md, then read only the model files you need.
+# If models/ is missing, this app was downloaded with an older Lightdash CLI —
+# upgrade the CLI and re-run `lightdash download` to fetch the model files.

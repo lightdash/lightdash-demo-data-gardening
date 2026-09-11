@@ -1,0 +1,70 @@
+chartConfig:
+  config:
+    columns:
+      dbt_support_requests_average_of_feedback_rating:
+        name: Avg. CSAT
+      dbt_support_requests_count_of_request_id:
+        color: "#7E57C2"
+        displayStyle: bar
+        name: Support tickets
+      dbt_support_requests_partner_name:
+        name: Partner
+      dbt_support_requests_reason:
+        frozen: true
+        name: Request reason
+      dbt_support_requests_request_date_day:
+        frozen: true
+        name: Request date
+    conditionalFormattings:
+      - applyTo: cell
+        color: "#7E57C2"
+        rules:
+          - id: c49cd4b4-8099-47c4-8d48-3b9dc3daed3f
+            operator: lessThan
+            values:
+              - 7
+        target:
+          fieldId: dbt_support_requests_average_of_feedback_rating
+    hideRowNumbers: true
+    showColumnCalculation: true
+    showResultsTotal: true
+    showTableNames: false
+  type: table
+contentType: chart
+description: Daily support ticket volume and CSAT by request reason and partner.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_day
+    - dbt_support_requests_reason
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_browser
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_of_request_id
+    - dbt_support_requests_average_of_feedback_rating
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_request_date_day
+    - descending: true
+      fieldId: dbt_support_requests_count_of_request_id
+  tableCalculations: []
+  timezone: project_timezone
+name: Support requests by day and segment
+slug: support-requests-by-day-and-segment
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_day
+    - dbt_support_requests_reason
+    - dbt_support_requests_partner_name
+    - dbt_support_requests_browser
+    - dbt_support_requests_count_of_request_id
+    - dbt_support_requests_average_of_feedback_rating
+tableName: dbt_support_requests
+verification: null
+version: 1

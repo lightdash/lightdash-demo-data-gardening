@@ -1,0 +1,57 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_count_distinct_user_id
+          type: line
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_count_distinct_user_id
+  type: cartesian
+contentType: chart
+dashboardSlug: executive-sales-dashboard
+description: Unique customers trend across the trailing 12 completed months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 135779e8-3874-4eed-a1d4-3bab0e65cb5d
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+            tableName: dbt_orders
+          values:
+            - 12
+      id: df2ffb64-1eba-4c67-b1c9-9e1944571ff4
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_distinct_user_id
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Monthly Unique Customers Trend
+slug: exec-monthly-customers-trend
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_count_distinct_user_id
+tableName: dbt_orders
+verification: null
+version: 1

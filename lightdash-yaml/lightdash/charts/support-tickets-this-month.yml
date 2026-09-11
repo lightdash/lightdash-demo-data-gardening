@@ -1,0 +1,51 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: MoM
+    conditionalFormattings:
+      - color: "#7E57C2"
+        darkColor: "#B39DDB"
+        rules:
+          - id: a
+            operator: greaterThanOrEqual
+            values:
+              - 0
+        target: null
+    flipColors: true
+    label: Support tickets
+    selectedField: dbt_support_requests_count_of_request_id
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+    style: thousands
+  type: big_number
+contentType: chart
+description: >-
+  Count of support tickets in the latest month, with month-over-month
+  comparison.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_month
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 2
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_of_request_id
+  sorts:
+    - descending: true
+      fieldId: dbt_support_requests_request_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Support tickets this month
+slug: support-tickets-this-month
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_month
+    - dbt_support_requests_count_of_request_id
+tableName: dbt_support_requests
+verification: null
+version: 1

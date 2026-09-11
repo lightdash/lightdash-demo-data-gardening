@@ -1,0 +1,45 @@
+chartConfig:
+  config:
+    label: Order Volume
+    selectedField: dbt_orders_count_of_order_id
+    showBigNumberLabel: true
+    style: K
+  type: big_number
+contentType: chart
+dashboardSlug: executive-sales-dashboard
+description: Total number of orders over the trailing 12 completed months.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: dbt_orders
+  filters:
+    dimensions:
+      and:
+        - id: 60088610-ccd8-434e-88b1-063993e51303
+          operator: inThePast
+          settings:
+            completed: true
+            unitOfTime: months
+          target:
+            fieldId: dbt_orders_order_date_month
+            tableName: dbt_orders
+          values:
+            - 12
+      id: 63e247b0-10c1-4051-a786-2f6d20cd9be7
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_count_of_order_id
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: Order Volume
+slug: exec-order-volume-kpi
+spaceSlug: "-sales"
+tableConfig:
+  columnOrder:
+    - dbt_orders_count_of_order_id
+tableName: dbt_orders
+verification: null
+version: 1

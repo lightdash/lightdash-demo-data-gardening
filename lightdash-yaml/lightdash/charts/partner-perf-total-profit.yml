@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    comparisonFormat: percentage
+    comparisonLabel: vs. previous period
+    flipColors: false
+    label: Total Profit
+    selectedField: dbt_orders_sum_of_profit
+    showBigNumberLabel: true
+    showComparison: true
+    showTableNamesInLabel: false
+    style: thousands
+  type: big_number
+contentType: chart
+description: Total profit across partner-fulfilled orders.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_profit
+  sorts:
+    - descending: true
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Partner Performance — Total Profit
+slug: partner-perf-total-profit
+spaceSlug: "-key-company-dashboards"
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_profit
+tableName: dbt_orders
+verification: null
+version: 1

@@ -1,0 +1,28 @@
+models:
+  - name: monthly_partner_info
+    columns:
+      - name: partner_size
+        label: "Partner size"
+        meta:
+          dimension:
+            type: string
+      - name: dbt_orders_partner_name
+        label: "Dbt orders partner name"
+        meta:
+          dimension:
+            type: string
+      - name: dbt_orders_order_date_month
+        label: "Dbt orders order date month"
+        meta:
+          dimension:
+            type: timestamp
+      - name: dbt_orders_sum_basket_total
+        label: "Dbt orders sum basket total"
+        meta:
+          dimension:
+            type: number
+      - name: dbt_orders_count_distinct_order_id
+        label: "Dbt orders count distinct order id"
+        meta:
+          dimension:
+            type: number

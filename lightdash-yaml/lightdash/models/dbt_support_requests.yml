@@ -1,0 +1,165 @@
+description: This table contains information on all the support requests we’ve received
+dimensions:
+  - description: Unique ID of the request.
+    metrics:
+      count_distinct_request_id:
+        description: Total number of support requests submitted by customers.
+        label: Support Tickets
+        spotlight:
+          categories:
+            - verified
+            - operations
+          visibility: show
+        type: count_distinct
+      count_of_request_id:
+        description: >-
+          Count of support tickets. dbt_support_requests is one row per
+          request_id, so this is equivalent to count_distinct_request_id
+          — but it's re-aggregatable, so it can live in pre-aggregates
+          and be used in time-window roll-ups without query-time work.
+        label: Support Tickets
+        spotlight:
+          categories:
+            - verified
+            - operations
+          visibility: show
+        type: count
+    name: request_id
+    sql: ${TABLE}.request_id
+    type: string
+  - description: Unique Order ID that pertains to this request.
+    name: order_id
+    sql: ${TABLE}.order_id
+    type: string
+  - description: Timestamp of request submission by the user.
+    name: request_date
+    sql: >
+      timestamp_add(
+        ${TABLE}.request_date,
+        interval timestamp_diff(current_timestamp(), timestamp '2025-02-13 00:00:00', second) second
+      )
+    time_intervals:
+      - HOUR
+      - MINUTE_OF_HOUR_NUM
+      - HOUR_OF_DAY_NUM
+      - DAY
+      - DAY_OF_WEEK_INDEX
+      - DAY_OF_MONTH_NUM
+      - DAY_OF_YEAR_NUM
+      - DAY_OF_WEEK_NAME
+      - WEEK
+      - WEEK_NUM
+      - MONTH
+      - MONTH_NUM
+      - MONTH_NAME
+      - QUARTER
+      - QUARTER_NUM
+      - QUARTER_NAME
+      - YEAR
+    type: timestamp
+  - description: Determined cause of request.
+    metrics:
+      count_of_reason:
+        description: Number of distinct support request categories. Know what your customers need help with!
+        label: Unique Request Reasons
+        spotlight:
+          visibility: hide
+        type: count_distinct
+    name: reason
+    sql: ${TABLE}.reason
+    type: string
+  - description: Feedback rating out of ten as received by post-request user survey.
+    metrics:
+      average_of_feedback_rating:
+        description: Average customer satisfaction rating from post-support surveys. Keep your customer happiness blooming!
+        label: Customer Satisfaction Score
+        spotlight:
+          visibility: hide
+        type: average
+    name: feedback_rating
+    sql: ${TABLE}.feedback_rating
+    type: number
+  - description: ""
+    name: order_date
+    sql: ${TABLE}.order_date
+    type: timestamp
+  - description: ""
+    name: basket_total
+    sql: ${TABLE}.basket_total
+    type: number
+  - description: ""
+    name: profit
+    sql: ${TABLE}.profit
+    type: number
+  - description: ""
+    name: referrer
+    sql: ${TABLE}.referrer
+    type: string
+  - description: ""
+    name: partner_id
+    sql: ${TABLE}.partner_id
+    type: string
+  - description: ""
+    name: partner_name
+    sql: ${TABLE}.partner_name
+    type: string
+  - description: ""
+    name: partner_commission
+    sql: ${TABLE}.partner_commission
+    type: number
+  - description: ""
+    metrics:
+      count_distinct_user_id:
+        description: Number of unique customers who submitted support tickets.
+        label: Unique Customers
+        spotlight:
+          categories:
+            - verified
+            - operations
+          visibility: hide
+        type: count_distinct
+    name: user_id
+    sql: ${TABLE}.user_id
+    type: string
+  - description: ""
+    name: email
+    sql: ${TABLE}.email
+    type: string
+  - description: ""
+    name: created_date
+    sql: ${TABLE}.created_date
+    type: timestamp
+  - description: ""
+    name: browser
+    sql: ${TABLE}.browser
+    type: string
+joins:
+  - join: dbt_orders
+    sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+label: Support requests
+metrics:
+  support_tickets_per_customer:
+    description: >-
+      Average support ticket volume per unique customer. Calculated as total
+      support tickets divided by unique customers who submitted a support ticket.
+    label: Support Tickets per Customer
+    round: 2
+    spotlight:
+      categories:
+        - operations
+      visibility: show
+    sql: ${count_of_request_id} / NULLIF(${count_distinct_user_id}, 0)
+    type: number
+name: dbt_support_requests
+pre_aggregates:
+  - dimensions:
+      - reason
+    granularity: DAY
+    metrics:
+      - average_of_feedback_rating
+      - count_of_request_id
+      - count_distinct_user_id
+    name: support_requests_daily
+    time_dimension: request_date
+sql_from: '`lightdash-healthcare-demo.lightdash_gardening_demo.dbt_support_requests`'
+type: model

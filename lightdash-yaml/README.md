@@ -1,6 +1,6 @@
 # Thyme to Shine — pure Lightdash YAML project
 
-A dbt-free version of the semantic layer in `../dbt-bigquery`. There is no
+A dbt-free version of the Thyme to Shine semantic layer. There is no
 `dbt_project.yml`, no manifest and no `dbt run` step: each model carries its
 transformation SQL inline in `sql_from`, reading the raw seed tables in
 `lightdash-healthcare-demo.lightdash_gardening_demo` directly.
@@ -12,7 +12,24 @@ lightdash/charts/           31 charts copied from Thyme to Shine Market
 lightdash/dashboards/       4 dashboards copied from Thyme to Shine Market
 lightdash/chart-types/      custom chart type used by one of those dashboards
 lightdash/apps/             the Revenue forecaster data app
+seeds/                      raw CSVs, loaded to BigQuery by load-seeds.sh
+load-seeds.sh               bq-based replacement for `dbt seed` / `dbt build`
 ```
+
+## Loading data
+
+`dbt seed` used to push `seeds/*.csv` into BigQuery and `dbt build` then created
+the `dbt_*` tables. There is no build step any more: the models read the raw
+seed tables directly, so only the load remains.
+
+```bash
+./load-seeds.sh                                   # external demo dataset
+DATASET=lightdash-analytics:lightdash_demo_gardening ./load-seeds.sh
+```
+
+It needs an authenticated `bq`, and `--replace` truncates each table first.
+Schemas are pinned explicitly rather than autodetected, so `created_date`,
+`order_date` and `request_date` land as TIMESTAMP.
 
 ## Commands
 

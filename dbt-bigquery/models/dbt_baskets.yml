@@ -138,7 +138,8 @@ models:
               type: sum
               label: 'Revenue'
               format: '[$$]#,##0'
-              description: 'Total sales revenue from all baskets. Seeds of success!'
+              description: 'Total revenue summed from basket records (one row per order item). Use when analysing revenue by product or item. For order-level financial reporting use dbt_orders.sum_of_basket_total instead.'
+              ai_hint: 'Basket/item-level Revenue metric. This explore has one row per basket item, so sums here are appropriate for product-level analysis only. For any general revenue or financial reporting question, use dbt_orders.sum_of_basket_total instead.'
               spotlight:
                 visibility: hide
                 categories:

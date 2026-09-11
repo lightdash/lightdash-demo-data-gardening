@@ -234,7 +234,8 @@ models:
               type: sum
               label: 'Revenue'
               format: '[$$]#,##0'
-              description: 'Total sales revenue from all orders.'
+              description: 'Total sales revenue from all orders. This explore has no pre-aggregate optimisations; for standard financial reporting use dbt_orders.sum_of_basket_total instead.'
+              ai_hint: 'Non-pre-aggregated Revenue metric. Functionally identical to dbt_orders.sum_of_basket_total but without pre-aggregate performance optimisations. For any standard revenue or financial reporting question, use dbt_orders.sum_of_basket_total instead.'
               spotlight:
                 visibility: show
                 categories:

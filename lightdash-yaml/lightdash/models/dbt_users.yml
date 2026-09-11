@@ -100,14 +100,5 @@ pre_aggregates:
       - count_of_user_id
     name: users_daily_by_browser
     time_dimension: created_date
-sql_from: |-
-  (
-    select
-      cast(user_id as string) as user_id,
-      email,
-      created_date,
-      browser,
-      shipping_address
-    from `lightdash-healthcare-demo.lightdash_gardening_demo.users`
-  )
+sql_from: '`lightdash-healthcare-demo.lightdash_gardening_demo.dbt_users`'
 type: model

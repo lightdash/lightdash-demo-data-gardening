@@ -198,28 +198,5 @@ group_details:
     label: Product Details
 label: Baskets
 name: dbt_baskets
-sql_from: |-
-  (
-    select
-      cast(basket.order_id as string) as order_id,
-      cast(basket.basket_item_id as string) as item_id,
-      basket.ordered_product_skus as sku,
-      product.product_name,
-      product.price_currency as currency,
-      basket.price_amount as item_price,
-      basket.basket_total,
-      orders.order_date,
-      orders.profit,
-      (basket.price_amount * partners.partner_commission) as item_profit,
-      orders.partner_id,
-      partners.partner_name,
-      partners.partner_commission
-    from `lightdash-healthcare-demo.lightdash_gardening_demo.baskets` as basket
-      left join `lightdash-healthcare-demo.lightdash_gardening_demo.products` as product
-        on cast(basket.ordered_product_skus as string) = cast(product.sku as string)
-      left join `lightdash-healthcare-demo.lightdash_gardening_demo.orders` as orders
-        on cast(basket.order_id as string) = cast(orders.order_id as string)
-      left join `lightdash-healthcare-demo.lightdash_gardening_demo.partners` as partners
-        on cast(orders.partner_id as string) = cast(partners.partner_id as string)
-  )
+sql_from: '`lightdash-healthcare-demo.lightdash_gardening_demo.dbt_baskets`'
 type: model

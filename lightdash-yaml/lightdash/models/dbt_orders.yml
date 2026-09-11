@@ -356,29 +356,5 @@ parameters:
       - "partner_name"
 spotlight:
   owner: joao@lightdash.com
-sql_from: |-
-  (
-    select
-      cast(orders.order_id as string) as order_id,
-      orders.order_date,
-      cast(orders.partner_id as string) as partner_id,
-      partners.partner_name,
-      partners.partner_logo,
-      partners.partner_commission,
-      orders.currency,
-      orders.basket_total,
-      orders.profit,
-      orders.referrer,
-      cast(orders.user_id as string) as user_id,
-      users.email,
-      users.created_date as user_created_date,
-      users.browser,
-      json_extract_scalar(users.shipping_address, '$.city') as shipping_city,
-      json_extract_scalar(users.shipping_address, '$.country') as shipping_country
-    from `lightdash-healthcare-demo.lightdash_gardening_demo.orders` as orders
-      left join `lightdash-healthcare-demo.lightdash_gardening_demo.users` as users
-        on cast(orders.user_id as string) = cast(users.user_id as string)
-      left join `lightdash-healthcare-demo.lightdash_gardening_demo.partners` as partners
-        on cast(orders.partner_id as string) = cast(partners.partner_id as string)
-  )
+sql_from: '`lightdash-healthcare-demo.lightdash_gardening_demo.dbt_orders`'
 type: model

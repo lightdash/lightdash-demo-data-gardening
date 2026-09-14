@@ -4,6 +4,12 @@ models:
       received'
     meta:
       label: Support requests
+      ai_hint: >
+        One row per support request. Use count_of_request_id or
+        count_distinct_request_id for ticket volume, count_distinct_user_id for
+        unique customers, and average_of_feedback_rating for satisfaction scores.
+        There is no pre-built per-customer ratio metric — compute it by dividing
+        ticket count by unique customers in the BI layer if needed.
       pre_aggregates:
         - name: support_requests_daily
           dimensions:

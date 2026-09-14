@@ -241,15 +241,16 @@ models:
               height: 128
               fit: cover
       - name: partner_commission
-        description: 'Commission rate the specified parter charges, as a decimal fraction.'
+        description: 'Commission amount paid back to the partner for this order (partner payout / revenue back / shareback).'
         meta:
           dimension:
             type: number
           metrics:
             sum_of_partner_commission:
               type: sum
-              label: 'Sum of Partner commission'
-              description: 'Total commission paid to partners across orders.'
+              label: 'Partner Payout'
+              description: 'Total commission paid back to partners across orders. Also referred to as partner payout, revenue back, or shareback — the portion of revenue returned to fulfillment partners.'
+              ai_hint: 'Use for partner payout, revenue back, shareback, partner commission total, or money returned to fulfillment partners.'
               format: '[$$]#,##0'
               spotlight:
                 visibility: show

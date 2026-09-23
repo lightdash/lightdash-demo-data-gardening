@@ -1,0 +1,14 @@
+# What your AI agents read before they answer.
+# Add things here to teach them your terms and how your data fits together.
+# Merge a change to this file and your future answers get better.
+# Managed from the Reviews tab under Ask AI.
+version: 2
+entries:
+  - id: country
+    kind: context
+    content: When a user asks to break down or filter by 'country', use the shipping_country dimension in the Orders explore, not shipping_city. City is a more granular geographic level than country.
+    terms:
+      - country
+      - break down by country
+      - country breakdown
+    objects: []

@@ -392,3 +392,44 @@ models:
         meta:
           dimension:
             type: string
+            ai_hint: 'Use Shipping Country for country-level geographic analysis. For broader geographic groupings (EMEA, APAC, Americas), use the Region dimension instead.'
+          additional_dimensions:
+            region:
+              label: Region
+              description: 'Broad geographic region of the shipping destination.'
+              type: string
+              ai_hint: 'Use Region for standard geographic groupings such as EMEA, APAC, and Americas. For country-level analysis, use the Shipping Country dimension instead.'
+              sql: |
+                case
+                  when ${shipping_country} in (
+                    'United States', 'Canada', 'Mexico', 'Brazil', 'Argentina',
+                    'Chile', 'Colombia', 'Peru', 'Venezuela', 'Ecuador', 'Bolivia',
+                    'Paraguay', 'Uruguay', 'Guyana', 'Suriname', 'Cuba',
+                    'Dominican Republic', 'Haiti', 'Jamaica', 'Trinidad and Tobago',
+                    'Barbados', 'Belize', 'Costa Rica', 'El Salvador', 'Guatemala',
+                    'Honduras', 'Nicaragua', 'Panama'
+                  ) then 'Americas'
+                  when ${shipping_country} in (
+                    'Australia', 'New Zealand', 'Japan', 'China', 'South Korea',
+                    'India', 'Indonesia', 'Thailand', 'Vietnam', 'Philippines',
+                    'Malaysia', 'Singapore', 'Hong Kong', 'Taiwan', 'Bangladesh',
+                    'Pakistan', 'Sri Lanka', 'Nepal', 'Myanmar', 'Cambodia',
+                    'Laos', 'Mongolia', 'Papua New Guinea', 'Fiji'
+                  ) then 'APAC'
+                  when ${shipping_country} in (
+                    'United Kingdom', 'Germany', 'France', 'Italy', 'Spain',
+                    'Netherlands', 'Belgium', 'Sweden', 'Norway', 'Denmark',
+                    'Finland', 'Poland', 'Czech Republic', 'Austria', 'Switzerland',
+                    'Portugal', 'Greece', 'Hungary', 'Romania', 'Bulgaria',
+                    'Croatia', 'Slovakia', 'Slovenia', 'Estonia', 'Latvia',
+                    'Lithuania', 'Ireland', 'Luxembourg', 'Malta', 'Cyprus',
+                    'Russia', 'Ukraine', 'Turkey', 'Israel', 'Saudi Arabia',
+                    'United Arab Emirates', 'Qatar', 'Kuwait', 'Bahrain', 'Oman',
+                    'Jordan', 'Lebanon', 'Egypt', 'South Africa', 'Nigeria',
+                    'Kenya', 'Ghana', 'Ethiopia', 'Tanzania', 'Morocco', 'Algeria',
+                    'Tunisia', 'Libya', 'Angola', 'Mozambique', 'Zambia',
+                    'Zimbabwe', 'Botswana', 'Namibia', 'Rwanda', 'Uganda',
+                    'Cameroon', 'Ivory Coast', 'Senegal'
+                  ) then 'EMEA'
+                  else 'Other'
+                end

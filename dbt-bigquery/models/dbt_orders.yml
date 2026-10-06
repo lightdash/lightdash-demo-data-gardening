@@ -328,6 +328,14 @@ models:
               format: '[$$]#,##0'
               spotlight:
                 visibility: hide
+            percentile_86_profit:
+              type: percentile
+              percentile: 86
+              label: 'Profit (86th Percentile)'
+              format: '[$$]#,##0'
+              description: 'The 86th percentile of profit per order. 86% of orders have profit at or below this value.'
+              spotlight:
+                visibility: hide
             profit_margin:
               type: number
               sql: "ROUND(100.0 * SUM(${TABLE}.profit) / NULLIF(SUM(${TABLE}.basket_total), 0), 2)"

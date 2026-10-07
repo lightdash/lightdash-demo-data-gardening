@@ -49,6 +49,17 @@ models:
           description: "The end of the custom date range"
           type: date
           allow_custom_values: true
+      metrics:
+        revenue_per_customer:
+          type: number
+          label: Revenue per Customer
+          description: Average revenue generated per unique customer. Calculated as total revenue divided by unique customers who placed orders. Grows with both order value and repeat purchases.
+          sql: ${sum_of_basket_total} / NULLIF(${count_distinct_user_id}, 0)
+          format: '[$$]#,##0.00'
+          spotlight:
+            visibility: show
+            categories:
+              - sales
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'

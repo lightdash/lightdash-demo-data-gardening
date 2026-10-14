@@ -76,6 +76,17 @@ models:
                 categories:
                   - verified
                   - sales
+            orders_per_customer_per_day:
+              type: number
+              sql: "SAFE_DIVIDE(COUNT(${TABLE}.order_id), NULLIF(COUNT(DISTINCT ${TABLE}.user_id) * COUNT(DISTINCT DATE(${order_date})), 0))"
+              label: 'Orders per Customer per Day'
+              description: 'Average number of orders per active customer per calendar day in the filtered period. This normalizes for shorter and longer months so February is comparable to January.'
+              format: '0.000'
+              spotlight:
+                visibility: show
+                categories:
+                  - verified
+                  - sales
           dimension:
             type: string
       - name: order_date
@@ -351,7 +362,7 @@ models:
             count_distinct_user_id:
               type: count_distinct
               label: 'Unique Customers'
-              description: 'Number of unique customers who placed orders.'
+              description: 'Number of unique customers who placed at least one order in the filtered period. This is not a day-normalized or month-normalized metric.'
               spotlight:
                 visibility: hide
                 categories:

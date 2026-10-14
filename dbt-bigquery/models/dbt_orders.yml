@@ -1,24 +1,23 @@
 models:
   - name: dbt_orders
-    description: 'This table contains information on all the confirmed orders and
-      their status'
+    description: 'This table contains information on all the confirmed orders and their status'
     meta:
       label: Orders
       # pre_aggregates:
-        # - name: orders_partner_daily
-        #   dimensions:
-        #     - partner_name
-        #     - basket_total
-        #     - referrer
-        #   metrics:
-        #     - sum_of_basket_total
-        #     - sum_of_profit
-        #     - average_of_basket_total
-        #     - avg_profit
-        #     - count_of_order_id
-        #     - sum_of_partner_commission
-        #   time_dimension: order_date
-        #   granularity: DAY
+      # - name: orders_partner_daily
+      #   dimensions:
+      #     - partner_name
+      #     - basket_total
+      #     - referrer
+      #   metrics:
+      #     - sum_of_basket_total
+      #     - sum_of_profit
+      #     - average_of_basket_total
+      #     - avg_profit
+      #     - count_of_order_id
+      #     - sum_of_partner_commission
+      #   time_dimension: order_date
+      #   granularity: DAY
       spotlight:
         owner: joao@lightdash.com
       parameters:
@@ -67,10 +66,7 @@ models:
               type: count
               label: 'Order Volume'
               description: >-
-                Count of orders. dbt_orders is one row per order_id, so this
-                is equivalent to count_distinct_order_id — but it's
-                re-aggregatable, so it can live in pre-aggregates and be
-                used in time-window roll-ups without query-time work.
+                Count of orders. dbt_orders is one row per order_id, so this is equivalent to count_distinct_order_id — but it's re-aggregatable, so it can live in pre-aggregates and be used in time-window roll-ups without query-time work.
               spotlight:
                 visibility: show
                 categories:
@@ -82,26 +78,7 @@ models:
         description: 'Timestamp of order placement by user.'
         meta:
           dimension:
-            time_intervals:
-              [
-                'HOUR',
-                'MINUTE_OF_HOUR_NUM',
-                'HOUR_OF_DAY_NUM',
-                'DAY',
-                'DAY_OF_WEEK_INDEX',
-                'DAY_OF_MONTH_NUM',
-                'DAY_OF_YEAR_NUM',
-                'DAY_OF_WEEK_NAME',
-                'WEEK',
-                'WEEK_NUM',
-                'MONTH',
-                'MONTH_NUM',
-                'MONTH_NAME',
-                'QUARTER',
-                'QUARTER_NUM',
-                'QUARTER_NAME',
-                'YEAR'
-              ]
+            time_intervals: [ 'HOUR', 'MINUTE_OF_HOUR_NUM', 'HOUR_OF_DAY_NUM', 'DAY', 'DAY_OF_WEEK_INDEX', 'DAY_OF_MONTH_NUM', 'DAY_OF_YEAR_NUM', 'DAY_OF_WEEK_NAME', 'WEEK', 'WEEK_NUM', 'MONTH', 'MONTH_NUM', 'MONTH_NAME', 'QUARTER', 'QUARTER_NUM', 'QUARTER_NAME', 'YEAR' ]
             sql: >
               timestamp_add(
                 ${TABLE}.order_date,
@@ -114,8 +91,7 @@ models:
               type: boolean
               sql: EXTRACT(DAYOFWEEK FROM ${order_date}) = 1
             order_date_period:
-              description: Date period (current period or previous period or previous year or
-                out of range) chosen by the date_range parameter
+              description: Date period (current period or previous period or previous year or out of range) chosen by the date_range parameter
               type: string
               sql: >
                 case
@@ -183,7 +159,7 @@ models:
                   when date(${order_date_day}) between date_sub(${lightdash.parameters.dbt_orders.custom_range_start}, interval 1 year)
                     and date_sub(${lightdash.parameters.dbt_orders.custom_range_end}, interval 1 year)
                     then 'previous year'
-  
+
                   else 'out of range'
                 end
       - name: partner_id
@@ -196,9 +172,7 @@ models:
         meta:
           dimension:
             urls:
-              - url: https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/view?filters=%7B"dimensions"%3A%5B%7B"id"%3A"fc5f8c1a-7673-4054-ba00-765d33033bfe"%2C"operator"%3A"equals"%2C"target"%3A%7B"fieldId"%3A"dbt_orders_partner_name"%2C"tableName"%3A"dbt_orders"%2C"fieldName"%3A"partner_name"%7D%2C"disabled"%3Afalse%2C"values"%3A%5B"${
-                  value.formatted | url_encode
-                  }"%5D%7D%5D%2C"metrics"%3A%5B%5D%2C"tableCalculations"%3A%5B%5D%7D
+              - url: https://analytics.lightdash.cloud/projects/8a223608-a1e4-426e-adcd-0598ea72b9f8/dashboards/3ee80f6e-5cb2-4375-b313-d2ad9126aece/view?filters=%7B"dimensions"%3A%5B%7B"id"%3A"fc5f8c1a-7673-4054-ba00-765d33033bfe"%2C"operator"%3A"equals"%2C"target"%3A%7B"fieldId"%3A"dbt_orders_partner_name"%2C"tableName"%3A"dbt_orders"%2C"fieldName"%3A"partner_name"%7D%2C"disabled"%3Afalse%2C"values"%3A%5B"${ value.formatted | url_encode }"%5D%7D%5D%2C"metrics"%3A%5B%5D%2C"tableCalculations"%3A%5B%5D%7D
                 label: View partner KPI dashboard
               - url: https://docs.lightdash.com/references/dimensions#urls
                 label: View partner account in Salesforce
@@ -227,8 +201,7 @@ models:
             selected_dim:
               label: Selected dimension
               type: string
-              description: The dimension that is currently selected in the orders_dim_toggle
-                parameter
+              description: The dimension that is currently selected in the orders_dim_toggle parameter
               sql: ${lightdash.parameters.dbt_orders.orders_dim_toggle}
       - name: partner_logo
         description: 'URL of the partner logo'
@@ -256,8 +229,7 @@ models:
                 categories:
                   - finance
       - name: currency
-        description: 'Three letter international currency code for the currency the
-          order was paid with.'
+        description: 'Three letter international currency code for the currency the order was paid with.'
         meta:
           dimension:
             type: string
@@ -283,7 +255,7 @@ models:
               type: sum_distinct
               label: 'Revenue (distinct)'
               sql: ${basket_total}
-              distinct_keys: [order_id]
+              distinct_keys: [ order_id ]
               format: '[$$]#,##0'
               description: 'Total sales revenue from all orders, counting each unique order total only once.'
               spotlight:
@@ -298,8 +270,7 @@ models:
                 categories:
                   - verified
       - name: profit
-        description: 'Sum of item profits within the basket. Thus, the total profit of
-          the order.'
+        description: 'Sum of item profits within the basket. Thus, the total profit of the order.'
         meta:
           dimension:
             format: '[$$]#,##0'
@@ -339,6 +310,12 @@ models:
                 categories:
                   - verified
                   - finance
+            profit_max_of_profit:
+              label: Max of Profit
+              description: "Max of Profit on the table Orders "
+              type: max
+              format: "[$$]#,##0"
+              filters: []
       - name: referrer
         description: 'Source from which the user was linked to the Thyme to Shine website.'
         meta:

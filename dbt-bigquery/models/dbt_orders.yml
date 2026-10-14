@@ -19,6 +19,10 @@ models:
         #     - sum_of_partner_commission
         #   time_dimension: order_date
         #   granularity: DAY
+      ai_hint:
+        - "Use this explore for partner performance analysis, top performing partners by orders, and monthly partner order trends."
+        - "Combine partner_name dimension with order_date_month (from order_date with MONTH interval) and the total_partner_orders metric to rank partners by orders over a given period."
+        - "This is the correct explore for questions like 'top partners by orders over the last year' — do NOT look for a monthly_partner_info explore."
       spotlight:
         owner: joao@lightdash.com
       parameters:
@@ -75,6 +79,15 @@ models:
                 visibility: show
                 categories:
                   - verified
+                  - sales
+            total_partner_orders:
+              type: count_distinct
+              label: 'Total Partner Orders'
+              description: 'Total number of distinct orders fulfilled by partners. Use this metric with partner_name and order_date_month to rank top performing partners over a time period.'
+              ai_hint: 'Use this metric for partner performance analysis and ranking. Combine with partner_name dimension and order_date_month time dimension for monthly partner leaderboards.'
+              spotlight:
+                visibility: show
+                categories:
                   - sales
           dimension:
             type: string

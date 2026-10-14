@@ -50,7 +50,7 @@ models:
           type: date
           allow_custom_values: true
     columns:
-      - name: order_id
+      - name: adsd
         description: 'Unique Order ID for the order.'
         meta:
           metrics:

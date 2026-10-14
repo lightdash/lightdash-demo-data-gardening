@@ -175,11 +175,16 @@ models:
               type: boolean
               description: True if order date is in the future, otherwise False
               sql: |
-                case 
-                  when ${TABLE}.order_date > current_date() 
+                case
+                  when ${TABLE}.order_date > current_date()
                     then true
                   else false
                 end
+            order_date_week_starting_friday:
+              label: Week Starting Friday
+              description: Start of the week, with weeks beginning on Friday.
+              type: date
+              sql: date_trunc(date(${order_date}), week(friday))
       - name: profit
         description: 'Sum of item profits within the basket. Thus, the total profit of the basket.'
         meta:

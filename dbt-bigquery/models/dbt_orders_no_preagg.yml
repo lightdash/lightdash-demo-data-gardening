@@ -158,6 +158,11 @@ models:
   
                   else 'out of range'
                 end
+            order_date_week_starting_friday:
+              label: Week Starting Friday
+              description: Start of the week, with weeks beginning on Friday.
+              type: date
+              sql: date_trunc(date(${order_date}), week(friday))
       - name: partner_id
         description: 'ID of the partner that is fulfilling the order.'
         meta:

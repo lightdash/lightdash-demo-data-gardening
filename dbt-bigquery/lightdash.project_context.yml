@@ -1,0 +1,24 @@
+# Shared background every AI agent in this project reads before answering.
+# Schema: https://github.com/lightdash/lightdash/blob/main/packages/common/src/schemas/json/lightdash-project-context-1.0.json
+version: 1
+entries:
+  - id: partner
+    kind: definition
+    content: "A partner is a garden centre that resells Thyme to Shine products. Partner questions are answered from the partner_name dimension on Orders."
+    terms: ["partner", "partners", "garden centre", "reseller"]
+    objects: ["dbt_orders"]
+  - id: aov
+    kind: definition
+    content: "AOV means average order value, which is the Average Order Value metric on Orders. Do not recompute it from revenue and order volume."
+    terms: ["AOV", "average order value", "basket size"]
+    objects: ["dbt_orders"]
+  - id: revenue-source
+    kind: context
+    content: "Answer revenue questions from Orders (dbt_orders). Baskets (dbt_baskets) is item level and only for product or SKU questions; summing basket_total there double counts orders."
+    terms: []
+    objects: ["dbt_orders", "dbt_baskets"]
+  - id: completed-months
+    kind: context
+    content: "When a question says last month or last quarter, use completed calendar periods and say which period was used in the answer."
+    terms: ["last month", "last quarter", "this quarter", "year to date"]
+    objects: ["dbt_orders"]

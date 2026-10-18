@@ -28,6 +28,11 @@ models:
             visibility: show
             categories:
               - operations
+        avg_days_order_to_request:
+          type: number
+          label: Average Days from Order to Request
+          description: Average elapsed days from order placement to support request submission for requests with an associated order date.
+          sql: AVG(TIMESTAMP_DIFF(${TABLE}.request_date, ${TABLE}.order_date, SECOND) / 86400.0)
     columns:
       - name: request_id
         description: 'Unique ID of the request.'
@@ -104,42 +109,42 @@ models:
           dimension:
             type: number
       - name: order_date
-        description: ""
+        description: 'Timestamp when the associated order was placed, from orders.'
         meta:
           dimension:
             type: timestamp
       - name: basket_total
-        description: ""
+        description: 'Total value of the associated order basket, from orders.'
         meta:
           dimension:
             type: number
       - name: profit
-        description: ""
+        description: 'Profit on the associated order, from orders.'
         meta:
           dimension:
             type: number
       - name: referrer
-        description: ""
+        description: 'Referrer of the associated order, from orders.'
         meta:
           dimension:
             type: string
       - name: partner_id
-        description: ""
+        description: 'ID of the partner on the associated order, from orders.'
         meta:
           dimension:
             type: string
       - name: partner_name
-        description: ""
+        description: 'Name of the partner on the associated order, from partners.'
         meta:
           dimension:
             type: string
       - name: partner_commission
-        description: ""
+        description: 'Commission of the partner on the associated order, from partners.'
         meta:
           dimension:
             type: number
       - name: user_id
-        description: ""
+        description: 'ID of the user who placed the associated order, from orders.'
         meta:
           metrics:
             count_distinct_user_id:
@@ -154,17 +159,17 @@ models:
           dimension:
             type: string
       - name: email
-        description: ""
+        description: 'Email address of the user who placed the associated order, from users.'
         meta:
           dimension:
             type: string
       - name: created_date
-        description: ""
+        description: 'Timestamp when the user account was created, from users.'
         meta:
           dimension:
             type: timestamp
       - name: browser
-        description: ""
+        description: 'Browser used by the user, from users.'
         meta:
           dimension:
             type: string

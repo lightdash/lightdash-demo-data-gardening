@@ -273,6 +273,9 @@ models:
               label: 'Revenue'
               format: '[$$]#,##0'
               description: 'Total sales revenue from all orders.'
+              ai_hint:
+                - This is the canonical revenue metric. Use it when users ask about "revenue", "sales" or "how much we made".
+                - It is correct at order grain. If the question joins Baskets or Support requests, use Revenue (distinct) instead, or each order is counted once per joined row.
               spotlight:
                 visibility: show
                 categories:
@@ -286,6 +289,9 @@ models:
               distinct_keys: [order_id]
               format: '[$$]#,##0'
               description: 'Total sales revenue from all orders, counting each unique order total only once.'
+              ai_hint:
+                - Same number as Revenue at order grain. Use this one whenever Baskets or Support requests are joined in, so each order is only counted once.
+                - Do not offer it alongside Revenue as if they were different measures.
               spotlight:
                 visibility: hide
             average_of_basket_total:

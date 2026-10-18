@@ -93,7 +93,15 @@ models:
               sql: ${item_profit} / ${item_price}
             item_profit_margin_tier:
               type: string
-              description: True if item has profit margin greater than 12%
+              description: >-
+                Categorical string tier of item profit margin (item profit divided by item price).
+                Stored values are 'Low profit margin' (margin below 8%),
+                'Mid profit margin' (8% to 12% inclusive) and
+                'High profit margin' (margin above 12%).
+                This is a string, not a boolean.
+              ai_hint: >-
+                String dimension, not boolean. To find high-margin items, filter on the exact
+                string "High profit margin", not boolean True.
               sql: |
                 case 
                   when ${item_profit_margin} < .08 then 'Low profit margin' 

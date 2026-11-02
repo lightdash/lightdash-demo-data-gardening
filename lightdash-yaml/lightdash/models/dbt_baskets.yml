@@ -197,6 +197,42 @@ group_details:
     description: Fields that have information about the products in the basket.
     label: Product Details
 label: Baskets
+metrics:
+  item_profit_on_or_after_baskets_from_date:
+    description: Sum of item profit for basket lines whose order date is on or after the Baskets from date parameter (dbt_baskets.baskets_from_date).
+    format: '[$$]#,##0'
+    label: Item profit on/after baskets from date
+    sql: |
+      CASE
+        WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_baskets.baskets_from_date})
+        THEN ${TABLE}.item_profit
+        ELSE 0
+      END
+    type: sum
+  item_profit_on_or_after_shared_from_date:
+    description: Sum of item profit for basket lines whose order date is on or after the shared-name parameter dbt_baskets.from_date. Independent of Baskets from date and of dbt_orders.from_date.
+    format: '[$$]#,##0'
+    label: Item profit on/after shared from date
+    sql: |
+      CASE
+        WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_baskets.from_date})
+        THEN ${TABLE}.item_profit
+        ELSE 0
+      END
+    type: sum
 name: dbt_baskets
+parameters:
+  baskets_from_date:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Include item profit on or after this date. Scoped to dbt_baskets only, and distinct from Orders from date. Basket order dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026.
+    label: Baskets from date
+    type: date
+  from_date:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Same parameter name (from_date) as dbt_orders.from_date, but a separate model-level parameter on dbt_baskets. Filters basket order_date. The label differs from the orders control on purpose.
+    label: "Baskets: shared from date"
+    type: date
 sql_from: '`lightdash-healthcare-demo.lightdash_gardening_demo.dbt_baskets`'
 type: model

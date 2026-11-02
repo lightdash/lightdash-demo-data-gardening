@@ -1,0 +1,127 @@
+config:
+  isAddFilterDisabled: false
+  isDateZoomDisabled: true
+  parameterOrder:
+    - dbt_orders.orders_from_date
+    - dbt_baskets.baskets_from_date
+    - dbt_support_requests.support_from_date
+    - dbt_users.users_created_from
+    - dbt_orders.from_date
+    - dbt_baskets.from_date
+  pinnedParameters:
+    - dbt_orders.orders_from_date
+    - dbt_baskets.baskets_from_date
+    - dbt_support_requests.support_from_date
+    - dbt_users.users_created_from
+    - dbt_orders.from_date
+    - dbt_baskets.from_date
+contentType: dashboard
+description: >-
+  Reproduction dashboard for several model-level date parameters on one page.
+  Each control is scoped to a single model. Two of the controls share the
+  parameter name from_date but stay independent.
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Multi-model date parameters
+parameters:
+  dbt_baskets.baskets_from_date:
+    parameterName: dbt_baskets.baskets_from_date
+    value: "2026-06-01"
+  dbt_baskets.from_date:
+    parameterName: dbt_baskets.from_date
+    value: "2026-06-01"
+  dbt_orders.from_date:
+    parameterName: dbt_orders.from_date
+    value: "2026-06-01"
+  dbt_orders.orders_from_date:
+    parameterName: dbt_orders.orders_from_date
+    value: "2026-06-01"
+  dbt_support_requests.support_from_date:
+    parameterName: dbt_support_requests.support_from_date
+    value: "2026-06-01"
+  dbt_users.users_created_from:
+    parameterName: dbt_users.users_created_from
+    value: "2026-06-01"
+slug: multi-model-date-parameters
+spaceSlug: multi-model-date-parameters
+tabs: []
+tiles:
+  - h: 8
+    properties:
+      content: |
+        ## Several date parameters, one dashboard
+
+        Each control belongs to one model. Changing it re-runs only the tiles whose chart references that model's parameter. The grey unfiltered series on each chart should stay put.
+
+        **Distinct names**
+
+        - **Orders from date** (`dbt_orders.orders_from_date`) moves *Revenue on/after orders from date*.
+        - **Baskets from date** (`dbt_baskets.baskets_from_date`) moves *Item profit on/after baskets from date*.
+        - **Support requests from date** (`dbt_support_requests.support_from_date`) moves the filtered support series.
+        - **Users created from** (`dbt_users.users_created_from`) moves the filtered customers series.
+
+        **Same parameter name**
+
+        `dbt_orders` and `dbt_baskets` both define `from_date`. They are still two controls, labelled **Orders: shared from date** and **Baskets: shared from date**. Moving one must not move the other model's series. The labels are different on purpose: the docs say identical labels make the controls look the same.
+
+        Order, basket, request and created dates are shifted forward from a 13 February 2025 anchor, so a useful cutoff is around mid-2026 (the saved default is 1 June 2026), not the original 2023–2025 seed dates. Months before the cutoff drop to zero on the filtered series.
+      hideFrame: false
+      title: How to read this repro
+    tabSlug: null
+    tileSlug: how-to-read-this-repro
+    type: markdown
+    w: 36
+    x: 0
+    "y": 0
+  - h: 9
+    properties:
+      chartName: Orders revenue by from dates
+      chartSlug: orders-revenue-by-from-dates
+      hideTitle: false
+      title: Orders
+    tabSlug: null
+    tileSlug: orders-revenue-by-from-dates
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 8
+  - h: 9
+    properties:
+      chartName: Baskets item profit by from dates
+      chartSlug: baskets-profit-by-from-dates
+      hideTitle: false
+      title: Baskets
+    tabSlug: null
+    tileSlug: baskets-profit-by-from-dates
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 8
+  - h: 9
+    properties:
+      chartName: Support tickets by from date
+      chartSlug: support-tickets-by-from-date
+      hideTitle: false
+      title: Support requests
+    tabSlug: null
+    tileSlug: support-tickets-by-from-date
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 17
+  - h: 9
+    properties:
+      chartName: Users created by from date
+      chartSlug: users-created-by-from-date
+      hideTitle: false
+      title: Users
+    tabSlug: null
+    tileSlug: users-created-by-from-date
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 17
+verification: null
+version: 1

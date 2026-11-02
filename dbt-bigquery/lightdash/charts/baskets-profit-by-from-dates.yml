@@ -1,0 +1,73 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_sum_of_item_profit
+          name: Item profit (unfiltered)
+          type: line
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_item_profit_on_or_after_baskets_from_date
+          name: Item profit on/after baskets from date
+          type: line
+        - encode:
+            xRef:
+              field: dbt_baskets_order_date_month
+            yRef:
+              field: dbt_baskets_item_profit_on_or_after_shared_from_date
+          name: Item profit on/after shared from date
+          type: line
+    layout:
+      xField: dbt_baskets_order_date_month
+      yField:
+        - dbt_baskets_sum_of_item_profit
+        - dbt_baskets_item_profit_on_or_after_baskets_from_date
+        - dbt_baskets_item_profit_on_or_after_shared_from_date
+  type: cartesian
+contentType: chart
+description: >-
+  Basket item profit by month. The unfiltered series ignores parameters. "Item
+  profit on/after baskets from date" follows dbt_baskets.baskets_from_date.
+  "Item profit on/after shared from date" follows dbt_baskets.from_date, which
+  does not move when the orders from_date control changes.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_baskets_order_date_month
+  exploreName: dbt_baskets
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_baskets_sum_of_item_profit
+    - dbt_baskets_item_profit_on_or_after_baskets_from_date
+    - dbt_baskets_item_profit_on_or_after_shared_from_date
+  sorts:
+    - descending: false
+      fieldId: dbt_baskets_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Baskets item profit by from dates
+parameters:
+  dbt_baskets.baskets_from_date: "2026-06-01"
+  dbt_baskets.from_date: "2026-06-01"
+slug: baskets-profit-by-from-dates
+spaceSlug: multi-model-date-parameters
+tableConfig:
+  columnOrder:
+    - dbt_baskets_order_date_month
+    - dbt_baskets_sum_of_item_profit
+    - dbt_baskets_item_profit_on_or_after_baskets_from_date
+    - dbt_baskets_item_profit_on_or_after_shared_from_date
+tableName: dbt_baskets
+verification: null
+version: 1

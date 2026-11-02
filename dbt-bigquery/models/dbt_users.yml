@@ -15,6 +15,13 @@ models:
         - join: dbt_orders
           sql_on: ${dbt_users.user_id} = ${dbt_orders.user_id}
           fields: [ count_distinct_order_id ]
+      parameters:
+        users_created_from:
+          label: "Users created from"
+          description: "Include customers whose created date is on or after this date. Scoped to dbt_users only. Created dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
       metrics:
         diff_emails_to_users:
           type: number
@@ -25,6 +32,15 @@ models:
             visibility: show
             categories:
               - beta
+        customers_on_or_after_users_created_from:
+          type: count
+          label: "Customers created on/after users created from"
+          description: "Count of customers whose created date is on or after the Users created from parameter (dbt_users.users_created_from). Earlier signups contribute nothing."
+          sql: |
+            CASE
+              WHEN DATE(${created_date}) >= DATE(${lightdash.parameters.dbt_users.users_created_from})
+              THEN 1
+            END
     columns:
       - name: browser
         description: 'Web browser that the user used to place the order.'

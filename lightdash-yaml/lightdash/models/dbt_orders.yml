@@ -326,6 +326,29 @@ dimensions:
     type: string
 label: Orders
 name: dbt_orders
+metrics:
+  revenue_on_or_after_orders_from_date:
+    description: Sum of basket total for orders whose order date is on or after the Orders from date parameter (dbt_orders.orders_from_date). Months before the cutoff contribute zero.
+    format: '[$$]#,##0'
+    label: Revenue on/after orders from date
+    sql: |
+      CASE
+        WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_orders.orders_from_date})
+        THEN ${TABLE}.basket_total
+        ELSE 0
+      END
+    type: sum
+  revenue_on_or_after_shared_from_date:
+    description: Sum of basket total for orders whose order date is on or after the shared-name parameter dbt_orders.from_date. Independent of Orders from date and of dbt_baskets.from_date.
+    format: '[$$]#,##0'
+    label: Revenue on/after shared from date
+    sql: |
+      CASE
+        WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_orders.from_date})
+        THEN ${TABLE}.basket_total
+        ELSE 0
+      END
+    type: sum
 parameters:
   custom_range_end:
     allow_custom_values: true
@@ -345,6 +368,18 @@ parameters:
       - "yesterday"
       - "last 7 days"
       - "last 30 days"
+  from_date:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Same parameter name (from_date) as dbt_baskets.from_date, but a separate model-level parameter on dbt_orders. Filters order_date. The label differs from the baskets control on purpose.
+    label: "Orders: shared from date"
+    type: date
+  orders_from_date:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Include order revenue on or after this date. Scoped to dbt_orders only. Dates on this model are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026.
+    label: Orders from date
+    type: date
   orders_dim_toggle:
     default: "partner_name"
     description: Swap between browser, partner, referrer

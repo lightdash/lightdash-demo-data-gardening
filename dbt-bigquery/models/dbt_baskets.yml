@@ -23,7 +23,42 @@ models:
         item_details:
           label: Item Details
           description: Fields that have informaton about the items in the basket.
-
+      parameters:
+        baskets_from_date:
+          label: "Baskets from date"
+          description: "Include item profit on or after this date. Scoped to dbt_baskets only, and distinct from Orders from date. Basket order dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
+        from_date:
+          label: "Baskets: shared from date"
+          description: "Same parameter name (from_date) as dbt_orders.from_date, but a separate model-level parameter on dbt_baskets. Filters basket order_date. The label differs from the orders control on purpose."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
+      metrics:
+        item_profit_on_or_after_baskets_from_date:
+          type: sum
+          label: "Item profit on/after baskets from date"
+          format: '[$$]#,##0'
+          description: "Sum of item profit for basket lines whose order date is on or after the Baskets from date parameter (dbt_baskets.baskets_from_date)."
+          sql: |
+            CASE
+              WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_baskets.baskets_from_date})
+              THEN ${TABLE}.item_profit
+              ELSE 0
+            END
+        item_profit_on_or_after_shared_from_date:
+          type: sum
+          label: "Item profit on/after shared from date"
+          format: '[$$]#,##0'
+          description: "Sum of item profit for basket lines whose order date is on or after the shared-name parameter dbt_baskets.from_date. Independent of Baskets from date and of dbt_orders.from_date."
+          sql: |
+            CASE
+              WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_baskets.from_date})
+              THEN ${TABLE}.item_profit
+              ELSE 0
+            END
     columns:
       - name: order_id
         description: 'Unique Order ID that the basket relates to.'

@@ -1,0 +1,61 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - encode:
+            xRef:
+              field: dbt_support_requests_request_date_month
+            yRef:
+              field: dbt_support_requests_count_of_request_id
+          name: Support tickets (unfiltered)
+          type: line
+        - encode:
+            xRef:
+              field: dbt_support_requests_request_date_month
+            yRef:
+              field: dbt_support_requests_tickets_on_or_after_support_from_date
+          name: Tickets on/after support from date
+          type: line
+    layout:
+      xField: dbt_support_requests_request_date_month
+      yField:
+        - dbt_support_requests_count_of_request_id
+        - dbt_support_requests_tickets_on_or_after_support_from_date
+  type: cartesian
+contentType: chart
+description: >-
+  Support tickets by month. The filtered series follows
+  dbt_support_requests.support_from_date and is not affected by the orders or
+  baskets date parameters.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_support_requests_request_date_month
+  exploreName: dbt_support_requests
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_support_requests_count_of_request_id
+    - dbt_support_requests_tickets_on_or_after_support_from_date
+  sorts:
+    - descending: false
+      fieldId: dbt_support_requests_request_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Support tickets by from date
+parameters:
+  dbt_support_requests.support_from_date: "2026-06-01"
+slug: support-tickets-by-from-date
+spaceSlug: multi-model-date-parameters
+tableConfig:
+  columnOrder:
+    - dbt_support_requests_request_date_month
+    - dbt_support_requests_count_of_request_id
+    - dbt_support_requests_tickets_on_or_after_support_from_date
+tableName: dbt_support_requests
+verification: null
+version: 1

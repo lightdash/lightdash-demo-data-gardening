@@ -91,7 +91,23 @@ metrics:
       visibility: show
     sql: ${count_distinct_email} - ${count_distinct_of_user_id}
     type: number
+  customers_on_or_after_users_created_from:
+    description: Count of customers whose created date is on or after the Users created from parameter (dbt_users.users_created_from). Earlier signups contribute nothing.
+    label: Customers created on/after users created from
+    sql: |
+      CASE
+        WHEN DATE(${created_date}) >= DATE(${lightdash.parameters.dbt_users.users_created_from})
+        THEN 1
+      END
+    type: count
 name: dbt_users
+parameters:
+  users_created_from:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Include customers whose created date is on or after this date. Scoped to dbt_users only. Created dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026.
+    label: Users created from
+    type: date
 pre_aggregates:
   - dimensions:
       - browser

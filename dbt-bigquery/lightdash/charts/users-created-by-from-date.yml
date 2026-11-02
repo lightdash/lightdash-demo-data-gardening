@@ -1,0 +1,61 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - encode:
+            xRef:
+              field: dbt_users_created_date_month
+            yRef:
+              field: dbt_users_count_of_user_id
+          name: Customers (unfiltered)
+          type: line
+        - encode:
+            xRef:
+              field: dbt_users_created_date_month
+            yRef:
+              field: dbt_users_customers_on_or_after_users_created_from
+          name: Customers created on/after users created from
+          type: line
+    layout:
+      xField: dbt_users_created_date_month
+      yField:
+        - dbt_users_count_of_user_id
+        - dbt_users_customers_on_or_after_users_created_from
+  type: cartesian
+contentType: chart
+description: >-
+  Customers by created month. The filtered series follows
+  dbt_users.users_created_from and is not affected by the order, basket, or
+  support date parameters.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_users_created_date_month
+  exploreName: dbt_users
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_users_count_of_user_id
+    - dbt_users_customers_on_or_after_users_created_from
+  sorts:
+    - descending: false
+      fieldId: dbt_users_created_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Users created by from date
+parameters:
+  dbt_users.users_created_from: "2026-06-01"
+slug: users-created-by-from-date
+spaceSlug: multi-model-date-parameters
+tableConfig:
+  columnOrder:
+    - dbt_users_created_date_month
+    - dbt_users_count_of_user_id
+    - dbt_users_customers_on_or_after_users_created_from
+tableName: dbt_users
+verification: null
+version: 1

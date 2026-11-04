@@ -1,3 +1,10 @@
+{{
+  config(
+    partition_by=({'field': 'order_date', 'data_type': 'datetime', 'granularity': 'day'} if target.name == 'rainbow' else none),
+    cluster_by=(['partner_name', 'referrer'] if target.name == 'rainbow' else none),
+  )
+}}
+
 select 
   cast(orders.order_id as string) as order_id,
   orders.order_date,

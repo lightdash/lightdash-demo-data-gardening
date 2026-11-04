@@ -1,3 +1,9 @@
+{{
+  config(
+    partition_by=({'field': 'order_date', 'data_type': 'datetime', 'granularity': 'day'} if target.name == 'rainbow' else none),
+  )
+}}
+
 select
 
   cast(basket.order_id as string) as order_id,

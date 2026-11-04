@@ -1,6 +1,7 @@
 {{
   config(
-    tags = ['lightdash']
+    tags = ['lightdash'],
+    partition_by=({'field': 'request_date', 'data_type': 'datetime', 'granularity': 'month'} if target.name == 'rainbow' else none)
   )
 }}
 

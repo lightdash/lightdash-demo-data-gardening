@@ -1,0 +1,14 @@
+# Sandbox for Rainbow preview envs; only used with --profiles-dir profiles/rainbow
+lightdash_demo_thyme:
+  target: rainbow
+  outputs:
+    rainbow:
+      type: bigquery
+      method: service-account
+      keyfile: "{{ env_var('RAINBOW_BQ_KEYFILE') }}"
+      project: lightdash-healthcare-demo
+      dataset: rainbow_thyme
+      location: US
+      priority: interactive
+      threads: 4
+      timeout_seconds: 1000

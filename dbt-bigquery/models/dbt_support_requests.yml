@@ -17,6 +17,13 @@ models:
       joins:
         - join: dbt_orders
           sql_on: ${dbt_orders.order_id} = ${dbt_support_requests.order_id}
+      parameters:
+        support_from_date:
+          label: "Support requests from date"
+          description: "Include support tickets whose request date is on or after this date. Scoped to dbt_support_requests only. Request dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
       metrics:
         support_tickets_per_customer:
           type: number
@@ -28,6 +35,15 @@ models:
             visibility: show
             categories:
               - operations
+        tickets_on_or_after_support_from_date:
+          type: count
+          label: "Tickets on/after support from date"
+          description: "Count of support requests whose request date is on or after the Support requests from date parameter (dbt_support_requests.support_from_date). Earlier requests contribute nothing."
+          sql: |
+            CASE
+              WHEN DATE(${request_date}) >= DATE(${lightdash.parameters.dbt_support_requests.support_from_date})
+              THEN 1
+            END
     columns:
       - name: request_id
         description: 'Unique ID of the request.'

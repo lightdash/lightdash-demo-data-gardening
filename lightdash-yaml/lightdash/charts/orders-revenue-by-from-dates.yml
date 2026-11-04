@@ -1,0 +1,73 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_sum_of_basket_total
+          name: Revenue (unfiltered)
+          type: line
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_revenue_on_or_after_orders_from_date
+          name: Revenue on/after orders from date
+          type: line
+        - encode:
+            xRef:
+              field: dbt_orders_order_date_month
+            yRef:
+              field: dbt_orders_revenue_on_or_after_shared_from_date
+          name: Revenue on/after shared from date
+          type: line
+    layout:
+      xField: dbt_orders_order_date_month
+      yField:
+        - dbt_orders_sum_of_basket_total
+        - dbt_orders_revenue_on_or_after_orders_from_date
+        - dbt_orders_revenue_on_or_after_shared_from_date
+  type: cartesian
+contentType: chart
+description: >-
+  Orders revenue by month. The unfiltered series ignores parameters. "Revenue
+  on/after orders from date" follows dbt_orders.orders_from_date. "Revenue
+  on/after shared from date" follows dbt_orders.from_date, which is a different
+  parameter from dbt_baskets.from_date even though the name matches.
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - dbt_orders_order_date_month
+  exploreName: dbt_orders
+  filters: {}
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_revenue_on_or_after_orders_from_date
+    - dbt_orders_revenue_on_or_after_shared_from_date
+  sorts:
+    - descending: false
+      fieldId: dbt_orders_order_date_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Orders revenue by from dates
+parameters:
+  dbt_orders.from_date: "2026-06-01"
+  dbt_orders.orders_from_date: "2026-06-01"
+slug: orders-revenue-by-from-dates
+spaceSlug: multi-model-date-parameters
+tableConfig:
+  columnOrder:
+    - dbt_orders_order_date_month
+    - dbt_orders_sum_of_basket_total
+    - dbt_orders_revenue_on_or_after_orders_from_date
+    - dbt_orders_revenue_on_or_after_shared_from_date
+tableName: dbt_orders
+verification: null
+version: 1

@@ -150,7 +150,23 @@ metrics:
       visibility: show
     sql: ${count_of_request_id} / NULLIF(${count_distinct_user_id}, 0)
     type: number
+  tickets_on_or_after_support_from_date:
+    description: Count of support requests whose request date is on or after the Support requests from date parameter (dbt_support_requests.support_from_date). Earlier requests contribute nothing.
+    label: Tickets on/after support from date
+    sql: |
+      CASE
+        WHEN DATE(${request_date}) >= DATE(${lightdash.parameters.dbt_support_requests.support_from_date})
+        THEN 1
+      END
+    type: count
 name: dbt_support_requests
+parameters:
+  support_from_date:
+    allow_custom_values: true
+    default: "2026-06-01"
+    description: Include support tickets whose request date is on or after this date. Scoped to dbt_support_requests only. Request dates are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026.
+    label: Support requests from date
+    type: date
 pre_aggregates:
   - dimensions:
       - reason

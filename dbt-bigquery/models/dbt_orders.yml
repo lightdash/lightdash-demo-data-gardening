@@ -49,6 +49,45 @@ models:
           description: "The end of the custom date range"
           type: date
           allow_custom_values: true
+        # Repro: distinct model-level date parameter. Separate control from
+        # dbt_baskets.baskets_from_date and from the shared-name from_date below.
+        orders_from_date:
+          label: "Orders from date"
+          description: "Include order revenue on or after this date. Scoped to dbt_orders only. Dates on this model are shifted forward from 13 February 2025, so a useful cutoff is around mid-2026."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
+        # Repro: same parameter name as dbt_baskets.from_date, different model.
+        # The label is deliberately different so the two dashboard controls can be told apart.
+        from_date:
+          label: "Orders: shared from date"
+          description: "Same parameter name (from_date) as dbt_baskets.from_date, but a separate model-level parameter on dbt_orders. Filters order_date."
+          type: date
+          default: "2026-06-01"
+          allow_custom_values: true
+      metrics:
+        revenue_on_or_after_orders_from_date:
+          type: sum
+          label: "Revenue on/after orders from date"
+          format: '[$$]#,##0'
+          description: "Sum of basket total for orders whose order date is on or after the Orders from date parameter (dbt_orders.orders_from_date). Months before the cutoff contribute zero."
+          sql: |
+            CASE
+              WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_orders.orders_from_date})
+              THEN ${TABLE}.basket_total
+              ELSE 0
+            END
+        revenue_on_or_after_shared_from_date:
+          type: sum
+          label: "Revenue on/after shared from date"
+          format: '[$$]#,##0'
+          description: "Sum of basket total for orders whose order date is on or after the shared-name parameter dbt_orders.from_date. Independent of Orders from date and of dbt_baskets.from_date."
+          sql: |
+            CASE
+              WHEN DATE(${order_date}) >= DATE(${lightdash.parameters.dbt_orders.from_date})
+              THEN ${TABLE}.basket_total
+              ELSE 0
+            END
     columns:
       - name: order_id
         description: 'Unique Order ID for the order.'

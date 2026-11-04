@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: dbt_deliveries
+    description: Order dispatch and delivery times. Mixes local wall-clock DATETIMEs with UTC TIMESTAMPs.
+    columns:
+      - name: order_id
+        description: Order identifier.
+        meta:
+          dimension:
+            type: string
+          metrics:
+            count_of_deliveries:
+              type: count_distinct
+      - name: user_id
+        meta:
+          dimension:
+            type: string
+      - name: partner_name
+        meta:
+          dimension:
+            type: string
+      - name: delivery_timezone
+        description: IANA time zone of the delivery address.
+        meta:
+          dimension:
+            type: string
+      - name: ordered_at_local
+        description: Order placement time, local wall clock (DATETIME, no time zone).
+        meta:
+          dimension:
+            type: timestamp
+      - name: dispatched_at_utc
+        description: Dispatch instant in UTC (TIMESTAMP). Used for partitioning.
+        meta:
+          dimension:
+            type: timestamp
+      - name: delivered_at_local
+        description: Delivery time, local wall clock (DATETIME, no time zone).
+        meta:
+          dimension:
+            type: timestamp
+      - name: delivery_window_start
+        description: Start of the promised delivery window (TIME).
+        meta:
+          dimension:
+            type: string
+      - name: delivery_window_end
+        description: End of the promised delivery window (TIME).
+        meta:
+          dimension:
+            type: string
+      - name: order_day
+        description: Local order date (DATE).
+        meta:
+          dimension:
+            type: date

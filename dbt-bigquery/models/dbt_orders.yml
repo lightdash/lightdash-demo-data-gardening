@@ -294,6 +294,15 @@ models:
                 - Do not offer it alongside Revenue as if they were different measures.
               spotlight:
                 visibility: hide
+            revenue_per_ordering_email:
+              type: number
+              label: 'Revenue per Ordering Email'
+              sql: '${sum_of_basket_total} / NULLIF(${count_distinct_email}, 0)'
+              format: '[$$]#,##0.00'
+              description: 'Total order revenue divided by the number of distinct non-null user email addresses associated with orders in the selected scope. Returns null when there are no non-null emails.'
+              ai_hint:
+                - The denominator is distinct non-null emails (Ordering Emails), not distinct user IDs.
+                - The ratio is at order grain and uses canonical Revenue (sum_of_basket_total), including revenue from orders with null emails in the numerator. Do not use it with fanout joins such as Baskets or Support requests.
             average_of_basket_total:
               type: average
               label: 'Average Order Value'
@@ -368,6 +377,11 @@ models:
       - name: email
         description: 'Email address of the user that placed the order.'
         meta:
+          metrics:
+            count_distinct_email:
+              type: count_distinct
+              label: 'Ordering Emails'
+              description: 'Number of distinct non-null user email addresses associated with orders in the selected scope.'
           dimension:
             urls:
               - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'

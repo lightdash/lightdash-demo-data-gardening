@@ -373,6 +373,11 @@ models:
               - url: 'mailto:${value.raw}?subject=Hello from Thyme Team!'
                 label: Send email
             type: string
+          metrics:
+            count_distinct_email:
+              type: count_distinct
+              label: Unique Emails
+              description: 'Number of unique email addresses that placed an order.'
       - name: user_created_date
         description: 'Timestamp of user creation.'
         meta:

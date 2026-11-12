@@ -1,0 +1,27 @@
+version: 2
+models:
+  - name: test_demo
+    description: SQL model for Test demo
+    meta:
+      label: Test demo
+    columns:
+      - name: email
+        meta:
+          dimension:
+            type: string
+      - name: browser
+        meta:
+          dimension:
+            type: string
+      - name: user_id
+        meta:
+          dimension:
+            type: string
+      - name: created_date
+        meta:
+          dimension:
+            type: timestamp
+      - name: shipping_address
+        meta:
+          dimension:
+            type: string

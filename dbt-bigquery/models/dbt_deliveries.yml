@@ -2,6 +2,22 @@ version: 2
 models:
   - name: dbt_deliveries
     description: Order dispatch and delivery times. Mixes local wall-clock DATETIMEs with UTC TIMESTAMPs.
+    meta:
+      joins:
+        - join: dbt_orders
+          sql_on: ${dbt_orders.order_id} = ${dbt_deliveries.order_id}
+          relationship: one-to-one
+      metrics:
+        revenue_per_delivery:
+          type: number
+          label: Revenue per Delivery
+          description: Total sales revenue divided by the number of deliveries.
+          sql: ${dbt_orders.sum_distinct_basket_total} / NULLIF(${count_of_deliveries}, 0)
+          format: '[$$]#,##0.00'
+          ai_hint:
+            - Use for "revenue per delivery". Group by Orders partner name and Orders order date month so revenue and deliveries share the same partner-month.
+            - dbt_deliveries has one row per order_id and joins to Orders on order_id, so the join does not fan out.
+            - Do not group by the Deliveries partner_name or order_day alongside Orders fields; use the Orders ones so the partner and month come from one table.
     columns:
       - name: order_id
         description: Order identifier.
